@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://brunodecurtins-create.github.io/helveticpoker-pokerturniere/sitemap.xml
