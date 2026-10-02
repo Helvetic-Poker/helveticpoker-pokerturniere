@@ -57,7 +57,7 @@ const pad=n=>String(n).padStart(2,'0');
 function localDate(){const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
 function labelDate(s){const d=new Date(s+'T12:00:00');return {day:pad(d.getDate()),month:d.toLocaleDateString('de-CH',{month:'short'}).replace('.','')}}
 function card(e){
-  const ld=labelDate(e.occurrence_date), logo=logos[e.organizer]||e.provider_logo||'';
+  const ld=labelDate(e.occurrence_date), logo=providerLogos[e.organizer]||e.provider_logo||'';
   const initial=esc((e.organizer||'?').slice(0,1).toUpperCase());
   const badge=e.event_type&&e.event_type!=='Regular'?'<span class="chip">'+esc(e.event_type)+'</span>':'';
   return '<article class="card"><div class="date"><b>'+ld.day+'</b><span>'+esc(ld.month)+'</span></div><div class="body"><div class="logo">'+(logo?'<img src="'+esc(logo)+'" alt="'+esc(e.organizer)+' Logo" loading="lazy">':initial)+'</div><div class="time">'+esc(e.time||'—')+'</div><div class="title">'+esc(e.title)+'</div><div class="place">📍 '+esc(e.city)+' ('+esc(e.canton)+')</div><div class="org">'+esc(e.organizer)+'</div><div class="chips"><span class="chip">'+esc(e.variant||'NLH')+'</span>'+badge+(e.buy_in_label?'<span class="chip">'+esc(e.buy_in_label)+'</span>':'')+'</div></div></article>';
