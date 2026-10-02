@@ -56,7 +56,7 @@ function card(e){
 }
 Promise.all(files.map(f=>fetch(f).then(r=>r.json()))).then(parts=>{
   const today=localDate();
-  const allEvents=parts.flat().filter(e=>e.occurrence_date>=today).sort((a,b)=>(a.occurrence_date+' '+(a.time||'')).localeCompare(b.occurrence_date+' '+(b.time||''),'de'));\n  const events=window.matchMedia('(max-width:560px)').matches?allEvents.slice(0,6):allEvents.slice(0,9);
+  const events=parts.flat().filter(e=>e.occurrence_date>=today).sort((a,b)=>(a.occurrence_date+' '+(a.time||'')).localeCompare(b.occurrence_date+' '+(b.time||''),'de')).slice(0,9);
   document.getElementById('grid').innerHTML=events.length?events.map(card).join(''):'<div class="empty">Aktuell sind keine kommenden Turniere veröffentlicht.</div>';
 }).catch(()=>{document.getElementById('grid').innerHTML='<div class="empty">Die Kalenderdaten konnten nicht geladen werden.</div>'});
 </script>
