@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Helvetic Poker – Nächste Pokerturniere</title>
+<style>
+:root{--red:#e21b35;--ink:#13263a;--muted:#6f7c8b;--line:#e1e6ea;--bg:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Montserrat,Arial,system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{display:grid;grid-template-columns:70px 1fr;min-height:154px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 3px 12px rgba(16,34,56,.05)}
+.date{background:#f5f7f8;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;text-align:center}
+.date b{font-size:22px;line-height:1}.date span{font-size:10px;color:var(--muted);font-weight:600;margin-top:4px}
+.body{padding:12px 13px;min-width:0}.logo{height:38px;width:70px;border:1px solid #e2e6ea;border-radius:7px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:9px;font-size:15px;font-weight:700}
+.logo img{max-width:100%;max-height:100%;object-fit:contain}.time{font-size:10px;color:var(--red);font-weight:700}.title{font-size:14px;font-weight:700;line-height:1.25;margin:3px 0 5px}.place,.org{font-size:10px;color:var(--muted);line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.chip{font-size:8px;background:#f0f2f4;color:#596675;border-radius:4px;padding:4px 6px;font-weight:600}.empty{padding:24px;border:1px dashed #cbd4dc;border-radius:10px;color:var(--muted);text-align:center}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.wrap{padding:0}.head{align-items:flex-start}.grid{grid-template-columns:1fr;gap:9px}.card{min-height:132px}.date{width:64px}.all{font-size:11px}.title{font-size:15px}.logo{height:42px;width:78px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="grid" class="grid"><div class="empty">Kalenderdaten werden geladen …</div></div>
+</div>
+<script>
+const files=[...Array(9)].map((_,i)=>'./data/0'+(i+1)+'.json');
+const providerLogos={
+"24Poker":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/6b50286d-2f09-47d4-a018-8c326b0ecef7/1774464947679-24poker.png",
+"AZ Poker Club Bern":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/1170cdc9-4cb0-4ac0-902f-19c369fa99b4/1774464942453-azpokerclub.jpg",
+"Airfield Pokerclub Interlaken":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/3a6035b2-ab43-4807-b3a5-28185be8f40b/1774465014142-pokerhelden.jpg",
+"Pokerhelden / Airfield Poker Club":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/3a6035b2-ab43-4807-b3a5-28185be8f40b/1774465014142-pokerhelden.jpg",
+"Another Poker Basel":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/c04768c0-8968-455e-acb3-38a42b79c3ee/1774464902622-anotherpoker.png",
+"Capital Poker Club Bern":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/415712c9-af88-4b1e-a4a0-5ebc87de4470/1774464996304-capitalpokerclub.png",
+"FOIF DRÜ EFFRETIKON":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/d5555268-b285-4c9f-8c62-8a53811cc8da/1774464838755-foifdrue.png",
+"FullEdge Pokerclub Pratteln BL":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/e1315bad-abde-460a-9ee0-6a2bda3e13fb/1774464850053-fulledge.jpg",
+"House of Cards Luzern":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/e20c02d3-49e6-4dfb-b2c2-4b20f29eadad/1774464785696-houseofcards.jpg",
+"HSOP Helvetic Series of Poker":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/711a2b69-fae1-4b0b-afca-e83c36e2d9c1/1774464992979-hsop.jpg",
+"Munot Poker Schaffhausen":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/6ce78667-c164-4a86-8874-e95496cb0bf5/1774464745546-munotpoker.png",
+"Prestige Poker Dietlikon":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/6870a596-1d3e-466f-af92-5dc034a1d727/1774464799361-prestigepoker.jpg",
+"STATION Poker Club":"https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/7a6418b7-dfb0-4519-aab5-e857f421a6d7/1774464732962-stationpokerclub.jpg",
+"Poker Club St. Gallen":"./assets/logos/poker-club-st-gallen.png",
+"Swiss Casino St. Gallen":"https://static.wixstatic.com/media/98a788_df2ae3f8c7e34e1ab9eba87e99a6f506~mv2.png/v1/fill/w_1024%2Ch_768%2Cal_c/Logo_SwissCasino4_3%20%282%29.png",
+"Grand Casino Luzern":"https://luzernerfest.ch/images/sponsoren/casino-luzern.png",
+"sports ZUGERLAND":"https://media.jobs.ch/media/f07dacd6-410e-4b8f-ae42-d713278866bc",
+"Fridli Poker":"./assets/logos/fridli-poker.jpg"
+};
+const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const pad=n=>String(n).padStart(2,'0');
+function localDate(){const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function labelDate(s){const d=new Date(s+'T12:00:00');return {day:pad(d.getDate()),month:d.toLocaleDateString('de-CH',{month:'short'}).replace('.','')}}
+function card(e){
+  const ld=labelDate(e.occurrence_date), logo=providerLogos[e.organizer]||e.provider_logo||'';
+  const initial=esc((e.organizer||'?').slice(0,1).toUpperCase());
+  const badge=e.event_type&&e.event_type!=='Regular'?'<span class="chip">'+esc(e.event_type)+'</span>':'';
+  return '<article class="card"><div class="date"><b>'+ld.day+'</b><span>'+esc(ld.month)+'</span></div><div class="body"><div class="logo">'+(logo?'<img src="'+esc(logo)+'" alt="'+esc(e.organizer)+' Logo" loading="lazy">':initial)+'</div><div class="time">'+esc(e.time||'—')+'</div><div class="title">'+esc(e.title)+'</div><div class="place">📍 '+esc(e.city)+' ('+esc(e.canton)+')</div><div class="org">'+esc(e.organizer)+'</div><div class="chips"><span class="chip">'+esc(e.variant||'NLH')+'</span>'+badge+(e.buy_in_label?'<span class="chip">'+esc(e.buy_in_label)+'</span>':'')+'</div></div></article>';
+}
+Promise.all(files.map(f=>fetch(f).then(r=>r.json()))).then(parts=>{
+  const today=localDate();
+  const allEvents=parts.flat().filter(e=>e.occurrence_date>=today).sort((a,b)=>(a.occurrence_date+' '+(a.time||'')).localeCompare(b.occurrence_date+' '+(b.time||''),'de'));
+  const events=window.matchMedia('(max-width:560px)').matches?allEvents.slice(0,3):allEvents.slice(0,9);
+  document.getElementById('grid').innerHTML=events.length?events.map(card).join(''):'<div class="empty">Aktuell sind keine kommenden Turniere veröffentlicht.</div>';
+}).catch(()=>{document.getElementById('grid').innerHTML='<div class="empty">Die Kalenderdaten konnten nicht geladen werden.</div>'});
+</script>
+</body>
+</html>
