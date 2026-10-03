@@ -257,78 +257,226 @@ jobs:
             </script>
 
             <style>
-              body {{
-                margin: 0;
-                font-family: Arial, sans-serif;
-                background: #f5f5f5;
-                color: #111;
-              }}
+          * {{
+            box-sizing: border-box;
+          }}
 
-              main {{
-                max-width: 900px;
-                margin: 40px auto;
-                padding: 0 20px;
-              }}
+          html {{
+            scroll-behavior: smooth;
+          }}
 
-              .card {{
-                background: #fff;
-                border-radius: 18px;
-                padding: 32px;
-                box-shadow: 0 8px 30px rgba(0,0,0,.08);
-              }}
+          body {{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+              radial-gradient(circle at top left, rgba(201,162,39,.08), transparent 32%),
+              linear-gradient(180deg, #f7f7f7 0%, #eeeeee 100%);
+            color: #151515;
+            line-height: 1.55;
+          }}
 
-              h1 {{
-                margin: 0 0 8px;
-                font-size: 36px;
-              }}
+          main {{
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 56px 20px 72px;
+          }}
 
-              .subtitle {{
-                color: #666;
-                font-size: 20px;
-                margin-bottom: 24px;
-              }}
+          .card {{
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow:
+              0 18px 50px rgba(0,0,0,.08),
+              0 2px 8px rgba(0,0,0,.04);
+          }}
 
-              .info {{
-                display: grid;
-                gap: 10px;
-                margin: 24px 0;
-              }}
+          .card::before {{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #c8102e 0%, #c8102e 70%, #c9a227 100%);
+          }}
 
-              .row {{
-                padding: 12px 0;
-                border-bottom: 1px solid #eee;
-              }}
+          .organizer-logo {{
+            margin: 0 0 28px;
+          }}
 
-              .label {{
-                font-weight: 700;
-              }}
+          .organizer-logo img {{
+            display: block;
+            width: 112px;
+            height: 112px;
+            object-fit: contain;
+            border-radius: 18px;
+            background: #111;
+            padding: 8px;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 8px 22px rgba(0,0,0,.10);
+          }}
 
-              .organizer-logo {{
-                margin: 18px 0;
-              }}
+          h1 {{
+            margin: 0 0 10px;
+            max-width: 820px;
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.08;
+            letter-spacing: -1.2px;
+            font-weight: 800;
+            color: #111;
+          }}
 
-              .organizer-logo img {{
-                display: block;
-                width: 120px;
-                height: 120px;
-                object-fit: contain;
-                border-radius: 12px;
-              }}
+          .subtitle {{
+            color: #6a6a6a;
+            font-size: 20px;
+            line-height: 1.4;
+            margin: 0 0 34px;
+          }}
 
-              .btn {{
-                display: inline-block;
-                padding: 12px 18px;
-                background: #d71920;
-                color: white;
-                text-decoration: none;
-                border-radius: 8px;
-                margin: 6px 6px 0 0;
-              }}
+          .info {{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin: 0 0 34px;
+          }}
 
-              .btn.secondary {{
-                background: #222;
-              }}
-            </style>
+          .row {{
+            min-height: 88px;
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+            background: #f8f8f8;
+            border: 1px solid #e9e9e9;
+            border-radius: 14px;
+          }}
+
+          .label {{
+            display: block;
+            color: #777;
+            font-size: 12px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+          }}
+
+          .row:not(:has(.label)) {{
+            display: none;
+          }}
+
+          .row {{
+            color: #171717;
+            font-size: 17px;
+            font-weight: 600;
+          }}
+
+          .row .label {{
+            font-weight: 700;
+          }}
+
+          .info .row:nth-child(2n) {{
+            background: #fff;
+          }}
+
+          .btn {{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 14px 22px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            background: #c8102e;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+            transition:
+              transform .18s ease,
+              box-shadow .18s ease,
+              background .18s ease;
+          }}
+
+          .btn:hover {{
+            background: #a90d26;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(200,16,46,.20);
+          }}
+
+          .btn.secondary {{
+            background: #171717;
+            color: #fff;
+          }}
+
+          .btn.secondary:hover {{
+            background: #2b2b2b;
+            box-shadow: 0 8px 20px rgba(0,0,0,.16);
+          }}
+
+          .btn:focus-visible {{
+            outline: 3px solid rgba(201,162,39,.55);
+            outline-offset: 3px;
+          }}
+
+          @media (max-width: 700px) {{
+            main {{
+              padding: 28px 14px 48px;
+            }}
+
+            .card {{
+              padding: 30px 22px 28px;
+              border-radius: 20px;
+            }}
+
+            .organizer-logo img {{
+              width: 92px;
+              height: 92px;
+              border-radius: 14px;
+            }}
+
+            h1 {{
+              font-size: clamp(30px, 9vw, 42px);
+              letter-spacing: -.7px;
+            }}
+
+            .subtitle {{
+              font-size: 18px;
+              margin-bottom: 26px;
+            }}
+
+            .info {{
+              grid-template-columns: 1fr;
+              gap: 10px;
+              margin-bottom: 28px;
+            }}
+
+            .row {{
+              min-height: 76px;
+              padding: 15px 17px;
+            }}
+
+            .btn {{
+              width: 100%;
+              min-height: 52px;
+            }}
+          }}
+
+          @media (prefers-reduced-motion: reduce) {{
+            html {{
+              scroll-behavior: auto;
+            }}
+
+            .btn {{
+              transition: none;
+            }}
+          }}
+        </style>
           </head>
 
           <body>
