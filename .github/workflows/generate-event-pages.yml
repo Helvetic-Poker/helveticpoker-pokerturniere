@@ -1,0 +1,390 @@
+name: Generate and deploy tournament pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/*.json"
+      - ".github/workflows/generate-event-pages.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Generate tournament pages
+        run: |
+          python3 - <<'PY'
+          import json
+          import html
+          import re
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          ROOT = Path(".")
+          DATA_DIR = ROOT / "data"
+          OUT_DIR = ROOT / "turniere"
+          BASE_URL = "https://pokerturniere.helveticpoker.ch"
+
+          provider_logos = {
+              "Grand Casino Luzern":
+                  "https://luzernerfest.ch/images/sponsoren/casino-luzern.png",
+              "Poker Club St. Gallen":
+                  "/assets/logos/poker-club-st-gallen.png",
+              "Fridli Poker":
+                  "/assets/logos/fridli-poker.jpg",
+          }
+
+          def esc(value):
+              return html.escape(str(value or ""), quote=True)
+
+          def slugify(value):
+              value = str(value or "").strip().lower()
+              value = re.sub(r"[^a-z0-9]+", "-", value)
+              return value.strip("-")
+
+          events = []
+
+          for path in sorted(DATA_DIR.glob("*.json")):
+              try:
+                  data = json.loads(path.read_text(encoding="utf-8"))
+              except Exception:
+                  continue
+
+              if isinstance(data, list):
+                  events.extend(data)
+              elif isinstance(data, dict):
+                  if isinstance(data.get("events"), list):
+                      events.extend(data["events"])
+                  else:
+                      events.append(data)
+
+          generated = 0
+
+          for event in events:
+              slug = event.get("slug")
+
+              if not slug:
+                  parts = [
+                      event.get("title"),
+                      event.get("city"),
+                      event.get("date_start"),
+                      event.get("id"),
+                  ]
+                  slug = slugify("-".join(str(x) for x in parts if x))
+
+              if not slug:
+                  continue
+
+              title = event.get("title") or "Pokerturnier"
+              subtitle = event.get("subtitle") or ""
+              city = event.get("city") or ""
+              organizer = event.get("organizer") or ""
+              venue = event.get("venue") or organizer
+              variant = event.get("variant") or ""
+              event_type = event.get("event_type") or ""
+              buy_in_label = event.get("buy_in_label") or ""
+              date_start = event.get("date_start") or ""
+              time = event.get("time") or ""
+              organizer_url = event.get("organizer_url") or ""
+
+              display_date = date_start
+
+              if date_start:
+                  try:
+                      y, m, d = date_start.split("-")
+                      display_date = f"{d}.{m}.{y}"
+                  except Exception:
+                      pass
+
+              date_text = display_date
+
+              if time:
+                  date_text += f" um {time} Uhr"
+
+              details = []
+
+              if variant:
+                  details.append(variant)
+
+              if buy_in_label:
+                  details.append(f"Buy-in {buy_in_label}")
+
+              if event_type:
+                  details.append(event_type)
+
+              detail_text = ", ".join(details)
+
+              description = (
+                  f"{title}"
+                  + (f" – {subtitle}" if subtitle else "")
+                  + (f" im {venue}" if venue else "")
+                  + (f". {detail_text}" if detail_text else "")
+                  + (f". {date_text}" if date_text else "")
+                  + "."
+              )
+
+              url = f"{BASE_URL}/turniere/{slug}/"
+
+              logo = (
+                  provider_logos.get(organizer)
+                  or event.get("provider_logo")
+                  or ""
+              )
+
+              organizer_logo_html = ""
+
+              if logo:
+                  organizer_logo_html = f"""
+                  <div class="organizer-logo">
+                    <img
+                      src="{esc(logo)}"
+                      alt="{esc(organizer)} Logo"
+                      loading="lazy">
+                  </div>
+                  """
+
+              start_date_iso = date_start
+
+              if date_start and time:
+                  try:
+                      local_dt = datetime.strptime(
+                          f"{date_start} {time}",
+                          "%Y-%m-%d %H:%M"
+                      ).replace(
+                          tzinfo=ZoneInfo("Europe/Zurich")
+                      )
+
+                      start_date_iso = local_dt.isoformat()
+                  except Exception:
+                      start_date_iso = f"{date_start}T{time}:00"
+
+              event_json = {
+                  "@context": "https://schema.org",
+                  "@type": "Event",
+                  "@id": url + "#event",
+                  "url": url,
+                  "name": title,
+                  "description": description,
+                  "startDate": start_date_iso,
+                  "eventStatus": "https://schema.org/EventScheduled",
+                  "location": {
+                      "@type": "Place",
+                      "name": venue or city
+                  },
+                  "organizer": {
+                      "@type": "Organization",
+                      "name": organizer
+                  }
+              }
+
+              if organizer_url:
+                  event_json["organizer"]["url"] = organizer_url
+
+              page_dir = OUT_DIR / slug
+              page_dir.mkdir(parents=True, exist_ok=True)
+
+              page = f"""<!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <title>{esc(title)}{f" – {esc(subtitle)}" if subtitle else ""} | {esc(city)} | Helvetic Poker</title>
+
+            <meta
+              name="description"
+              content="{esc(description)}">
+
+            <meta
+              name="robots"
+              content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+            <link
+              rel="canonical"
+              href="{esc(url)}">
+
+            <script type="application/ld+json">
+          {json.dumps(event_json, ensure_ascii=False, indent=2)}
+            </script>
+
+            <style>
+              body {{
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background: #f5f5f5;
+                color: #111;
+              }}
+
+              main {{
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 0 20px;
+              }}
+
+              .card {{
+                background: #fff;
+                border-radius: 18px;
+                padding: 32px;
+                box-shadow: 0 8px 30px rgba(0,0,0,.08);
+              }}
+
+              h1 {{
+                margin: 0 0 8px;
+                font-size: 36px;
+              }}
+
+              .subtitle {{
+                color: #666;
+                font-size: 20px;
+                margin-bottom: 24px;
+              }}
+
+              .info {{
+                display: grid;
+                gap: 10px;
+                margin: 24px 0;
+              }}
+
+              .row {{
+                padding: 12px 0;
+                border-bottom: 1px solid #eee;
+              }}
+
+              .label {{
+                font-weight: 700;
+              }}
+
+              .organizer-logo {{
+                margin: 18px 0;
+              }}
+
+              .organizer-logo img {{
+                display: block;
+                width: 120px;
+                height: 120px;
+                object-fit: contain;
+                border-radius: 12px;
+              }}
+
+              .btn {{
+                display: inline-block;
+                padding: 12px 18px;
+                background: #d71920;
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                margin: 6px 6px 0 0;
+              }}
+
+              .btn.secondary {{
+                background: #222;
+              }}
+            </style>
+          </head>
+
+          <body>
+            <main>
+              <div class="card">
+
+                {organizer_logo_html}
+
+                <h1>{esc(title)}</h1>
+
+                {f'<div class="subtitle">{esc(subtitle)}</div>' if subtitle else ''}
+
+                <div class="info">
+
+                  <div class="row">
+                    <span class="label">Datum:</span>
+                    {esc(date_text)}
+                  </div>
+
+                  {f'''
+                  <div class="row">
+                    <span class="label">Ort:</span>
+                    {esc(city)}
+                  </div>
+                  ''' if city else ''}
+
+                  {f'''
+                  <div class="row">
+                    <span class="label">Veranstaltungsort:</span>
+                    {esc(venue)}
+                  </div>
+                  ''' if venue else ''}
+
+                  {f'''
+                  <div class="row">
+                    <span class="label">Variante:</span>
+                    {esc(variant)}
+                  </div>
+                  ''' if variant else ''}
+
+                  {f'''
+                  <div class="row">
+                    <span class="label">Buy-in:</span>
+                    {esc(buy_in_label)}
+                  </div>
+                  ''' if buy_in_label else ''}
+
+                  {f'''
+                  <div class="row">
+                    <span class="label">Veranstalter:</span>
+                    {esc(organizer)}
+                  </div>
+                  ''' if organizer else ''}
+
+                </div>
+
+                {
+                  f'<a class="btn" href="{esc(organizer_url)}" target="_blank" rel="noopener">Zum Veranstalter</a>'
+                  if organizer_url else ''
+                }
+
+                <a class="btn secondary" href="/">
+                  ← Alle Pokerturniere
+                </a>
+
+              </div>
+            </main>
+          </body>
+          </html>
+          """
+
+              (page_dir / "index.html").write_text(
+                  page,
+                  encoding="utf-8"
+              )
+
+              generated += 1
+
+          print(f"Generated {generated} tournament pages.")
+          PY
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
