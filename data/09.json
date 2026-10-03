@@ -2566,5 +2566,29 @@
     "chips": null,
     "slug": "pcsg-monsterstack-2026-10-24",
     "provider_logo": ""
+  },
+  {
+    "id": "pcsg-halloween-monsterstack-2026-11-01",
+    "date_start": "2026-11-01",
+    "date_end": "2026-11-01",
+    "occurrence_date": "2026-11-01",
+    "time": "17:00",
+    "title": "Halloween Monsterstack",
+    "subtitle": "",
+    "city": "St. Gallen",
+    "canton": "SG",
+    "region": "Ostschweiz",
+    "organizer": "Poker Club St. Gallen",
+    "venue": "Poker Club St. Gallen",
+    "variant": "NLH",
+    "event_type": "Regular",
+    "buy_in": 100,
+    "is_freeroll": false,
+    "buy_in_label": "CHF 100 + 30",
+    "last_checked": "2026-10-03",
+    "organizer_url": "https://pcsg.ch/turnier",
+    "chips": null,
+    "slug": "pcsg-halloween-monsterstack-2026-11-01",
+    "provider_logo": ""
   }
 ]
