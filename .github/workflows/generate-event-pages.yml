@@ -349,6 +349,19 @@ jobs:
               landing_organizers = {name for name, count in landing_organizer_counts.items() if count >= 2}
               landing_cantons = {name for name, count in landing_canton_counts.items() if count >= 2}
 
+              landing_city_url = city in landing_cities
+              landing_organizer_url = organizer in landing_organizers
+              canton_name = CANTON_NAMES.get(str(event.get("canton") or "").strip().upper()) or ""
+              landing_canton_url = canton_name in landing_cantons
+              variant_key = str(variant or "").strip().upper()
+              variant_url = "/nlh-pokerturniere/" if variant_key == "NLH" else ("/plo-pokerturniere/" if variant_key in {"PLO", "PLO8"} else "")
+              buy_value = event.get("buy_in")
+              buyin_url = ""
+              if isinstance(buy_value, (int, float)) and buy_value <= 50:
+                  buyin_url = "/pokerturniere-bis-50-chf/"
+              elif isinstance(buy_value, (int, float)) and buy_value <= 100:
+                  buyin_url = "/pokerturniere-bis-100-chf/"
+
               # Find a small set of useful internal links to other real tournament pages.
               same_city = []
               same_organizer = []
