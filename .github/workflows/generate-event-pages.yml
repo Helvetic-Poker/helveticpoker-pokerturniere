@@ -267,15 +267,6 @@ jobs:
               if date_end and date_end != date_start:
                   event_json["endDate"] = end_date_iso
 
-              if buy_in_label:
-                  price_match = re.search(r"([0-9]+(?:[.,][0-9]+)?)", buy_in_label)
-                  if price_match:
-                      event_json["offers"] = {
-                          "@type": "Offer",
-                          "price": float(price_match.group(1).replace(",", ".")),
-                          "priceCurrency": "CHF"
-                      }
-
               if organizer_url:
                   event_json["organizer"]["url"] = organizer_url
 
