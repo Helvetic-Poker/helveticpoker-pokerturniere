@@ -47,7 +47,11 @@ def grouped(field):
             groups[value] += 1
     return sorted(groups.items(), key=lambda x: (-x[1], x[0].lower()))
 
-cities = grouped("city")
+cities_all = grouped("city")
+priority_cities = ["Luzern", "Zürich", "Bern", "Basel", "St. Gallen", "Genf", "Lausanne", "Winterthur", "Biel", "Aargau"]
+city_map = dict(cities_all)
+cities = [(name, city_map[name]) for name in priority_cities if name in city_map]
+cities += [(name, count) for name, count in cities_all if name not in {x[0] for x in cities}][:max(0, 12 - len(cities))]
 organizers = grouped("organizer")
 cantons = {}
 for e in upcoming:
