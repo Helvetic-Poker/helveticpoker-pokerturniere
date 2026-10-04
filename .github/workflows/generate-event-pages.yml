@@ -91,6 +91,19 @@ jobs:
               value = re.sub(r"[^a-z0-9]+", "-", value)
               return value.strip("-")
 
+          def event_slug(event):
+              slug = event.get("slug")
+              if slug:
+                  return slug
+
+              parts = [
+                  event.get("title"),
+                  event.get("city"),
+                  event.get("date_start"),
+                  event.get("id"),
+              ]
+              return slugify("-".join(str(x) for x in parts if x))
+
           events = []
 
           for path in sorted(DATA_DIR.glob("*.json")):
@@ -111,16 +124,7 @@ jobs:
           sitemap_urls = {f"{BASE_URL}/"}
 
           for event in events:
-              slug = event.get("slug")
-
-              if not slug:
-                  parts = [
-                      event.get("title"),
-                      event.get("city"),
-                      event.get("date_start"),
-                      event.get("id"),
-                  ]
-                  slug = slugify("-".join(str(x) for x in parts if x))
+              slug = event_slug(event)
 
               if not slug:
                   continue
@@ -134,8 +138,16 @@ jobs:
               event_type = event.get("event_type") or ""
               buy_in_label = event.get("buy_in_label") or ""
               date_start = event.get("date_start") or ""
+              date_end = event.get("date_end") or date_start
               time = event.get("time") or ""
               organizer_url = event.get("organizer_url") or ""
+              street_address = (
+                  event.get("street_address")
+                  or event.get("address")
+                  or event.get("venue_address")
+                  or ""
+              )
+              postal_code = event.get("postal_code") or event.get("zip") or ""
 
               display_date = date_start
 
@@ -191,6 +203,7 @@ jobs:
                   """
 
               start_date_iso = date_start
+              end_date_iso = date_end or date_start
 
               if date_start and time:
                   try:
@@ -205,6 +218,32 @@ jobs:
                   except Exception:
                       start_date_iso = f"{date_start}T{time}:00"
 
+              if date_end and time and date_end != date_start:
+                  try:
+                      local_end_dt = datetime.strptime(
+                          f"{date_end} {time}",
+                          "%Y-%m-%d %H:%M"
+                      ).replace(
+                          tzinfo=ZoneInfo("Europe/Zurich")
+                      )
+
+                      end_date_iso = local_end_dt.isoformat()
+                  except Exception:
+                      end_date_iso = f"{date_end}T{time}:00"
+
+              address_json = {
+                  "@type": "PostalAddress",
+                  "addressLocality": city,
+                  "addressRegion": event.get("canton") or "",
+                  "addressCountry": "CH"
+              }
+
+              if street_address:
+                  address_json["streetAddress"] = street_address
+
+              if postal_code:
+                  address_json["postalCode"] = postal_code
+
               event_json = {
                   "@context": "https://schema.org",
                   "@type": "Event",
@@ -216,7 +255,8 @@ jobs:
                   "eventStatus": "https://schema.org/EventScheduled",
                   "location": {
                       "@type": "Place",
-                      "name": venue or city
+                      "name": venue or city,
+                      "address": address_json
                   },
                   "organizer": {
                       "@type": "Organization",
@@ -224,8 +264,97 @@ jobs:
                   }
               }
 
+              if date_end and date_end != date_start:
+                  event_json["endDate"] = end_date_iso
+
+              if buy_in_label:
+                  price_match = re.search(r"([0-9]+(?:[.,][0-9]+)?)", buy_in_label)
+                  if price_match:
+                      event_json["offers"] = {
+                          "@type": "Offer",
+                          "price": float(price_match.group(1).replace(",", ".")),
+                          "priceCurrency": "CHF",
+                          "availability": "https://schema.org/InStock"
+                      }
+
               if organizer_url:
                   event_json["organizer"]["url"] = organizer_url
+
+              # Find a small set of useful internal links to other real tournament pages.
+              same_city = []
+              same_organizer = []
+
+              for other in events:
+                  other_slug = event_slug(other)
+                  if not other_slug or other_slug == slug:
+                      continue
+
+                  if city and (other.get("city") or "") == city:
+                      same_city.append(other)
+
+                  if organizer and (other.get("organizer") or "") == organizer:
+                      same_organizer.append(other)
+
+              def related_sort(item):
+                  return (
+                      item.get("date_start") or "9999-99-99",
+                      item.get("time") or "99:99",
+                      item.get("title") or ""
+                  )
+
+              same_city = sorted(same_city, key=related_sort)[:4]
+              same_organizer = sorted(same_organizer, key=related_sort)[:4]
+
+              related_city_html = "".join(
+                  f'<li><a href="/turniere/{esc(event_slug(item))}/">{esc(item.get("title") or "Pokerturnier")}</a>'
+                  f'{f" · {esc(item.get("date_start", ""))}" if item.get("date_start") else ""}</li>'
+                  for item in same_city
+              )
+
+              related_organizer_html = "".join(
+                  f'<li><a href="/turniere/{esc(event_slug(item))}/">{esc(item.get("title") or "Pokerturnier")}</a>'
+                  f'{f" · {esc(item.get("date_start", ""))}" if item.get("date_start") else ""}</li>'
+                  for item in same_organizer
+              )
+
+              breadcrumb_items = [
+                  {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Pokerturniere Schweiz",
+                      "item": f"{BASE_URL}/"
+                  }
+              ]
+
+              position = 2
+              if event.get("region"):
+                  breadcrumb_items.append({
+                      "@type": "ListItem",
+                      "position": position,
+                      "name": event.get("region")
+                  })
+                  position += 1
+
+              if city:
+                  breadcrumb_items.append({
+                      "@type": "ListItem",
+                      "position": position,
+                      "name": city
+                  })
+                  position += 1
+
+              breadcrumb_items.append({
+                  "@type": "ListItem",
+                  "position": position,
+                  "name": title,
+                  "item": url
+              })
+
+              breadcrumb_json = {
+                  "@context": "https://schema.org",
+                  "@type": "BreadcrumbList",
+                  "itemListElement": breadcrumb_items
+              }
 
               page_dir = OUT_DIR / slug
               page_dir.mkdir(parents=True, exist_ok=True)
@@ -252,6 +381,10 @@ jobs:
 
             <script type="application/ld+json">
           {json.dumps(event_json, ensure_ascii=False, indent=2)}
+            </script>
+
+            <script type="application/ld+json">
+          {json.dumps(breadcrumb_json, ensure_ascii=False, indent=2)}
             </script>
 
             <style>
@@ -338,8 +471,43 @@ jobs:
             background: linear-gradient(90deg, #c8102e 0%, #c8102e 68%, #c9a227 100%);
           }}
 
+          .breadcrumbs {{
+            padding: 20px 48px 0;
+            color: #777;
+            font-size: 13px;
+          }}
+
+          .breadcrumbs ol {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }}
+
+          .breadcrumbs li {{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+          }}
+
+          .breadcrumbs li:not(:last-child)::after {{
+            content: "›";
+            color: #aaa;
+          }}
+
+          .breadcrumbs a {{
+            color: #666;
+            text-decoration: none;
+          }}
+
+          .breadcrumbs a:hover {{
+            color: #c8102e;
+          }}
+
           .hero {{
-            padding: 46px 48px 36px;
+            padding: 30px 48px 36px;
           }}
 
           .organizer-logo {{
@@ -451,6 +619,27 @@ jobs:
             margin: 0;
             color: #666;
             font-size: 15px;
+          }}
+
+          .related-list {{
+            margin: 0;
+            padding-left: 19px;
+          }}
+
+          .related-list li {{
+            margin: 7px 0;
+            color: #777;
+          }}
+
+          .related-list a {{
+            color: #202020;
+            font-weight: 700;
+            text-decoration: none;
+          }}
+
+          .related-list a:hover {{
+            color: #c8102e;
+            text-decoration: underline;
           }}
 
           .actions {{
@@ -569,8 +758,13 @@ jobs:
               padding: 18px 12px 48px;
             }}
 
+            .breadcrumbs {{
+              padding: 16px 22px 0;
+              font-size: 12px;
+            }}
+
             .hero {{
-              padding: 30px 22px 26px;
+              padding: 24px 22px 26px;
             }}
 
             .organizer-logo img {{
@@ -655,6 +849,15 @@ jobs:
           <main>
             <article class="event-card">
 
+              <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
+                <ol>
+                  <li><a href="/">Pokerturniere Schweiz</a></li>
+                  {f'<li>{esc(event.get("region"))}</li>' if event.get("region") else ''}
+                  {f'<li>{esc(city)}</li>' if city else ''}
+                  <li aria-current="page">{esc(title)}</li>
+                </ol>
+              </nav>
+
               <section class="hero">
                 {organizer_logo_html}
 
@@ -699,8 +902,33 @@ jobs:
                   <p class="venue-location">
                     {esc(city)}{f" · {esc(organizer)}" if organizer and organizer != venue else ""}
                   </p>
+                  {f'<p class="venue-location">{esc(street_address)}{f", {esc(postal_code)}" if postal_code else ""}</p>' if street_address else ''}
                 </div>
               </section>
+
+              {
+                f'''
+              <section class="content-section">
+                <h2 class="section-title">Weitere Pokerturniere in {esc(city)}</h2>
+                <ul class="related-list">
+                  {related_city_html}
+                </ul>
+              </section>
+                '''
+                if related_city_html else ''
+              }
+
+              {
+                f'''
+              <section class="content-section">
+                <h2 class="section-title">Weitere Turniere von {esc(organizer)}</h2>
+                <ul class="related-list">
+                  {related_organizer_html}
+                </ul>
+              </section>
+                '''
+                if related_organizer_html and organizer and organizer not in city else ''
+              }
 
               <div class="actions">
 
