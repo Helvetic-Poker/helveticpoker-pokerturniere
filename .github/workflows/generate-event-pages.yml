@@ -47,6 +47,16 @@ jobs:
           OUT_DIR = ROOT / "turniere"
           BASE_URL = "https://pokerturniere.helveticpoker.ch"
 
+          CANTON_NAMES = {
+              "AG": "Aargau", "AR": "Appenzell Ausserrhoden", "AI": "Appenzell Innerrhoden",
+              "BL": "Basel-Landschaft", "BS": "Basel-Stadt", "BE": "Bern", "FR": "Freiburg",
+              "GE": "Genf", "GL": "Glarus", "GR": "Graubünden", "JU": "Jura", "LU": "Luzern",
+              "NE": "Neuenburg", "NW": "Nidwalden", "OW": "Obwalden", "SG": "St. Gallen",
+              "SH": "Schaffhausen", "SZ": "Schwyz", "SO": "Solothurn", "TG": "Thurgau",
+              "TI": "Tessin", "UR": "Uri", "VD": "Waadt", "VS": "Wallis", "ZG": "Zug",
+              "ZH": "Zürich"
+          }
+
           provider_logos = {
               "24Poker":
               "https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/6b50286d-2f09-47d4-a018-8c326b0ecef7/1774464947679-24poker.png",
@@ -221,19 +231,10 @@ jobs:
                   except Exception:
                       start_date_iso = f"{date_start}T{time}:00"
 
-              if date_end and time and date_end != date_start:
-                  try:
-                      local_end_dt = datetime.strptime(
-                          f"{date_end} {time}",
-                          "%Y-%m-%d %H:%M"
-                      ).replace(
-                          tzinfo=ZoneInfo("Europe/Zurich")
-                      )
-
-                      end_date_iso = local_end_dt.isoformat()
-                  except Exception:
-                      end_date_iso = f"{date_end}T{time}:00"
-
+              if date_end and date_end != date_start:
+                  # The source data contains an end date but no verified end time.
+                  # Do not invent a finishing time for structured data.
+                  end_date_iso = date_end
               address_json = {
                   "@type": "PostalAddress",
                   "addressLocality": city,
@@ -327,17 +328,20 @@ jobs:
               ]
 
               position = 2
-              if event.get("region"):
-                  region_slug = slugify(event.get("region"))
+              canton_code = str(event.get("canton") or "").strip().upper()
+              canton_name = CANTON_NAMES.get(canton_code) or ""
+              if canton_name:
+                  canton_slug = slugify(canton_name)
                   breadcrumb_items.append({
                       "@type": "ListItem",
                       "position": position,
-                      "name": event.get("region"),
-                      "item": f"{BASE_URL}/kanton/{region_slug}/"
+                      "name": canton_name,
+                      "item": f"{BASE_URL}/kanton/{canton_slug}/"
                   })
                   position += 1
 
               if city:
+
                   city_slug = slugify(city)
                   breadcrumb_items.append({
                       "@type": "ListItem",
@@ -625,6 +629,13 @@ jobs:
             font-size: 15px;
           }}
 
+          .event-description {{
+            margin: 0;
+            color: #555;
+            font-size: 16px;
+            max-width: 820px;
+          }}
+
           .related-list {{
             margin: 0;
             padding-left: 19px;
@@ -887,6 +898,11 @@ jobs:
                   <span class="fact-value">{esc(variant or "—")}</span>
                 </div>
 
+              </section>
+
+              <section class="content-section">
+                <h2 class="section-title">Über dieses Turnier</h2>
+                <p class="event-description">{esc(description)}</p>
               </section>
 
               <section class="content-section">
