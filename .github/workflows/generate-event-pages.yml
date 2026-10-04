@@ -273,8 +273,7 @@ jobs:
                       event_json["offers"] = {
                           "@type": "Offer",
                           "price": float(price_match.group(1).replace(",", ".")),
-                          "priceCurrency": "CHF",
-                          "availability": "https://schema.org/InStock"
+                          "priceCurrency": "CHF"
                       }
 
               if organizer_url:
