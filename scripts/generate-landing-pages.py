@@ -317,6 +317,20 @@ def write_page(kind, name, items):
         for city, _ in top_cities:
             if city in landing_cities:
                 related_html += f'<a class="related-chip" href="/stadt/{slugify(city)}/">Stadt: {esc(city)} →</a>'
+    if kind == 'stadt' and canton_name:
+        if canton_name in landing_cantons:
+            related_html += f'<a class="related-chip" href="/kanton/{slugify(canton_name)}/">Kanton: {esc(canton_name)} →</a>'
+    for variant, _ in top_variants:
+        variant_key = variant.upper()
+        if variant_key == 'NLH':
+            related_html += '<a class="related-chip" href="/nlh-pokerturniere/">NLH Pokerturniere →</a>'
+        elif variant_key in {'PLO', 'PLO8'}:
+            related_html += '<a class="related-chip" href="/plo-pokerturniere/">PLO Pokerturniere →</a>'
+    if buy_in_values:
+        if min(buy_in_values) <= 50:
+            related_html += '<a class="related-chip" href="/pokerturniere-bis-50-chf/">Pokerturniere bis CHF 50 →</a>'
+        elif min(buy_in_values) <= 100:
+            related_html += '<a class="related-chip" href="/pokerturniere-bis-100-chf/">Pokerturniere bis CHF 100 →</a>'
 
     collection_json = {
         '@context': 'https://schema.org',
