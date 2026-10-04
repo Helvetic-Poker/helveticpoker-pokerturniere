@@ -1,6 +1,7 @@
 import html, json, re
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 BASE_URL = 'https://pokerturniere.helveticpoker.ch'
@@ -187,6 +188,22 @@ def write_page(kind, name, items):
     slug = slugify(name)
     url = f'{BASE_URL}/{kind}/{slug}/'
 
+    logo_url = ''
+    if kind == 'veranstalter':
+        for event in upcoming:
+            provider_logo = str(event.get('provider_logo') or '').strip()
+            organizer_url = str(event.get('organizer_url') or '').strip()
+            if provider_logo:
+                logo_url = provider_logo
+                break
+            if organizer_url:
+                host = urlparse(organizer_url).netloc.split('@')[-1].split(':')[0]
+                if host.startswith('www.'):
+                    host = host[4:]
+                if host:
+                    logo_url = f'https://icons.duckduckgo.com/ip3/{host}.ico'
+                    break
+
     if kind == 'stadt':
         title = f'Pokerturniere in {name}'
         desc = f'Kommende Pokerturniere in {name}: Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte.'
@@ -243,6 +260,7 @@ main{max-width:1180px;margin:0 auto;padding:34px 24px 60px}
 .card{background:#fff;border:1px solid #dedede;border-radius:20px;overflow:hidden;box-shadow:0 12px 35px #0000000b}
 .top{height:5px;background:linear-gradient(90deg,#c8102e 0%,#c8102e 68%,#c9a227 100%)}
 .intro{padding:38px 42px 28px}
+.brand{display:flex;align-items:center;gap:18px;margin-bottom:20px}.brand img{width:72px;height:72px;object-fit:contain;border:1px solid #e2e5e8;border-radius:14px;padding:8px;background:#fff}.brand-label{font-size:13px;color:#777;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
 h1{margin:0;font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-1.5px}
 .intro p{color:#626262;font-size:18px;max-width:820px;margin:18px 0 22px}
 .badges{display:flex;flex-wrap:wrap;gap:10px}
@@ -275,7 +293,7 @@ ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .event-card>a{grid-template-columns:82px minmax(190px,1.5fr) 110px 150px 140px 105px;gap:12px}
 }
 @media(max-width:760px){
-.head{padding:12px 15px}.logo{width:245px;max-height:72px}.nav a{display:none!important}.all-btn{display:block!important}
+.head{padding:12px 15px}.logo{width:245px;max-height:72px}.nav a{display:none!important}.all-btn{display:block!important}.brand img{width:60px;height:60px}.brand{gap:14px}
 main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;letter-spacing:-.8px}
 .intro p{font-size:16px}.list{padding:0 12px 25px}.list-head{display:block}h2{font-size:25px;margin-bottom:14px}
 .event-card>a{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:10px}
@@ -317,6 +335,7 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 <article class="card">
 <div class="top"></div>
 <section class="intro">
+{f'<div class="brand"><img src="{esc(logo_url)}" alt="Logo von {esc(name)}" loading="lazy" referrerpolicy="no-referrer"><span class="brand-label">Veranstalter</span></div>' if logo_url else ''}
 <h1>{esc(title)}</h1>
 <p>{esc(desc)}</p>
 <div class="badges">
