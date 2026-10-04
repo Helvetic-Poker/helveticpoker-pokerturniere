@@ -443,8 +443,8 @@ jobs:
           }}
 
           .brand img {{
-            width: 92px;
-            height: 56px;
+            width: 150px;
+            height: 72px;
             object-fit: contain;
             display: block;
           }}
@@ -850,8 +850,8 @@ jobs:
             }}
 
             .brand img {{
-              width: 78px;
-              height: 48px;
+              width: 120px;
+              height: 60px;
             }}
           }}
 
