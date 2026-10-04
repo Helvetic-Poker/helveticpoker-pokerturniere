@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - "data/*.json"
+      - "scripts/generate-landing-pages.py"
       - ".github/workflows/generate-event-pages.yml"
 
 permissions:
