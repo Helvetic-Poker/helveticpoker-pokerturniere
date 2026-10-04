@@ -319,12 +319,6 @@ jobs:
             padding: 28px 20px 72px;
           }}
 
-          .breadcrumbs {{
-            margin: 0 0 20px;
-            color: #777;
-            font-size: 13px;
-          }}
-
           .event-card {{
             position: relative;
             overflow: hidden;
@@ -574,11 +568,6 @@ jobs:
               padding: 18px 12px 48px;
             }}
 
-            .breadcrumbs {{
-              margin-bottom: 14px;
-              font-size: 12px;
-            }}
-
             .hero {{
               padding: 30px 22px 26px;
             }}
@@ -592,6 +581,7 @@ jobs:
             h1 {{
               font-size: clamp(32px, 10vw, 44px);
               letter-spacing: -1px;
+              font-weight: 700;
             }}
 
             .subtitle {{
@@ -627,6 +617,10 @@ jobs:
               width: 100%;
             }}
 
+            .organizer-btn {{
+              margin-left: 0;
+            }}
+
             .ad-slot {{
               margin: 0 22px 28px;
             }}
@@ -657,10 +651,6 @@ jobs:
           </header>
 
           <main>
-            <div class="breadcrumbs">
-              Pokerturniere Schweiz › {esc(city)} › {esc(title)}
-            </div>
-
             <article class="event-card">
 
               <section class="hero">
