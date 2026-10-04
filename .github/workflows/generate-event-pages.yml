@@ -147,9 +147,6 @@ jobs:
 
               date_text = display_date
 
-              if time:
-                  date_text += f" um {time} Uhr"
-
               details = []
 
               if variant:
@@ -360,7 +357,7 @@ jobs:
             height: 104px;
             object-fit: contain;
             border-radius: 18px;
-            background: #111;
+            background: transparent;
             padding: 8px;
             border: 1px solid #e4e4e4;
             box-shadow: 0 8px 24px rgba(0,0,0,.10);
@@ -509,6 +506,7 @@ jobs:
             background: #fff;
             color: #171717;
             border-color: #dcdcdc;
+            margin-left: auto;
           }}
 
           .btn.ghost:hover {{
