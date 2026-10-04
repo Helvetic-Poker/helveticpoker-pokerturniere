@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - "data/*.json"
+      - "index.html"
       - "scripts/generate-landing-pages.py"
       - "scripts/generate-homepage-hub.py"
       - ".github/workflows/generate-event-pages.yml"
