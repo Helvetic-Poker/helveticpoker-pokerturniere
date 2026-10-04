@@ -232,6 +232,39 @@ def write_page(kind, name, items):
 
     rows = ''.join(row(e) for e in upcoming[:60])
 
+    cities = sorted({str(e.get('city') or '').strip() for e in upcoming if str(e.get('city') or '').strip()})
+    organizers = sorted({str(e.get('organizer') or '').strip() for e in upcoming if str(e.get('organizer') or '').strip()})
+    variants = sorted({str(e.get('variant') or '').strip() for e in upcoming if str(e.get('variant') or '').strip()})
+    venues = sorted({str(e.get('venue') or '').strip() for e in upcoming if str(e.get('venue') or '').strip()})
+    stat_items = [
+        ('Turniere', str(len(upcoming))),
+        ('Orte', str(len(cities))),
+        ('Veranstalter', str(len(organizers))),
+        ('Spielarten', str(len(variants))),
+    ]
+    if kind == 'stadt':
+        stat_items = [('Turniere', str(len(upcoming))), ('Veranstalter', str(len(organizers))), ('Spielarten', str(len(variants))), ('Spielorte', str(len(venues)))]
+    elif kind == 'kanton':
+        stat_items = [('Turniere', str(len(upcoming))), ('Städte', str(len(cities))), ('Veranstalter', str(len(organizers))), ('Spielarten', str(len(variants)))]
+    elif kind == 'veranstalter':
+        stat_items = [('Turniere', str(len(upcoming))), ('Städte', str(len(cities))), ('Spielarten', str(len(variants))), ('Spielorte', str(len(venues)))]
+
+    stat_html = ''.join(
+        f'<div class="stat"><strong>{esc(value)}</strong><span>{esc(label)}</span></div>'
+        for label, value in stat_items
+    )
+
+    extra_title = {
+        'stadt': f'Pokerturniere & Spielorte in {name}',
+        'kanton': f'Pokerturniere & Städte im Kanton {name}',
+        'veranstalter': f'{name}: Turniere & Spielorte'
+    }[kind]
+    extra_text = {
+        'stadt': f'In {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst. Die Termine zeigen dir auf einen Blick Veranstalter, Spielarten und Spielorte.',
+        'kanton': f'Im Kanton {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst. Die Übersicht verbindet die verfügbaren Termine mit Städten, Veranstaltern und Spielarten.',
+        'veranstalter': f'Bei {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst. Hier findest du die nächsten Termine sowie die dazugehörigen Städte, Spielarten und Spielorte.'
+    }[kind]
+
     breadcrumb_json = {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
@@ -279,7 +312,7 @@ h1{margin:0;font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-1.5p
 .badges{display:flex;flex-wrap:wrap;gap:10px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#f3f3f6;border-radius:12px;padding:10px 15px;font-size:15px;font-weight:800}
 .badge.primary{background:#fae8eb;color:#b20f2b}
-.list{padding:0 28px 36px}
+.stats-grid{padding:0 28px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{padding:16px 18px;border:1px solid #dedede;border-radius:14px;background:#fafbfc}.stat strong{display:block;font-size:24px;line-height:1.1}.stat span{display:block;margin-top:5px;color:#777;font-size:12px}.context{padding:0 28px 28px}.context h2{font-size:24px;margin:0 0 7px}.context p{margin:0;color:#666;font-size:15px;max-width:900px}.list{padding:0 28px 36px}
 .list-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:8px 0 16px}
 h2{font-size:30px;line-height:1.15;margin:0}
 ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
@@ -309,7 +342,7 @@ ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .head{padding:12px 15px}.logo{width:245px;max-height:72px}.nav a{display:none!important}.all-btn{display:block!important}.brand img{width:60px;height:60px}.brand{gap:14px}
 main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;letter-spacing:-.8px}
 .intro p{font-size:16px}.list{padding:0 12px 25px}.list-head{display:block}h2{font-size:25px;margin-bottom:14px}
-.event-card>a{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:10px}
+.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 12px 18px}.context{padding:0 12px 22px}.context h2{font-size:21px}.event-card>a{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:10px}
 .date-box{height:62px}
 .event-info{grid-column:2}
 .event-info strong{font-size:15px}.event-info small{white-space:normal}
@@ -355,6 +388,11 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 <span class="badge primary">◫ &nbsp;{len(upcoming)} kommende Turniere</span>
 <span class="badge">⌖ &nbsp;{esc(name)}</span>
 </div>
+</section>
+<section class="stats-grid">{stat_html}</section>
+<section class="context">
+<h2>{esc(extra_title)}</h2>
+<p>{esc(extra_text)}</p>
 </section>
 <section class="list">
 <div class="list-head"><h2>{len(upcoming)} kommende Pokerturniere{(" in " + esc(name)) if kind == "stadt" else ""}</h2></div>
