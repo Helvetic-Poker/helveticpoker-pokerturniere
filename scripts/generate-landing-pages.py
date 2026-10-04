@@ -52,12 +52,15 @@ def row(e):
         d = f'{day}.{m}.{y}'
     except Exception:
         pass
+    buy_in = e.get('buy_in_label') or ''
+    if buy_in and not str(buy_in).strip().lower().startswith('buy-in'):
+        buy_in = 'Buy-in ' + str(buy_in).strip()
     meta = ' · '.join(
         x for x in [
             d,
             e.get('time') or '',
             e.get('city') or '',
-            ('Buy-in ' + e.get('buy_in_label')) if e.get('buy_in_label') else ''
+            buy_in
         ] if x
     )
     return f'<li><a href="/turniere/{esc(event_slug(e))}/"><strong>{esc(e.get("title") or "Pokerturnier")}</strong><span>{esc(meta)}</span></a></li>'
