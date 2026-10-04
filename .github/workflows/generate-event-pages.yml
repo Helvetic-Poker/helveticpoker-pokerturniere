@@ -1223,7 +1223,7 @@ jobs:
               for sitemap_url in urls:
                   lines.append(f"  <url><loc>{html.escape(sitemap_url)}</loc></url>")
               lines.append("</urlset>")
-              (ROOT / path).write_text("\\n".join(lines) + "\\n", encoding="utf-8")
+              (ROOT / path).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
           write_urlset("sitemap.xml", sitemap_urls_sorted)
 
