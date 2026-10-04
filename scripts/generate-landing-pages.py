@@ -63,5 +63,7 @@ sitemap = {f'{BASE_URL}/'}
 for kind, values in groups.items():
     for name, items in sorted(values.items()): sitemap.add(write_page(kind, name, items))
 
+landing_urls = sorted(url for url in sitemap if url != f'{BASE_URL}/')
+(ROOT / '.generated-landing-urls.txt').write_text('\n'.join(landing_urls) + '\n', encoding='utf-8')
 print(f'Generated {sum(len(v) for v in groups.values())} SEO landing pages.')
-print(f'Added {len(sitemap)} URLs including landing pages.')
+print(f'Added {len(landing_urls)} landing URLs.')
