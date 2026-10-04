@@ -79,7 +79,7 @@ def format_buy_in(e):
         return f'CHF {value:,.0f}'.replace(',', "'")
     if label and label.lower() not in {'buy-in siehe veranstalter', 'siehe veranstalter'}:
         return label.replace('Buy-in ', '', 1).strip()
-    return 'Noch nicht veröffentlicht'
+    return 'Noch offen'
 
 def row(e):
     month, day, weekday = format_date_parts(e)
@@ -182,7 +182,7 @@ body{margin:0;font-family:Arial,sans-serif;color:#151515;background:#f5f5f5;line
 a{color:inherit}
 header{background:#fff;border-bottom:1px solid #e1e1e1}
 .head{max-width:1180px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{display:block;width:205px;height:auto;max-height:58px;object-fit:contain;object-position:left center}
+.logo{display:block;width:270px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
 .nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:700;color:#333}
 .nav a{text-decoration:none}
 .nav a:hover{color:#c8102e}
@@ -217,6 +217,7 @@ ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .event-info strong{display:block;font-size:16px;line-height:1.15;white-space:nowrap}
 .event-info small{display:block;color:#777;font-size:12px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .buy-info .icon{color:#c28d00}
+.buy-info .event-info strong{white-space:normal;overflow-wrap:anywhere}
 .details{justify-self:end;background:#c8102e;color:#fff;border-radius:9px;padding:12px 17px;font-weight:800;white-space:nowrap}
 .details span{font-size:18px;margin-left:5px}
 @media(max-width:1000px){
@@ -224,7 +225,7 @@ ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .event-card>a{grid-template-columns:82px minmax(190px,1.5fr) 110px 150px 140px 105px;gap:12px}
 }
 @media(max-width:760px){
-.head{padding:12px 15px}.logo{width:175px}.nav a{display:none!important}.all-btn{display:block!important}
+.head{padding:12px 15px}.logo{width:215px;max-height:64px}.nav a{display:none!important}.all-btn{display:block!important}
 main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;letter-spacing:-.8px}
 .intro p{font-size:16px}.list{padding:0 12px 25px}.list-head{display:block}h2{font-size:25px;margin-bottom:14px}
 .event-card>a{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:10px}
