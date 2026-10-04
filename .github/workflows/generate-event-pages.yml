@@ -411,7 +411,7 @@ jobs:
                   })
                   position += 1
 
-              if city:
+              if city and city in landing_cities:
 
                   city_slug = slugify(city)
                   breadcrumb_items.append({
@@ -438,17 +438,24 @@ jobs:
               page_dir = OUT_DIR / slug
               page_dir.mkdir(parents=True, exist_ok=True)
 
+              meta_description = description
+              if date_text and city:
+                  meta_description = f"{description} Am {date_text} in {city}."
+              elif date_text:
+                  meta_description = f"{description} Am {date_text}."
+              page_title = f"{title}{f" – {subtitle}" if subtitle else ""} | {city} | Pokerturniere Schweiz"
+
               page = f"""<!doctype html>
-          <html lang="de">
+          <html lang="de-CH">
           <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <title>{esc(title)}{f" – {esc(subtitle)}" if subtitle else ""} | {esc(city)} | Pokerturniere Schweiz</title>
+            <title>{esc(page_title)}</title>
 
             <meta
               name="description"
-              content="{esc(description)}">
+              content="{esc(meta_description)}">
 
             <meta
               name="robots"
@@ -458,8 +465,8 @@ jobs:
               rel="canonical"
               href="{esc(url)}">
             <meta property="og:type" content="event">
-            <meta property="og:title" content="{esc(title)}{f" – {esc(subtitle)}" if subtitle else ""} | {esc(city)} | Pokerturniere Schweiz">
-            <meta property="og:description" content="{esc(description)}">
+            <meta property="og:title" content="{esc(page_title)}">
+            <meta property="og:description" content="{esc(meta_description)}">
             <meta property="og:url" content="{esc(url)}">
             <meta property="og:site_name" content="Helvetic Poker">
 
@@ -1140,6 +1147,10 @@ jobs:
 
           exec((ROOT / "scripts" / "generate-landing-pages.py").read_text(encoding="utf-8"), globals())
           exec((ROOT / "scripts" / "generate-homepage-hub.py").read_text(encoding="utf-8"), globals())
+          # The overview hubs are canonical crawl entry points too.
+          for landing_kind in ("stadt", "kanton", "veranstalter"):
+              sitemap_urls.add(f"{BASE_URL}/{landing_kind}/")
+
           landing_url_file = ROOT / ".generated-landing-urls.txt"
           if landing_url_file.exists():
               for landing_url in landing_url_file.read_text(encoding="utf-8").splitlines():
