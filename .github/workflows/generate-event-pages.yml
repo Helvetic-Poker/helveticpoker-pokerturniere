@@ -292,8 +292,15 @@ jobs:
                       item.get("title") or ""
                   )
 
-              same_city = sorted(same_city, key=related_sort)[:4]
-              same_organizer = sorted(same_organizer, key=related_sort)[:4]
+              today_key = datetime.now(ZoneInfo("Europe/Zurich")).strftime("%Y-%m-%d")
+              same_city = sorted(
+                  [item for item in same_city if (item.get("date_start") or "") >= today_key],
+                  key=related_sort
+              )[:4]
+              same_organizer = sorted(
+                  [item for item in same_organizer if (item.get("date_start") or "") >= today_key],
+                  key=related_sort
+              )[:4]
 
               related_city_html = "".join(
                   f'<li><a href="/turniere/{esc(event_slug(item))}/">{esc(item.get("title") or "Pokerturnier")}</a>'
@@ -318,18 +325,22 @@ jobs:
 
               position = 2
               if event.get("region"):
+                  region_slug = slugify(event.get("region"))
                   breadcrumb_items.append({
                       "@type": "ListItem",
                       "position": position,
-                      "name": event.get("region")
+                      "name": event.get("region"),
+                      "item": f"{BASE_URL}/kanton/{region_slug}/"
                   })
                   position += 1
 
               if city:
+                  city_slug = slugify(city)
                   breadcrumb_items.append({
                       "@type": "ListItem",
                       "position": position,
-                      "name": city
+                      "name": city,
+                      "item": f"{BASE_URL}/stadt/{city_slug}/"
                   })
                   position += 1
 
