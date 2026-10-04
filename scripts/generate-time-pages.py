@@ -65,6 +65,9 @@ def date_label(value):
         return value or ""
     return d.strftime("%d.%m.%Y")
 
+def weekday_label(d):
+    return ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"][d.weekday()]
+
 def event_sort(event):
     return (event.get("date_start") or "9999-99-99", event.get("time") or "99:99", event.get("title") or "")
 
@@ -284,14 +287,14 @@ targets = [
         f"Pokerturniere heute in der Schweiz – {today.strftime('%d.%m.%Y')}",
         f"Pokerturniere heute in der Schweiz: aktuelle Termine, Startzeiten, Buy-ins, Orte und Veranstalter für {today.strftime('%d.%m.%Y')}.",
         between(today, today),
-        f"Termine für heute, {today.strftime('%A, %d.%m.%Y')}"
+        f"Termine für heute, {weekday_label(today) + ', ' + today.strftime('%d.%m.%Y')}"
     ),
     (
         "pokerturniere-morgen",
         f"Pokerturniere morgen in der Schweiz – {tomorrow.strftime('%d.%m.%Y')}",
         f"Pokerturniere morgen in der Schweiz: aktuelle Termine, Startzeiten, Buy-ins, Orte und Veranstalter für {tomorrow.strftime('%d.%m.%Y')}.",
         between(tomorrow, tomorrow),
-        f"Termine für morgen, {tomorrow.strftime('%A, %d.%m.%Y')}"
+        f"Termine für morgen, {weekday_label(tomorrow) + ', ' + tomorrow.strftime('%d.%m.%Y')}"
     ),
     (
         "pokerturniere-diese-woche",
