@@ -219,15 +219,15 @@ def write_page(kind, name, items):
 
     if kind == 'stadt':
         title = f'Pokerturniere in {name}'
-        desc = f'Kommende Pokerturniere in {name}: Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte.'
+        desc = f'Kommende Pokerturniere in {name}: aktuelle Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte im Schweizer Pokerkalender.'
         parent_name = 'Städte'
     elif kind == 'kanton':
         title = f'Pokerturniere im Kanton {name}'
-        desc = f'Kommende Pokerturniere im Kanton {name}: Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte.'
+        desc = f'Kommende Pokerturniere im Kanton {name}: aktuelle Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte im Schweizer Pokerkalender.'
         parent_name = 'Kantone'
     else:
         title = f'Pokerturniere von {name}'
-        desc = f'Kommende Pokerturniere von {name}: Termine, Startzeiten, Buy-ins und Spielarten im Schweizer Pokerkalender.'
+        desc = f'Kommende Pokerturniere von {name}: aktuelle Termine, Startzeiten, Buy-ins und Spielarten im Schweizer Pokerkalender.'
         parent_name = 'Veranstalter'
 
     rows = ''.join(row(e) for e in upcoming[:60])
@@ -236,6 +236,10 @@ def write_page(kind, name, items):
     organizers = sorted({str(e.get('organizer') or '').strip() for e in upcoming if str(e.get('organizer') or '').strip()})
     variants = sorted({str(e.get('variant') or '').strip() for e in upcoming if str(e.get('variant') or '').strip()})
     venues = sorted({str(e.get('venue') or '').strip() for e in upcoming if str(e.get('venue') or '').strip()})
+    dates = sorted({e.get('date_start') for e in upcoming if e.get('date_start')})
+    buy_in_values = [e.get('buy_in') for e in upcoming if isinstance(e.get('buy_in'), (int, float)) and e.get('buy_in') > 0]
+    top_variants = sorted(((variant, sum(1 for e in upcoming if (e.get('variant') or '').strip() == variant)) for variant in variants), key=lambda x: (-x[1], x[0].lower()))[:4]
+    top_cities = sorted(((city, sum(1 for e in upcoming if (e.get('city') or '').strip() == city)) for city in cities), key=lambda x: (-x[1], x[0].lower()))[:4]
     stat_items = [
         ('Turniere', str(len(upcoming))),
         ('Orte', str(len(cities))),
@@ -264,6 +268,35 @@ def write_page(kind, name, items):
         'kanton': f'Im Kanton {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst. Die Übersicht verbindet die verfügbaren Termine mit Städten, Veranstaltern und Spielarten.',
         'veranstalter': f'Bei {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst. Hier findest du die nächsten Termine sowie die dazugehörigen Städte, Spielarten und Spielorte.'
     }[kind]
+
+    if buy_in_values:
+        buy_in_summary = f" Die erfassten Buy-ins reichen von CHF {min(buy_in_values):,.0f} bis CHF {max(buy_in_values):,.0f}.".replace(',', "'")
+    else:
+        buy_in_summary = ""
+
+    if kind == 'stadt':
+        detail_text = f'In {name} findest du aktuell {len(upcoming)} kommende Pokerturniere.'
+        if top_variants:
+            detail_text += f' Vertreten sind unter anderem {", ".join(v for v, _ in top_variants)}.'
+        detail_text += buy_in_summary
+    elif kind == 'kanton':
+        detail_text = f'Im Kanton {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst.'
+        if top_cities:
+            detail_text += f' Die nächsten Termine verteilen sich unter anderem auf {", ".join(city for city, _ in top_cities)}.'
+        detail_text += buy_in_summary
+    else:
+        detail_text = f'Für {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst.'
+        if top_cities:
+            detail_text += f' Die Termine finden unter anderem in {", ".join(city for city, _ in top_cities)} statt.'
+        detail_text += buy_in_summary
+
+    related_html = ''
+    if kind == 'kanton':
+        for city, _ in top_cities:
+            related_html += f'<a class="related-chip" href="/stadt/{slugify(city)}/">Stadt: {esc(city)} →</a>'
+    elif kind == 'veranstalter':
+        for city, _ in top_cities:
+            related_html += f'<a class="related-chip" href="/stadt/{slugify(city)}/">Stadt: {esc(city)} →</a>'
 
     breadcrumb_json = {
         '@context': 'https://schema.org',
@@ -312,7 +345,7 @@ h1{margin:0;font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-1.5p
 .badges{display:flex;flex-wrap:wrap;gap:10px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#f3f3f6;border-radius:12px;padding:10px 15px;font-size:15px;font-weight:800}
 .badge.primary{background:#fae8eb;color:#b20f2b}
-.stats-grid{padding:0 28px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{padding:16px 18px;border:1px solid #dedede;border-radius:14px;background:#fafbfc}.stat strong{display:block;font-size:24px;line-height:1.1}.stat span{display:block;margin-top:5px;color:#777;font-size:12px}.context{padding:0 28px 28px}.context h2{font-size:24px;margin:0 0 7px}.context p{margin:0;color:#666;font-size:15px;max-width:900px}.list{padding:0 28px 36px}
+.stats-grid{padding:0 28px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{padding:16px 18px;border:1px solid #dedede;border-radius:14px;background:#fafbfc}.stat strong{display:block;font-size:24px;line-height:1.1}.stat span{display:block;margin-top:5px;color:#777;font-size:12px}.context{padding:0 28px 28px}.context h2{font-size:24px;margin:0 0 7px}.context p{margin:0;color:#666;font-size:15px;max-width:900px}.related{padding:0 28px 30px}.related h2{font-size:22px;margin:0 0 12px}.related-links{display:flex;flex-wrap:wrap;gap:8px}.related-chip{display:inline-flex;padding:9px 12px;border:1px solid #dedede;border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;background:#fafbfc}.related-chip:hover{border-color:#f0aab5;color:#c8102e}.list{padding:0 28px 36px}
 .list-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:8px 0 16px}
 h2{font-size:30px;line-height:1.15;margin:0}
 ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
@@ -362,6 +395,7 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="{esc(url)}">
 <script type="application/ld+json">{json.dumps(breadcrumb_json, ensure_ascii=False)}</script>
+<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"ItemList","name":title,"itemListElement":[{"@type":"ListItem","position":i+1,"name":e.get("title") or "Pokerturnier","url":f"{BASE_URL}/turniere/{event_slug(e)}/"} for i,e in enumerate(upcoming[:60])]}, ensure_ascii=False)}</script>
 <style>{style}</style>
 </head>
 <body>
@@ -392,8 +426,9 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 <section class="stats-grid">{stat_html}</section>
 <section class="context">
 <h2>{esc(extra_title)}</h2>
-<p>{esc(extra_text)}</p>
+<p>{esc(extra_text)} {esc(detail_text)}</p>
 </section>
+{f'<section class="related"><h2>Weitere Übersichten</h2><div class="related-links">{related_html}</div></section>' if related_html else ''}
 <section class="list">
 <div class="list-head"><h2>{len(upcoming)} kommende Pokerturniere{(" in " + esc(name)) if kind == "stadt" else ""}</h2></div>
 <ul>{rows}</ul>
