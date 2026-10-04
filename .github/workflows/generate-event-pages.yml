@@ -8,6 +8,7 @@ on:
     paths:
       - "data/*.json"
       - "scripts/generate-landing-pages.py"
+      - "scripts/generate-homepage-hub.py"
       - ".github/workflows/generate-event-pages.yml"
 
 permissions:
@@ -1003,6 +1004,7 @@ jobs:
               generated += 1
 
           exec((ROOT / "scripts" / "generate-landing-pages.py").read_text(encoding="utf-8"), globals())
+          exec((ROOT / "scripts" / "generate-homepage-hub.py").read_text(encoding="utf-8"), globals())
           landing_url_file = ROOT / ".generated-landing-urls.txt"
           if landing_url_file.exists():
               for landing_url in landing_url_file.read_text(encoding="utf-8").splitlines():
