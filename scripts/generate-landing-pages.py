@@ -43,6 +43,21 @@ for path in sorted(DATA_DIR.glob('*.json')):
 
 today = datetime.now(ZoneInfo('Europe/Zurich')).strftime('%Y-%m-%d')
 
+def upcoming_count_by(field):
+    counts = {}
+    for event in events:
+        if (event.get('date_start') or '') < today:
+            continue
+        value = str(event.get(field) or '').strip()
+        if value:
+            counts[value] = counts.get(value, 0) + 1
+    return counts
+
+landing_city_counts = upcoming_count_by('city')
+landing_organizer_counts = upcoming_count_by('organizer')
+landing_cities = {name for name, count in landing_city_counts.items() if count >= 2}
+landing_organizers = {name for name, count in landing_organizer_counts.items() if count >= 2}
+
 def sort_event(e):
     return (e.get('date_start') or '9999-99-99', e.get('time') or '99:99', e.get('title') or '')
 
@@ -137,8 +152,8 @@ def write_index_page(kind, values):
         entries.append((name, upcoming))
 
     url = f'{BASE_URL}/{kind}/'
-    title = f'Pokerturniere – {parent}'
-    desc = f'Übersicht der {parent.lower()} mit kommenden Pokerturnieren in der Schweiz.'
+    title = f'Pokerturniere Schweiz nach {singular[kind].lower()}'
+    desc = f'Kommende Pokerturniere in der Schweiz nach {singular[kind].lower()}: aktuelle Termine, Orte und Veranstalter.'
     cards = ''.join(
         f'<a class="index-card" href="/{kind}/{esc(slugify(name))}/">'
         f'<strong>{esc(name)}</strong><span>{len(upcoming)} kommende Turniere</span><b>→</b></a>'
@@ -152,14 +167,21 @@ def write_index_page(kind, values):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} | Helvetic Poker</title>
 <meta name="description" content="{esc(desc)}">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="{esc(url)}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{esc(title)} | Helvetic Poker">
+<meta property="og:description" content="{esc(desc)}">
+<meta property="og:url" content="{esc(url)}">
+<meta property="og:site_name" content="Helvetic Poker">
+<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Pokerturniere Schweiz","item":f"{BASE_URL}/"},{"@type":"ListItem","position":2,"name":title,"item":url}]}, ensure_ascii=False)}</script>
+<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"ItemList","name":title,"itemListElement":[{"@type":"ListItem","position":i+1,"name":name,"url":f"{BASE_URL}/{kind}/{slugify(name)}/"} for i,(name,_) in enumerate(entries)]}, ensure_ascii=False)}</script>
 <style>
 *{{box-sizing:border-box}}body{{margin:0;font-family:Arial,sans-serif;color:#151515;background:#f5f5f5}}a{{color:inherit}}
 header{{background:#fff;border-bottom:1px solid #e1e1e1}}.head{{max-width:1180px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}}
 .logo{{display:block;width:310px;max-height:88px;object-fit:contain;object-position:left center}}.nav{{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:700}}.nav a{{text-decoration:none}}.all-btn{{background:#c8102e;color:#fff!important;padding:11px 18px;border-radius:9px}}
 main{{max-width:1180px;margin:auto;padding:34px 24px 60px}}.breadcrumb{{font-size:14px;color:#666;margin-bottom:28px}}.card{{background:#fff;border:1px solid #dedede;border-radius:20px;overflow:hidden;box-shadow:0 12px 35px #0000000b}}
-.top{{height:5px;background:linear-gradient(90deg,#c8102e 0%,#c8102e 68%,#c9a227 100%)}}.intro{{padding:38px 42px 28px}}h1{{margin:0;font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-1.5px}}.intro p{{color:#626262;font-size:18px;max-width:820px;margin:18px 0 0}}
+.top{{height:5px;background:linear-gradient(90deg,#c8102e 0%,#c8102e 68%,#c9a227 100%)}}.intro{{padding:38px 42px 28px}}h1{{margin:0;font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-1.5px}}.intro p{{color:#626262;font-size:18px;max-width:820px;margin:18px 0 0}}.data-note{{font-size:12px!important;color:#8a8a8a!important;margin-top:10px!important}}
 .grid{{padding:0 28px 38px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}.index-card{{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:20px;border:1px solid #dedede;border-radius:15px;text-decoration:none;background:#fff}}.index-card:hover{{box-shadow:0 8px 24px #00000012;transform:translateY(-1px)}}.index-card strong{{font-size:18px}}.index-card span{{color:#777;font-size:13px}}.index-card b{{grid-column:2;grid-row:1 / span 2;align-self:center;color:#c8102e;font-size:22px}}
 @media(max-width:760px){{.head{{padding:12px 15px}}.logo{{width:245px;max-height:72px}}.nav a{{display:none}}.all-btn{{display:block!important}}main{{padding:22px 12px 40px}}.intro{{padding:28px 22px 22px}}.grid{{grid-template-columns:1fr;padding:0 12px 25px}}}}
 </style>
@@ -168,7 +190,7 @@ main{{max-width:1180px;margin:auto;padding:34px 24px 60px}}.breadcrumb{{font-siz
 <header><div class="head"><a href="/" aria-label="Helvetic Poker – Pokerturniere Schweiz"><img class="logo" src="/assets/helvetic-poker-logo.png" alt="Helvetic Poker"></a>
 <nav class="nav" aria-label="Hauptnavigation"><a href="/">Turniere</a><a href="/stadt/">Städte</a><a href="/kanton/">Kantone</a><a href="/veranstalter/">Veranstalter</a><a href="/">Kalender</a><a class="all-btn" href="/">Alle Turniere</a></nav></div></header>
 <main><div class="breadcrumb"><a href="/">⌂</a> &nbsp;›&nbsp; {esc(parent)}</div>
-<article class="card"><div class="top"></div><section class="intro"><h1>{esc(title)}</h1><p>{esc(desc)}</p></section><section class="grid">{cards}</section></article></main>
+<article class="card"><div class="top"></div><section class="intro"><h1>{esc(title)}</h1><p>{esc(desc)}</p><p class="data-note">Aktualisierte Übersicht · {esc(today)}</p></section><section class="grid">{cards}</section></article></main>
 </body></html>'''
     out = ROOT / kind
     out.mkdir(parents=True, exist_ok=True)
@@ -291,12 +313,44 @@ def write_page(kind, name, items):
         detail_text += buy_in_summary
 
     related_html = ''
-    if kind == 'kanton':
+    if kind in {'kanton', 'veranstalter'}:
         for city, _ in top_cities:
-            related_html += f'<a class="related-chip" href="/stadt/{slugify(city)}/">Stadt: {esc(city)} →</a>'
-    elif kind == 'veranstalter':
-        for city, _ in top_cities:
-            related_html += f'<a class="related-chip" href="/stadt/{slugify(city)}/">Stadt: {esc(city)} →</a>'
+            if city in landing_cities:
+                related_html += f'<a class="related-chip" href="/stadt/{slugify(city)}/">Stadt: {esc(city)} →</a>'
+
+    collection_json = {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        'name': title,
+        'url': url,
+        'isPartOf': {
+            '@type': 'WebSite',
+            'name': 'Helvetic Poker – Pokerturniere Schweiz',
+            'url': f'{BASE_URL}/'
+        },
+        'mainEntity': {
+            '@type': 'ItemList',
+            'name': title,
+            'numberOfItems': len(upcoming),
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': i + 1,
+                    'name': e.get('title') or 'Pokerturnier',
+                    'url': f'{BASE_URL}/turniere/{event_slug(e)}/'
+                }
+                for i, e in enumerate(upcoming[:60])
+            ]
+        }
+    }
+    if kind == 'veranstalter':
+        organizer_source_url = next((str(e.get('organizer_url') or '').strip() for e in upcoming if str(e.get('organizer_url') or '').strip()), '')
+        collection_json['mainEntity'] = {
+            '@type': 'Organization',
+            '@id': url + '#organization',
+            'name': name,
+            'url': organizer_source_url or url
+        }
 
     breadcrumb_json = {
         '@context': 'https://schema.org',
@@ -395,6 +449,7 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="{esc(url)}">
 <script type="application/ld+json">{json.dumps(breadcrumb_json, ensure_ascii=False)}</script>
+<script type="application/ld+json">{json.dumps(collection_json, ensure_ascii=False)}</script>
 <script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"ItemList","name":title,"itemListElement":[{"@type":"ListItem","position":i+1,"name":e.get("title") or "Pokerturnier","url":f"{BASE_URL}/turniere/{event_slug(e)}/"} for i,e in enumerate(upcoming[:60])]}, ensure_ascii=False)}</script>
 <style>{style}</style>
 </head>
