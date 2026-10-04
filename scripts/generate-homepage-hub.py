@@ -62,6 +62,7 @@ for e in upcoming:
 cantons = sorted(cantons.items(), key=lambda x: (-x[1], x[0].lower()))
 
 def cards(kind, items, limit=None):
+    items = [(name, count) for name, count in items if count >= 2]
     if limit:
         items = items[:limit]
     return "".join(
