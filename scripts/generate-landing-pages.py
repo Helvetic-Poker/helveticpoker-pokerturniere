@@ -182,7 +182,7 @@ body{margin:0;font-family:Arial,sans-serif;color:#151515;background:#f5f5f5;line
 a{color:inherit}
 header{background:#fff;border-bottom:1px solid #e1e1e1}
 .head{max-width:1180px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{display:block;width:270px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
+.logo{display:block;width:310px;height:auto;max-height:88px;object-fit:contain;object-position:left center}
 .nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:700;color:#333}
 .nav a{text-decoration:none}
 .nav a:hover{color:#c8102e}
@@ -225,7 +225,7 @@ ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .event-card>a{grid-template-columns:82px minmax(190px,1.5fr) 110px 150px 140px 105px;gap:12px}
 }
 @media(max-width:760px){
-.head{padding:12px 15px}.logo{width:215px;max-height:64px}.nav a{display:none!important}.all-btn{display:block!important}
+.head{padding:12px 15px}.logo{width:245px;max-height:72px}.nav a{display:none!important}.all-btn{display:block!important}
 main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;letter-spacing:-.8px}
 .intro p{font-size:16px}.list{padding:0 12px 25px}.list-head{display:block}h2{font-size:25px;margin-bottom:14px}
 .event-card>a{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:10px}
