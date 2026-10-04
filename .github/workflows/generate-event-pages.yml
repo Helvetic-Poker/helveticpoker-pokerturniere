@@ -443,11 +443,19 @@ jobs:
               page_dir.mkdir(parents=True, exist_ok=True)
 
               meta_description = description
-              if date_text and city:
-                  meta_description = f"{description} Am {date_text} in {city}."
-              elif date_text:
-                  meta_description = f"{description} Am {date_text}."
-              page_title = f"{title}{f" – {subtitle}" if subtitle else ""} | {city} | Pokerturniere Schweiz"
+              context_parts = []
+              if date_text:
+                  context_parts.append(f"am {date_text}")
+              if time:
+                  context_parts.append(f"ab {time} Uhr")
+              if city:
+                  context_parts.append(f"in {city}")
+              if buy_in_label:
+                  context_parts.append(f"mit Buy-in {buy_in_label}")
+              if context_parts:
+                  meta_description = f"{description} " + " ".join(context_parts) + "."
+              meta_description = meta_description[:158].rstrip(" .") + "."
+              page_title = f"{title}{f" – {subtitle}" if subtitle else ""} | {date_text}{f" | {city}" if city else ""} | Pokerturnier"
 
               page = f"""<!doctype html>
           <html lang="de-CH">
@@ -994,7 +1002,7 @@ jobs:
                   {esc(event_type)}{f" · {esc(variant)}" if variant else ""}
                 </div>
 
-                <h1>{esc(title)}</h1>
+                <h1>{esc(page_title)}</h1>
 
                 {f'<div class="subtitle">{esc(subtitle)}</div>' if subtitle else ''}
               </section>
@@ -1069,6 +1077,18 @@ jobs:
                 '''
                 if related_organizer_html and organizer and organizer not in city else ''
               }
+
+              <section class="content-section">
+                <h2 class="section-title">Weitere Pokerturnier-Übersichten</h2>
+                <div class="venue-links">
+                  {f'<a href="/stadt/{slugify(city)}/">Pokerturniere in {esc(city)} →</a>' if landing_city_url else ''}
+                  {f'<a href="/kanton/{slugify(canton_name)}/">Pokerturniere im Kanton {esc(canton_name)} →</a>' if landing_canton_url else ''}
+                  {f'<a href="/veranstalter/{slugify(organizer)}/">Turniere von {esc(organizer)} →</a>' if landing_organizer_url else ''}
+                  {f'<a href="{variant_url}">Weitere {esc(variant)} Pokerturniere →</a>' if variant_url else ''}
+                  {f'<a href="{buyin_url}">Pokerturniere bis CHF {50 if buyin_url.endswith("50-chf/") else 100} →</a>' if buyin_url else ''}
+                  <a href="/pokerturniere-diese-woche/">Pokerturniere diese Woche →</a>
+                </div>
+              </section>
 
               <div class="actions">
 
