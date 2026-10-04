@@ -506,14 +506,15 @@ jobs:
             background: #fff;
             color: #171717;
             border-color: #dcdcdc;
-            margin-left: auto;
           }}
 
           .btn.ghost:hover {{
             background: #f6f6f6;
             box-shadow: 0 8px 18px rgba(0,0,0,.08);
           }}
-
+.organizer-btn {{
+  margin-left: auto;
+}}
           .share-status {{
             width: 100%;
             min-height: 20px;
@@ -711,18 +712,18 @@ jobs:
 
               <div class="actions">
 
-                <button class="btn ghost" type="button" onclick="shareTournament()">
-                  ↗ Turnier teilen
-                </button>
+               <a class="btn secondary" href="/">
+  ← Alle Pokerturniere
+</a>
 
-                {
-                  f'<a class="btn" href="{esc(organizer_url)}" target="_blank" rel="noopener">Zum Veranstalter →</a>'
-                  if organizer_url else ''
-                }
+<button class="btn ghost" type="button" onclick="shareTournament()">
+  ↗ Turnier teilen
+</button>
 
-                <a class="btn secondary" href="/">
-                  ← Alle Pokerturniere
-                </a>
+{
+  f'<a class="btn organizer-btn" href="{esc(organizer_url)}" target="_blank" rel="noopener">Zum Veranstalter →</a>'
+  if organizer_url else ''
+}
 
                 <div id="share-status" class="share-status" aria-live="polite"></div>
 
