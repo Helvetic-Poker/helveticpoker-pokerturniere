@@ -10,6 +10,7 @@ on:
       - "index.html"
       - "scripts/generate-landing-pages.py"
       - "scripts/generate-homepage-hub.py"
+      - "scripts/generate-time-pages.py"
       - "pokerturniere-schweiz/index.html"
       - ".github/workflows/generate-event-pages.yml"
 
@@ -1149,6 +1150,7 @@ jobs:
 
           exec((ROOT / "scripts" / "generate-landing-pages.py").read_text(encoding="utf-8"), globals())
           exec((ROOT / "scripts" / "generate-homepage-hub.py").read_text(encoding="utf-8"), globals())
+          exec((ROOT / "scripts" / "generate-time-pages.py").read_text(encoding="utf-8"), globals())
           # The overview hubs are canonical crawl entry points too.
           for landing_kind in ("stadt", "kanton", "veranstalter"):
               sitemap_urls.add(f"{BASE_URL}/{landing_kind}/")
@@ -1159,6 +1161,12 @@ jobs:
               for landing_url in landing_url_file.read_text(encoding="utf-8").splitlines():
                   if landing_url.strip():
                       sitemap_urls.add(landing_url.strip())
+
+          time_url_file = ROOT / ".generated-time-urls.txt"
+          if time_url_file.exists():
+              for time_url in time_url_file.read_text(encoding="utf-8").splitlines():
+                  if time_url.strip():
+                      sitemap_urls.add(time_url.strip())
 
           # Build standards-compliant sitemap shards and a sitemap index.
           # The index remains at /sitemap.xml, so the existing Search Console
