@@ -41,6 +41,7 @@ jobs:
           from pathlib import Path
           from datetime import datetime
           from zoneinfo import ZoneInfo
+          from urllib.parse import quote
 
           ROOT = Path(".")
           DATA_DIR = ROOT / "data"
@@ -57,6 +58,17 @@ jobs:
               "ZH": "Zürich"
           }
 
+
+
+          # Verifizierte Veranstaltungsadressen für Veranstaltungsorte, die aktuell noch nicht
+          # direkt in den Eventdaten gepflegt sind. Diese Liste wird später schrittweise erweitert.
+          VENUE_ADDRESS_OVERRIDES = {
+              "24Poker": {
+                  "street_address": "Industriestrasse 23, Eingang 2",
+                  "postal_code": "5036",
+                  "city": "Oberentfelden",
+              },
+          }
           provider_logos = {
               "24Poker":
               "https://zejcddvqhcbbmrufqsli.supabase.co/storage/v1/object/public/club-logos/6b50286d-2f09-47d4-a018-8c326b0ecef7/1774464947679-24poker.png",
@@ -161,6 +173,11 @@ jobs:
                   or ""
               )
               postal_code = event.get("postal_code") or event.get("zip") or ""
+
+              venue_override = VENUE_ADDRESS_OVERRIDES.get(venue) or VENUE_ADDRESS_OVERRIDES.get(organizer) or {}
+              if venue_override:
+                  street_address = venue_override.get("street_address") or street_address
+                  postal_code = venue_override.get("postal_code") or postal_code
 
               display_date = date_start
 
@@ -638,6 +655,24 @@ jobs:
             font-size: 15px;
           }}
 
+          .venue-links {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 17px;
+          }}
+
+          .venue-links a {{
+            color: #c8102e;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+          }}
+
+          .venue-links a:hover {{
+            text-decoration: underline;
+          }}
+
           .event-description {{
             margin: 0;
             color: #555;
@@ -928,9 +963,15 @@ jobs:
                 <div class="venue-card">
                   <p class="venue-name">{esc(venue or organizer or city)}</p>
                   <p class="venue-location">
-                    {esc(city)}{f" · {esc(organizer)}" if organizer and organizer != venue else ""}
+                    {esc(street_address) if street_address else ""}
                   </p>
-                  {f'<p class="venue-location">{esc(street_address)}{f", {esc(postal_code)}" if postal_code else ""}</p>' if street_address else ''}
+                  <p class="venue-location">
+                    {esc(postal_code + " " if postal_code else "")}{esc(city)}
+                  </p>
+                  <div class="venue-links">
+                    {f'<a href="https://www.google.com/maps/search/?api=1&query={quote(street_address + ", " + postal_code + " " + city)}" target="_blank" rel="noopener">📍 Route planen →</a>' if street_address else ''}
+                    {f'<a href="/veranstalter/{slugify(organizer)}/">Veranstalter: {esc(organizer)} →</a>' if organizer else ''}
+                  </div>
                 </div>
               </section>
 
