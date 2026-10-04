@@ -512,9 +512,9 @@ jobs:
             background: #f6f6f6;
             box-shadow: 0 8px 18px rgba(0,0,0,.08);
           }}
-.organizer-btn {{
-  margin-left: auto;
-}}
+          .organizer-btn {{
+            margin-left: auto;
+          }}
           .share-status {{
             width: 100%;
             min-height: 20px;
