@@ -1209,12 +1209,11 @@ jobs:
                   if category_url.strip():
                       sitemap_urls.add(category_url.strip())
 
-          # Build standards-compliant sitemap shards and a sitemap index.
-          # The index remains at /sitemap.xml, so the existing Search Console
-          # submission continues to work while Google can discover every shard.
+          # Build one standards-compliant sitemap.
+          # The site currently has far fewer than the 50,000-URL sitemap limit,
+          # so a single URLset is simpler and avoids an unnecessary sitemap-index
+          # dependency in Search Console.
           sitemap_urls_sorted = sorted(sitemap_urls)
-          page_urls = [url for url in sitemap_urls_sorted if "/turniere/" not in url]
-          tournament_urls = [url for url in sitemap_urls_sorted if "/turniere/" in url]
 
           def write_urlset(path, urls):
               lines = [
@@ -1224,62 +1223,26 @@ jobs:
               for sitemap_url in urls:
                   lines.append(f"  <url><loc>{html.escape(sitemap_url)}</loc></url>")
               lines.append("</urlset>")
-              (ROOT / path).write_text("\n".join(lines) + "\n", encoding="utf-8")
+              (ROOT / path).write_text("\\n".join(lines) + "\\n", encoding="utf-8")
 
-          child_sitemaps = []
-          write_urlset("sitemap-pages.xml", page_urls)
-          child_sitemaps.append("sitemap-pages.xml")
-
-          CHUNK_SIZE = 45000
-          for index in range(0, len(tournament_urls), CHUNK_SIZE):
-              chunk_number = index // CHUNK_SIZE + 1
-              filename = f"sitemap-tournaments-{chunk_number}.xml"
-              write_urlset(filename, tournament_urls[index:index + CHUNK_SIZE])
-              child_sitemaps.append(filename)
-
-          sitemap_index_lines = [
-              '<?xml version="1.0" encoding="UTF-8"?>',
-              '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-          ]
-          for filename in child_sitemaps:
-              sitemap_index_lines.append(
-                  "  <sitemap><loc>"
-                  f"{BASE_URL}/{filename}"
-                  "</loc></sitemap>"
-              )
-          sitemap_index_lines.append("</sitemapindex>")
-          (ROOT / "sitemap.xml").write_text(
-              "\n".join(sitemap_index_lines) + "\n",
-              encoding="utf-8"
-          )
+          write_urlset("sitemap.xml", sitemap_urls_sorted)
 
           # Validate before deployment so a malformed sitemap cannot be published.
           import xml.etree.ElementTree as ET
           sitemap_namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
           root = ET.fromstring((ROOT / "sitemap.xml").read_text(encoding="utf-8"))
-          assert root.tag == f"{{{sitemap_namespace}}}sitemapindex"
+          assert root.tag == f"{{{sitemap_namespace}}}urlset"
 
-          indexed = [
-              (node.text or "").strip()
-              for node in root.findall(f"{{{sitemap_namespace}}}sitemap/{{{sitemap_namespace}}}loc")
+          all_seen_urls = [
+              (loc_node.text or "").strip()
+              for loc_node in root.findall(f"{{{sitemap_namespace}}}url/{{{sitemap_namespace}}}loc")
           ]
-          assert indexed == [f"{BASE_URL}/{name}" for name in child_sitemaps]
-
-          all_seen_urls = []
-          for filename in child_sitemaps:
-              child = ET.fromstring((ROOT / filename).read_text(encoding="utf-8"))
-              assert child.tag == f"{{{sitemap_namespace}}}urlset"
-              for loc_node in child.findall(f"{{{sitemap_namespace}}}url/{{{sitemap_namespace}}}loc"):
-                  value = (loc_node.text or "").strip()
-                  assert value.startswith(BASE_URL + "/") or value == BASE_URL
-                  all_seen_urls.append(value)
-
           assert len(all_seen_urls) == len(set(all_seen_urls)), "Duplicate sitemap URLs"
           assert len(all_seen_urls) == len(sitemap_urls), "Sitemap URL count mismatch"
           assert all_seen_urls, "Sitemap must not be empty"
 
           print(f"Generated {generated} tournament pages.")
-          print(f"Wrote sitemap index with {len(child_sitemaps)} child sitemaps and {len(all_seen_urls)} URLs.")
+          print(f"Wrote single sitemap with {len(all_seen_urls)} URLs.")
           PY
 
       - name: Upload GitHub Pages artifact
