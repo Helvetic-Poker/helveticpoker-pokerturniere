@@ -545,9 +545,9 @@ jobs:
           h1 {{
             margin: 0;
             max-width: 850px;
-            font-size: clamp(34px, 5.2vw, 58px);
+            font-size: clamp(30px, 4.2vw, 46px);
             line-height: 1.04;
-            letter-spacing: -1.7px;
+            letter-spacing: -1.2px;
             font-weight: 850;
             color: #111;
           }}
@@ -775,9 +775,9 @@ jobs:
             }}
 
             h1 {{
-              font-size: 28px;
-              line-height: 1.12;
-              letter-spacing: -.6px;
+              font-size: 24px;
+              line-height: 1.15;
+              letter-spacing: -.4px;
               font-weight: 700;
             }}
 
@@ -849,15 +849,6 @@ jobs:
 
           <main>
             <article class="event-card">
-
-              <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
-                <ol>
-                  <li><a href="/">Pokerturniere Schweiz</a></li>
-                  {f'<li>{esc(event.get("region"))}</li>' if event.get("region") else ''}
-                  {f'<li>{esc(city)}</li>' if city else ''}
-                  <li aria-current="page">{esc(title)}</li>
-                </ol>
-              </nav>
 
               <section class="hero">
                 {organizer_logo_html}
