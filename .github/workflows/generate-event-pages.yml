@@ -436,8 +436,17 @@ jobs:
           }}
 
           .brand {{
-            font-weight: 800;
-            letter-spacing: -.2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+          }}
+
+          .brand img {{
+            width: 92px;
+            height: 56px;
+            object-fit: contain;
+            display: block;
           }}
 
           .brand span {{
@@ -839,6 +848,11 @@ jobs:
             .event-card {{
               border-radius: 21px;
             }}
+
+            .brand img {{
+              width: 78px;
+              height: 48px;
+            }}
           }}
 
           @media (prefers-reduced-motion: reduce) {{
@@ -856,7 +870,10 @@ jobs:
             <body>
                       <header class="site-header">
             <div class="header-inner">
-              <div class="brand">Helvetic Poker <span>·</span> Pokerturniere Schweiz</div>
+              <div class="brand">
+                <img src="/assets/helvetic-poker-logo.png?v=7" alt="Helvetic Poker">
+                <span>Pokerturniere Schweiz</span>
+              </div>
               <a class="back-link" href="/">← Zum Kalender</a>
             </div>
           </header>
