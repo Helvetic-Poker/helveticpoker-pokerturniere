@@ -75,7 +75,7 @@ hub = f'''<section class="seo-hub" aria-labelledby="seo-hub-title">
   <div class="seo-hub-head">
     <div>
       <h2 id="seo-hub-title">Pokerturniere in der Schweiz nach Ort &amp; Veranstalter</h2>
-      <p>Finde kommende Pokerturniere nach Stadt, Kanton oder Veranstalter.</p>
+      <p>Finde kommende Pokerturniere nach Stadt, Kanton oder Veranstalter. <a href="/pokerturniere-schweiz/">So funktioniert der Kalender →</a></p>
     </div>
   </div>
   <div class="seo-hub-grid">
