@@ -71,7 +71,22 @@ def cards(kind, items, limit=None):
         for name, count in items
     )
 
-hub = f'''<section class="seo-hub" aria-labelledby="seo-hub-title">
+hub = f'''<style id="seo-hub-mobile-fix">
+@media(max-width:720px){
+  .seo-hub{padding:0 10px}
+  .seo-hub-grid{grid-template-columns:1fr;gap:12px}
+  .seo-hub-group{padding:14px;border-radius:12px;min-width:0}
+  .seo-hub-group-wide{grid-column:auto}
+  .seo-hub-group-head{margin-bottom:10px}
+  .seo-hub-group-head h3{font-size:16px}
+  .seo-hub-group-head a{font-size:10px}
+  .seo-hub-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .seo-hub-card{min-width:0;padding:10px}
+  .seo-hub-card span{font-size:12px;line-height:1.2;overflow-wrap:anywhere}
+  .seo-hub-card small{font-size:9px;line-height:1.25}
+}
+</style>
+<section class="seo-hub" aria-labelledby="seo-hub-title">
   <div class="seo-hub-head">
     <div>
       <h2 id="seo-hub-title">Pokerturniere in der Schweiz nach Ort &amp; Veranstalter</h2>
