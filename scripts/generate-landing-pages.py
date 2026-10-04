@@ -177,18 +177,7 @@ def write_page(kind, name, items):
         ]
     }
 
-    page = f'''<!doctype html>
-<html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(title)} | Helvetic Poker</title>
-<meta name="description" content="{esc(desc)}">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="{esc(url)}">
-<script type="application/ld+json">{json.dumps(breadcrumb_json, ensure_ascii=False)}</script>
-<style>
-*{box-sizing:border-box}
+    style = '''*{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;color:#151515;background:#f5f5f5;line-height:1.45}
 a{color:inherit}
 header{background:#fff;border-bottom:1px solid #e1e1e1}
@@ -246,7 +235,19 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 .details{grid-column:2;justify-self:start;padding:9px 14px;margin-top:2px}
 .event-title{font-size:17px}
 }
-</style>
+'''
+
+    page = f'''<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{esc(title)} | Helvetic Poker</title>
+<meta name="description" content="{esc(desc)}">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{esc(url)}">
+<script type="application/ld+json">{json.dumps(breadcrumb_json, ensure_ascii=False)}</script>
+<style>{style}</style>
 </head>
 <body>
 <header><div class="head">
