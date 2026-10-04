@@ -268,135 +268,222 @@ jobs:
           body {{
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background:
-              radial-gradient(circle at top left, rgba(201,162,39,.08), transparent 32%),
-              linear-gradient(180deg, #f7f7f7 0%, #eeeeee 100%);
             color: #151515;
+            background:
+              radial-gradient(circle at 10% 0%, rgba(200,16,46,.07), transparent 28%),
+              radial-gradient(circle at 90% 10%, rgba(201,162,39,.08), transparent 24%),
+              linear-gradient(180deg, #fafafa 0%, #f0f0f0 100%);
             line-height: 1.55;
+          }}
+
+          a {{
+            color: inherit;
+          }}
+
+          .site-header {{
+            border-bottom: 1px solid rgba(0,0,0,.08);
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(12px);
+          }}
+
+          .header-inner {{
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+          }}
+
+          .brand {{
+            font-weight: 800;
+            letter-spacing: -.2px;
+          }}
+
+          .brand span {{
+            color: #c8102e;
+          }}
+
+          .back-link {{
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+          }}
+
+          .back-link:hover {{
+            color: #c8102e;
           }}
 
           main {{
             max-width: 980px;
             margin: 0 auto;
-            padding: 56px 20px 72px;
+            padding: 28px 20px 72px;
           }}
 
-          .card {{
+          .breadcrumbs {{
+            margin: 0 0 20px;
+            color: #777;
+            font-size: 13px;
+          }}
+
+          .event-card {{
             position: relative;
             overflow: hidden;
-            background: #ffffff;
-            border: 1px solid #e7e7e7;
-            border-radius: 24px;
-            padding: 48px;
+            background: #fff;
+            border: 1px solid #e4e4e4;
+            border-radius: 26px;
             box-shadow:
-              0 18px 50px rgba(0,0,0,.08),
-              0 2px 8px rgba(0,0,0,.04);
+              0 22px 60px rgba(0,0,0,.08),
+              0 3px 12px rgba(0,0,0,.04);
           }}
 
-          .card::before {{
+          .event-card::before {{
             content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            display: block;
             height: 5px;
-            background: linear-gradient(90deg, #c8102e 0%, #c8102e 70%, #c9a227 100%);
+            background: linear-gradient(90deg, #c8102e 0%, #c8102e 68%, #c9a227 100%);
+          }}
+
+          .hero {{
+            padding: 46px 48px 36px;
           }}
 
           .organizer-logo {{
-            margin: 0 0 28px;
+            margin: 0 0 24px;
           }}
 
           .organizer-logo img {{
             display: block;
-            width: 112px;
-            height: 112px;
+            width: 104px;
+            height: 104px;
             object-fit: contain;
             border-radius: 18px;
             background: #111;
             padding: 8px;
-            border: 1px solid #e5e5e5;
-            box-shadow: 0 8px 22px rgba(0,0,0,.10);
+            border: 1px solid #e4e4e4;
+            box-shadow: 0 8px 24px rgba(0,0,0,.10);
+          }}
+
+          .eyebrow {{
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: #f6ecee;
+            color: #a30d25;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-bottom: 16px;
           }}
 
           h1 {{
-            margin: 0 0 10px;
-            max-width: 820px;
-            font-size: clamp(32px, 5vw, 52px);
-            line-height: 1.08;
-            letter-spacing: -1.2px;
-            font-weight: 800;
+            margin: 0;
+            max-width: 850px;
+            font-size: clamp(34px, 5.2vw, 58px);
+            line-height: 1.04;
+            letter-spacing: -1.7px;
+            font-weight: 850;
             color: #111;
           }}
 
           .subtitle {{
-            color: #6a6a6a;
+            max-width: 760px;
+            margin: 14px 0 0;
+            color: #6b6b6b;
             font-size: 20px;
-            line-height: 1.4;
-            margin: 0 0 34px;
+            line-height: 1.45;
           }}
 
-          .info {{
+          .facts {{
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 12px;
-            margin: 0 0 34px;
+            padding: 0 48px 36px;
           }}
 
-          .row {{
-            min-height: 88px;
-            padding: 18px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 4px;
+          .fact {{
+            min-height: 104px;
+            padding: 17px 18px;
+            border: 1px solid #e7e7e7;
+            border-radius: 16px;
             background: #f8f8f8;
-            border: 1px solid #e9e9e9;
-            border-radius: 14px;
           }}
 
-          .label {{
+          .fact-label {{
             display: block;
+            margin-bottom: 7px;
             color: #777;
-            font-size: 12px;
-            line-height: 1.2;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: .08em;
           }}
 
-          .row:not(:has(.label)) {{
-            display: none;
+          .fact-value {{
+            display: block;
+            color: #151515;
+            font-size: 16px;
+            font-weight: 750;
+            line-height: 1.3;
           }}
 
-          .row {{
-            color: #171717;
-            font-size: 17px;
-            font-weight: 600;
+          .content-section {{
+            padding: 0 48px 36px;
           }}
 
-          .row .label {{
-            font-weight: 700;
+          .section-title {{
+            margin: 0 0 13px;
+            font-size: 18px;
+            font-weight: 800;
           }}
 
-          .info .row:nth-child(2n) {{
-            background: #fff;
+          .venue-card {{
+            padding: 22px;
+            border: 1px solid #e4e4e4;
+            border-radius: 18px;
+            background: #fbfbfb;
+          }}
+
+          .venue-name {{
+            margin: 0 0 5px;
+            font-size: 19px;
+            font-weight: 800;
+          }}
+
+          .venue-location {{
+            margin: 0;
+            color: #666;
+            font-size: 15px;
+          }}
+
+          .actions {{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            padding: 0 48px 46px;
           }}
 
           .btn {{
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 50px;
+            min-height: 52px;
             padding: 14px 22px;
             border-radius: 12px;
             border: 1px solid transparent;
             background: #c8102e;
             color: #fff;
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 15px;
+            font-weight: 800;
             line-height: 1.2;
+            cursor: pointer;
             transition:
               transform .18s ease,
               box-shadow .18s ease,
@@ -406,64 +493,147 @@ jobs:
           .btn:hover {{
             background: #a90d26;
             transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(200,16,46,.20);
+            box-shadow: 0 9px 22px rgba(200,16,46,.20);
           }}
 
           .btn.secondary {{
             background: #171717;
-            color: #fff;
           }}
 
           .btn.secondary:hover {{
-            background: #2b2b2b;
-            box-shadow: 0 8px 20px rgba(0,0,0,.16);
+            background: #2a2a2a;
+            box-shadow: 0 9px 22px rgba(0,0,0,.16);
           }}
 
-          .btn:focus-visible {{
+          .btn.ghost {{
+            background: #fff;
+            color: #171717;
+            border-color: #dcdcdc;
+          }}
+
+          .btn.ghost:hover {{
+            background: #f6f6f6;
+            box-shadow: 0 8px 18px rgba(0,0,0,.08);
+          }}
+
+          .share-status {{
+            width: 100%;
+            min-height: 20px;
+            color: #6b6b6b;
+            font-size: 13px;
+          }}
+
+          .ad-slot {{
+            display: none;
+            margin: 0 48px 36px;
+            min-height: 120px;
+            border: 1px dashed #d6d6d6;
+            border-radius: 16px;
+            background: #fafafa;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+          }}
+
+          .footer {{
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px 48px;
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+          }}
+
+          :focus-visible {{
             outline: 3px solid rgba(201,162,39,.55);
             outline-offset: 3px;
           }}
 
-          @media (max-width: 700px) {{
-            main {{
-              padding: 28px 14px 48px;
+          @media (max-width: 820px) {{
+            .facts {{
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+            }}
+          }}
+
+          @media (max-width: 640px) {{
+            .header-inner {{
+              padding: 16px 14px;
             }}
 
-            .card {{
-              padding: 30px 22px 28px;
-              border-radius: 20px;
+            .brand {{
+              font-size: 14px;
+            }}
+
+            .back-link {{
+              font-size: 13px;
+            }}
+
+            main {{
+              padding: 18px 12px 48px;
+            }}
+
+            .breadcrumbs {{
+              margin-bottom: 14px;
+              font-size: 12px;
+            }}
+
+            .hero {{
+              padding: 30px 22px 26px;
             }}
 
             .organizer-logo img {{
-              width: 92px;
-              height: 92px;
-              border-radius: 14px;
+              width: 88px;
+              height: 88px;
+              border-radius: 15px;
             }}
 
             h1 {{
-              font-size: clamp(30px, 9vw, 42px);
-              letter-spacing: -.7px;
+              font-size: clamp(32px, 10vw, 44px);
+              letter-spacing: -1px;
             }}
 
             .subtitle {{
               font-size: 18px;
-              margin-bottom: 26px;
             }}
 
-            .info {{
-              grid-template-columns: 1fr;
-              gap: 10px;
-              margin-bottom: 28px;
+            .facts {{
+              grid-template-columns: 1fr 1fr;
+              gap: 9px;
+              padding: 0 22px 28px;
             }}
 
-            .row {{
-              min-height: 76px;
-              padding: 15px 17px;
+            .fact {{
+              min-height: 88px;
+              padding: 14px;
+            }}
+
+            .fact-value {{
+              font-size: 14px;
+            }}
+
+            .content-section {{
+              padding: 0 22px 28px;
+            }}
+
+            .actions {{
+              padding: 0 22px 32px;
+              flex-direction: column;
+              align-items: stretch;
             }}
 
             .btn {{
               width: 100%;
-              min-height: 52px;
+            }}
+
+            .ad-slot {{
+              margin: 0 22px 28px;
+            }}
+
+            .event-card {{
+              border-radius: 21px;
             }}
           }}
 
@@ -476,65 +646,79 @@ jobs:
               transition: none;
             }}
           }}
-        </style>
-          </head>
+            </style>
+            </head>
 
-          <body>
-            <main>
-              <div class="card">
+            <body>
+                      <header class="site-header">
+            <div class="header-inner">
+              <div class="brand">Helvetic Poker <span>·</span> Pokerturniere Schweiz</div>
+              <a class="back-link" href="/">← Zum Kalender</a>
+            </div>
+          </header>
 
+          <main>
+            <div class="breadcrumbs">
+              Pokerturniere Schweiz › {esc(city)} › {esc(title)}
+            </div>
+
+            <article class="event-card">
+
+              <section class="hero">
                 {organizer_logo_html}
+
+                <div class="eyebrow">
+                  {esc(event_type)}{f" · {esc(variant)}" if variant else ""}
+                </div>
 
                 <h1>{esc(title)}</h1>
 
                 {f'<div class="subtitle">{esc(subtitle)}</div>' if subtitle else ''}
+              </section>
 
-                <div class="info">
+              <section class="facts" aria-label="Turnierdetails">
 
-                  <div class="row">
-                    <span class="label">Datum:</span>
-                    {esc(date_text)}
-                  </div>
-
-                  {f'''
-                  <div class="row">
-                    <span class="label">Ort:</span>
-                    {esc(city)}
-                  </div>
-                  ''' if city else ''}
-
-                  {f'''
-                  <div class="row">
-                    <span class="label">Veranstaltungsort:</span>
-                    {esc(venue)}
-                  </div>
-                  ''' if venue else ''}
-
-                  {f'''
-                  <div class="row">
-                    <span class="label">Variante:</span>
-                    {esc(variant)}
-                  </div>
-                  ''' if variant else ''}
-
-                  {f'''
-                  <div class="row">
-                    <span class="label">Buy-in:</span>
-                    {esc(buy_in_label)}
-                  </div>
-                  ''' if buy_in_label else ''}
-
-                  {f'''
-                  <div class="row">
-                    <span class="label">Veranstalter:</span>
-                    {esc(organizer)}
-                  </div>
-                  ''' if organizer else ''}
-
+                <div class="fact">
+                  <span class="fact-label">Datum</span>
+                  <span class="fact-value">{esc(date_text)}</span>
                 </div>
 
+                <div class="fact">
+                  <span class="fact-label">Start</span>
+                  <span class="fact-value">{esc(time + " Uhr" if time else "—")}</span>
+                </div>
+
+                <div class="fact">
+                  <span class="fact-label">Buy-in</span>
+                  <span class="fact-value">{esc(buy_in_label or "—")}</span>
+                </div>
+
+                <div class="fact">
+                  <span class="fact-label">Spielart</span>
+                  <span class="fact-value">{esc(variant or "—")}</span>
+                </div>
+
+              </section>
+
+              <section class="content-section">
+                <h2 class="section-title">Veranstaltungsort</h2>
+
+                <div class="venue-card">
+                  <p class="venue-name">{esc(venue or organizer or city)}</p>
+                  <p class="venue-location">
+                    {esc(city)}{f" · {esc(organizer)}" if organizer and organizer != venue else ""}
+                  </p>
+                </div>
+              </section>
+
+              <div class="actions">
+
+                <button class="btn ghost" type="button" onclick="shareTournament()">
+                  ↗ Turnier teilen
+                </button>
+
                 {
-                  f'<a class="btn" href="{esc(organizer_url)}" target="_blank" rel="noopener">Zum Veranstalter</a>'
+                  f'<a class="btn" href="{esc(organizer_url)}" target="_blank" rel="noopener">Zum Veranstalter →</a>'
                   if organizer_url else ''
                 }
 
@@ -542,8 +726,58 @@ jobs:
                   ← Alle Pokerturniere
                 </a>
 
+                <div id="share-status" class="share-status" aria-live="polite"></div>
+
               </div>
-            </main>
+
+              <div class="ad-slot" id="ad-slot-top" data-ad-slot="event-top" aria-hidden="true">
+                Werbeplatz
+              </div>
+
+              <div class="ad-slot" id="ad-slot-bottom" data-ad-slot="event-bottom" aria-hidden="true">
+                Werbeplatz
+              </div>
+
+            </article>
+          </main>
+
+          <footer class="footer">
+            Helvetic Poker · Pokerturniere Schweiz
+          </footer>
+
+          <script>
+            async function shareTournament() {{
+              const shareData = {{
+                title: document.title,
+                text: "{esc(title)}{f" – {esc(venue)}" if venue else ""}",
+                url: window.location.href
+              }};
+
+              const status = document.getElementById("share-status");
+
+              try {{
+                if (navigator.share) {{
+                  await navigator.share(shareData);
+                  return;
+                }}
+
+                await navigator.clipboard.writeText(window.location.href);
+                status.textContent = "Link kopiert – du kannst ihn jetzt weiterleiten.";
+
+              }} catch (error) {{
+                if (error && error.name === "AbortError") {{
+                  return;
+                }}
+
+                try {{
+                  await navigator.clipboard.writeText(window.location.href);
+                  status.textContent = "Link kopiert – du kannst ihn jetzt weiterleiten.";
+                }} catch (_) {{
+                  status.textContent = "Bitte kopiere die URL aus der Browserzeile.";
+                }}
+              }}
+            }}
+          </script>
           </body>
           </html>
           """
