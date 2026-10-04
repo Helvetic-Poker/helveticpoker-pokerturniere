@@ -231,13 +231,17 @@ def write_page(kind, name, items):
     slug = slugify(name)
     url = f'{BASE_URL}/{kind}/{slug}/'
 
-    logo_url = provider_logos.get(name) or ''
-    if not logo_url:
-        for event in upcoming:
-            provider_logo = str(event.get('provider_logo') or '').strip()
-            if provider_logo:
-                logo_url = provider_logo
-                break
+    # Logos are only appropriate for organizer landing pages.
+    # City and canton pages aggregate multiple providers and therefore stay neutral.
+    logo_url = ''
+    if kind == 'veranstalter':
+        logo_url = provider_logos.get(name) or ''
+        if not logo_url:
+            for event in upcoming:
+                provider_logo = str(event.get('provider_logo') or '').strip()
+                if provider_logo:
+                    logo_url = provider_logo
+                    break
 
     if kind == 'stadt':
         title = f'Pokerturniere in {name}'
