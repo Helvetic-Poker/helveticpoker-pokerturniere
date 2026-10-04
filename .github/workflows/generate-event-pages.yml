@@ -108,6 +108,7 @@ jobs:
                       events.append(data)
 
           generated = 0
+          sitemap_urls = {f"{BASE_URL}/"}
 
           for event in events:
               slug = event.get("slug")
@@ -777,9 +778,27 @@ jobs:
                   encoding="utf-8"
               )
 
+              sitemap_urls.add(url)
               generated += 1
 
+          sitemap_lines = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+          ]
+
+          for sitemap_url in sorted(sitemap_urls):
+              sitemap_lines.append(
+                  f"  <url><loc>{html.escape(sitemap_url)}</loc></url>"
+              )
+
+          sitemap_lines.append("</urlset>")
+          (ROOT / "sitemap.xml").write_text(
+              "\n".join(sitemap_lines) + "\n",
+              encoding="utf-8"
+          )
+
           print(f"Generated {generated} tournament pages.")
+          print(f"Wrote sitemap with {len(sitemap_urls)} URLs.")
           PY
 
       - name: Upload GitHub Pages artifact
