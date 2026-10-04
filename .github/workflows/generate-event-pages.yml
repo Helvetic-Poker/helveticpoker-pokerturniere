@@ -223,14 +223,23 @@ jobs:
 
               detail_text = ", ".join(details)
 
-              description = (
-                  f"{title}"
-                  + (f" – {subtitle}" if subtitle else "")
-                  + (f" im {venue}" if venue else "")
-                  + (f". {detail_text}" if detail_text else "")
-                  + (f". {date_text}" if date_text else "")
-                  + "."
-              )
+              description_parts = []
+              if organizer:
+                  description_parts.append(f"Beim {title} von {organizer}")
+              else:
+                  description_parts.append(f"Beim {title}")
+              if variant:
+                  description_parts.append(f"steht {variant} im Mittelpunkt")
+              elif subtitle:
+                  description_parts.append(f"geht es um {subtitle}")
+              if buy_in_label:
+                  description_parts.append(f"mit einem Buy-in von {buy_in_label}")
+              if event_type and event_type.lower() not in {"regular", "regelmässig"}:
+                  description_parts.append(f"als {event_type}-Turnier")
+              description = " ".join(description_parts).strip()
+              if description and not description.endswith("."):
+                  description += "."
+
 
               url = f"{BASE_URL}/turniere/{slug}/"
 
@@ -311,6 +320,31 @@ jobs:
               if organizer_url:
                   event_json["organizer"]["url"] = organizer_url
 
+              # Only link to landing pages that are actually generated.
+              # Landing pages require at least two upcoming events.
+              today_key = datetime.now(ZoneInfo("Europe/Zurich")).strftime("%Y-%m-%d")
+              landing_city_counts = {}
+              landing_organizer_counts = {}
+              landing_canton_counts = {}
+              for candidate in events:
+                  candidate_date = candidate.get("date_start") or ""
+                  if candidate_date < today_key:
+                      continue
+                  candidate_city = (candidate.get("city") or "").strip()
+                  candidate_organizer = (candidate.get("organizer") or "").strip()
+                  candidate_canton = str(candidate.get("canton") or "").strip().upper()
+                  if candidate_city:
+                      landing_city_counts[candidate_city] = landing_city_counts.get(candidate_city, 0) + 1
+                  if candidate_organizer:
+                      landing_organizer_counts[candidate_organizer] = landing_organizer_counts.get(candidate_organizer, 0) + 1
+                  candidate_canton_name = CANTON_NAMES.get(candidate_canton) or ""
+                  if candidate_canton_name:
+                      landing_canton_counts[candidate_canton_name] = landing_canton_counts.get(candidate_canton_name, 0) + 1
+
+              landing_cities = {name for name, count in landing_city_counts.items() if count >= 2}
+              landing_organizers = {name for name, count in landing_organizer_counts.items() if count >= 2}
+              landing_cantons = {name for name, count in landing_canton_counts.items() if count >= 2}
+
               # Find a small set of useful internal links to other real tournament pages.
               same_city = []
               same_organizer = []
@@ -335,11 +369,11 @@ jobs:
 
               today_key = datetime.now(ZoneInfo("Europe/Zurich")).strftime("%Y-%m-%d")
               same_city = sorted(
-                  [item for item in same_city if (item.get("date_start") or "") >= today_key],
+                  [item for item in same_city if (item.get("date_start") or "") >= today_key and (item.get("city") or "") in landing_cities],
                   key=related_sort
               )[:4]
               same_organizer = sorted(
-                  [item for item in same_organizer if (item.get("date_start") or "") >= today_key],
+                  [item for item in same_organizer if (item.get("date_start") or "") >= today_key and (item.get("organizer") or "") in landing_organizers],
                   key=related_sort
               )[:4]
 
@@ -367,7 +401,7 @@ jobs:
               position = 2
               canton_code = str(event.get("canton") or "").strip().upper()
               canton_name = CANTON_NAMES.get(canton_code) or ""
-              if canton_name:
+              if canton_name and canton_name in landing_cantons:
                   canton_slug = slugify(canton_name)
                   breadcrumb_items.append({
                       "@type": "ListItem",
@@ -410,7 +444,7 @@ jobs:
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <title>{esc(title)}{f" – {esc(subtitle)}" if subtitle else ""} | {esc(city)} | Helvetic Poker</title>
+            <title>{esc(title)}{f" – {esc(subtitle)}" if subtitle else ""} | {esc(city)} | Pokerturniere Schweiz</title>
 
             <meta
               name="description"
@@ -423,6 +457,12 @@ jobs:
             <link
               rel="canonical"
               href="{esc(url)}">
+            <meta property="og:type" content="event">
+            <meta property="og:title" content="{esc(title)}{f" – {esc(subtitle)}" if subtitle else ""} | {esc(city)} | Pokerturniere Schweiz">
+            <meta property="og:description" content="{esc(description)}">
+            <meta property="og:url" content="{esc(url)}">
+            <meta property="og:site_name" content="Helvetic Poker">
+
 
             <script type="application/ld+json">
           {json.dumps(event_json, ensure_ascii=False, indent=2)}
@@ -990,7 +1030,7 @@ jobs:
                   </p>
                   <div class="venue-links">
                     {f'<a href="https://www.google.com/maps/search/?api=1&query={quote(street_address + ", " + postal_code + " " + city)}" target="_blank" rel="noopener">📍 Route planen →</a>' if street_address else ''}
-                    {f'<a href="/veranstalter/{slugify(organizer)}/">Veranstalter: {esc(organizer)} →</a>' if organizer else ''}
+                    {f'<a href="/veranstalter/{slugify(organizer)}/">Veranstalter: {esc(organizer)} →</a>' if organizer and organizer in landing_organizers else ''}
                   </div>
                 </div>
               </section>
