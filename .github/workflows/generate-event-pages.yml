@@ -712,18 +712,18 @@ jobs:
 
               <div class="actions">
 
-               <a class="btn secondary" href="/">
-  ← Alle Pokerturniere
-</a>
+              <a class="btn secondary" href="/">
+                ← Alle Pokerturniere
+              </a>
 
-<button class="btn ghost" type="button" onclick="shareTournament()">
-  ↗ Turnier teilen
-</button>
+              <button class="btn ghost" type="button" onclick="shareTournament()">
+                ↗ Turnier teilen
+              </button>
 
-{
-  f'<a class="btn organizer-btn" href="{esc(organizer_url)}" target="_blank" rel="noopener">Zum Veranstalter →</a>'
-  if organizer_url else ''
-}
+              {
+                f'<a class="btn organizer-btn" href="{esc(organizer_url)}" target="_blank" rel="noopener">Zum Veranstalter →</a>'
+                if organizer_url else ''
+              }
 
                 <div id="share-status" class="share-status" aria-live="polite"></div>
 
