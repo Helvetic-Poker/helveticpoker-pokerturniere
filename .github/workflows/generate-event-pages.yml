@@ -10,6 +10,7 @@ on:
       - "index.html"
       - "scripts/generate-landing-pages.py"
       - "scripts/generate-homepage-hub.py"
+      - "pokerturniere-schweiz/index.html"
       - ".github/workflows/generate-event-pages.yml"
 
 permissions:
@@ -1151,6 +1152,7 @@ jobs:
           # The overview hubs are canonical crawl entry points too.
           for landing_kind in ("stadt", "kanton", "veranstalter"):
               sitemap_urls.add(f"{BASE_URL}/{landing_kind}/")
+          sitemap_urls.add(f"{BASE_URL}/pokerturniere-schweiz/")
 
           landing_url_file = ROOT / ".generated-landing-urls.txt"
           if landing_url_file.exists():
