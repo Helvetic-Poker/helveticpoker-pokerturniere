@@ -71,22 +71,7 @@ def cards(kind, items, limit=None):
         for name, count in items
     )
 
-hub = f'''<style id="seo-hub-mobile-fix">
-@media(max-width:720px){
-  .seo-hub{padding:0 10px}
-  .seo-hub-grid{grid-template-columns:1fr;gap:12px}
-  .seo-hub-group{padding:14px;border-radius:12px;min-width:0}
-  .seo-hub-group-wide{grid-column:auto}
-  .seo-hub-group-head{margin-bottom:10px}
-  .seo-hub-group-head h3{font-size:16px}
-  .seo-hub-group-head a{font-size:10px}
-  .seo-hub-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
-  .seo-hub-card{min-width:0;padding:10px}
-  .seo-hub-card span{font-size:12px;line-height:1.2;overflow-wrap:anywhere}
-  .seo-hub-card small{font-size:9px;line-height:1.25}
-}
-</style>
-<section class="seo-hub" aria-labelledby="seo-hub-title">
+hub = f'''<section class="seo-hub" aria-labelledby="seo-hub-title">
   <div class="seo-hub-head">
     <div>
       <h2 id="seo-hub-title">Pokerturniere in der Schweiz nach Ort &amp; Veranstalter</h2>
@@ -109,11 +94,31 @@ hub = f'''<style id="seo-hub-mobile-fix">
   </div>
 </section>'''
 
+mobile_css = """<style id="seo-hub-mobile-fix">
+@media(max-width:720px){
+  .seo-hub{max-width:none;margin:24px 10px 45px;padding:0}
+  .seo-hub-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .seo-hub-group{min-width:0;padding:14px;border-radius:12px}
+  .seo-hub-group-wide{grid-column:auto}
+  .seo-hub-group-head{margin-bottom:10px}
+  .seo-hub-group-head h3{font-size:16px;line-height:1.2}
+  .seo-hub-group-head a{font-size:10px}
+  .seo-hub-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;min-width:0}
+  .seo-hub-card{min-width:0;padding:10px;overflow:hidden}
+  .seo-hub-card span{font-size:12px;line-height:1.2;overflow-wrap:anywhere;word-break:break-word}
+  .seo-hub-card small{font-size:9px;line-height:1.25}
+}
+</style>"""
 text = INDEX.read_text(encoding="utf-8")
+
 start = "<!-- SEO_HUB_START -->"
 end = "<!-- SEO_HUB_END -->"
 if start not in text or end not in text:
     raise SystemExit("SEO hub markers missing in index.html")
+head_end = text.find("</head>")
+if head_end == -1:
+    raise SystemExit("index.html head end missing")
+text = text[:head_end] + mobile_css + "\n" + text[head_end:]
 before = text.split(start,1)[0]
 after = text.split(end,1)[1]
 text = before + start + "\n" + hub + "\n" + end + after
