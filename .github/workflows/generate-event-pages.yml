@@ -1010,17 +1010,12 @@ jobs:
               sitemap_urls.add(url)
               generated += 1
 
-          python3 scripts/generate-landing-pages.py
-          if [ -f .generated-landing-urls.txt ]; then
-            while IFS= read -r landing_url; do
-              [ -n "$landing_url" ] && echo "$landing_url" >> .generated-landing-urls-for-sitemap.txt
-            done < .generated-landing-urls.txt
-          fi
-          if [ -f .generated-landing-urls-for-sitemap.txt ]; then
-            while IFS= read -r landing_url; do
-              [ -n "$landing_url" ] && echo "$landing_url" >> .generated-landing-urls-for-sitemap.txt
-            done < /dev/null
-          fi
+          exec((ROOT / "scripts" / "generate-landing-pages.py").read_text(encoding="utf-8"), globals())
+          landing_url_file = ROOT / ".generated-landing-urls.txt"
+          if landing_url_file.exists():
+              for landing_url in landing_url_file.read_text(encoding="utf-8").splitlines():
+                  if landing_url.strip():
+                      sitemap_urls.add(landing_url.strip())
 
           sitemap_lines = [
               '<?xml version="1.0" encoding="UTF-8"?>',
