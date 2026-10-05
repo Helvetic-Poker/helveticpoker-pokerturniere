@@ -61,6 +61,27 @@ for e in upcoming:
         cantons[name] = cantons.get(name, 0) + 1
 cantons = sorted(cantons.items(), key=lambda x: (-x[1], x[0].lower()))
 
+category_counts = {
+    'pokerturniere-bis-50-chf': sum(
+        1 for e in upcoming
+        if bool(e.get('is_freeroll'))
+        or (isinstance(e.get('buy_in'), (int, float)) and e.get('buy_in') <= 50)
+    ),
+    'pokerturniere-bis-100-chf': sum(
+        1 for e in upcoming
+        if bool(e.get('is_freeroll'))
+        or (isinstance(e.get('buy_in'), (int, float)) and e.get('buy_in') <= 100)
+    ),
+    'freeroll-pokerturniere': sum(1 for e in upcoming if bool(e.get('is_freeroll'))),
+    'nlh-pokerturniere': sum(1 for e in upcoming if (e.get('variant') or '').strip().upper() == 'NLH'),
+    'plo-pokerturniere': sum(1 for e in upcoming if (e.get('variant') or '').strip().upper() in {'PLO', 'PLO8'}),
+}
+
+def category_card(slug, label, note):
+    if category_counts.get(slug, 0) < 2:
+        return ''
+    return f'<a class="seo-hub-card" href="/{slug}/"><span>{esc(label)}</span><small>{esc(note)}</small></a>'
+
 def cards(kind, items, limit=None):
     items = [(name, count) for name, count in items if count >= 2]
     if limit:
@@ -79,7 +100,7 @@ hub = f'''<section class="seo-hub" aria-labelledby="seo-hub-title">
     </div>
   </div>
   <div class="seo-hub-grid">\n    <div class="seo-hub-group seo-hub-group-wide">\n      <div class="seo-hub-group-head"><h3>Direkt zu den aktuellen Terminen</h3></div>\n      <div class="seo-hub-cards">\n        <a class="seo-hub-card" href="/pokerturniere-heute/"><span>Heute</span><small>Turniere heute</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-morgen/"><span>Morgen</span><small>Turniere morgen</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-diese-woche/"><span>Diese Woche</span><small>Laufende Woche</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-wochenende/"><span>Wochenende</span><small>Samstag &amp; Sonntag</small></a>\n      </div>\n    </div>
-    <div class="seo-hub-group seo-hub-group-wide">\n      <div class="seo-hub-group-head"><h3>Nach Buy-in &amp; Spielart</h3></div>\n      <div class="seo-hub-cards">\n        <a class="seo-hub-card" href="/pokerturniere-bis-50-chf/"><span>Bis CHF 50</span><small>Kleine Buy-ins</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-bis-100-chf/"><span>Bis CHF 100</span><small>Buy-in bis CHF 100</small></a>\n        <a class="seo-hub-card" href="/freeroll-pokerturniere/"><span>Freerolls</span><small>Kostenlose Turniere</small></a>\n        <a class="seo-hub-card" href="/nlh-pokerturniere/"><span>NLH</span><small>No-Limit Holdem</small></a>\n        <a class="seo-hub-card" href="/plo-pokerturniere/"><span>PLO</span><small>Pot-Limit Omaha</small></a>\n      </div>\n    </div>\n    <div class="seo-hub-group">
+    <div class="seo-hub-group seo-hub-group-wide">\n      <div class="seo-hub-group-head"><h3>Nach Buy-in &amp; Spielart</h3></div>\n      <div class="seo-hub-cards">\n        {category_card('pokerturniere-bis-50-chf', 'Bis CHF 50', 'Kleine Buy-ins')}\n        {category_card('pokerturniere-bis-100-chf', 'Bis CHF 100', 'Buy-in bis CHF 100')}\n        {category_card('freeroll-pokerturniere', 'Freerolls', 'Kostenlose Turniere')}\n        {category_card('nlh-pokerturniere', 'NLH', 'No-Limit Holdem')}\n        {category_card('plo-pokerturniere', 'PLO', 'Pot-Limit Omaha')}\n      </div>\n    </div>\n    <div class="seo-hub-group">
       <div class="seo-hub-group-head"><h3>Beliebte Städte</h3><a href="/stadt/">Alle Städte →</a></div>
       <div class="seo-hub-cards">{cards("stadt", cities, 12)}</div>
     </div>
