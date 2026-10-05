@@ -55,8 +55,18 @@ def upcoming_count_by(field):
 
 landing_city_counts = upcoming_count_by('city')
 landing_organizer_counts = upcoming_count_by('organizer')
+landing_canton_counts = {}
+for event in events:
+    if (event.get('date_start') or '') < today:
+        continue
+    canton_code = str(event.get('canton') or '').strip().upper()
+    canton_name = CANTON_NAMES.get(canton_code) or str(event.get('region') or '').strip()
+    if canton_name:
+        landing_canton_counts[canton_name] = landing_canton_counts.get(canton_name, 0) + 1
+
 landing_cities = {name for name, count in landing_city_counts.items() if count >= 2}
 landing_organizers = {name for name, count in landing_organizer_counts.items() if count >= 2}
+landing_cantons = {name for name, count in landing_canton_counts.items() if count >= 2}
 
 def sort_event(e):
     return (e.get('date_start') or '9999-99-99', e.get('time') or '99:99', e.get('title') or '')
@@ -321,9 +331,17 @@ def write_page(kind, name, items):
         for city, _ in top_cities:
             if city in landing_cities:
                 related_html += f'<a class="related-chip" href="/stadt/{slugify(city)}/">Stadt: {esc(city)} →</a>'
-    if kind == 'stadt' and canton_name:
-        if canton_name in landing_cantons:
-            related_html += f'<a class="related-chip" href="/kanton/{slugify(canton_name)}/">Kanton: {esc(canton_name)} →</a>'
+    if kind == 'stadt':
+        page_cantons = sorted({
+            CANTON_NAMES.get(str(event.get('canton') or '').strip().upper())
+            or str(event.get('region') or '').strip()
+            for event in upcoming
+            if CANTON_NAMES.get(str(event.get('canton') or '').strip().upper())
+            or str(event.get('region') or '').strip()
+        })
+        for canton_name in page_cantons:
+            if canton_name in landing_cantons:
+                related_html += f'<a class="related-chip" href="/kanton/{slugify(canton_name)}/">Kanton: {esc(canton_name)} →</a>'
     for variant, _ in top_variants:
         variant_key = variant.upper()
         if variant_key == 'NLH':
@@ -331,9 +349,9 @@ def write_page(kind, name, items):
         elif variant_key in {'PLO', 'PLO8'}:
             related_html += '<a class="related-chip" href="/plo-pokerturniere/">PLO Pokerturniere →</a>'
     if buy_in_values:
-        if min(buy_in_values) <= 50:
+        if any(value <= 50 for value in buy_in_values):
             related_html += '<a class="related-chip" href="/pokerturniere-bis-50-chf/">Pokerturniere bis CHF 50 →</a>'
-        elif min(buy_in_values) <= 100:
+        if any(value <= 100 for value in buy_in_values):
             related_html += '<a class="related-chip" href="/pokerturniere-bis-100-chf/">Pokerturniere bis CHF 100 →</a>'
 
     collection_json = {
