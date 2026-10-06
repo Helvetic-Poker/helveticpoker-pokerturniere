@@ -173,7 +173,9 @@ jobs:
                       events.append(data)
 
           generated = 0
+          build_date = datetime.now(ZoneInfo("Europe/Zurich")).date().isoformat()
           sitemap_urls = {f"{BASE_URL}/"}
+          sitemap_lastmod = {f"{BASE_URL}/": build_date}
 
           for event in events:
               slug = event_slug(event)
@@ -1184,6 +1186,7 @@ jobs:
               )
 
               sitemap_urls.add(url)
+              sitemap_lastmod[url] = str(event.get("last_checked") or build_date)
               generated += 1
 
           exec((ROOT / "scripts" / "generate-landing-pages.py").read_text(encoding="utf-8"), globals())
@@ -1192,26 +1195,34 @@ jobs:
           exec((ROOT / "scripts" / "generate-category-pages.py").read_text(encoding="utf-8"), globals())
           # The overview hubs are canonical crawl entry points too.
           for landing_kind in ("stadt", "kanton", "veranstalter"):
-              sitemap_urls.add(f"{BASE_URL}/{landing_kind}/")
+              landing_index_url = f"{BASE_URL}/{landing_kind}/"
+              sitemap_urls.add(landing_index_url)
+              sitemap_lastmod.setdefault(landing_index_url, build_date)
           sitemap_urls.add(f"{BASE_URL}/pokerturniere-schweiz/")
 
           landing_url_file = ROOT / ".generated-landing-urls.txt"
           if landing_url_file.exists():
               for landing_url in landing_url_file.read_text(encoding="utf-8").splitlines():
                   if landing_url.strip():
-                      sitemap_urls.add(landing_url.strip())
+                      landing_url = landing_url.strip()
+                      sitemap_urls.add(landing_url)
+                      sitemap_lastmod.setdefault(landing_url, build_date)
 
           time_url_file = ROOT / ".generated-time-urls.txt"
           if time_url_file.exists():
               for time_url in time_url_file.read_text(encoding="utf-8").splitlines():
                   if time_url.strip():
-                      sitemap_urls.add(time_url.strip())
+                      time_url = time_url.strip()
+                      sitemap_urls.add(time_url)
+                      sitemap_lastmod.setdefault(time_url, build_date)
 
           category_url_file = ROOT / ".generated-category-urls.txt"
           if category_url_file.exists():
               for category_url in category_url_file.read_text(encoding="utf-8").splitlines():
                   if category_url.strip():
-                      sitemap_urls.add(category_url.strip())
+                      category_url = category_url.strip()
+                      sitemap_urls.add(category_url)
+                      sitemap_lastmod.setdefault(category_url, build_date)
 
           # Build one standards-compliant sitemap.
           # The site currently has far fewer than the 50,000-URL sitemap limit,
@@ -1225,7 +1236,11 @@ jobs:
                   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
               ]
               for sitemap_url in urls:
-                  lines.append(f"  <url><loc>{html.escape(sitemap_url)}</loc></url>")
+                  lastmod = sitemap_lastmod.get(sitemap_url)
+                  lines.append(
+                      f"  <url><loc>{html.escape(sitemap_url)}</loc>"
+                      f"{f'<lastmod>{html.escape(lastmod)}</lastmod>' if lastmod else ''}</url>"
+                  )
               lines.append("</urlset>")
               (ROOT / path).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
