@@ -109,6 +109,7 @@ header{height:64px}
 .foot{display:block}
 .foot span{display:block;margin-bottom:5px}
 }
+.seo-intro{max-width:1100px;margin:0 auto 42px;padding:0 4px}.seo-intro h2{font-size:24px;margin:0 0 8px}.seo-intro p{font-size:13px;line-height:1.65;color:var(--muted);margin:0 0 8px;max-width:900px}.seo-intro-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.seo-intro-links a{display:inline-block;padding:8px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;text-decoration:none;font-size:11px;font-weight:700;color:var(--ink)}.seo-intro-links a:hover{border-color:#ffc5cd;background:#fff5f6;color:var(--red)}
 </style>
 </head>
 <body>
@@ -120,6 +121,19 @@ header{height:64px}
 <section class="hero"><div class="heroIn"><h1>Pokerturniere Schweiz</h1><p>Der Schweizer Pokerkalender</p></div></section>
 <section class="panel"><div class="quick"><button class="active" data-mode="today">Heute</button><button data-mode="tomorrow">Morgen</button><button data-mode="weekend">Wochenende</button><button data-mode="all">Alle</button><select id="month"><option value="">Monat auswählen</option></select></div><div class="regions" id="regions"></div><div class="filters"><div class="field"><label>Buy-in</label><select id="buy"><option value="">Alle</option><option value="free">Freeroll</option><option value="50">bis CHF 50</option><option value="100">CHF 51–100</option><option value="200">CHF 101–200</option><option value="500">CHF 201–500</option><option value="1000">CHF 501–1000</option><option value="1001">über CHF 1000</option><option value="unknown">nicht angegeben</option></select></div><div class="field"><label>Variante</label><select id="variant"><option value="">Alle</option></select></div><div class="field"><label>Turnierart</label><select id="type"><option value="">Alle</option></select></div><div class="field"><label>Veranstalter</label><select id="org"><option value="">Alle</option></select></div><div class="field"><label>Suche</label><input id="q" placeholder="Turnier, Ort oder Veranstalter …"></div></div></section>
 <main class="content"><div class="head"><div><h2 id="heading">Heute in der Schweiz</h2><p id="sub">Datenstand 01.10.2026</p></div><div class="stats"><div class="stat"><strong id="count">0</strong><span>Turniere</span></div><div class="stat"><strong id="cities">0</strong><span>Städte</span></div><div class="stat"><strong id="orgs">0</strong><span>Veranstalter</span></div></div></div><div id="list"></div></main>
+<section class="seo-intro" aria-labelledby="seo-intro-title">
+  <h2 id="seo-intro-title">Pokerturniere Schweiz – aktueller Turnierkalender</h2>
+  <p>Hier findest du <strong>aktuelle Pokerturniere in der Schweiz</strong> mit Datum, Startzeit, Buy-in, Spielart, Ort und Veranstalter. Der Kalender bündelt veröffentlichte Live-Pokerturniere aus Schweizer Pokerclubs, Casinos und weiteren Veranstaltern.</p>
+  <p>Suche gezielt nach <strong>NLH Pokerturnieren</strong>, Buy-in, Region, Stadt oder Veranstalter und öffne die jeweilige Turnierseite für die Details und den direkten Veranstalter-Link.</p>
+  <nav class="seo-intro-links" aria-label="Pokerturniere Übersichten">
+    <a href="./pokerturniere-schweiz/">Pokerturniere Schweiz – Kalender &amp; Informationen</a>
+    <a href="./nlh-pokerturniere/">NLH Pokerturniere Schweiz</a>
+    <a href="./pokerturniere-wochenende/">Pokerturniere am Wochenende</a>
+    <a href="./stadt/">Pokerturniere nach Stadt</a>
+    <a href="./kanton/">Pokerturniere nach Kanton</a>
+    <a href="./veranstalter/">Pokerturniere nach Veranstalter</a>
+  </nav>
+</section>
 <!-- SEO_HUB_START -->\n<!-- SEO_HUB_END -->\n<footer><div class="foot"><span>© Helvetic Poker</span><span>Kalenderstand 01.10.2026 · laufende Aktualisierung vorgesehen</span></div></footer>
 <script>
 const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));let events=[],mode='today',region='',month='';
