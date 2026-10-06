@@ -209,3 +209,5 @@ after = text.split(end,1)[1]
 text = before + start + "\n" + hub + "\n" + end + after
 INDEX.write_text(text, encoding="utf-8")
 print(f"Homepage hub generated: {len(cities)} cities, {len(cantons)} cantons, {len(organizers)} organizers.")
+
+# Keep homepage navigation deployment current.
