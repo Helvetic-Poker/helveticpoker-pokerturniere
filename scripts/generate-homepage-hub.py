@@ -182,6 +182,10 @@ mobile_css = """<style id="seo-hub-mobile-fix">
   .seo-hub-group-head{margin-bottom:10px}
   .seo-hub-group-head h3{font-size:16px;line-height:1.2}
   .seo-hub-group-head a{font-size:10px}
+  .seo-event-grid{grid-template-columns:1fr;gap:7px}
+  .seo-event-card{grid-template-columns:78px minmax(0,1fr)}
+  .seo-event-date{grid-row:1 / span 2}
+  .seo-event-title,.seo-event-meta{grid-column:2}
   .seo-hub-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;min-width:0}
   .seo-hub-card{min-width:0;padding:10px;overflow:hidden}
   .seo-hub-card span{font-size:12px;line-height:1.2;overflow-wrap:anywhere;word-break:break-word}
