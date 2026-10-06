@@ -159,6 +159,8 @@ jobs:
           events = []
 
           for path in sorted(DATA_DIR.glob("*.json")):
+              if path.name.startswith("cashgames"):
+                  continue
               try:
                   data = json.loads(path.read_text(encoding="utf-8"))
               except Exception:
@@ -1189,6 +1191,7 @@ jobs:
               sitemap_lastmod[url] = str(event.get("last_checked") or build_date)
               generated += 1
 
+          exec((ROOT / "scripts" / "generate-cashgame-pages.py").read_text(encoding="utf-8"), globals())
           exec((ROOT / "scripts" / "generate-landing-pages.py").read_text(encoding="utf-8"), globals())
           exec((ROOT / "scripts" / "generate-homepage-hub.py").read_text(encoding="utf-8"), globals())
           exec((ROOT / "scripts" / "generate-time-pages.py").read_text(encoding="utf-8"), globals())
