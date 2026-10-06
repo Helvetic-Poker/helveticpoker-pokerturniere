@@ -254,12 +254,12 @@ def write_page(kind, name, items):
                     break
 
     if kind == 'stadt':
-        title = f'Pokerturniere in {name}'
-        desc = f'Kommende Pokerturniere in {name}: aktuelle Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte im Schweizer Pokerkalender.'
+        title = f'Pokerturniere {name} – aktuelle Termine'
+        desc = f'Pokerturniere {name}: aktuelle Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte im Schweizer Pokerkalender.'
         parent_name = 'Städte'
     elif kind == 'kanton':
-        title = f'Pokerturniere im Kanton {name}'
-        desc = f'Kommende Pokerturniere im Kanton {name}: aktuelle Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte im Schweizer Pokerkalender.'
+        title = f'Pokerturniere im Kanton {name} – aktuelle Termine'
+        desc = f'Pokerturniere im Kanton {name}: aktuelle Termine, Startzeiten, Buy-ins, Spielarten und Veranstaltungsorte im Schweizer Pokerkalender.'
         parent_name = 'Kantone'
     else:
         title = f'Pokerturniere von {name}'
@@ -295,8 +295,8 @@ def write_page(kind, name, items):
     )
 
     extra_title = {
-        'stadt': f'Pokerturniere & Spielorte in {name}',
-        'kanton': f'Pokerturniere & Städte im Kanton {name}',
+        'stadt': f'Pokerturniere in {name}: Spielorte & Termine',
+        'kanton': f'Pokerturniere im Kanton {name}: Städte & Termine',
         'veranstalter': f'{name}: Turniere & Spielorte'
     }[kind]
     extra_text = {
@@ -311,12 +311,12 @@ def write_page(kind, name, items):
         buy_in_summary = ""
 
     if kind == 'stadt':
-        detail_text = f'In {name} findest du aktuell {len(upcoming)} kommende Pokerturniere.'
+        detail_text = f'Pokerturniere {name}: aktuell sind {len(upcoming)} kommende Pokerturniere erfasst.'
         if top_variants:
             detail_text += f' Vertreten sind unter anderem {", ".join(v for v, _ in top_variants)}.'
         detail_text += buy_in_summary
     elif kind == 'kanton':
-        detail_text = f'Im Kanton {name} sind aktuell {len(upcoming)} kommende Pokerturniere erfasst.'
+        detail_text = f'Pokerturniere im Kanton {name}: aktuell sind {len(upcoming)} kommende Pokerturniere erfasst.'
         if top_cities:
             detail_text += f' Die nächsten Termine verteilen sich unter anderem auf {", ".join(city for city, _ in top_cities)}.'
         detail_text += buy_in_summary
