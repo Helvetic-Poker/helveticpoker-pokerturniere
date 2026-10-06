@@ -20,6 +20,8 @@ def event_slug(e):
 def load():
     out=[]
     for p in sorted(DATA_DIR.glob("*.json")):
+            if p.name.startswith("cashgames"):
+                continue
         try: data=json.loads(p.read_text(encoding="utf-8"))
         except Exception: continue
         if isinstance(data,list): out.extend(data)
