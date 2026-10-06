@@ -38,6 +38,18 @@ for path in sorted(DATA_DIR.glob("*.json")):
 today = datetime.now(ZoneInfo("Europe/Zurich")).strftime("%Y-%m-%d")
 upcoming = [e for e in events if (e.get("date_start") or "") >= today]
 
+def event_slug(e):
+    return e.get("slug") or slugify("-".join(
+        str(x) for x in [e.get("title"), e.get("city"), e.get("date_start"), e.get("id")] if x
+    ))
+
+def date_label(value):
+    try:
+        y, m, d = str(value or "").split("-")
+        return f"{d}.{m}.{y}"
+    except Exception:
+        return str(value or "")
+
 def grouped(field):
     groups = {}
     for e in upcoming:
@@ -86,11 +98,46 @@ def cards(kind, items, limit=None):
     items = [(name, count) for name, count in items if count >= 2]
     if limit:
         items = items[:limit]
+    def label(name):
+        if kind == "stadt":
+            return f"Pokerturniere in {name}"
+        if kind == "kanton":
+            return f"Pokerturniere im Kanton {name}"
+        return name
     return "".join(
         f'<a class="seo-hub-card" href="/{kind}/{esc(slugify(name))}/">'
-        f'<span>{esc(name)}</span><small>{count} kommende Turniere</small></a>'
+        f'<span>{esc(label(name))}</span><small>{count} kommende Turniere</small></a>'
         for name, count in items
     )
+
+upcoming_for_homepage = sorted(
+    upcoming,
+    key=lambda e: (e.get("date_start") or "9999-99-99", e.get("time") or "99:99", e.get("title") or "")
+)[:12]
+
+upcoming_html = "".join(
+    f'<a class="seo-event-card" href="/turniere/{esc(event_slug(e))}/">'
+    f'<span class="seo-event-date">{esc(date_label(e.get("date_start")))}</span>'
+    f'<span class="seo-event-title">{esc(e.get("title") or "Pokerturnier")}</span>'
+    f'<span class="seo-event-meta">{esc(e.get("city") or "")} · {esc(e.get("organizer") or "")}</span>'
+    f'</a>'
+    for e in upcoming_for_homepage
+)
+
+upcoming_json = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Kommende Pokerturniere Schweiz",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": e.get("title") or "Pokerturnier",
+            "url": f"https://pokerturniere.helveticpoker.ch/turniere/{event_slug(e)}/"
+        }
+        for i, e in enumerate(upcoming_for_homepage)
+    ]
+}
 
 hub = f'''<section class="seo-hub" aria-labelledby="seo-hub-title">
   <div class="seo-hub-head">
@@ -99,6 +146,17 @@ hub = f'''<section class="seo-hub" aria-labelledby="seo-hub-title">
       <p>Finde kommende Pokerturniere nach Stadt, Kanton oder Veranstalter. <a href="/pokerturniere-schweiz/">So funktioniert der Kalender →</a></p>
     </div>
   </div>
+  <div class="seo-event-section">
+    <div class="seo-hub-group-head">
+      <div>
+        <h3>Kommende Pokerturniere Schweiz</h3>
+        <p>Die nächsten Termine mit Stadt und Veranstalter.</p>
+      </div>
+      <a href="/">Alle Turniere →</a>
+    </div>
+    <div class="seo-event-grid">{upcoming_html}</div>
+  </div>
+  <script type="application/ld+json">{json.dumps(upcoming_json, ensure_ascii=False)}</script>
   <div class="seo-hub-grid">\n    <div class="seo-hub-group seo-hub-group-wide">\n      <div class="seo-hub-group-head"><h3>Direkt zu den aktuellen Terminen</h3></div>\n      <div class="seo-hub-cards">\n        <a class="seo-hub-card" href="/pokerturniere-heute/"><span>Heute</span><small>Turniere heute</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-morgen/"><span>Morgen</span><small>Turniere morgen</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-diese-woche/"><span>Diese Woche</span><small>Laufende Woche</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-wochenende/"><span>Wochenende</span><small>Samstag &amp; Sonntag</small></a>\n      </div>\n    </div>
     <div class="seo-hub-group seo-hub-group-wide">\n      <div class="seo-hub-group-head"><h3>Nach Buy-in &amp; Spielart</h3></div>\n      <div class="seo-hub-cards">\n        {category_card('pokerturniere-bis-50-chf', 'Bis CHF 50', 'Kleine Buy-ins')}\n        {category_card('pokerturniere-bis-100-chf', 'Bis CHF 100', 'Buy-in bis CHF 100')}\n        {category_card('freeroll-pokerturniere', 'Freerolls', 'Kostenlose Turniere')}\n        {category_card('nlh-pokerturniere', 'NLH', 'No-Limit Holdem')}\n        {category_card('plo-pokerturniere', 'PLO', 'Pot-Limit Omaha')}\n      </div>\n    </div>\n    <div class="seo-hub-group">
       <div class="seo-hub-group-head"><h3>Beliebte Städte</h3><a href="/stadt/">Alle Städte →</a></div>
