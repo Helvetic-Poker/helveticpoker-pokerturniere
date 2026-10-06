@@ -48,8 +48,15 @@ def label(e):
 
 def sort_key(e): return (e.get("date_start") or "9999-99-99",e.get("time") or "99:99",e.get("title") or "")
 
+def date_label(value):
+    try:
+        y, m, day = str(value or "").split("-")
+        return f"{day}.{m}.{y}"
+    except Exception:
+        return str(value or "")
+
 def row(e):
-    return f'''<article class="event"><a href="/turniere/{esc(event_slug(e))}/"><div class="date"><strong>{esc(e.get("date_start",""))}</strong><span>{esc(e.get("time","—"))} Uhr</span></div><div><h2>{esc(e.get("title") or "Pokerturnier")}</h2><p>{esc(e.get("city") or "")}{(" · " + esc(e.get("organizer") or "")) if e.get("organizer") else ""}</p><div class="tags"><span>{esc(e.get("variant") or "")}</span><span>{esc(label(e))}</span></div></div><b>Details →</b></a></article>'''
+    return f'''<article class="event"><a href="/turniere/{esc(event_slug(e))}/"><div class="date"><strong>{esc(date_label(e.get("date_start")))}</strong><span>{esc(e.get("time","—"))} Uhr</span></div><div><h2>{esc(e.get("title") or "Pokerturnier")}</h2><p>{esc(e.get("city") or "")}{(" · " + esc(e.get("organizer") or "")) if e.get("organizer") else ""}</p><div class="tags"><span>{esc(e.get("variant") or "")}</span><span>{esc(label(e))}</span></div></div><b>Details →</b></a></article>'''
 
 def write(slug,title,desc,items):
     items=sorted(items,key=sort_key)
