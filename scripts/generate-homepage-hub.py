@@ -26,6 +26,8 @@ def slugify(value):
 
 events = []
 for path in sorted(DATA_DIR.glob("*.json")):
+        if path.name.startswith("cashgames"):
+            continue
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except Exception:
