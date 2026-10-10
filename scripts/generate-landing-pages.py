@@ -236,10 +236,10 @@ def write_page(kind, name, items):
         key=sort_event
     )
 
-    # City pages are useful with even one upcoming event: keep known city URLs
-    # available and avoid 404s for cities with a real, current calendar entry.
-    # Canton and organizer pages remain limited to 2+ events to avoid thin pages.
-    minimum_events = 1 if kind == 'stadt' else 2
+    # Keep city URLs available even between tournament dates. A known city may
+    # temporarily have no upcoming events; publish a useful empty state instead of a 404.
+    # Canton and organizer pages remain limited to 2+ upcoming events.
+    minimum_events = 0 if kind == 'stadt' else 2
     if len(upcoming) < minimum_events:
         return None
 
@@ -285,6 +285,9 @@ def write_page(kind, name, items):
 </a>
 </section>'''
     rows = ''.join(row(e) for e in upcoming[:60])
+    if not upcoming and kind == 'stadt':
+        rows = ('<li class="empty-state"><strong>Aktuell sind keine kommenden Turniere in ' + esc(name) + ' erfasst.</strong>'
+                '<p>Neue Termine werden laufend ergänzt. Im <a href="/">Schweizer Pokerkalender</a> findest du weitere aktuelle Turniere.</p></li>')
 
     cities = sorted({str(e.get('city') or '').strip() for e in upcoming if str(e.get('city') or '').strip()})
     organizers = sorted({str(e.get('organizer') or '').strip() for e in upcoming if str(e.get('organizer') or '').strip()})
@@ -458,6 +461,7 @@ h1{margin:0;font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-1.5p
 h2{font-size:30px;line-height:1.15;margin:0}
 ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .event-card{border:1px solid #dedede;border-radius:15px;background:#fff;overflow:hidden;transition:box-shadow .15s,transform .15s}
+.empty-state{padding:22px;border:1px solid #dedede;border-radius:15px;background:#fafbfc;color:#555}.empty-state strong{display:block;color:#222}.empty-state p{margin:8px 0 0}.empty-state a{color:#c8102e;font-weight:700}
 .event-card:hover{box-shadow:0 8px 24px #00000012;transform:translateY(-1px)}
 .event-card>a{display:grid;grid-template-columns:92px minmax(230px,1.7fr) 130px 190px 155px 120px;align-items:center;gap:18px;padding:9px 14px;text-decoration:none}
 .date-box{height:64px;border-left:4px solid #c8102e;border-radius:9px;background:#fff0f2;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
