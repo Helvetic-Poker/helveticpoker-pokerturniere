@@ -14,6 +14,9 @@ events = []
 source_files = 0
 
 for path in sorted(DATA_DIR.glob("*.json")):
+    # Cashgame datasets use a different schema and are not tournament calendar events.
+    if "cashgame" in path.stem.casefold():
+        continue
     source_files += 1
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -75,7 +78,7 @@ for event in events:
             seen[key] = event["_quality_source"]
 
 print()
-print(f"Datenqualitätsbericht: {source_files} JSON-Dateien, {len(events)} Einträge geprüft")
+print(f"Datenqualitätsbericht: {source_files} Turnier-JSON-Dateien, {len(events)} Einträge geprüft")
 if issues:
     for name, count in sorted(issues.items()):
         print(f"- {name}: {count}")
