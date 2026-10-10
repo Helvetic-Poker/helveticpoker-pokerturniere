@@ -236,8 +236,11 @@ def write_page(kind, name, items):
         key=sort_event
     )
 
-    # Avoid thin doorway-style landing pages. Only publish useful collections.
-    if len(upcoming) < 2:
+    # City pages are useful with even one upcoming event: keep known city URLs
+    # available and avoid 404s for cities with a real, current calendar entry.
+    # Canton and organizer pages remain limited to 2+ events to avoid thin pages.
+    minimum_events = 1 if kind == 'stadt' else 2
+    if len(upcoming) < minimum_events:
         return None
 
     slug = slugify(name)
