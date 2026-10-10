@@ -124,6 +124,35 @@ upcoming_html = "".join(
     for e in upcoming_for_homepage
 )
 
+# Seven-day plan (including today), based on Swiss local date.
+from datetime import date, timedelta
+week_end = date.fromisoformat(today) + timedelta(days=6)
+weekly_events = []
+for event in upcoming:
+    try:
+        event_date = date.fromisoformat(str(event.get("date_start") or ""))
+    except ValueError:
+        continue
+    if date.fromisoformat(today) <= event_date <= week_end:
+        weekly_events.append(event)
+weekly_events.sort(key=lambda e: (e.get("date_start") or "9999-99-99", e.get("time") or "99:99", e.get("title") or ""))
+weekly_html = "".join(
+    f'<a class="seo-event-card" href="/turniere/{esc(event_slug(e))}/">'
+    f'<span class="seo-event-date">{esc(date_label(e.get("date_start")))}</span>'
+    f'<span class="seo-event-title">{esc(e.get("title") or "Pokerturnier")}</span>'
+    f'<span class="seo-event-meta">{esc(e.get("city") or "")} · {esc(e.get("organizer") or "")}</span>'
+    f'</a>'
+    for e in weekly_events[:20]
+)
+weekly_heading = f"Diese Woche: {len(weekly_events)} bestätigte Kalendereinträge"
+weekly_empty = '<p>Für die nächsten sieben Tage sind derzeit keine passenden Termine im Kalender erfasst. Bitte prüfe den Kalender später erneut.</p>'
+weekly_section = f'''<div class="seo-event-section seo-weekly-plan">
+    <div class="seo-hub-group-head">
+      <div><h3>Der Schweizer Poker-Wochenplan</h3><p>{esc(weekly_heading)} · {esc(date_label(today))} bis {esc(date_label(week_end.isoformat()))}</p></div>
+      <a href="/pokerturniere-diese-woche/">Alle Termine dieser Woche →</a>
+    </div>
+    <div class="seo-event-grid">{weekly_html if weekly_events else weekly_empty}</div>
+  </div>'''
 upcoming_json = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -156,6 +185,7 @@ hub = f'''<section class="seo-hub" aria-labelledby="seo-hub-title">
     </div>
     <div class="seo-event-grid">{upcoming_html}</div>
   </div>
+  {weekly_section}
   <script type="application/ld+json">{json.dumps(upcoming_json, ensure_ascii=False)}</script>
   <div class="seo-hub-grid">\n    <div class="seo-hub-group seo-hub-group-wide">\n      <div class="seo-hub-group-head"><h3>Direkt zu den aktuellen Terminen</h3></div>\n      <div class="seo-hub-cards">\n        <a class="seo-hub-card" href="/pokerturniere-heute/"><span>Heute</span><small>Turniere heute</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-morgen/"><span>Morgen</span><small>Turniere morgen</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-diese-woche/"><span>Diese Woche</span><small>Laufende Woche</small></a>\n        <a class="seo-hub-card" href="/pokerturniere-wochenende/"><span>Wochenende</span><small>Samstag &amp; Sonntag</small></a>\n      </div>\n    </div>
     <div class="seo-hub-group seo-hub-group-wide">\n      <div class="seo-hub-group-head"><h3>Nach Buy-in &amp; Spielart</h3></div>\n      <div class="seo-hub-cards">\n        {category_card('pokerturniere-bis-50-chf', 'Bis CHF 50', 'Kleine Buy-ins')}\n        {category_card('pokerturniere-bis-100-chf', 'Bis CHF 100', 'Buy-in bis CHF 100')}\n        {category_card('freeroll-pokerturniere', 'Freerolls', 'Kostenlose Turniere')}\n        {category_card('nlh-pokerturniere', 'NLH', 'No-Limit Holdem')}\n        {category_card('plo-pokerturniere', 'PLO', 'Pot-Limit Omaha')}\n      </div>\n    </div>\n    <div class="seo-hub-group">
