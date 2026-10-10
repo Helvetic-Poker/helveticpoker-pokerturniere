@@ -289,6 +289,30 @@ def write_page(kind, name, items):
         rows = ('<li class="empty-state"><strong>Aktuell sind keine kommenden Turniere in ' + esc(name) + ' erfasst.</strong>'
                 '<p>Neue Termine werden laufend ergänzt. Im <a href="/">Schweizer Pokerkalender</a> findest du weitere aktuelle Turniere.</p></li>')
 
+    nearby_html = ''
+    if kind == 'stadt' and not upcoming:
+        city_canton_codes = {
+            str(e.get('canton') or '').strip().upper()
+            for e in items
+            if str(e.get('canton') or '').strip()
+        }
+        nearby = sorted(
+            [
+                e for e in events
+                if (e.get('date_start') or '') >= today
+                and str(e.get('city') or '').strip().lower() != name.lower()
+                and str(e.get('canton') or '').strip().upper() in city_canton_codes
+            ],
+            key=sort_event
+        )
+        if nearby:
+            nearby_rows = ''.join(row(e) for e in nearby[:6])
+            nearby_html = f'''<section class="list nearby-list">
+<div class="list-head"><h2>Pokerturniere in der Nähe</h2></div>
+<p class="nearby-note">In {esc(name)} selbst sind aktuell keine kommenden Turniere erfasst. Diese Termine finden in anderen Orten derselben Region statt.</p>
+<ul>{nearby_rows}</ul>
+</section>'''
+
     cities = sorted({str(e.get('city') or '').strip() for e in upcoming if str(e.get('city') or '').strip()})
     organizers = sorted({str(e.get('organizer') or '').strip() for e in upcoming if str(e.get('organizer') or '').strip()})
     variants = sorted({str(e.get('variant') or '').strip() for e in upcoming if str(e.get('variant') or '').strip()})
@@ -462,6 +486,7 @@ h2{font-size:30px;line-height:1.15;margin:0}
 ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .event-card{border:1px solid #dedede;border-radius:15px;background:#fff;overflow:hidden;transition:box-shadow .15s,transform .15s}
 .empty-state{padding:22px;border:1px solid #dedede;border-radius:15px;background:#fafbfc;color:#555}.empty-state strong{display:block;color:#222}.empty-state p{margin:8px 0 0}.empty-state a{color:#c8102e;font-weight:700}
+.nearby-note{margin:0 0 14px;color:#626262;font-size:14px}
 .event-card:hover{box-shadow:0 8px 24px #00000012;transform:translateY(-1px)}
 .event-card>a{display:grid;grid-template-columns:92px minmax(230px,1.7fr) 130px 190px 155px 120px;align-items:center;gap:18px;padding:9px 14px;text-decoration:none}
 .date-box{height:64px;border-left:4px solid #c8102e;border-radius:9px;background:#fff0f2;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
@@ -543,6 +568,7 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 </section>
 {f'<section class="related"><h2>Weitere Übersichten</h2><div class="related-links">{related_html}</div></section>' if related_html else ''}
 {next_event_html}
+{nearby_html}
 <section class="list">
 <div class="list-head"><h2>{len(upcoming)} kommende Pokerturniere{(" in " + esc(name)) if kind == "stadt" else ""}</h2></div>
 <ul>{rows}</ul>
