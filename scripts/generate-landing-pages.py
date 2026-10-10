@@ -268,6 +268,19 @@ def write_page(kind, name, items):
         desc = f'Kommende Pokerturniere von {name}: aktuelle Termine, Startzeiten, Buy-ins und Spielarten im Schweizer Pokerkalender.'
         parent_name = 'Veranstalter'
 
+    # Highlight the next confirmed calendar entry on regional pages.
+    next_event = upcoming[0] if upcoming else None
+    next_event_html = ''
+    if next_event:
+        next_event_html = f'''<section class="next-event" aria-labelledby="next-event-title">
+<h2 id="next-event-title">Nächster Termin in {esc(name)}</h2>
+<a class="next-event-card" href="/turniere/{esc(event_slug(next_event))}/">
+<span class="next-event-date">{esc(format_date(next_event))}{(' · ' + esc(next_event.get('time'))) if next_event.get('time') else ''}</span>
+<strong>{esc(next_event.get('title') or 'Pokerturnier')}</strong>
+<span>{esc(next_event.get('city') or name)}{(' · ' + esc(next_event.get('organizer'))) if next_event.get('organizer') else ''}</span>
+<span class="next-event-link">Turnierdetails ansehen →</span>
+</a>
+</section>'''
     rows = ''.join(row(e) for e in upcoming[:60])
 
     cities = sorted({str(e.get('city') or '').strip() for e in upcoming if str(e.get('city') or '').strip()})
@@ -437,7 +450,7 @@ h1{margin:0;font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-1.5p
 .badges{display:flex;flex-wrap:wrap;gap:10px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#f3f3f6;border-radius:12px;padding:10px 15px;font-size:15px;font-weight:800}
 .badge.primary{background:#fae8eb;color:#b20f2b}
-.stats-grid{padding:0 28px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{padding:16px 18px;border:1px solid #dedede;border-radius:14px;background:#fafbfc}.stat strong{display:block;font-size:24px;line-height:1.1}.stat span{display:block;margin-top:5px;color:#777;font-size:12px}.context{padding:0 28px 28px}.context h2{font-size:24px;margin:0 0 7px}.context p{margin:0;color:#666;font-size:15px;max-width:900px}.related{padding:0 28px 30px}.related h2{font-size:22px;margin:0 0 12px}.related-links{display:flex;flex-wrap:wrap;gap:8px}.related-chip{display:inline-flex;padding:9px 12px;border:1px solid #dedede;border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;background:#fafbfc}.related-chip:hover{border-color:#f0aab5;color:#c8102e}.list{padding:0 28px 36px}
+.stats-grid{padding:0 28px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{padding:16px 18px;border:1px solid #dedede;border-radius:14px;background:#fafbfc}.stat strong{display:block;font-size:24px;line-height:1.1}.stat span{display:block;margin-top:5px;color:#777;font-size:12px}.context{padding:0 28px 28px}.context h2{font-size:24px;margin:0 0 7px}.context p{margin:0;color:#666;font-size:15px;max-width:900px}.related{padding:0 28px 30px}.related h2{font-size:22px;margin:0 0 12px}.related-links{display:flex;flex-wrap:wrap;gap:8px}.related-chip{display:inline-flex;padding:9px 12px;border:1px solid #dedede;border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;background:#fafbfc}.related-chip:hover{border-color:#f0aab5;color:#c8102e}.next-event{padding:0 28px 28px}.next-event h2{font-size:22px;margin:0 0 12px}.next-event-card{display:grid;gap:6px;padding:18px 20px;border:1px solid #f0c3cb;border-left:5px solid #c8102e;border-radius:14px;background:#fff8f9;text-decoration:none}.next-event-date{font-size:13px;font-weight:800;color:#a30c25}.next-event-card strong{font-size:20px}.next-event-card>span:not(.next-event-date):not(.next-event-link){color:#626262}.next-event-link{font-weight:800;color:#c8102e;margin-top:4px}.list{padding:0 28px 36px}
 .list-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:8px 0 16px}
 h2{font-size:30px;line-height:1.15;margin:0}
 ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
@@ -522,6 +535,7 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 <p>{esc(extra_text)} {esc(detail_text)}</p>
 </section>
 {f'<section class="related"><h2>Weitere Übersichten</h2><div class="related-links">{related_html}</div></section>' if related_html else ''}
+{next_event_html}
 <section class="list">
 <div class="list-head"><h2>{len(upcoming)} kommende Pokerturniere{(" in " + esc(name)) if kind == "stadt" else ""}</h2></div>
 <ul>{rows}</ul>
