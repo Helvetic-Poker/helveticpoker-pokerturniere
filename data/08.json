@@ -262,29 +262,5 @@
     "chips": null,
     "slug": "house-of-cards-lucky-wednesday-2026-12-16",
     "provider_logo": ""
-  },
-  {
-    "id": "poker-circle-swiss-masters-championship-week-2026-12-16",
-    "date_start": "2026-12-16",
-    "date_end": "2026-12-20",
-    "occurrence_date": "2026-12-16",
-    "time": "TBA",
-    "title": "Poker Circle Swiss Masters Championship Week",
-    "subtitle": "Mehrtagiges Festival",
-    "city": "Luzern",
-    "canton": "LU",
-    "region": "Luzern",
-    "organizer": "Grand Casino Luzern",
-    "venue": "Grand Casino Luzern",
-    "variant": "NLH",
-    "event_type": "Festival",
-    "buy_in": null,
-    "is_freeroll": false,
-    "buy_in_label": "Buy-in siehe Veranstalter",
-    "last_checked": "2026-10-26",
-    "organizer_url": "https://www.grandcasinoluzern.ch/",
-    "chips": null,
-    "slug": "poker-circle-swiss-masters-championship-week-2026-12-16",
-    "provider_logo": "https://www.mycasino.ch/cdn-cgi/image/width%3D1200%2Cquality%3D85%2Cblur%3D0%2Cformat%3Dwebp/https%3A/cdn.sanity.io/images/ol1w6ddr/paf-prod/1d98721e872518f1c246449a032c07752bc17613-520x520.png?q=100"
   }
 ]
