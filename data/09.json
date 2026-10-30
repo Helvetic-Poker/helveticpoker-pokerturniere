@@ -5136,13 +5136,13 @@
     "provider_logo": ""
   },
   {
-    "id": "hsop-8-zizers-spezial-event-2026-10-31",
+    "id": "hsop-rentry-turnier-2026-10-31",
     "date_start": "2026-10-31",
     "date_end": "2026-10-31",
     "occurrence_date": "2026-10-31",
     "time": "15:00",
-    "title": "8. Zizers Spezial Event",
-    "subtitle": "",
+    "title": "HSOP RENTRY TURNIER",
+    "subtitle": "8. Zizers Spezial Event (offizieller HSOP-Titel)",
     "city": "Zizers",
     "canton": "GR",
     "region": "Graubünden",
@@ -5156,9 +5156,9 @@
     "last_checked": "2026-10-30",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
-    "slug": "hsop-8-zizers-spezial-event-2026-10-31",
+    "slug": "hsop-rentry-turnier-2026-10-31",
     "provider_logo": "",
-    "source_note": "Buy-in.info calendar title: HSOP RENTRY TURNIER; official HSOP event title: 8. Zizers Spezial Event."
+    "source_note": "Buy-in.info main-calendar title: HSOP RENTRY TURNIER; official HSOP event title: 8. Zizers Spezial Event."
   },
   {
     "id": "24poker-24-300er-kingpin-freezeout-2026-10-31",
