@@ -5538,11 +5538,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 45",
-    "last_checked": "2026-10-24",
+    "last_checked": "2026-10-30",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-poker-club-bern-cpc-the-grand-freezeout-300-2026-11-01",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info recurring schedule also shows a Sunday-labelled CPC THE GRAND date one day earlier (31.10/14.11/28.11/12.12/26.12). The dated main calendar lists this event on the following actual Sunday; that date is followed and no duplicate Saturday entry is created."
   },
   {
     "id": "24poker-superstack-2026-11-01",
@@ -7011,11 +7012,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 45",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-10-30",
     "organizer_url": "https://www.munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-monatsfreezeout-ohne-ante-100k-10k-2026-11-07",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Current Buy-in.info organizer overview lists MONATSFREEZEOUT OHNE ANTE 100k+10k, CHF 300+45, at 19:00. A stale detail-page 'Weitere Turniere' table still lists GEBURI SPECIAL DACHMARDER 200 BOUNTY, CHF 100+30, for the same date; current organizer overview is followed."
   },
   {
     "id": "capital-special-grand-progressive-bounty-30k-2026-11-07",
@@ -8416,11 +8418,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 45",
-    "last_checked": "2026-10-24",
+    "last_checked": "2026-10-30",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-poker-club-bern-cpc-the-grand-freezeout-300-2026-11-15",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info recurring schedule also shows a Sunday-labelled CPC THE GRAND date one day earlier (31.10/14.11/28.11/12.12/26.12). The dated main calendar lists this event on the following actual Sunday; that date is followed and no duplicate Saturday entry is created."
   },
   {
     "id": "24poker-kristinas-super-stack-150k-2026-11-15",
@@ -11343,11 +11346,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 45",
-    "last_checked": "2026-10-24",
+    "last_checked": "2026-10-30",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-poker-club-bern-cpc-the-grand-freezeout-300-2026-11-29",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info recurring schedule also shows a Sunday-labelled CPC THE GRAND date one day earlier (31.10/14.11/28.11/12.12/26.12). The dated main calendar lists this event on the following actual Sunday; that date is followed and no duplicate Saturday entry is created."
   },
   {
     "id": "24poker-kristinas-super-stack-150k-2026-11-29",
@@ -12891,11 +12895,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 45",
-    "last_checked": "2026-10-24",
+    "last_checked": "2026-10-30",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-cpc-the-grand-freezeout-300-2026-12-13",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info recurring schedule also shows a Sunday-labelled CPC THE GRAND date one day earlier (31.10/14.11/28.11/12.12/26.12). The dated main calendar lists this event on the following actual Sunday; that date is followed and no duplicate Saturday entry is created."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-sundaychill-deepstack-2026-12-13",
@@ -13927,11 +13932,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 45",
-    "last_checked": "2026-10-01",
+    "last_checked": "2026-10-30",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-the-grand-2026-12-27",
-    "provider_logo": "https://static.wixstatic.com/media/b03116_fe1dc1d4d9d149869d5c1483bc900ae1~mv2.png/v1/fill/w_980,h_733,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Capital%20Poker%20Club.png"
+    "provider_logo": "https://static.wixstatic.com/media/b03116_fe1dc1d4d9d149869d5c1483bc900ae1~mv2.png/v1/fill/w_980,h_733,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Capital%20Poker%20Club.png",
+    "source_note": "Buy-in.info recurring schedule also shows a Sunday-labelled CPC THE GRAND date one day earlier (31.10/14.11/28.11/12.12/26.12). The dated main calendar lists this event on the following actual Sunday; that date is followed and no duplicate Saturday entry is created."
   },
   {
     "id": "house-of-cards-lucky-sunday-2026-12-27",
