@@ -5157,7 +5157,8 @@
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-8-zizers-spezial-event-2026-10-31",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info calendar title: HSOP RENTRY TURNIER; official HSOP event title: 8. Zizers Spezial Event."
   },
   {
     "id": "24poker-24-300er-kingpin-freezeout-2026-10-31",
@@ -6122,13 +6123,13 @@
     "provider_logo": ""
   },
   {
-    "id": "hsop-zizers-le-petit-re-entry-turnier-2026-11-03",
+    "id": "hsop-graubuenden-2026-11-03",
     "date_start": "2026-11-03",
     "date_end": "2026-11-03",
     "occurrence_date": "2026-11-03",
     "time": "19:00",
-    "title": "Le Petit Re-Entry Turnier",
-    "subtitle": "3 Re-Entries",
+    "title": "HSOP GRAUBÜNDEN",
+    "subtitle": "Le Petit Re-Entry Turnier (3 Re-Entries)",
     "city": "Zizers",
     "canton": "GR",
     "region": "Graubünden",
@@ -6142,8 +6143,9 @@
     "last_checked": "2026-10-30",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
-    "slug": "hsop-zizers-le-petit-re-entry-turnier-2026-11-03",
-    "provider_logo": ""
+    "slug": "hsop-graubuenden-2026-11-03",
+    "provider_logo": "",
+    "source_note": "Buy-in.info main-calendar title is HSOP GRAUBÜNDEN; the official HSOP calendar describes the format as Le Petit Re-Entry Turnier."
   },
   {
     "id": "another-poker-basel-hyper-turbo-satelitte-1-ticket-garantiert-2026-11-04",
