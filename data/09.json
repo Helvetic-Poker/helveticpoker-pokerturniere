@@ -3737,8 +3737,8 @@
     "buy_in": 95,
     "is_freeroll": false,
     "buy_in_label": "CHF 95 + 25",
-    "last_checked": "2026-10-29",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-graubuenden-2026-10-26",
     "provider_logo": ""
@@ -3857,8 +3857,8 @@
     "buy_in": 60,
     "is_freeroll": false,
     "buy_in_label": "CHF 60 + 20",
-    "last_checked": "2026-10-29",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://sports-zugerland.ch/sport/poker/",
     "chips": null,
     "slug": "sports-zugerland-swiss-poker-trophy-2026-10-26",
     "provider_logo": ""
@@ -4313,8 +4313,8 @@
     "buy_in": 75,
     "is_freeroll": false,
     "buy_in_label": "CHF 75 + 25",
-    "last_checked": "2026-10-24",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://www.station-poker-club.ch/",
     "chips": null,
     "slug": "station-poker-club-super-bomb-pot-edition-add-on-2026-10-28",
     "provider_logo": ""
@@ -4529,8 +4529,8 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-24",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-new-100er-thursday-100k-10k-bonus-2026-10-29",
     "provider_logo": ""
@@ -5226,7 +5226,7 @@
     "is_freeroll": false,
     "buy_in_label": "CHF 100",
     "last_checked": "2026-10-25",
-    "organizer_url": "https://www.pokerhelden.ch/turniere/-/Turnier/?id=6aa97adbfaa33ba136ed2f8a",
+    "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "72-offsuite-thun-turnier-2026-10-31",
     "provider_logo": ""
@@ -5369,8 +5369,8 @@
     "buy_in": 60,
     "is_freeroll": false,
     "buy_in_label": "CHF 60 + 30 + 40",
-    "last_checked": "2026-10-24",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://www.station-poker-club.ch/",
     "chips": null,
     "slug": "station-poker-club-red-or-black-progr-bounty-2026-10-31",
     "provider_logo": ""
@@ -5561,8 +5561,8 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-24",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://24-poker.ch/",
     "chips": null,
     "slug": "24poker-superstack-2026-11-01",
     "provider_logo": ""
@@ -5805,7 +5805,8 @@
     "organizer_url": "https://anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-hyper-turbo-satelitte-2-ticket-garantiert-2026-11-02",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info main calendar lists 1 guaranteed ticket; an indexed Buy-in.info event view lists 2. Ticket guarantee conflict unresolved; title follows the main calendar."
   },
   {
     "id": "capital-poker-club-bern-cpc-monsterstack-monday-65-20-2026-11-02",
@@ -5945,8 +5946,8 @@
     "buy_in": 60,
     "is_freeroll": false,
     "buy_in_label": "CHF 60 + 20",
-    "last_checked": "2026-10-29",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://sports-zugerland.ch/sport/poker/",
     "chips": null,
     "slug": "sports-zugerland-swiss-poker-trophy-2026-11-02",
     "provider_logo": ""
@@ -6093,7 +6094,8 @@
     "organizer_url": "https://www.foifdrue.ch/",
     "chips": null,
     "slug": "foif-dr-effretikon-foif-dr-200er-freezeout-2026-11-03",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info lists for 03.11.2026 a special 300er Freezeout (CHF 300+45); the club's general Tuesday programme lists 200+40. This 200er record is retained pending event-specific clarification."
   },
   {
     "id": "rpr-roger-s-pokerroom-dienstagturnier-mit-halbjahrespot-shot-clock-2026-11-03",
@@ -6402,8 +6404,8 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-new-100er-thursday-100k-10k-bonus-2026-11-05",
     "provider_logo": ""
@@ -7710,8 +7712,8 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-new-100er-thursday-100k-10k-bonus-2026-11-12",
     "provider_logo": ""
@@ -8993,8 +8995,8 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-new-100er-thursday-100k-10k-bonus-2026-11-19",
     "provider_logo": ""
@@ -9406,7 +9408,7 @@
     "is_freeroll": false,
     "buy_in_label": "CHF 80 + Mystery 50",
     "last_checked": "2026-10-25",
-    "organizer_url": "https://www.pokerhelden.ch/turniere/-/Bounty%20Turnier/?id=6aa97c17faa33ba136ed2faa",
+    "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "72-offsuite-thun-bounty-turnier-2026-11-21",
     "provider_logo": ""
@@ -10228,8 +10230,8 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
-    "organizer_url": "",
+    "last_checked": "2026-10-30",
+    "organizer_url": "https://munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-new-100er-thursday-100k-10k-bonus-2026-11-26",
     "provider_logo": ""
@@ -12479,7 +12481,7 @@
     "is_freeroll": false,
     "buy_in_label": "CHF 200",
     "last_checked": "2026-10-25",
-    "organizer_url": "https://www.pokerhelden.ch/turniere/-/%20Turnier%20200/?id=6aa97c8cfaa33ba136ed2fba",
+    "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "72-offsuite-thun-turnier-200-2026-12-12",
     "provider_logo": ""
