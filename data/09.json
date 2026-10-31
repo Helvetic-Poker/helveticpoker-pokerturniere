@@ -3322,7 +3322,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -3333,7 +3333,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-luzern-house-of-cards-lucky-sunday-2026-10-25",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "24poker-superstack-2026-10-25",
@@ -4210,7 +4211,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -4221,7 +4222,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-luzern-house-of-cards-lucky-wednesday-2026-10-28",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "az-poker-club-bern-monster-stack-100k-20-min-level-2026-10-28",
@@ -13771,7 +13773,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -13782,7 +13784,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-sunday-2026-12-20",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-sundaychill-deepstack-2026-12-20",
@@ -13963,7 +13966,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -13974,7 +13977,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-wednesday-2026-12-23",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "az-poker-club-bern-monster-stack-100k-20-min-level-2026-12-23",
@@ -14206,7 +14210,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -14217,7 +14221,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-sunday-2026-12-27",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-sundaychill-deepstack-2026-12-27",
@@ -14350,7 +14355,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -14361,7 +14366,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-wednesday-2026-12-30",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-freeroll-2026-12-31",

@@ -82,7 +82,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -93,7 +93,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-sunday-2026-10-18",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "az-dienstag-special-rebuy-monster-stack-2026-10-20",
@@ -154,7 +155,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -165,7 +166,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-wednesday-2026-10-21",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "az-az-win-the-button-monster-stack-2026-10-22",

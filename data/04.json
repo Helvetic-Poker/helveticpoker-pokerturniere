@@ -346,7 +346,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards",
     "variant": "NLH",
     "event_type": "Turnier",
@@ -357,6 +357,7 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-sunday-gisikon-2026-10-04-58",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   }
 ]

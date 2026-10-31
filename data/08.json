@@ -106,7 +106,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -117,7 +117,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-sunday-2026-11-29",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "house-of-cards-lucky-wednesday-2026-12-02",
@@ -130,7 +131,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -141,7 +142,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-wednesday-2026-12-02",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "az-az-sunday-freezout-30-000-max-pot-2026-12-06",
@@ -178,7 +180,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -189,7 +191,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-sunday-2026-12-06",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "house-of-cards-lucky-wednesday-2026-12-09",
@@ -202,7 +205,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -213,7 +216,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-wednesday-2026-12-09",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "house-of-cards-lucky-sunday-2026-12-13",
@@ -226,7 +230,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -237,7 +241,8 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-sunday-2026-12-13",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   },
   {
     "id": "house-of-cards-lucky-wednesday-2026-12-16",
@@ -250,7 +255,7 @@
     "city": "Gisikon",
     "canton": "LU",
     "region": "Luzern",
-    "organizer": "Belly Vibes",
+    "organizer": "House of Cards Luzern",
     "venue": "House of Cards Luzern",
     "variant": "NLH",
     "event_type": "Regular",
@@ -261,6 +266,7 @@
     "organizer_url": "https://bellyvibes.ch/house-of-cards/",
     "chips": null,
     "slug": "house-of-cards-lucky-wednesday-2026-12-16",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info organizer listing names this organizer House of Cards Luzern; internal label normalized from Belly Vibes."
   }
 ]
