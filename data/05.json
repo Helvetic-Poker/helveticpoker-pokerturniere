@@ -244,7 +244,7 @@
     "date_start": "2026-10-10",
     "date_end": "2026-10-10",
     "occurrence_date": "2026-10-10",
-    "time": "",
+    "time": "TBA",
     "title": "Swiss Poker Ladies Championship",
     "subtitle": "Mehrtagiges Festival",
     "city": "Dietlikon",
@@ -261,7 +261,8 @@
     "organizer_url": "https://www.prestige-poker.ch/",
     "chips": null,
     "slug": "swiss-poker-ladies-championship-2026-10-10",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "No reliable published start time was available in the reviewed source; TBA is used rather than inferring a time."
   },
   {
     "id": "capital-the-grand-2026-10-11",
