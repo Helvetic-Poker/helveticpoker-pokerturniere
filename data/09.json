@@ -7415,7 +7415,7 @@
     "date_start": "2026-11-09",
     "date_end": "2026-11-09",
     "occurrence_date": "2026-11-09",
-    "time": "19:30",
+    "time": "TBA",
     "title": "Pokemon",
     "subtitle": "",
     "city": "Burgdorf",
@@ -7428,12 +7428,13 @@
     "buy_in": 20,
     "is_freeroll": false,
     "buy_in_label": "CHF 20 + 10",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-pokemon-2026-11-09",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "sports-zugerland-swiss-poker-trophy-2026-11-09",
@@ -7701,7 +7702,7 @@
     "slug": "postli-poker-mittwuch-spez-2026-11-11",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-freeroll-2026-11-12",
@@ -7896,7 +7897,7 @@
     "slug": "postli-poker-donschti-gambler-2026-11-12",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "24poker-haidy-s-plo-warm-up-2-gtd-2026-11-13",
@@ -8144,7 +8145,7 @@
     "date_start": "2026-11-13",
     "date_end": "2026-11-13",
     "occurrence_date": "2026-11-13",
-    "time": "20:00",
+    "time": "TBA",
     "title": "Friti-Bounty",
     "subtitle": "",
     "city": "Burgdorf",
@@ -8157,12 +8158,13 @@
     "buy_in": 45,
     "is_freeroll": false,
     "buy_in_label": "CHF 45 + 30 + 15",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-friti-bounty-2026-11-13",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-time-challenge-2026-11-13",
@@ -8362,7 +8364,7 @@
     "date_start": "2026-11-14",
     "date_end": "2026-11-14",
     "occurrence_date": "2026-11-14",
-    "time": "19:30",
+    "time": "TBA",
     "title": "Saturday Deep Century",
     "subtitle": "",
     "city": "Burgdorf",
@@ -8375,12 +8377,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 20",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-saturday-deep-century-2026-11-14",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-time-challenge-2026-11-14",
@@ -8532,7 +8535,7 @@
     "date_start": "2026-11-15",
     "date_end": "2026-11-15",
     "occurrence_date": "2026-11-15",
-    "time": "15:00",
+    "time": "TBA",
     "title": "Omaha PL",
     "subtitle": "",
     "city": "Burgdorf",
@@ -8545,12 +8548,13 @@
     "buy_in": 30,
     "is_freeroll": false,
     "buy_in_label": "CHF 30 + 10",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-omaha-pl-2026-11-15",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-sundaychill-deepstack-2026-11-15",
@@ -8871,7 +8875,7 @@
     "date_start": "2026-11-16",
     "date_end": "2026-11-16",
     "occurrence_date": "2026-11-16",
-    "time": "19:30",
+    "time": "TBA",
     "title": "Pokemon",
     "subtitle": "",
     "city": "Burgdorf",
@@ -8884,12 +8888,13 @@
     "buy_in": 20,
     "is_freeroll": false,
     "buy_in_label": "CHF 20 + 10",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-pokemon-2026-11-16",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "sports-zugerland-swiss-poker-trophy-2026-11-16",
@@ -9329,7 +9334,7 @@
     "slug": "postli-poker-donschti-gambler-2026-11-19",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "24poker-haidy-s-plo-warm-up-2-gtd-2026-11-20",
@@ -9596,7 +9601,7 @@
     "slug": "postli-poker-progressiv-bounty-2026-11-20",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-time-challenge-2026-11-20",
@@ -9864,7 +9869,7 @@
     "slug": "postli-poker-team-challenge-2026-11-21",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-time-challenge-2026-11-21",
@@ -9992,7 +9997,7 @@
     "date_start": "2026-11-22",
     "date_end": "2026-11-22",
     "occurrence_date": "2026-11-22",
-    "time": "15:00",
+    "time": "TBA",
     "title": "Texas Time",
     "subtitle": "",
     "city": "Burgdorf",
@@ -10005,12 +10010,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 10",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-texas-time-2026-11-22",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-sundaychill-deepstack-2026-11-22",
@@ -10233,7 +10239,7 @@
     "date_start": "2026-11-23",
     "date_end": "2026-11-23",
     "occurrence_date": "2026-11-23",
-    "time": "19:30",
+    "time": "TBA",
     "title": "Pokemon",
     "subtitle": "",
     "city": "Burgdorf",
@@ -10246,12 +10252,13 @@
     "buy_in": 20,
     "is_freeroll": false,
     "buy_in_label": "CHF 20 + 10",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-pokemon-2026-11-23",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "sports-zugerland-swiss-poker-trophy-2026-11-23",
@@ -10495,7 +10502,7 @@
     "slug": "postli-poker-mittwuch-spez-2026-11-25",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "grand-casino-luzern-sat-for-autumn-special-2026-11-26",
@@ -10738,7 +10745,7 @@
     "slug": "postli-poker-donschti-gambler-2026-11-26",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "pokerhelden-satelitte-bopm-main-event-wilderswil-2026-11-26",
@@ -11058,7 +11065,7 @@
     "date_start": "2026-11-27",
     "date_end": "2026-11-27",
     "occurrence_date": "2026-11-27",
-    "time": "20:00",
+    "time": "TBA",
     "title": "Friti-Bounty",
     "subtitle": "",
     "city": "Burgdorf",
@@ -11071,12 +11078,13 @@
     "buy_in": 45,
     "is_freeroll": false,
     "buy_in_label": "CHF 45 + 30 + 15",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-friti-bounty-2026-11-27",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "grand-casino-luzern-freezeout-2026-11-27",
@@ -11372,7 +11380,7 @@
     "date_start": "2026-11-28",
     "date_end": "2026-11-28",
     "occurrence_date": "2026-11-28",
-    "time": "19:30",
+    "time": "TBA",
     "title": "Saturday Deep Century",
     "subtitle": "",
     "city": "Burgdorf",
@@ -11385,12 +11393,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 20",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-saturday-deep-century-2026-11-28",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-time-challenge-2026-11-28",
@@ -11615,7 +11624,7 @@
     "date_start": "2026-11-29",
     "date_end": "2026-11-29",
     "occurrence_date": "2026-11-29",
-    "time": "15:00",
+    "time": "TBA",
     "title": "Omaha Time",
     "subtitle": "",
     "city": "Burgdorf",
@@ -11628,12 +11637,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 10",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-omaha-time-2026-11-29",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-sundaychill-deepstack-2026-11-29",
@@ -11856,7 +11866,7 @@
     "date_start": "2026-11-30",
     "date_end": "2026-11-30",
     "occurrence_date": "2026-11-30",
-    "time": "19:30",
+    "time": "TBA",
     "title": "Pokemon",
     "subtitle": "",
     "city": "Burgdorf",
@@ -11869,12 +11879,13 @@
     "buy_in": 20,
     "is_freeroll": false,
     "buy_in_label": "CHF 20 + 10",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.poestli-stadel.ch/",
     "chips": null,
     "slug": "postli-poker-pokemon-2026-11-30",
     "provider_logo": "",
-    "_file": "data/09.json"
+    "_file": "data/09.json",
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "sports-zugerland-swiss-poker-trophy-2026-11-30",
@@ -12167,7 +12178,7 @@
     "slug": "postli-poker-donschti-gambler-2026-12-03",
     "provider_logo": "",
     "_file": "data/09.json",
-    "source_note": "Buy-in.info's dated 'Weitere Turniere' listing confirms the date, title and buy-in but does not specify a start time; TBA is used rather than copying a time from another event."
+    "source_note": "The current Buy-in.info Pöstli organizer overview is only accessible through 02.11.2026. This later date is not independently reverified in this run and remains pending source confirmation; start time is TBA because no current date-specific time source was accessible."
   },
   {
     "id": "24poker-haidy-s-plo-warm-up-2-gtd-2026-12-04",
