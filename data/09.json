@@ -9969,14 +9969,15 @@
     "venue": "Capital Poker Club Bern",
     "variant": "NLH",
     "event_type": "Regular",
-    "buy_in": 0,
-    "is_freeroll": true,
-    "buy_in_label": "Freeroll",
-    "last_checked": "2026-10-24",
+    "buy_in": 100,
+    "is_freeroll": false,
+    "buy_in_label": "CHF 100 + 30",
+    "last_checked": "2026-10-31",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-ranking-final-2026-11-22",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Current Buy-in.info Capital Poker Club organizer calendar lists Ranking Final on 22.11.2026 at 15:00 with CHF 100+30; corrected from the previous Freeroll label."
   },
   {
     "id": "postli-poker-texas-time-2026-11-22",
@@ -14474,5 +14475,30 @@
     "slug": "another-poker-basel-time-poker-tournament-pl-omaha-4-card-2026-11-04",
     "provider_logo": "",
     "source_note": "Explicitly listed in the current Buy-in.info Another Poker organizer filter on 04.11.2026 at 19:30; not present in the existing calendar data."
+  },
+  {
+    "id": "another-poker-basel-big-fish-80k-startstack-2026-11-07",
+    "date_start": "2026-11-07",
+    "date_end": "2026-11-07",
+    "occurrence_date": "2026-11-07",
+    "time": "20:00",
+    "title": "Big Fish (80K Startstack)",
+    "subtitle": "",
+    "city": "Basel",
+    "canton": "BS",
+    "region": "Basel",
+    "organizer": "Another Poker Basel",
+    "venue": "Another Poker Basel",
+    "variant": "NLH",
+    "event_type": "Regular",
+    "buy_in": 50,
+    "is_freeroll": false,
+    "buy_in_label": "CHF 50 + 20",
+    "last_checked": "2026-10-31",
+    "organizer_url": "https://anotherpoker.ch/",
+    "chips": null,
+    "slug": "another-poker-basel-big-fish-80k-startstack-2026-11-07",
+    "provider_logo": "",
+    "source_note": "Explicitly listed in the current Buy-in.info main calendar on 07.11.2026 at 20:00 for CHF 50+20; missing from the previous Helvetic Poker data."
   }
 ]
