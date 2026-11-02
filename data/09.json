@@ -6327,7 +6327,7 @@
     "date_end": "2026-11-05",
     "occurrence_date": "2026-11-05",
     "time": "19:00",
-    "title": "Big Thursday Poker - Beat the Pro Supermario",
+    "title": "Big Thursday Poker",
     "subtitle": "",
     "city": "Basel",
     "canton": "BS",
@@ -6343,7 +6343,8 @@
     "organizer_url": "https://anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-big-thursday-poker-2026-11-05",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info source conflict: the current main calendar lists 'Big Thursday Poker'; the current organizer filter appends 'Beat the Pro Supermario'. The main calendar is used for the canonical title; both current views are noted."
   },
   {
     "id": "prestige-poker-dietlikon-mystery-bounty-2026-11-05",
