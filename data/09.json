@@ -14683,7 +14683,7 @@
     "date_start": "2026-11-10",
     "date_end": "2026-11-10",
     "occurrence_date": "2026-11-10",
-    "time": "TBA",
+    "time": "18:30",
     "title": "Dienstagturnier mit Halbjahrespot SHOT-CLOCK",
     "subtitle": "",
     "city": "Düdingen",
@@ -14696,12 +14696,12 @@
     "buy_in": 70,
     "is_freeroll": false,
     "buy_in_label": "CHF 70 + 25 + 5",
-    "last_checked": "2026-10-31",
+    "last_checked": "2026-11-03",
     "organizer_url": "https://www.rpr.poker/",
     "chips": null,
     "slug": "rpr-rogers-pokerroom-dienstagturnier-mit-halbjahrespot-shot-clock-2026-11-10",
     "provider_logo": "",
-    "source_note": "Buy-in.info RPR organizer overview explicitly lists this date and CHF 70+25+5. The overview does not publish a start time for this date; TBA is used instead of copying 18:30 from another event."
+    "source_note": "Current Buy-in.info main calendar explicitly lists this event on 2026-11-10 at 18:30 (checked 2026-11-03)."
   },
   {
     "id": "rpr-rogers-pokerroom-dienstagturnier-mit-halbjahrespot-shot-clock-2026-11-17",
