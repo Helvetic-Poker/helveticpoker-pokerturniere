@@ -8228,12 +8228,13 @@
     "buy_in": 200,
     "is_freeroll": false,
     "buy_in_label": "CHF 200 + 40",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-05",
     "organizer_url": "https://www.foifdrue.ch/",
     "chips": null,
     "slug": "foif-drue-effretikon-foif-dru-spez-seniors-event-freezeout-2026-11-11",
     "provider_logo": "",
-    "_ord": 321
+    "_ord": 321,
+    "source_note": "The current Buy-in.info main calendar explicitly lists this FOIF Seniors Freezeout on 11.11.2026 at 18:30 with CHF 200+40. It is absent from the separately opened FOIF organizer filter; retained because the current main calendar is the controlling Buy-in.info view. Participation restriction (50+) is retained from the event title/description."
   },
   {
     "id": "az-poker-club-bern-monster-stack-100k-20-min-level-2026-11-11",
