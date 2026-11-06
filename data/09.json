@@ -7157,17 +7157,17 @@
     "region": "Zürich",
     "organizer": "Prestige Poker Dietlikon",
     "venue": "Prestige Poker Dietlikon",
-    "variant": "TBA",
-    "event_type": "TBA",
+    "variant": "NLH",
+    "event_type": "Turnier",
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 20",
-    "last_checked": "2026-11-02",
+    "last_checked": "2026-11-06",
     "organizer_url": "https://www.prestige-poker.ch/",
     "chips": null,
     "slug": "prestige-poker-dietlikon-friday-50er-21-30-2026-11-06",
     "provider_logo": "",
-    "source_note": "Buy-in.info current calendar explicitly lists 06.11.2026 at 21:30 with CHF 50+20. Variant and tournament type are not stated in the accessible listing; kept as TBA.",
+    "source_note": "Buy-in.info-Hauptkalender listet 06.11.2026 ausdrücklich um 21:30 Uhr für CHF 50+20. Die Buy-in.info-Detailseite zum identischen Turnierformat „Friday 50er - 21:30“ weist Hold'em NL Turnier aus; die datierte Turnierliste führt den 06.11. ausdrücklich auf.",
     "_ord": 615
   },
   {
@@ -7912,8 +7912,8 @@
     "date_end": "2026-11-09",
     "occurrence_date": "2026-11-09",
     "time": "19:00",
-    "title": "Re-Entry Turnier",
-    "subtitle": "2 Re-Entries",
+    "title": "HSOP GRAUBÜNDEN",
+    "subtitle": "Re-Entry Turnier · 2 Re-Entries",
     "city": "Zizers",
     "canton": "GR",
     "region": "Graubünden",
@@ -7924,12 +7924,13 @@
     "buy_in": 95,
     "is_freeroll": false,
     "buy_in_label": "CHF 95 + 25",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-06",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-zizers-re-entry-turnier-2026-11-09",
     "provider_logo": "",
-    "_ord": 310
+    "_ord": 310,
+    "source_note": "Buy-in.info-Hauptkalender listet den Termin am 09.11.2026 ausdrücklich unter dem Titel „HSOP GRAUBÜNDEN“; dieser aktuelle Kalendertitel hat Vorrang. Die datierte offizielle HSOP-Seite präzisiert das Format als Re-Entry (2 Mal), NLH, CHF 95 + 25 und Start 19:00 Uhr."
   },
   {
     "id": "foif-dru-effretikon-foif-dru-easy-monday-new-bounty-turnier-2026-11-09",
@@ -8168,8 +8169,8 @@
     "date_end": "2026-11-10",
     "occurrence_date": "2026-11-10",
     "time": "19:00",
-    "title": "Le Petit Re-Entry Turnier",
-    "subtitle": "3 Re-Entries",
+    "title": "HSOP GRAUBÜNDEN",
+    "subtitle": "Le Petit Re-Entry Turnier · 3 Re-Entries",
     "city": "Zizers",
     "canton": "GR",
     "region": "Graubünden",
@@ -8180,12 +8181,13 @@
     "buy_in": 75,
     "is_freeroll": false,
     "buy_in_label": "CHF 75 + 25",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-06",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-zizers-le-petit-re-entry-turnier-2026-11-10",
     "provider_logo": "",
-    "_ord": 320
+    "_ord": 320,
+    "source_note": "Buy-in.info-Hauptkalender listet den Termin am 10.11.2026 ausdrücklich unter dem Titel „HSOP GRAUBÜNDEN“; dieser aktuelle Kalendertitel hat Vorrang. Die datierte offizielle HSOP-Seite präzisiert das Format als Le Petit Re-Entry (3 Mal), NLH, CHF 75 + 25 und Start 19:00 Uhr."
   },
   {
     "id": "rpr-rogers-pokerroom-dienstagturnier-mit-halbjahrespot-shot-clock-2026-11-10",
@@ -8649,7 +8651,7 @@
     "date_end": "2026-11-13",
     "occurrence_date": "2026-11-13",
     "time": "19:00",
-    "title": "Freezeout Turnier",
+    "title": "HSOP FREEZEOUT TURNIER",
     "subtitle": "70'000 Chips inkl. Bonus",
     "city": "Zizers",
     "canton": "GR",
@@ -8661,12 +8663,13 @@
     "buy_in": 150,
     "is_freeroll": false,
     "buy_in_label": "CHF 150 + 30",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-06",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-zizers-freezeout-turnier-2026-11-13",
     "provider_logo": "",
-    "_ord": 338
+    "_ord": 338,
+    "source_note": "Buy-in.info-Hauptkalender führt am 13.11.2026 den Titel „HSOP FREEZEOUT TURNIER“. Die datierte offizielle HSOP-Seite bestätigt Hold’em No Limit, Freezeout, CHF 150 + 30 und Start 19:00 Uhr."
   },
   {
     "id": "another-poker-basel-friday-night-poker-xxl-2026-11-13",
@@ -15518,7 +15521,7 @@
     "city": "Dietlikon",
     "canton": "ZH",
     "region": "Zürich",
-    "variant": "TBA",
+    "variant": "NLH",
     "event_type": "Regular",
     "buy_in": 75,
     "buy_in_label": "CHF 75 + 25",
@@ -15527,7 +15530,7 @@
     "provider_logo": "",
     "last_checked": "2026-11-06",
     "_ord": 622,
-    "source_note": "Aktuelle Buy-in.info-Hauptkalenderansicht listet 11.11.2026 ausdrücklich 19:00 Uhr, CHF 75+25. Variante nicht ausgewiesen; TBA."
+    "source_note": "Buy-in.info-Hauptkalender listet 11.11.2026 ausdrücklich um 19:00 Uhr für CHF 75+25. Die Buy-in.info-Detailseite zum identischen „75er- Turnier“ weist Hold'em NL Turnier aus und führt den 11.11. ausdrücklich in der weiteren datierten Turnierliste."
   },
   {
     "id": "another-poker-basel-time-poker-turnier-pl-omaha-2026-11-11",
@@ -15648,8 +15651,8 @@
     "city": "Dietlikon",
     "canton": "ZH",
     "region": "Zürich",
-    "variant": "TBA",
-    "event_type": "TBA",
+    "variant": "NLH",
+    "event_type": "Turnier",
     "buy_in": 50,
     "buy_in_label": "CHF 50 + 20",
     "is_freeroll": false,
@@ -15657,7 +15660,7 @@
     "provider_logo": "",
     "last_checked": "2026-11-06",
     "_ord": 627,
-    "source_note": "Buy-in.info-Hauptkalender listet 13.11.2026 ausdrücklich 21:30 Uhr, CHF 50+20. Variante/Turnierart nicht ausgewiesen; TBA."
+    "source_note": "Buy-in.info-Hauptkalender listet 13.11.2026 ausdrücklich um 21:30 Uhr für CHF 50+20. Die Buy-in.info-Detailseite zum identischen Turnierformat „Friday 50er - 21:30“ weist Hold'em NL Turnier aus; die datierte Turnierliste führt den 13.11. ausdrücklich auf."
   },
   {
     "id": "prestige-poker-dietlikon-saturday-50er-neu-14-00-2026-11-14",
