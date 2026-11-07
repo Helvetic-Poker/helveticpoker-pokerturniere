@@ -116,3 +116,50 @@ Es wurde in den heute geprüften Quellen keine eindeutig bestätigte offizielle 
 - https://buy-in.info/tournaments/553 (Sports Zugerland)
 - https://buy-in.info/tournaments/540 (RPR/Roger's Pokerroom)
 - https://www.grandcasinoluzern.ch/spielen/poker-circle/poker-circle-swiss-masters
+
+
+## GitHub Actions, Pages-Artefakt und Live-Prüfung
+
+Der Datencommit ist `399c33de94356876eb34ea25f58e395fa5ca422a`. Der anschliessende Audit-Dokumentationscommit ist `8accdcf8f3151d24a63b311118996b0ab2b8d76f` und ändert keine Turnierdaten.
+
+- Qualitätsworkflow: Run 42353308608 – SUCCESS. Der Workflow-Log bestätigt: „9 Turnier-JSON-Dateien, 780 Einträge geprüft“.
+- Pages-Deployment: Run 42353308700 – SUCCESS; alle Schritte von Generierung, Artefakt-Upload und Deployment erfolgreich.
+- Pages-Artefakt: ID 13566796254, `github-pages.zip`, 1'653'707 Bytes; SHA-256 `d66b5cc5a5e62a4b2268b3034c71f24b85e396eea360698acacf8f9fdf1aa29e`.
+- ZIP-Test und Entpacken erfolgreich; enthaltenes `artifact.tar` wurde vollständig extrahiert.
+- Artefakt: 881 Dateien, 9 Turnier-JSON-Dateien, 780 Turnierdetailseiten, 19 Veranstalterseiten.
+- Alle neun JSON-Dateien im Artefakt stimmen per Git-Blob-SHA exakt mit den Dateien auf `main` beim Datencommit überein.
+- Alle 16 neu ergänzten Grand-Casino-Seiten sind vorhanden und in der `sitemap.xml`.
+- Die geänderten Detailseiten Another Poker 09.11., Airfield Bounty Hero 14.11. und Airfield Satellite BOPM 15.11. sind im Artefakt vorhanden; Datum, Startzeit, Veranstalter und Buy-in geprüft.
+
+### Veranstalterzähler im Artefakt
+
+| Veranstalterseite | Kommende Turniere |
+|---|---:|
+| 24Poker | 28 |
+| 72 Offsuite Thun | 2 |
+| Airfield Pokerclub Interlaken | 4 |
+| Another Poker Basel | 39 |
+| AZ Poker Club Bern | 25 |
+| Capital Poker Club Bern | 33 |
+| DC Poker Club | 20 |
+| FOIF DRÜ EFFRETIKON | 96 |
+| Grand Casino Luzern | 31 |
+| House of Cards Luzern | 16 |
+| HSOP Helvetic Series of Poker | 11 |
+| Munot Poker Schaffhausen | 13 |
+| Open Valais Poker (OVP) | 3 |
+| Pöstli Poker | 21 |
+| Pokerhelden / Airfield Poker Club | 17 |
+| Prestige Poker Dietlikon | 14 |
+| RPR/Roger's Pokerroom | 8 |
+| Sports Zugerland | 14 |
+| STATION Poker Club | 5 |
+
+### Live-Cache-Abweichungen
+
+- Die Live-Veranstalterseite Grand Casino Luzern zeigt 31 kommende Turniere und listet alle neu ergänzten Dezembertermine. Die direkt geöffneten Detailseiten Afterwork (10.12., 19:30, CHF 100+20) und PCSM Finale (20.12., 13:00, CHF 800+80) sind korrekt.
+- Die Live-Seite Another Poker Basel zeigt noch 46 statt 39 kommende Turniere und für den 09.11. weiterhin „Hyper Turbo Satelitte“ mit CHF 24+6 statt der im Artefakt enthaltenen, nach Hauptkalender/Veranstalterübersicht gewählten „Satellite 350 Master Freezeout“ mit CHF 30+10.
+- Die Live-Seite Airfield Pokerclub Interlaken zeigt noch 2 statt 4 kommende Turniere; Bounty Hero 14.11. und Satellite BOPM Main Event 15.11. sind dort noch nicht sichtbar.
+- Die Startseite zeigt noch „0 Turniere“ für heute und listet den 06.11. als nächsten Termin, obwohl der lokale Prüftag der 07.11. ist.
+
+Die Live-Abweichungen sind Cache-/Auslieferungsabweichungen gegenüber dem erfolgreich erzeugten und vollständig geprüften Artefakt. Das Artefakt selbst enthält die aktuellen Daten. Die Audit-Dokumentation wurde nach dem Deployment ergänzt; der Dokumentationscommit ändert den Website-Datenbestand nicht.
