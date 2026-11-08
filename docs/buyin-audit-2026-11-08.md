@@ -127,3 +127,8 @@ Die direkt verlinkte Grand-Casino-Luzern-Veranstalterseite zeigt noch 31 statt 4
 - HSOP, STATION Poker Club, Airfield Pokerclub Interlaken und Kartenfreunde Wynental: keine vollständige aktuelle Buy-in.info-Veranstalteransicht; nur einzelne Hauptkalenderzeilen bzw. ergänzende offizielle Quellen verfügbar.
 
 Es wurde keine vollständige Abdeckung bis 31.12.2026 bestätigt. Keine Termine wurden aus wöchentlichen Mustern hochgerechnet.
+
+
+### Zusätzlicher Capital-Quellenkonflikt
+
+Die Veranstalterseite Capital Poker Club Bern enthält im sekundären Abschnitt „Weitere Turniere“ einen CPC-THE-GRAND-Termin am 26.12.2026. Dieser Termin fehlt in der aktuellen bevorstehenden Veranstalterübersicht und im aktuellen Kalenderfilter, der den 27.12. als letzten sichtbaren Termin führt. Gemäss Quellenpriorität wurde der 26.12.-Eintrag nicht übernommen; er bleibt als ungeklärter Detailtabellen-Konflikt dokumentiert.
