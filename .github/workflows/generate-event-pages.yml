@@ -281,7 +281,7 @@ jobs:
               # Only emit a DateTime when the source provides a real HH:MM value.
               # For TBA/unknown times, schema.org accepts the verified date alone;
               # never create malformed values such as 2026-12-18TTBA:00.
-              if date_start and time and re.fullmatch(r"\\d{2}:\\d{2}", str(time)):
+              if date_start and time and re.fullmatch(r"\d{2}:\d{2}", str(time)):
                   try:
                       local_dt = datetime.strptime(
                           f"{date_start} {time}",
