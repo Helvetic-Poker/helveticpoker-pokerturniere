@@ -7799,13 +7799,13 @@
     "buy_in": 30,
     "is_freeroll": false,
     "buy_in_label": "CHF 30 + 10",
-    "last_checked": "2026-11-07",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-satellite-350-master-freezeout-2026-11-09",
     "provider_logo": "",
     "_ord": 307,
-    "source_note": "Quellenabgleich 07.11.2026: Die aktuelle Buy-in.info-Hauptkalenderansicht und der aktuelle Veranstalterfilter ?forganizer=226 führen übereinstimmend den Termin 09.11.2026, 18:40 Uhr als „Satellite 350 Master Freezeout“ mit CHF 30+10. Ein älterer Filter-Snapshot zeigte noch „Hyper Turbo Satelitte - 1 Ticket garantiert“ mit CHF 24+6; dieser veraltete Stand wird von den aktuellen Ansichten überholt. Variante nicht belegt, daher TBA."
+    "source_note": "Quellenkonflikt 09.11.2026: Die aktuelle Buy-in.info-Hauptkalenderansicht und der aktuelle Another-Poker-Veranstalterfilter https://buy-in.info/calendar?forganizer=226 führen übereinstimmend 09.11.2026, 18:40, „Satellite 350 Master Freezeout“, CHF 30+10. Eine Buy-in.info-Startseiten-/Suchansicht zeigte abweichend „Turbo Satellite Master Freezeout 350“ mit CHF 40+10. Die aktuelle Hauptkalender-/Veranstalteransicht hat Vorrang; 30+10 bleibt gespeichert. Variante nicht belegt, daher TBA."
   },
   {
     "id": "capital-poker-club-bern-cpc-monsterstack-monday-65-20-2026-11-09",
@@ -8872,13 +8872,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 50 + 30",
-    "last_checked": "2026-11-07",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-bounty-hero-wilderswil-2026-11-14",
     "provider_logo": "",
     "_ord": 348,
-    "source_note": "Quellenabgleich 07.11.2026: Die aktuelle Buy-in.info-Hauptkalenderansicht führt „Bounty Hero“ am 14.11.2026, 18:00 Uhr unter „Airfield Pokerclub Interlaken“ mit CHF 50+50+30. Der bisherige Datensatz verwendete „Pokerhelden / Airfield Poker Club“ und CHF 70+30+25. Buy-in.info ist die verbindliche Mindestquelle; deshalb Veranstalter und Buy-in entsprechend korrigiert."
+    "source_note": "Quellenkonflikt 09.11.2026: Die aktuelle Buy-in.info-Hauptkalenderansicht https://buy-in.info/calendar listet am 14.11.2026, 18:00, CHF 50+50+30. Die aktuelle Pokerhelden-/Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga nennt für denselben Termin CHF 70+30+25. Buy-in.info bleibt für den Mindestabgleich die maßgebliche Listing-Quelle; daher CHF 50+50+30 beibehalten und Abweichung dokumentiert."
   },
   {
     "id": "az-poker-club-bern-az-champioship-serie-4-2026-11-14",
@@ -10111,12 +10111,13 @@
     "buy_in": 90,
     "is_freeroll": false,
     "buy_in_label": "CHF 90 + 10 + 30",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-pokerseries-cup-wilderswil-2026-11-20",
     "provider_logo": "",
-    "_ord": 399
+    "_ord": 399,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "az-poker-club-bern-top-structure-2026-11-20",
@@ -10267,12 +10268,13 @@
     "buy_in": 75,
     "is_freeroll": false,
     "buy_in_label": "CHF 75 + 25",
-    "last_checked": "2026-10-06",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-heads-up-turnier-nur-fur-mitglieder-wilderswil-2026-11-21",
     "provider_logo": "",
-    "_ord": 406
+    "_ord": 406,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "72-offsuite-thun-bounty-turnier-2026-11-21",
@@ -11425,12 +11427,13 @@
     "buy_in": 20,
     "is_freeroll": false,
     "buy_in_label": "CHF 20 + 5",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-satelitte-bopm-main-event-wilderswil-2026-11-26",
     "provider_logo": "",
-    "_ord": 451
+    "_ord": 451,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "grand-casino-luzern-sat-autumn-special-2026-11-27",
@@ -11628,12 +11631,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-bopm-mainevent-flight-1a-wilderswil-2026-11-27",
     "provider_logo": "",
-    "_ord": 459
+    "_ord": 459,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "another-poker-basel-friday-night-poker-xxl-2026-11-27",
@@ -12012,12 +12016,13 @@
     "buy_in": 40,
     "is_freeroll": false,
     "buy_in_label": "CHF 40 + 35 + 25",
-    "last_checked": "2026-10-06",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-bopm-mystery-bounty-wilderswil-2026-11-28",
     "provider_logo": "",
-    "_ord": 474
+    "_ord": 474,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "munot-poker-schaffhausen-new-mega-deep-stack-30k-pot-2026-11-28",
@@ -12268,12 +12273,13 @@
     "buy_in": 60,
     "is_freeroll": false,
     "buy_in_label": "CHF 60 + 20",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-bopm-closer-wilderswil-2026-11-29",
     "provider_logo": "",
-    "_ord": 484
+    "_ord": 484,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "capital-poker-club-bern-cpc-the-grand-freezeout-300-2026-11-29",
@@ -13098,12 +13104,13 @@
     "buy_in": 90,
     "is_freeroll": false,
     "buy_in_label": "CHF 90 + 10 + 30",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-pokerseries-cup-wilderswil-2026-12-04",
     "provider_logo": "",
-    "_ord": 516
+    "_ord": 516,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-time-challenge-2026-12-04",
@@ -13149,12 +13156,13 @@
     "buy_in": 40,
     "is_freeroll": false,
     "buy_in_label": "CHF 40 + 10 + 10",
-    "last_checked": "2026-10-06",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-pokerhelden-liga-4-wilderswil-2026-12-05",
     "provider_logo": "",
-    "_ord": 518
+    "_ord": 518,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "az-poker-club-bern-az-champioship-serie-4-2026-12-05",
@@ -13278,12 +13286,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 20",
-    "last_checked": "2026-10-06",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-chlouse-trophy-wilderswil-2026-12-06",
     "provider_logo": "",
-    "_ord": 523
+    "_ord": 523,
+    "source_note": "Datums-/Quellenkonflikt 09.11.2026: Die ältere Buy-in.info-Detailtabelle „Weitere Turniere“ https://buy-in.info/tournament/112555 nennt Chlouse Trophy am 05.12.2026. Die aktuelle offizielle Pokerhelden-Turnierliste https://www.pokerraum.ch/turniere?titel=Chlouse+Trophy+%2F+Triplestack+Freezout sowie die aktuelle Pokerraum-Übersicht führen das Event am 06.12.2026 um 13:00 mit CHF 50+20. Mangels aktueller Airfield-Haupt-/Veranstalterübersicht bleibt der Konflikt offen; der aktuell offiziell bestätigte 06.12.-Termin ist gespeichert, der ältere Buy-in-Detailtabellen-Termin ist dokumentiert."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-freeroll-2026-12-06",
@@ -13719,12 +13728,13 @@
     "buy_in": 90,
     "is_freeroll": false,
     "buy_in_label": "CHF 90 + 10 + 30",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-pokerseries-cup-wilderswil-2026-12-11",
     "provider_logo": "",
-    "_ord": 540
+    "_ord": 540,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "az-poker-club-bern-top-structure-2026-12-11",
@@ -13849,12 +13859,13 @@
     "buy_in": 80,
     "is_freeroll": false,
     "buy_in_label": "CHF 80 + 20",
-    "last_checked": "2026-10-06",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-chrusi-s-packliturnier-wilderswil-2026-12-12",
     "provider_logo": "",
-    "_ord": 545
+    "_ord": 545,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "capital-poker-club-bern-cpc-big-monsterstack-freezeout-2026-12-12",
@@ -14390,12 +14401,13 @@
     "buy_in": 90,
     "is_freeroll": false,
     "buy_in_label": "CHF 90 + 10 + 30",
-    "last_checked": "2026-10-06",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-pokerseries-cup-wilderswil-2026-12-18",
     "provider_logo": "",
-    "_ord": 567
+    "_ord": 567,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-crazy-friday-2026-12-18",
@@ -14828,12 +14840,13 @@
     "buy_in": 0,
     "is_freeroll": true,
     "buy_in_label": "Freeroll",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-jahresranking-2026-finalturnier-2026-12-26",
     "provider_logo": "",
-    "_ord": 588
+    "_ord": 588,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-saturday-night-150k-2026-12-26",
@@ -15217,12 +15230,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 15",
-    "last_checked": "2026-10-06",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-roschel-s-painapel-wilderswil-2027-02-13",
     "provider_logo": "",
-    "_ord": 603
+    "_ord": 603,
+    "source_note": "Datierte Buy-in.info-Haupt-/Detailansicht listet den konkreten Termin; die Startzeit und/oder Buy-in-Aufteilung wird durch die aktuelle datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga corroboriert. Keine Uhrzeit aus einem anderen Termin übernommen. Für Airfield ist derzeit keine aktuelle separate Buy-in.info-Veranstalterübersicht erreichbar; Detailtabellen-Konflikte sind im Audit dokumentiert."
   },
   {
     "id": "station-poker-club-sunday-friends-biel-bienne-2026-11-08",
@@ -17537,5 +17551,109 @@
     "provider_logo": "",
     "source_note": "Offizielles Fivebet-Programm des Basler Poker Festival 03.–06.12.2026 listet „TAKE OFF Final Day“ am 2026-12-06 um 14:00. Ort: Metro, Grand Casino Basel. Für den Final-Day-Stage ist kein separater Buy-in angegeben; buy_in_label bleibt TBA statt den Entry-Buy-in der Flight-Tage zu übernehmen.",
     "_ord": 705
+  },
+  {
+    "id": "az-poker-club-bern-top-structure-2026-12-18",
+    "date_start": "2026-12-18",
+    "date_end": "2026-12-18",
+    "occurrence_date": "2026-12-18",
+    "time": "TBA",
+    "title": "Top Structure 2026",
+    "subtitle": "",
+    "city": "Bern",
+    "canton": "BE",
+    "region": "Bern",
+    "organizer": "AZ Poker Club Bern",
+    "venue": "AZ Poker Club Bern",
+    "variant": "TBA",
+    "event_type": "TBA",
+    "buy_in": 300,
+    "is_freeroll": false,
+    "buy_in_label": "CHF 300 + 40",
+    "last_checked": "2026-11-09",
+    "organizer_url": "https://azpoker.club/tournament/",
+    "chips": null,
+    "slug": "az-poker-club-bern-top-structure-2026-12-18",
+    "provider_logo": "",
+    "source_note": "Aktuelle Buy-in.info-Veranstalterübersicht AZ Poker Club Bern https://buy-in.info/tournaments/564, geprüft 09.11.2026, listet diesen konkreten Termin am 18.12.2026 mit Titel und CHF 300+40. Die Übersicht nennt keine Startzeit und keine Variante/Turnierart; daher TBA. Datum nicht aus einem Wochenmuster abgeleitet.",
+    "_ord": 706
+  },
+  {
+    "id": "az-poker-club-bern-monster-stack-100k-20-min-level-2026-12-23",
+    "date_start": "2026-12-23",
+    "date_end": "2026-12-23",
+    "occurrence_date": "2026-12-23",
+    "time": "TBA",
+    "title": "Monster Stack 100K, 20 min Level",
+    "subtitle": "",
+    "city": "Bern",
+    "canton": "BE",
+    "region": "Bern",
+    "organizer": "AZ Poker Club Bern",
+    "venue": "AZ Poker Club Bern",
+    "variant": "TBA",
+    "event_type": "TBA",
+    "buy_in": 70,
+    "is_freeroll": false,
+    "buy_in_label": "CHF 70 + 20",
+    "last_checked": "2026-11-09",
+    "organizer_url": "https://azpoker.club/tournament/",
+    "chips": null,
+    "slug": "az-poker-club-bern-monster-stack-100k-20-min-level-2026-12-23",
+    "provider_logo": "",
+    "source_note": "Aktuelle Buy-in.info-Veranstalterübersicht AZ Poker Club Bern https://buy-in.info/tournaments/564, geprüft 09.11.2026, listet diesen konkreten Termin am 23.12.2026 mit Titel und CHF 70+20. Die Übersicht nennt keine Startzeit und keine Variante/Turnierart; daher TBA. Datum nicht aus einem Wochenmuster abgeleitet.",
+    "_ord": 707
+  },
+  {
+    "id": "az-poker-club-bern-top-structure-2026-12-25",
+    "date_start": "2026-12-25",
+    "date_end": "2026-12-25",
+    "occurrence_date": "2026-12-25",
+    "time": "TBA",
+    "title": "Top Structure 2026",
+    "subtitle": "",
+    "city": "Bern",
+    "canton": "BE",
+    "region": "Bern",
+    "organizer": "AZ Poker Club Bern",
+    "venue": "AZ Poker Club Bern",
+    "variant": "TBA",
+    "event_type": "TBA",
+    "buy_in": 300,
+    "is_freeroll": false,
+    "buy_in_label": "CHF 300 + 40",
+    "last_checked": "2026-11-09",
+    "organizer_url": "https://azpoker.club/tournament/",
+    "chips": null,
+    "slug": "az-poker-club-bern-top-structure-2026-12-25",
+    "provider_logo": "",
+    "source_note": "Aktuelle Buy-in.info-Veranstalterübersicht AZ Poker Club Bern https://buy-in.info/tournaments/564, geprüft 09.11.2026, listet diesen konkreten Feiertagstermin am 25.12.2026 mit Titel und CHF 300+40. Die Übersicht nennt keine Startzeit und keine Variante/Turnierart; daher TBA. Datum ausdrücklich gelistet, nicht aus einem Wochenmuster abgeleitet.",
+    "_ord": 708
+  },
+  {
+    "id": "az-poker-club-bern-az-sunday-freezout-30000-max-pot-2026-12-27",
+    "date_start": "2026-12-27",
+    "date_end": "2026-12-27",
+    "occurrence_date": "2026-12-27",
+    "time": "TBA",
+    "title": "AZ Sunday Freezout 30'000 max pot",
+    "subtitle": "",
+    "city": "Bern",
+    "canton": "BE",
+    "region": "Bern",
+    "organizer": "AZ Poker Club Bern",
+    "venue": "AZ Poker Club Bern",
+    "variant": "TBA",
+    "event_type": "Freezeout",
+    "buy_in": 300,
+    "is_freeroll": false,
+    "buy_in_label": "CHF 300 + 40",
+    "last_checked": "2026-11-09",
+    "organizer_url": "https://azpoker.club/tournament/",
+    "chips": null,
+    "slug": "az-poker-club-bern-az-sunday-freezout-30000-max-pot-2026-12-27",
+    "provider_logo": "",
+    "source_note": "Aktuelle Buy-in.info-Veranstalterübersicht AZ Poker Club Bern https://buy-in.info/tournaments/564, geprüft 09.11.2026, listet diesen konkreten Termin am 27.12.2026 mit Titel und CHF 300+40. Die Übersicht nennt keine Startzeit und keine Variante; Zeit und Variante daher TBA. Turnierart Freezeout ergibt sich ausdrücklich aus dem Titel.",
+    "_ord": 709
   }
 ]
