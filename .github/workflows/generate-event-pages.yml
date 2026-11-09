@@ -278,7 +278,10 @@ jobs:
               start_date_iso = date_start
               end_date_iso = date_end or date_start
 
-              if date_start and time:
+              # Only emit a DateTime when the source provides a real HH:MM value.
+              # For TBA/unknown times, schema.org accepts the verified date alone;
+              # never create malformed values such as 2026-12-18TTBA:00.
+              if date_start and time and re.fullmatch(r"\\d{2}:\\d{2}", str(time)):
                   try:
                       local_dt = datetime.strptime(
                           f"{date_start} {time}",
@@ -289,7 +292,7 @@ jobs:
 
                       start_date_iso = local_dt.isoformat()
                   except Exception:
-                      start_date_iso = f"{date_start}T{time}:00"
+                      start_date_iso = date_start
 
               if date_end and date_end != date_start:
                   # The source data contains an end date but no verified end time.
