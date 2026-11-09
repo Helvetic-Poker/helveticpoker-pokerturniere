@@ -17,11 +17,12 @@
     "buy_in": 60,
     "is_freeroll": false,
     "buy_in_label": "CHF 60 + 20",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-bopm-opener-2026-11-26",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info-Detailtabelle „Weitere Turniere“ führt den konkreten Termin mit Titel und Buy-in; die datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga bestätigt die konkrete Startzeit und Buy-in-Angabe. Keine Zeit aus einem anderen Wochentag übernommen. Eine aktuelle separate Buy-in.info-Airfield-Veranstalterübersicht war nicht erreichbar; die Detailtabellen-Blocker sind im Audit dokumentiert."
   },
   {
     "id": "pokerhelden-bopm-main-event-flight-1b-2026-11-28",
@@ -41,11 +42,12 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-bopm-main-event-flight-1b-2026-11-28",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info-Detailtabelle „Weitere Turniere“ führt den konkreten Termin mit Titel und Buy-in; die datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga bestätigt die konkrete Startzeit und Buy-in-Angabe. Keine Zeit aus einem anderen Wochentag übernommen. Eine aktuelle separate Buy-in.info-Airfield-Veranstalterübersicht war nicht erreichbar; die Detailtabellen-Blocker sind im Audit dokumentiert."
   },
   {
     "id": "pokerhelden-bopm-main-event-final-2026-11-29",
@@ -65,11 +67,12 @@
     "buy_in": 0,
     "is_freeroll": true,
     "buy_in_label": "Freeroll",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-bopm-main-event-final-2026-11-29",
-    "provider_logo": ""
+    "provider_logo": "",
+    "source_note": "Buy-in.info-Detailtabelle „Weitere Turniere“ führt den konkreten Termin mit Titel und Buy-in; die datierte Pokerraum-Veranstalterliste https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga bestätigt die konkrete Startzeit und Buy-in-Angabe. Keine Zeit aus einem anderen Wochentag übernommen. Eine aktuelle separate Buy-in.info-Airfield-Veranstalterübersicht war nicht erreichbar; die Detailtabellen-Blocker sind im Audit dokumentiert."
   },
   {
     "id": "house-of-cards-lucky-sunday-2026-11-29",
@@ -139,12 +142,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 40",
-    "last_checked": "2026-11-08",
+    "last_checked": "2026-11-09",
     "organizer_url": "https://azpoker.club/tournament/",
     "chips": null,
     "slug": "az-az-sunday-freezout-30-000-max-pot-2026-12-06",
     "provider_logo": "",
-    "source_note": "Buy-in.info-Detailtabelle „Weitere Turniere“ https://www.buy-in.info/tournament/116064 listet Datum, Titel und Buy-in, aber keine Startzeit. Keine datierte offizielle Veranstalterquelle mit Uhrzeit gefunden; Drittanbieterzeiten nicht übernommen. TBA gemäss Quellenregel."
+    "source_note": "Aktuelle Buy-in.info-Veranstalterübersicht AZ Poker Club Bern https://buy-in.info/tournaments/564 bestätigt den konkreten Termin 06.12.2026, Titel und CHF 300+40. Keine Startzeit/Variante in der Übersicht; TBA beibehalten. Die frühere Detailtabellenquelle wird durch die aktuelle Veranstalterübersicht ergänzt."
   },
   {
     "id": "house-of-cards-lucky-sunday-2026-12-06",
