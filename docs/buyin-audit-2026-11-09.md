@@ -157,3 +157,46 @@ Weitere Anbieter wie HSOP, STATION, DC Poker Club, Open Valais Poker, 72 Offsuit
 - Exakte Dublettengruppen nach Prüfung: **0**
 
 Keine vollständige Kalenderabdeckung behauptet; die oben genannten Pagination- und Monatsblocker bleiben offen.
+
+
+## GitHub-Änderungen, CI und Deployment
+
+Relevante Commits auf `main`:
+
+- Vier AZ-Turniere ergänzt und Quellenkonflikte dokumentiert: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/dc70fc572d777ed8888beb0d527006af39630a4d
+- Airfield-/AZ-Quellenhinweise ergänzt: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/e3c92c42cde26e8d06324ac6f10ab97dca999185
+- AZ-Quellenhinweis auf aktuelle Veranstalterübersicht aktualisiert: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/b1769003f4823957477571934f1d3dc7ffceb39b
+- 28 Grand-Casino-Luzern-Varianten anhand der aktuellen Clubübersicht präzisiert: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/1f2d694f1b89927c7b834ec581ec68350df48680
+- JSON-LD-Startdatum für TBA-Zeiten abgesichert: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/e12939ece3b01108a6ff3fddc1837737d4b086ba
+
+Letzter `main`-Commit: `e12939ece3b01108a6ff3fddc1837737d4b086ba`.
+
+- Tournament data quality report: SUCCESS, Run https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/42580844297
+- GitHub Pages deployment: SUCCESS, Run https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/42581195405
+- Deployment-Artefakt: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/42581195405/artifacts/13656962916
+- SHA-256 des heruntergeladenen ZIP-Artefakts: `ccc8f7229aac003014ec699fa72790d88f06e7648a53a4a74d87abbef2a15fc0`.
+
+## Tatsächliches Pages-Artefakt
+
+Das ZIP wurde heruntergeladen, das TAR vollständig entpackt und lokal geprüft:
+
+- 9 Turnier-JSON-Dateien, zusätzlich 2 getrennte Cash-Game-JSON-Dateien.
+- 806 Turnierdetailseiten.
+- 20 Veranstalterseiten.
+- 875 URLs in der Sitemap.
+- 4 neue AZ-Detailseiten vorhanden und alle 4 in der Sitemap.
+- Alle 20 Veranstalterseiten-Zähler stimmen mit den kommenden Datensätzen der Artefakt-JSON-Dateien überein.
+- 662 schema.org-`startDate`-Werte sind gültige DateTime-Werte; 144 sind gültige reine Datumswerte für TBA-Startzeiten; 0 ungültige Werte.
+
+Bei der ersten Artefaktprüfung wurde festgestellt, dass die Seitengenerierung für `TBA` einen ungültigen Wert wie `2026-12-18TTBA:00` erzeugte. Die Workflow-Generierung wurde in Commit `e12939e` korrigiert: Für unbekannte Startzeiten wird nun nur das bestätigte Datum als schema.org-`startDate` ausgegeben. Das finale Artefakt des erfolgreichen Runs `42581195405` enthält keine ungültigen StartDate-Werte mehr.
+
+### Live-Verifikation nach Deployment
+
+- AZ-Veranstalterseite zeigt 23 kommende Turniere.
+- Alle vier neuen AZ-Detailseiten sind live erreichbar und zeigen das korrekte Datum, `Start TBA Uhr` und den Buy-in.
+- Grand-Casino-Luzern-Veranstalterseite zeigt 41 kommende Turniere.
+- Die PCSM-Day-1A-Detailseite ist live mit 16.12.2026, 15:00, CHF 800+80 und NLH.
+- Die öffentliche Grand-Casino-Luzern-Veranstalterseite und einzelne ältere Detailseiten zeigen noch teilweise TBA bei Varianten, obwohl das finale Artefakt und andere Detailseiten NLH/PLO enthalten. Beispiel: Afterwork 10.12. zeigt live noch TBA, während das finale Artefakt NLH enthält. Dies ist eine partielle Cache-/Auslieferungsabweichung; Artefakt und Live-Seiten werden getrennt bewertet.
+- Der direkte öffentliche JSON-Endpunkt war über den Web-Abruf nicht lesbar; die geladenen Daten wurden über Veranstalter- und Turnierdetailseiten verifiziert.
+
+Die Live-Verifikation ist damit **teilweise erfolgreich**, nicht vollständig. Das Artefakt ist vollständig geprüft und aktuell; einzelne öffentliche Grand-Casino-Luzern-Seiten zeigen noch ältere Werte.
