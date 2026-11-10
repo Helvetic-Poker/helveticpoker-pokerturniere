@@ -111,6 +111,7 @@ Bei einer zweiten Zeilenprüfung wurde bestätigt, dass „CPC THE GRAND Freezeo
 
 1. **Another Poker Basel, 11.11.2026:** Hauptkalender: 18:40, „Satellite 350 Master Freezeout“, CHF 30+10. Aktuelle Veranstalterübersicht: „Turbo Satellite Master Freezeout 350“, CHF 40+10. Gewählt wird die explizite Hauptkalenderzeile.
 2. **Another Poker Basel, 14.11.2026:** Hauptkalender: Big Fish, 20:00, CHF 60+20. Aktuelle Veranstalterübersicht: CHF 50+20. Gewählt wird die Hauptkalenderzeile.
+3. **Grand Casino Luzern, Mystery Bounty, 20.12.2026:** Clubübersicht `/club/458` nennt CHF 200; die aktuelle gefilterte Hauptkalenderansicht `?forganizer=458` nennt 15:00 und CHF 200+100+40. Gewählt wird die vollständige Buy-in-Angabe der aktuellen Kalenderzeile; `buy_in` bleibt 200 als Grundbetrag und `buy_in_label` wurde auf CHF 200 + 100 + 40 korrigiert.
 
 ## Quellen-/Monatsblocker
 
@@ -157,3 +158,8 @@ Dubletten wurden in diesem Lauf nicht bereinigt. Die Wiederherstellung von CPC 2
 ## Nachprüfung der gefilterten Kalenderansichten am 10.11.2026
 
 Die aktuellen Suchindex-Ausgaben für die gefilterten Buy-in.info-Kalender wurden zusätzlich geprüft. Die Resultate für Another Poker Basel, Capital Poker Club Bern, Munot Poker Schaffhausen und Prestige Poker Dietlikon waren am 10.11.2026 frisch indexiert und enthalten explizite Startzeiten. Die 62 wiederhergestellten Uhrzeiten wurden in Commit `9bbb98b58b85407c80ac525586361168110bc415` gespeichert. Die Hauptkalender-Pagination bleibt weiterhin nicht vollständig abrufbar; die 12 Veranstalterübersichten decken deshalb nicht alle Schweizer Anbieter oder den gesamten Dezember ab.
+
+
+### Grand Casino Luzern – Mystery Bounty, 20.12.2026: Buy-in korrigiert
+
+Die aktuelle gefilterte Hauptkalenderansicht https://buy-in.info/calendar?forganizer=458, geprüft 10.11.2026, listet den Termin um 15:00 Uhr mit CHF 200+100+40. Die Clubübersicht https://buy-in.info/club/458 zeigt nur CHF 200. Die explizite aktuelle Kalenderzeile hat Vorrang; `buy_in_label` wurde daher von CHF 200 auf CHF 200 + 100 + 40 korrigiert. Der Grundbetrag `buy_in` bleibt 200. Commit: `b6608545fc3008da9c6d6e3b1c8facfc1c37b065`.
