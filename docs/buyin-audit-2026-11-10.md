@@ -78,11 +78,11 @@ Die aktuelle Veranstalterübersicht https://buy-in.info/tournaments/189 listet a
 
 Der bisherige Datensatz „Hyper Turbo Satelitte - 1 Ticket garantiert“ / CHF 24+6 wurde anhand der aktuellen Veranstalterübersicht korrigiert zu „Satellite 350 Master Freezeout“ / CHF 30+10. Die Übersicht nennt keine Startzeit oder Variante; beide bleiben TBA. ID und Slug wurden auf den korrigierten Titel angepasst.
 
-### 69 Startzeitfelder auf TBA gesetzt
+### Startzeiten: TBA-Korrektur und anschliessende Kalenderfilter-Verifikation
 
-Die aktuellen Veranstalterübersichten enthalten für die folgenden späteren Einzeltermine keine Uhrzeiten. Es wurde keine Uhrzeit aus wöchentlichen Mustern oder allgemeinen Öffnungszeiten übernommen:
+Beim ersten Durchlauf wurden 69 Startzeiten vorsorglich auf TBA gesetzt, weil die jeweiligen Veranstalterübersichten `/tournaments/{id}` keine Uhrzeitspalte enthalten:
 
-| Veranstalter | Startzeiten auf TBA |
+| Veranstalter | Zunächst auf TBA gesetzt |
 |---|---:|
 | Another Poker Basel | 21 |
 | Capital Poker Club Bern | 27 |
@@ -90,7 +90,18 @@ Die aktuellen Veranstalterübersichten enthalten für die folgenden späteren Ei
 | Munot Poker Schaffhausen | 8 |
 | **Summe** | **69** |
 
-Die Hauptkalender-Uhrzeiten für sichtbare Termine bleiben erhalten. Bei Another Poker Basel am 16.11. wurden nur Monday After Work Poker und Time Poker Turnier PL Omaha auf TBA gesetzt; das im Hauptkalender ausdrücklich mit 18:40 gelistete Hyper-Turbo-Satellite bleibt unverändert.
+Eine anschliessende Prüfung der aktuellen gefilterten Kalenderansichten (`?forganizer=`) ergab, dass für 62 dieser Datensätze die konkrete Uhrzeit ausdrücklich im Buy-in.info-Kalenderfilter steht. Diese Uhrzeiten wurden deshalb am selben Tag wiederhergestellt; sie stammen aus datierten Kalenderzeilen und nicht aus Wochenmustern:
+
+- Another Poker Basel: 26 Zeiten aus `https://buy-in.info/calendar?forganizer=226`.
+- Capital Poker Club Bern: 27 Zeiten aus `https://buy-in.info/calendar?forganizer=493` bzw. der aktuellen Promo-Filteransicht.
+- Munot Poker Schaffhausen: 8 Zeiten aus `https://buy-in.info/calendar?forganizer=558`.
+- Prestige Poker Dietlikon: 1 zusätzliche Zeit für den 18.11. aus `https://buy-in.info/calendar?forganizer=189`.
+
+Insgesamt wurden **62 Startzeiten** wiederhergestellt. Die betroffenen Events wurden mit `last_checked: 2026-11-10` und einem Quellenhinweis auf den konkreten Kalenderfilter versehen.
+
+**13 House-of-Cards-Termine bleiben TBA** (18.11., 22.11., 25.11., 29.11., 02.12., 06.12., 09.12., 13.12., 16.12., 20.12., 23.12., 27.12. und 30.12.). Die gefilterte Kalenderansicht `?forganizer=570` ist nur mit einem drei Wochen alten Suchindex-Snapshot erreichbar; die aktuelle Veranstalterübersicht enthält keine Uhrzeiten. Daher wurde diese ältere Filteransicht nicht als hinreichend aktuelle Bestätigung verwendet.
+
+Die Hauptkalender-Uhrzeiten bleiben vorrangig. Insbesondere bei Another Poker Basel wurden die abweichenden Buy-ins der Filter-/Veranstalteransicht für 11.11. und 14.11. nicht übernommen: Die Hauptkalenderwerte CHF 30+10 bzw. CHF 60+20 bleiben bestehen; die dort ausdrücklich gelisteten Uhrzeiten 18:40 bzw. 20:00 sind bestätigt.
 
 ### Wiederherstellung CPC 27.12.2026
 
@@ -141,3 +152,8 @@ In den geprüften Ansichten wurde keine neue eindeutig bestätigte offizielle Tu
 - Cash-Game-Datensätze im Turnierbestand: 0.
 
 Dubletten wurden in diesem Lauf nicht bereinigt. Die Wiederherstellung von CPC 27.12. und die Ergänzung des Prestige-18.11.-Termins beruhen auf expliziten aktuellen Veranstalterlistings.
+
+
+## Nachprüfung der gefilterten Kalenderansichten am 10.11.2026
+
+Die aktuellen Suchindex-Ausgaben für die gefilterten Buy-in.info-Kalender wurden zusätzlich geprüft. Die Resultate für Another Poker Basel, Capital Poker Club Bern, Munot Poker Schaffhausen und Prestige Poker Dietlikon waren am 10.11.2026 frisch indexiert und enthalten explizite Startzeiten. Die 62 wiederhergestellten Uhrzeiten wurden in Commit `9bbb98b58b85407c80ac525586361168110bc415` gespeichert. Die Hauptkalender-Pagination bleibt weiterhin nicht vollständig abrufbar; die 12 Veranstalterübersichten decken deshalb nicht alle Schweizer Anbieter oder den gesamten Dezember ab.
