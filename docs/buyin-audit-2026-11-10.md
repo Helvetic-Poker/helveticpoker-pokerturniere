@@ -105,7 +105,7 @@ Die Hauptkalender-Uhrzeiten bleiben vorrangig. Insbesondere bei Another Poker Ba
 
 ### Wiederherstellung CPC 27.12.2026
 
-Bei einer zweiten Zeilenprüfung wurde bestätigt, dass „CPC THE GRAND Freezeout 300.-“ am 27.12.2026 in der aktuellen Veranstalter-Hauptliste https://buy-in.info/tournaments/493 (Zeile 31) steht. Der Datensatz wurde deshalb wieder aufgenommen: CHF 300+45, Startzeit TBA, Variante TBA, Turnierart Freezeout. Die nachfolgende sekundäre „Weitere Turniere“-Tabelle nennt zusätzlich 26.12.; dieser 26.12.-Termin bleibt ausgeschlossen. Die Wiederherstellung korrigiert die vorherige Fehlinterpretation der Tabellenstruktur.
+Bei einer zweiten Zeilenprüfung wurde bestätigt, dass „CPC THE GRAND Freezeout 300.-“ am 27.12.2026 in der aktuellen Veranstalter-Hauptliste https://buy-in.info/tournaments/493 (Zeile 31) steht. Der Datensatz wurde deshalb wieder aufgenommen: CHF 300+45, Startzeit 15:00 (aus der aktuellen gefilterten Hauptkalenderansicht `?forganizer=493`, geprüft 10.11.2026), Variante TBA, Turnierart Freezeout. Die nachfolgende sekundäre „Weitere Turniere“-Tabelle nennt zusätzlich 26.12.; dieser 26.12.-Termin bleibt ausgeschlossen. Die Wiederherstellung korrigiert die vorherige Fehlinterpretation der Tabellenstruktur.
 
 ### Dokumentierte Buy-in.info-Quellenkonflikte
 
