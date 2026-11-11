@@ -3,10 +3,10 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 06.11.2026
-- Zeitraum im Datenbestand: Oktober bis Dezember 2026
-- 764 eindeutige Turnierdatensätze in 9 Dateien unter `data/*.json`
-- Davon 399 Datensätze vom 06.11.2026 bis 31.12.2026
+- Datenstand: 11.11.2026
+- Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
+- 814 eindeutige Turnierdatensätze in 9 Dateien unter `data/*.json`
+- 384 Datensätze vom 11.11.2026 bis 31.12.2026
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
@@ -18,12 +18,13 @@ Zentraler Kalender der Schweizer Pokerszene.
 - Cash Games werden nicht in den Turnierdatenbestand übernommen.
 - Bei widersprüchlichen Buy-in.info-Ansichten hat die aktuelle Hauptkalender-/Veranstalterübersicht Vorrang; Abweichungen werden dokumentiert.
 
-## Quellenabgleich 06.11.2026
-- Die zugängliche Hauptkalenderansicht zeigte 100 Zeilen vom 06.11. bis 13.11.2026: 96 Turnierlistings, 3 Cash Games und 1 Hinweis auf einen geschlossenen Spieltag.
-- Alle 96 Turnierlistings sind im Datenbestand vorhanden.
-- Die HSOP-Titel für 09., 10. und 13.11. wurden an die aktuelle Buy-in.info-Hauptkalenderbezeichnung angeglichen; offizielle HSOP-Details bleiben in Untertitel/Quellenhinweisen erhalten.
-- Bei Prestige wurden drei Varianten-/Formatangaben anhand datierter Buy-in.info-Detail-/Folgelistings präzisiert.
-- Zwei semantische Dubletten der Airfield/Pokerhelden-Liga aus 02. und 03.10. wurden dateiübergreifend zusammengeführt.
-- Hauptkalender-Pagination hinter dem 13.11. sowie mehrere Veranstalterfilter nach ihrem jeweils letzten sichtbaren Termin waren nicht vollständig auslesbar. Daher wird keine vollständige Buy-in.info-Abdeckung bis 31.12.2026 behauptet.
+## Quellenabgleich 11.11.2026
+- Die aktuelle Hauptkalenderansicht zeigte 100 sichtbare Zeilen; 7 Zeilen betrafen den 10.11.2026, 2 waren Cash Games. Für den Prüfzeitraum ab 11.11. wurden 91 Turnierlistings gezählt.
+- Zwölf aktuelle Veranstalterübersichten enthielten zusammen 320 ausdrücklich datierte Turnierlistings ab 11.11.2026.
+- Nach 85 Überschneidungen zwischen Hauptkalender und Veranstalterübersichten ergeben sich 326 eindeutige Turniere in den heute erreichbaren Ansichten.
+- Ein fehlendes RPR-TimePOKER-++-Turnier am 11.11.2026 wurde ergänzt; Another-Poker-Buy-ins/Titel, HSOP-Haupttitel, sieben FOIF-Titel, 15 House-of-Cards-Titel und ein GCL-Titel wurden nach aktueller Quelle korrigiert.
+- 16 ausdrücklich in der aktuellen Hauptkalenderansicht sichtbare Startzeiten wurden von TBA auf die datierten Uhrzeiten gesetzt.
+- Alle neun JSON-Dateien wurden erneut auf Syntax, doppelte IDs/Slugs, semantische Dubletten, Pflichtfelder, Uhrzeitformate und Cash Games geprüft.
+- Die Hauptkalender-Pagination hinter der sichtbaren ersten Ansicht bleibt nicht vollständig auslesbar. Für HSOP, Airfield und weitere nicht separat gefilterte Anbieter ist der Zeitraum nach dem sichtbaren Hauptkalender-Ausschnitt nicht vollständig verifizierbar. Es wird keine vollständige Buy-in.info-Abdeckung bis 31.12.2026 behauptet.
 
 Der tägliche Quellenabgleich wird fortgeführt. Ein erfolgreicher JSON-/Pages-Build ersetzt nicht die Prüfung der tatsächlich erreichbaren Buy-in.info-Monate und der öffentlichen Live-Auslieferung.
