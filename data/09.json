@@ -8398,7 +8398,7 @@
     "provider_logo": "",
     "last_checked": "2026-11-11",
     "_ord": 620,
-    "source_note": "Quellenkonflikt 10.11.2026: Buy-in.info-Hauptkalender listet am 11.11.2026 um 18:40 „Satellite 350 Master Freezeout“ für CHF 30+10. Die aktuelle Another-Poker-Veranstalterübersicht https://buy-in.info/tournaments/226 zeigt abweichend „Turbo Satellite Master Freezeout 350“ für CHF 40+10. Für diesen Eintrag wird die explizite Hauptkalenderzeile als Primärquelle verwendet: 18:40, CHF 30+10; Variante nicht ausgewiesen, daher TBA.\nBuy-in.info current main calendar (https://buy-in.info/calendar) and current organizer overview (https://buy-in.info/tournaments/226) list 11.11.2026, 18:40, title \"Turbo Satellite Master Freezeout 350\", CHF 40 + 10. Variant not shown; TBA retained."
+    "source_note": "Quellenkonflikt am 11.11.2026: Ein älterer gecachter HTML-Snapshot der Buy-in.info-Hauptkalenderansicht zeigte noch den früheren Titel „Satellite 350 Master Freezeout“ und CHF 30+10. Die heute gecrawlte aktuelle Hauptkalenderansicht https://buy-in.info/calendar sowie die aktuelle Veranstalterübersicht https://buy-in.info/tournaments/226 listen übereinstimmend 11.11.2026, 18:40, „Turbo Satellite Master Freezeout 350“ und CHF 40+10. Gewählt wird der aktuelle Stand: CHF 40 + 10. Variante nicht ausgewiesen; daher TBA."
   },
   {
     "id": "az-poker-club-bern-monster-stack-100k-20-min-level-2026-11-11",
