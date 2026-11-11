@@ -16,10 +16,12 @@ Der Abgleich ist **nicht vollständig**: Die Hauptkalender-Pagination hinter der
 ### Hauptkalender
 Quelle: https://buy-in.info/calendar
 
-- 100 sichtbare Ansichtszeilen.
-- 7 Zeilen lagen am 10.11.2026 und damit vor dem heutigen Prüfzeitraum.
+- Die direkt geöffnete Hauptkalenderansicht zeigte 100 sichtbare Zeilen (die sichtbare Tabelle reicht vom 08.11. bis 16.11.).
+- 33 Zeilen lagen vor dem heutigen Prüfzeitraum 11.11.2026.
 - 2 Cash-Game-Zeilen ausgeschlossen.
-- Für den Zeitraum 11.11.–31.12.2026 verblieben 91 Turnierlistings in der sichtbaren Hauptkalenderansicht.
+- Für den Zeitraum 11.11.–31.12.2026 verblieben 65 Turnierlistings in dieser direkten sichtbaren Ansicht.
+- Zusätzlich wurden aktuelle Suchindex-Snippets geprüft (heute gecrawlt). Sie zeigen unter anderem die aktuellen 11.11.-Werte sowie zwei weitere HSOP-Termine am 16.11. und 17.11.; diese partiellen Snippets werden nicht als vollständige zusätzliche Ansichtszeilen gezählt.
+- Die direkt geöffnete HTML-Hauptansicht war drei Tage älter als die aktuellen Suchindex-Snippets. Bei Another Poker wurden deshalb die frischeren aktuellen Veranstalter-/Suchindexwerte verwendet.
 
 ### Veranstalterübersichten
 Die folgenden aktuellen Buy-in.info-Veranstalterübersichten wurden vollständig bis zum jeweils letzten sichtbaren Listing gelesen. Die Zählung umfasst ausdrücklich gelistete Turniere ab 11.11.2026 und schliesst Cash Games aus.
@@ -56,13 +58,15 @@ Veranstalterquellen:
 
 ### Überschneidungen und eindeutige Turniere
 
-- Hauptkalender-Listings ab 11.11.: 91
+- Hauptkalender-Listings ab 11.11. in der direkten sichtbaren Tabelle: 65
 - Veranstalterübersichten: 320
-- Rohe Turnier-Listing-Vorkommen: 411
-- Überschneidungen zwischen Ansichten: 85
-- **Eindeutige Turniere in den heute erreichbaren Ansichten: 326**
+- Rohe Listing-Vorkommen aus diesen vollständigen Ansichten: 385
+- Überschneidungen zwischen diesen Ansichten: 61
+- Eindeutige Turniere aus Hauptkalender und Veranstalterübersichten: 324
+- Zusätzlich zwei HSOP-Termine am 16.11. und 17.11. in aktuellen Suchindex-Snippets, nicht in der direkten ersten Tabelle oder den zwölf Veranstalterübersichten
+- **Eindeutige Turniere über alle heute erreichbaren Ansichten einschliesslich dieser zwei Suchindex-Termine: 326**
 
-Die sechs zusätzlichen Hauptkalender-Einträge ausserhalb der zwölf oben aufgeführten Veranstalter stammen aus den sichtbaren Airfield- und HSOP-Listungen. Die 326 sind keine vollständige Gesamtzahl aller Buy-in.info-Turniere.
+Die 326 sind keine vollständige Gesamtzahl aller Buy-in.info-Turniere; die Suchindex-Snippets sind partiell und werden nicht als vollständige Kalenderseiten ausgegeben.
 
 ## Neue Veranstaltung
 
@@ -85,7 +89,7 @@ Die Variante und Turnierart sind für diesen datierten Eintrag nicht angegeben u
 ### Another Poker Basel
 - 11.11.: Titel auf „Turbo Satellite Master Freezeout 350“ und Buy-in auf CHF 40 + 10 korrigiert.
 - 14.11. Big Fish: Buy-in auf CHF 50 + 20 korrigiert.
-- Quelle: Hauptkalender und aktuelle Veranstalterübersicht https://buy-in.info/tournaments/226.
+- Quellenkonflikt: Die direkt geöffnete Hauptkalender-HTML-Ansicht (drei Tage älter) zeigte für 11.11. noch „Satellite 350 Master Freezeout“ / CHF 30 + 10 und für 14.11. CHF 60 + 20. Die heute gecrawlte Veranstalterübersicht https://buy-in.info/tournaments/226 zeigt dagegen den aktualisierten Titel und CHF 40 + 10 am 11.11. sowie CHF 50 + 20 beim Big Fish am 14.11.; das heutige Suchindex-Snippet bestätigt die 11.11.-Änderung. Gewählt wurde die frischere aktuelle Veranstalterübersicht bzw. der heutige Suchindex, nicht die ältere HTML-Cachedarstellung.
 
 ### HSOP
 - 16.11. und 17.11.: Haupttitel auf „HSOP GRAUBÜNDEN“ gesetzt, wie in der aktuellen Hauptkalenderansicht.

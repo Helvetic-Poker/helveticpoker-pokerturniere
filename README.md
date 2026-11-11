@@ -19,9 +19,9 @@ Zentraler Kalender der Schweizer Pokerszene.
 - Bei widersprüchlichen Buy-in.info-Ansichten hat die aktuelle Hauptkalender-/Veranstalterübersicht Vorrang; Abweichungen werden dokumentiert.
 
 ## Quellenabgleich 11.11.2026
-- Die aktuelle Hauptkalenderansicht zeigte 100 sichtbare Zeilen; 7 Zeilen betrafen den 10.11.2026, 2 waren Cash Games. Für den Prüfzeitraum ab 11.11. wurden 91 Turnierlistings gezählt.
+- Die direkt geöffnete Hauptkalenderansicht zeigte 100 sichtbare Zeilen; 33 lagen vor dem 11.11.2026, 2 waren Cash Games. Für den Prüfzeitraum ab 11.11. blieben 65 Turnierlistings in dieser Ansicht.
 - Zwölf aktuelle Veranstalterübersichten enthielten zusammen 320 ausdrücklich datierte Turnierlistings ab 11.11.2026.
-- Nach 85 Überschneidungen zwischen Hauptkalender und Veranstalterübersichten ergeben sich 326 eindeutige Turniere in den heute erreichbaren Ansichten.
+- Zwischen diesen vollständigen Ansichten gab es 61 Überschneidungen: 385 Listing-Vorkommen ergeben 324 eindeutige Turniere. Zwei weitere HSOP-Termine (16./17.11.) wurden nur in aktuellen Suchindex-Snippets sichtbar und separat bestätigt; damit sind 326 eindeutige Turniere in allen heute erreichbaren Ansichten erfasst.
 - Ein fehlendes RPR-TimePOKER-++-Turnier am 11.11.2026 wurde ergänzt; Another-Poker-Buy-ins/Titel, HSOP-Haupttitel, sieben FOIF-Titel, 15 House-of-Cards-Titel und ein GCL-Titel wurden nach aktueller Quelle korrigiert.
 - 16 ausdrücklich in der aktuellen Hauptkalenderansicht sichtbare Startzeiten wurden von TBA auf die datierten Uhrzeiten gesetzt.
 - Alle neun JSON-Dateien wurden erneut auf Syntax, doppelte IDs/Slugs, semantische Dubletten, Pflichtfelder, Uhrzeitformate und Cash Games geprüft.
