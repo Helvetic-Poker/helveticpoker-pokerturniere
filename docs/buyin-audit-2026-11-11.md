@@ -169,6 +169,46 @@ Alle übrigen nicht belegten Startzeiten bleiben TBA.
 
 Es wurden keine Termine aus einem wöchentlichen Muster hochgerechnet. Nicht gelistete Feiertags- oder Sondertermine wurden nicht erzeugt. Es wurde keine neue eindeutig bestätigte offizielle Absage festgestellt.
 
-## Commit / Deployment
+## GitHub Actions, Pages-Artefakt und Live-Verifikation
 
-Wird nach dem Commit ergänzt. Workflow- und Pages-Artefaktstatus werden separat verifiziert; ein erfolgreicher Build wird nicht als vollständige Buy-in.info-Abdeckung gewertet.
+### Commit und Workflows
+- Daten-/Quellencommit: `4446ca6c9841c908c4d62ec6d644938b0e357a88`
+- Commit-Link: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/4446ca6c9841c908c4d62ec6d644938b0e357a88
+- Tournament Data Quality Report: **SUCCESS**, Run https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/42986846712
+- GitHub Pages Deployment: **SUCCESS**, Run https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/42986846714
+
+### Tatsächlich heruntergeladenes Deployment-Artefakt
+- Artifact ID: `13839199821`
+- ZIP-Grösse: 1'702'094 Bytes
+- SHA-256: `ca38fcf79997d03294d45510c0e5e4ba4957ec40d977b155fafe7cf04c07985d`
+- Download: https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/42986846714/artifacts/13839199821
+- 920 Dateien im extrahierten Pages-Verzeichnis.
+- 9 Turnier-JSON-Dateien, 814 Datensätze.
+- 814 generierte Turnierdetailseiten.
+- 20 Veranstalterseiten.
+- 883 URLs in der Sitemap.
+- Alle neun JSON-Dateien stimmen bytegenau über ihre Git-Blob-SHAs mit den Dateien auf `main` beim Datencommit überein.
+- Alle 814 Turnierdetailseiten wurden auf Existenz sowie Datum, Titel, veröffentlichte Startzeit und Buy-in geprüft: 0 fehlende Seiten, 0 Feldabweichungen.
+- Alle 20 Veranstalterseiten-Zähler stimmen mit dem aktuellen Datenbestand überein (20/20).
+- Die neue RPR-Seite ist im Artefakt und in der Sitemap enthalten: https://pokerturniere.helveticpoker.ch/turniere/rpr-timepoker-2026-11-11/
+  - 11.11.2026, 18:30, CHF 100 + 20, Düdingen.
+  - Variante und Turnierart bleiben TBA, da sie für diesen datierten Eintrag nicht genannt sind.
+
+### Live-Website
+Die Live-Prüfung ist **teilweise erfolgreich**, aber die HTML-Auslieferung ist nicht überall konsistent mit dem neuen Artefakt:
+- RPR-Veranstalterseite zeigt 8 kommende Turniere; das neue RPR TimePOKER ++ am 11.11. ist live sichtbar. Die direkt geöffnete Detailseite zeigt 18:30 und CHF 100 + 20.
+- Another-Poker-Detailseiten vom 11.11. und 14.11. zeigen die korrigierten Titel/Buy-ins.
+- House-of-Cards-Detailseite vom 18.11. zeigt den korrigierten Titel und 19:00.
+- HSOP-Detailseite vom 16.11. zeigt den aktuellen Haupttitel „HSOP GRAUBÜNDEN“ und die erhaltene Re-Entry-Detailangabe.
+- Der öffentliche Startseiten-/Wochenindex zeigt teilweise noch den Stand vom 10.11. (unter anderem den alten Another-Satellite-Titel/Buy-in); die direkte Detailseite ist bereits aktuell.
+- Die öffentliche House-of-Cards-Veranstalterseite zeigt noch 18 Einträge einschliesslich bereits vergangener Novembertermine und ältere Gedankenstrich-Titel; das aktuelle Artefakt enthält 15 zukünftige Einträge mit den korrigierten Titeln.
+- Damit ist die Artefaktprüfung erfolgreich, die Live-Auslieferung aber teilweise cache-/edge-veraltet. Diese beiden Zustände werden nicht gleichgesetzt.
+
+## Nicht vollständig erreichbare Quellen / Blocker
+
+1. Die Hauptkalenderansicht ist auf die sichtbare erste Ergebnismenge begrenzt. Die Versuche mit `?page=2`, `?offset=100`, `?start=100`, `?date=2026-11-21` und `?datum-ab=2026-11-21` lieferten keine vollständige Folgeseite.
+2. Der Zeitraum 21.11.–31.12. ist deshalb nicht kalenderweit vollständig prüfbar. Die aktuellen Veranstalterübersichten decken nur die zwölf oben genannten Anbieter und deren sichtbare Einträge ab.
+3. Für HSOP und Airfield gibt es keine separate aktuelle vollständige Buy-in.info-Veranstalterübersicht; spätere Termine dieser Anbieter nach dem sichtbaren Hauptkalender-Ausschnitt bleiben unbestätigt.
+4. Weitere Anbieter-/Monatsansichten ausserhalb der zwölf genannten aktuellen Übersichten konnten nicht vollständig aus dem Hauptkalender rekonstruiert werden.
+
+Es wurden keine Termine aus einem wöchentlichen Muster hochgerechnet. Nicht gelistete Feiertags- oder Sondertermine wurden nicht erzeugt. Es wurde keine neue eindeutig bestätigte offizielle Absage festgestellt.
