@@ -153,10 +153,12 @@ Alle übrigen nicht belegten Startzeiten bleiben TBA.
 - Doppelte IDs: 0
 - Doppelte Slugs: 0
 - Semantische Dublettengruppen nach Datum/Zeit/Veranstalter/Titel/Buy-in: 0
-- Fehlende Pflichtfelder: 0
+- Fehlende öffentliche Kernfelder (Datum, Startzeit oder TBA, Titel, Veranstalter, Ort soweit verfügbar, Variante/Turnierart oder TBA, Buy-in-Label): 0
 - Ungültige Startzeitformate: 0
 - Cash Games im Turnierbestand: 0
 - Startzeit TBA im Prüfzeitraum: 141
+- Numerisches `buy_in` ist bei 2 zukünftigen Grand-Casino-Basel-Final-Day-Einträgen `null`; das öffentliche Feld `buy_in_label` steht bewusst auf `TBA`, weil keine Buy-in-Angabe veröffentlicht ist. Ein weiterer solcher Datensatz liegt ausserhalb des Prüfzeitraums.
+- Ein einzelnes `source_note` fehlt noch bei 30 zukünftigen Legacy-Datensätzen (25 aktuelle Buy-in.info-Hauptkalenderlistings und 5 datierte HSOP-Termine, deren Quellen in diesem Audit geprüft wurden). `source_note` ist kein öffentliches Pflichtfeld; 411 ältere historische Datensätze haben ebenfalls kein `source_note`.
 - Variante TBA im Prüfzeitraum: 52
 - Turnierart TBA im Prüfzeitraum: 15
 
