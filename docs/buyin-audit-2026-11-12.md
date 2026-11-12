@@ -9,14 +9,14 @@ Zusätzlich wurden elf aktuelle Veranstalterübersichten/-filter, eine ältere P
 | Kennzahl | Anzahl |
 |---|---:|
 | Hauptkalender-Zeilen | 100 |
-| Zeilen aus den ausgewählten Veranstalter-/Detailansichten | 327 |
-| **Ansichtszeilen insgesamt** | **427** |
+| Zeilen aus den ausgewählten Veranstalter-/Detailansichten | 352 |
+| **Ansichtszeilen insgesamt** | **452** |
 | Cash Games / geschlossene Spieltage | 6 |
-| **Tatsächliche Turnier-Listing-Vorkommen** | **421** |
-| Wiederholungen zwischen Ansichten | 88 |
-| **Eindeutige Turniere in den erreichbaren Ansichten** | **333** |
+| **Tatsächliche Turnier-Listing-Vorkommen** | **446** |
+| Wiederholungen zwischen Ansichten | 94 |
+| **Eindeutige Turniere in den erreichbaren Ansichten** | **352** |
 
-Die 333 sind die Vereinigungsmenge der konkret erreichbaren Ansichten, keine vollständige Zahl aller Schweizer Buy-in.info-Veröffentlichungen. Die Zählung enthält ausdrücklich auch sekundäre, nicht gleichwertige Quellen: elf Pöstli-Zeilen aus einer rund zwei Wochen alten Übersicht und elf STATION-Zeilen aus einer „Weitere Turniere“-Tabelle. Ohne diese beiden sekundären Ansichten umfassen die aktuellen Haupt-/Veranstalteransichten 316 eindeutige Turniere.
+Die 352 sind die Vereinigungsmenge der konkret erreichbaren Ansichten, keine vollständige Zahl aller Schweizer Buy-in.info-Veröffentlichungen. Der Pöstli-Organizer-Überblick wurde nachträglich aktuell abrufbar und enthält jetzt 36 Termine bis 28.12.2026. Zusätzlich bleibt die STATION-Detailtabelle mit elf Zeilen eine sekundäre „Weitere Turniere“-Quelle; sechs davon erweitern die aktuelle Haupt-/Veranstaltermenge. Ohne diese STATION-Sekundärquelle umfassen die aktuellen Haupt-/Veranstalteransichten 346 eindeutige Turniere.
 
 ## Ergänzte Turniere
 
@@ -53,7 +53,7 @@ Vier bestehende Datensätze:
 - [Grand Casino Luzern](https://buy-in.info/tournaments/458) – bis 20.12.
 - [Sports Zugerland](https://buy-in.info/tournaments/553) – bis 28.12.
 - [RPR/Roger's Pokerroom](https://buy-in.info/tournaments/540) – bis 29.12.
-- [Pöstli Poker](https://buy-in.info/tournaments/554) – erreichbare Übersicht nur als rund zwei Wochen alter Snapshot, bis 03.12.; spätere Einträge sind daher sekundär und nicht als aktuelle vollständige Monatsprüfung gewertet.
+- [Pöstli Poker](https://buy-in.info/tournaments/554) – aktuelle Veranstalterübersicht nachträglich erfolgreich abgerufen; 36 datierte Termine vom 12.11. bis 28.12.2026. Die Übersicht nennt keine Startzeiten; sechs Zeiten sind zusätzlich in der aktuellen Hauptkalenderansicht ausdrücklich gelistet, alle übrigen bleiben TBA.
 - [STATION-Detailseite mit „Weitere Turniere“](https://www.buy-in.info/tournament/117439) – Tabelle enthält konkrete Daten/Titel/Buy-ins bis 30.11., aber keine Startzeiten für die späteren Termine. Die aktuelle STATION-Veranstalterübersicht ist veraltet und zeigt nur 08./09.11.; die Detailtabelle wurde nur dort genutzt, wo keine neuere widersprüchliche Haupt-/Veranstalteransicht zugänglich war. Nicht belegte Zeiten bleiben TBA.
 - [Kartenfreunde Wynental – offizieller Eventhinweis](https://kartenfreunde.ch/2022/02/14/sunday-chill-out/) – nennt Sunday Chill-Out 1–2 Mal pro Monat ab 15:00; das konkrete Datum 15.11. und der Buy-in stammen ausschließlich aus dem Buy-in.info-Hauptkalender.
 - [Gemeinde Gränichen – Vereinsverzeichnis](https://www.graenichen.ch/de/vereinsverzeichnis/index.php) – bestätigt Kartenfreunde Wynental in Gränichen.
@@ -77,7 +77,7 @@ Letzte erreichbare Termine der Veranstalteransichten:
 | Another Poker | 03.12. | 04.–31.12. |
 | Prestige Poker | 20.11. | 21.11.–31.12. |
 | Grand Casino Luzern | 20.12. | 21.–31.12. |
-| Pöstli Poker | 03.12. | aktuelle Ansicht fehlt; Snapshot rund zwei Wochen alt |
+| Pöstli Poker | 28.12. | 29.–31.12.; aktuelle Ansicht nennt keine Startzeiten |
 | Sports Zugerland | 28.12. | 29.–31.12. |
 | RPR | 29.12. | 30.–31.12. |
 | STATION | 30.11. | 01.–31.12.; nur Detailtabelle, keine aktuelle Veranstalteransicht |
@@ -96,7 +96,33 @@ HSOP, Airfield Pokerclub Interlaken und Kartenfreunde Wynental haben in den erre
 | data/06.json | 14 |
 | data/07.json | 15 |
 | data/08.json | 10 |
-| data/09.json | 713 |
-| **Gesamt** | **827** |
+| data/09.json | 732 |
+| **Gesamt** | **846** |
 
-Davon 385 Datensätze im Zeitraum 12.11.–31.12.2026.
+Davon 404 Datensätze im Zeitraum 12.11.–31.12.2026.
+
+
+## Nachtrag 12.11.2026 – aktualisierte Pöstli-Organizerübersicht
+
+Bei einer erneuten direkten Prüfung wurde die aktuelle [Pöstli-Poker-Veranstalterübersicht](https://buy-in.info/tournaments/554) erfolgreich geladen. Der zuvor im ersten Lauf verfügbare ältere Snapshot war damit überholt. Die aktuelle Ansicht listet **36 konkrete Turniere vom 12.11. bis 28.12.2026** sowie vier weitere Termine im Januar 2027 (ausserhalb des Prüfzeitraums).
+
+- **17** der 36 Termine waren bereits im Bestand.
+- **19 fehlende Turniere** wurden ergänzt: 04.12. Progressiv-Bounty (CHF 45+20+15); 05.12. High Roller (CHF 150+25); 07.12. Pokemon (CHF 20+10); 09.12. Mittwuch Spez (CHF 45+15); 10.12. Donschti Gämbler (CHF 65+15); 11.12. Friti-Bounty (CHF 45+30+15); 12.12. Mystery-Bounty (CHF 80+50+20); 13.12. Omaha PL (CHF 30+10); 17.12. Donschti Gämbler (CHF 65+15); 18.12. Friti-Bounty (CHF 45+30+15); 19.12. Saturday Deep Century (CHF 100+20); 20.12. Texas Time (CHF 50+10); 21.12. Pokemon (CHF 20+10); 23.12. Mittwuch Spez (CHF 45+15); 24.12. Donschti Gämbler (CHF 65+15); 25.12. Progressiv-Bounty (CHF 45+20+15); 26.12. Saturday Deep Century (CHF 100+20); 27.12. Omaha Time (CHF 50+10); 28.12. Pokemon (CHF 20+10).
+- Die Pöstli-Übersicht selbst weist keine Startzeiten aus. Für sechs Termine sind Uhrzeiten zusätzlich ausdrücklich in der aktuellen Hauptkalenderansicht vorhanden; für die übrigen 30 bleibt die Startzeit TBA.
+- Varianten und Turnierarten wurden nur aus eindeutigen Titeln abgeleitet: Omaha PL = PLO/Omaha; Bounty-Titel = Bounty; nicht eindeutig bezeichnete Felder bleiben TBA. Insgesamt 34 Varianten und 24 Turnierarten im Pöstli-Zeitraum bleiben TBA.
+- Standort: Hohengasse 10, 3400 Burgdorf (BE), direkt aus der Veranstalterübersicht.
+- Die 19 Ergänzungen sind in `data/09.json` enthalten. Der Bestand umfasst nun 846 Datensätze, davon 404 vom 12.11. bis 31.12.2026.
+
+### Aktualisierte Zählung nach Pöstli-Nachtrag
+
+| Kennzahl | Anzahl |
+|---|---:|
+| Hauptkalender-Ansichtszeilen | 100 |
+| Ausgewählte Veranstalter-/Detailansichtszeilen | 352 |
+| Ansichtszeilen insgesamt | 452 |
+| Cash Games / geschlossene Spieltage ausgeschlossen | 6 |
+| Tatsächliche Listing-Vorkommen | 446 |
+| Wiederholungen zwischen Ansichten | 94 |
+| Eindeutige Turniere in erreichbaren Ansichten | 352 |
+
+Die Hauptkalender-Pagination endet weiterhin bei 100 Zeilen am 20.11.2026. Die aktualisierte Pöstli-Seite schliesst nur den Pöstli-Block bis 28.12.; sie beseitigt nicht die übrigen Monats-/Anbieter-Blocker. Vollständige Abdeckung bis 31.12.2026 ist weiterhin nicht bestätigt.
