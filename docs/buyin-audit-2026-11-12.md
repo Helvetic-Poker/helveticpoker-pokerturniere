@@ -126,3 +126,34 @@ Bei einer erneuten direkten Prüfung wurde die aktuelle [Pöstli-Poker-Veranstal
 | Eindeutige Turniere in erreichbaren Ansichten | 352 |
 
 Die Hauptkalender-Pagination endet weiterhin bei 100 Zeilen am 20.11.2026. Die aktualisierte Pöstli-Seite schliesst nur den Pöstli-Block bis 28.12.; sie beseitigt nicht die übrigen Monats-/Anbieter-Blocker. Vollständige Abdeckung bis 31.12.2026 ist weiterhin nicht bestätigt.
+
+
+## GitHub Actions, Artefakt und Live-Verifikation (Nachtrag 12.11.2026)
+
+### Commits
+- Datenänderung: [ac7a8b9](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/ac7a8b9a625a28da1d30898fa261baa16d42ef81) – 19 neue Pöstli-Turniere.
+- Quellen-/Variantennormalisierung: [8627c23](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/8627c236c730a21551c246d5a6acce88702a33a4) – bestehende Pöstli-Quellenhinweise aktualisiert, nicht belegte Varianten/Turnierarten auf TBA gesetzt.
+- Audit-Nachtrag: [87a6535](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/87a6535b246b70eec2d1251a31e9e84fa3a11b04).
+- README-Zähler: [31240dc](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/31240dc01e9fcb373f0af2cf3fb675fce6930e06). Letzter Commit auf `main`: `31240dc01e9fcb373f0af2cf3fb675fce6930e06`.
+
+### Workflows
+- [Tournament data quality report – Run 43181274912](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43181274912): completed / success.
+- [Generate and deploy tournament pages – Run 43181274661](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43181274661): completed / success.
+- Beide Jobs wurden für Datencommit `8627c236c730a21551c246d5a6acce88702a33a4` ausgeführt.
+
+### Tatsächliches GitHub-Pages-Artefakt
+- [Artefakt github-pages, ID 13926695825](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43181274661/artifacts/13926695825), ZIP-Grösse 1'730'062 Bytes.
+- SHA-256 des heruntergeladenen ZIP: `533f765034ef927df33ad48d5d6f934a01fc93dfb20c364f55cc66deec5da373` (stimmt mit dem von GitHub gemeldeten Artefakt-Digest überein).
+- Das ZIP enthält ein `artifact.tar`; dieses wurde vollständig extrahiert.
+- Enthaltene Turnierdaten: alle neun `data/01.json` bis `data/09.json`, insgesamt 846 Datensätze. Alle neun Git-Blob-SHAs stimmen bytegenau mit `main` beim Datencommit überein.
+- Generierte Turnierdetailseiten: 846; Veranstalterseiten: 20; Sitemap: 915 URLs.
+- Veranstalterseiten-Zähler: 20/20 stimmen mit den zukünftigen Datensätzen überein. FOIF DRÜ hat 87 zukünftige Datensätze; die ItemList/JSON-LD-Liste ist aus Layoutgründen auf 60 Karten begrenzt, die Zählanzeige ist korrekt und alle 87 Detailseiten sind vorhanden.
+- Die 19 neuen Pöstli-Seiten sind alle vorhanden und in der Sitemap. Datum, Start TBA, Buy-in, Veranstalter und Burgdorf wurden für alle 19 Seiten im Artefakt geprüft.
+
+### Live-Verifikation
+- [Pöstli-Veranstalterseite](https://pokerturniere.helveticpoker.ch/veranstalter/poestli-poker/) zeigt 36 kommende Turniere und die neuen Dezembertermine.
+- Alle 19 neuen Detailseiten wurden über die Veranstalterseite geöffnet; sie zeigen jeweils das korrekte Datum, TBA als Startzeit, den Buy-in und die Adresse Hohengasse 10, 3400 Burgdorf.
+- Beispiele: [Progressiv-Bounty 04.12.](https://pokerturniere.helveticpoker.ch/turniere/poestli-poker-progressiv-bounty-2026-12-04/) und [Pokemon 28.12.](https://pokerturniere.helveticpoker.ch/turniere/poestli-poker-pokemon-2026-12-28/).
+- Für diese Pöstli-Seiten wurde kein Cache-Rückstand festgestellt. Das Artefakt entspricht dem Datencommit; die danach folgenden Commits betreffen nur Audit/README und ändern keine Turnierdaten.
+
+Die Hauptkalender-Pagination und die übrigen offenen Anbieter-/Monatszeiträume bleiben weiterhin Blocker. Vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird nicht behauptet.
