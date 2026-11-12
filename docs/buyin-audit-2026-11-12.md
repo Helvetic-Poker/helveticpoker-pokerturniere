@@ -9,11 +9,11 @@ Zusätzlich wurden elf aktuelle Veranstalterübersichten/-filter, eine ältere P
 | Kennzahl | Anzahl |
 |---|---:|
 | Hauptkalender-Zeilen | 100 |
-| Zeilen aus den ausgewählten Veranstalter-/Detailansichten | 352 |
-| **Ansichtszeilen insgesamt** | **452** |
+| Zeilen aus den ausgewählten Veranstalter-/Detailansichten | 348 |
+| **Ansichtszeilen insgesamt** | **448** |
 | Cash Games / geschlossene Spieltage | 6 |
-| **Tatsächliche Turnier-Listing-Vorkommen** | **446** |
-| Wiederholungen zwischen Ansichten | 94 |
+| **Tatsächliche Turnier-Listing-Vorkommen** | **442** |
+| Wiederholungen zwischen Ansichten | 90 |
 | **Eindeutige Turniere in den erreichbaren Ansichten** | **352** |
 
 Die 352 sind die Vereinigungsmenge der konkret erreichbaren Ansichten, keine vollständige Zahl aller Schweizer Buy-in.info-Veröffentlichungen. Der Pöstli-Organizer-Überblick wurde nachträglich aktuell abrufbar und enthält jetzt 36 Termine bis 28.12.2026. Zusätzlich bleibt die STATION-Detailtabelle mit elf Zeilen eine sekundäre „Weitere Turniere“-Quelle; sechs davon erweitern die aktuelle Haupt-/Veranstaltermenge. Ohne diese STATION-Sekundärquelle umfassen die aktuellen Haupt-/Veranstalteransichten 346 eindeutige Turniere.
@@ -117,12 +117,14 @@ Bei einer erneuten direkten Prüfung wurde die aktuelle [Pöstli-Poker-Veranstal
 
 | Kennzahl | Anzahl |
 |---|---:|
-| Hauptkalender-Ansichtszeilen | 100 |
-| Ausgewählte Veranstalter-/Detailansichtszeilen | 352 |
-| Ansichtszeilen insgesamt | 452 |
+| Hauptkalender-Ansichtszeilen | 100 (davon 97 Turnierlistings) |
+| Zwölf aktuelle Veranstalterübersichten | 335 Rohzeilen (332 Turniere; 2 GCL-Cash-Games und 1 Prestige-Schliessung ausgeschlossen) |
+| Zusätzliche STATION-Detailtabelle | 11 Zeilen |
+| Zusätzliche HSOP-Suchindex-Snippets | 2 konkrete Turnierlistings |
+| Ansichtszeilen insgesamt | 448 |
 | Cash Games / geschlossene Spieltage ausgeschlossen | 6 |
-| Tatsächliche Listing-Vorkommen | 446 |
-| Wiederholungen zwischen Ansichten | 94 |
+| Tatsächliche Listing-Vorkommen | 442 |
+| Wiederholungen zwischen Ansichten | 90 |
 | Eindeutige Turniere in erreichbaren Ansichten | 352 |
 
 Die Hauptkalender-Pagination endet weiterhin bei 100 Zeilen am 20.11.2026. Die aktualisierte Pöstli-Seite schliesst nur den Pöstli-Block bis 28.12.; sie beseitigt nicht die übrigen Monats-/Anbieter-Blocker. Vollständige Abdeckung bis 31.12.2026 ist weiterhin nicht bestätigt.
@@ -157,3 +159,8 @@ Die Hauptkalender-Pagination endet weiterhin bei 100 Zeilen am 20.11.2026. Die a
 - Für diese Pöstli-Seiten wurde kein Cache-Rückstand festgestellt. Das Artefakt entspricht dem Datencommit; die danach folgenden Commits betreffen nur Audit/README und ändern keine Turnierdaten.
 
 Die Hauptkalender-Pagination und die übrigen offenen Anbieter-/Monatszeiträume bleiben weiterhin Blocker. Vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird nicht behauptet.
+
+
+### Zählungspräzisierung nach vollständiger Durchsicht der aktuellen Veranstalterseiten
+
+Die Ansichtszeilenzählung wurde gegen die zwölf aktuell direkt geöffneten Veranstalterseiten präzisiert: 335 Rohzeilen, davon 332 tatsächliche Turnierlistings; zwei GCL-Cash-Games und der Prestige-Schliessungshinweis sind ausgeschlossen. Zusammen mit 100 Hauptkalenderzeilen (97 Turnierlistings), elf STATION-Detailtabellenzeilen und zwei HSOP-Suchindexlistings ergibt das 448 Rohzeilen, sechs Nicht-Turnierzeilen, 442 Listing-Vorkommen, 90 Wiederholungen und 352 eindeutige Turniere. Die Veranstalterseiten wurden gegen den Bestand geprüft: Die aktuellen Zukunftszähler der zwölf Veranstalter stimmen mit den gespeicherten Datensätzen überein.
