@@ -150,3 +150,86 @@ Keine neue eindeutig bestätigte offizielle Absage wurde festgestellt.
 Der Datencommit enthält die sechs Ergänzungen und fünf Korrekturen; anschliessend wurden README und dieses Audit aktualisiert. GitHub Actions und das Pages-Artefakt werden nach dem Commit separat geprüft.
 
 **Keine vollständige Buy-in.info-Abdeckung bis 31.12.2026 behauptet.**
+
+
+## Ergänzende Nachprüfung – 13. November 2026, 09:30 Uhr
+
+### Aktuelle Buy-in.info-Ansichten erneut geöffnet
+
+Die Hauptkalenderansicht https://buy-in.info/calendar wurde heute erneut direkt geöffnet. Sie zeigt 100 sichtbare Zeilen vom 13.11.2026 bis 21.11.2026, letzte sichtbare Zeile 21.11. um 18:40. Darin enthalten sind 97 Turnierlistings, zwei Cash Games und ein als „Dienstag PP geschlossen“ geführter Prestige-Schliesstag.
+
+Erneut direkt geöffnet und mit dem Datenbestand abgeglichen wurden diese zwölf aktuellen Veranstalterübersichten:
+
+| Veranstalter | sichtbare Zeilen |
+|---|---:|
+| 24Poker | 22 |
+| FOIF DRÜ EFFRETIKON | 85 |
+| AZ Poker Club Bern | 20 |
+| Capital Poker Club Bern | 30 |
+| House of Cards Luzern | 14 |
+| Munot Poker Schaffhausen | 10 |
+| Another Poker Basel | 32 |
+| Prestige Poker Dietlikon | 21 |
+| Grand Casino Luzern | 43 |
+| Sports Zugerland | 12 |
+| RPR/Roger's Pokerroom | 7 |
+| Pöstli Poker | 35 |
+| **Zwischensumme Veranstalterübersichten** | **331** |
+
+Zusätzlich wurde die aktuelle STATION-Detailtabelle „Weitere Turniere“ https://buy-in.info/tournament/116563 erneut über den Suchindex abgerufen. Sie enthält zehn Termine ab 14.11. bis 30.11.2026; alle zehn sind im Bestand vorhanden.
+
+| Zählung | Anzahl |
+|---|---:|
+| Hauptkalender | 100 |
+| Veranstalterübersichten | 331 |
+| STATION-Detailtabelle | 10 |
+| **Ansichtszeilen insgesamt** | **441** |
+| Cash Games (2 Hauptkalender, 2 GCL-Übersicht) | 4 |
+| geschlossene Prestige-Platzhalter (1 Hauptkalender, 2 Prestige-Übersicht) | 3 |
+| **Tatsächliche Listing-Vorkommen** | **434** |
+| Überschneidungen zwischen den Ansichten | 88 |
+| **Eindeutige Turniere in den erreichbaren Ansichten** | **346** |
+
+Die 346 eindeutigen Turniere der erreichbaren Buy-in.info-Ansichten sind im Datenbestand enthalten. Es wurde heute kein fehlendes Buy-in.info-Turnier identifiziert. Die Zahlen beschreiben ausschliesslich die erreichbaren Ansichten und sind keine Vollständigkeitsbehauptung für den gesamten Kalender.
+
+### STATION-Provenienz präzisiert
+
+Für alle zehn STATION-Turniere vom 14.11. bis 30.11. wurden die Quellenhinweise in data/09.json präzisiert. Die Detailtabelle bestätigt Datum, Titel und Buy-in. Die aktuelle Hauptkalenderansicht bestätigt zusätzlich für 14.11. (19:00), 15.11. (15:00), 16.11. (19:00) und 19.11. (19:00) die konkreten Startzeiten. Für 21., 22., 23., 26., 29. und 30.11. nennt die zugängliche Detailtabelle keine Startzeit; diese bleibt TBA. Es wurde keine Uhrzeit aus einem Wochenmuster übernommen. Die offizielle STATION-Website bestätigt Biel/Bienne, Ohmweg 10.
+
+Damit wurden zehn Provenienznotizen verbessert; Turnierdatum, Titel, Startzeit, Buy-in, Variante und Turnierart mussten bei diesen zehn Datensätzen nicht geändert werden.
+
+### Quellenkonflikte und Datumsgrenzen
+
+- Die Capital-Poker-Übersicht enthält nach dem aktuellen Kalenderblock eine weitere Terminserie, deren Wochentage zu 2027 passen. Diese Folge wurde nicht als 2026 interpretiert. Für 2026 bleibt der aktuelle Veranstalterkalender mit dem konkret gelisteten 27.12. massgeblich; es wurde kein 26.12.-Termin hinzugefügt.
+- Die Grand-Casino-Luzern-Übersicht enthält nach dem 2026-Block weitere Termine für 2027. Diese wurden nicht in den Prüfzeitraum übernommen.
+- Bei GCL sind die beiden Cash-Game-Zeilen vom 13./14.11. ausgeschlossen. Die drei Prestige-Schliesstage sind keine Turniere.
+- Es wurde keine neue eindeutig bestätigte offizielle Absage gefunden.
+
+### Pagination, Filter und verbleibende Blocker
+
+Die Hauptkalender-Pagination bleibt nicht zuverlässig auslesbar. Neben den zuvor getesteten Parametern wurden heute erneut `?page=2`, `?p=2`, `?seite=2`, `?from=2026-12-01`, `?datum=2026-12-01`, `?month=12&year=2026` sowie direkte `?forganizer=`-Kalender-URLs versucht; diese Aufrufe waren über den verfügbaren Webabruf nicht zugänglich. Die direkten Veranstalterübersichten unter `/tournaments/{id}` waren dagegen abrufbar. Suchindex-Snapshots für gefilterte Kalender wurden ergänzend genutzt, ersetzen aber keine vollständige Monatsansicht.
+
+Letzte aktuell direkt erreichbare Termine der Veranstalterübersichten:
+- 24Poker: 06.12.; 07.–31.12. dort nicht gelistet/erreichbar.
+- FOIF DRÜ: 31.12.; kein offener Zeitraum innerhalb der sichtbaren Übersicht.
+- AZ Poker Club: 27.12.; 28.–31.12. offen.
+- Capital Poker Club: 27.12.; 28.–31.12. offen.
+- House of Cards: 30.12.; 31.12. offen.
+- Munot Poker: 28.11.; 29.11.–31.12. offen.
+- Another Poker: 03.12.; 04.–31.12. offen.
+- Prestige Poker: 24.11. (danach nur geschlossener Platzhalter); 25.11.–31.12. offen.
+- Grand Casino Luzern: 20.12.; 21.–31.12. offen.
+- Sports Zugerland: 28.12.; 29.–31.12. offen.
+- RPR: 29.12.; 30.–31.12. offen.
+- Pöstli Poker: 28.12.; 29.–31.12. offen.
+- STATION-Detailtabelle: 30.11.; 01.–31.12. offen.
+
+Für HSOP, Airfield/Pokerhelden, DC Poker Club, 72 Offsuite Thun, Kartenfreunde Wynental, Grand Casino Basel und Open Valais Poker ist keine vollständige aktuelle Buy-in.info-Veranstalterübersicht zugänglich. Einzelne datierte Hauptkalender-, Suchindex- oder offizielle Veranstalterbelege liegen vor, reichen aber nicht zur vollständigen Monatsabdeckung.
+
+### Datenqualität und Änderungen dieser Nachprüfung
+
+Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze insgesamt, davon 397 vom 13.11. bis 31.12.2026. Es bestehen weiterhin 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate und 0 Cash Games in den Turnierdateien. Im Prüfzeitraum bleiben 148 Startzeiten, 115 Varianten und 62 Turnierarten bewusst TBA; 0 zukünftige Datensätze haben eine leere source_note.
+
+Änderungsbilanz dieser Nachprüfung: 0 fehlende Turniere ergänzt, 0 fachliche Turnierfelder korrigiert, 10 Provenienznotizen präzisiert, 0 Dubletten bereinigt.
+
+**Eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird weiterhin ausdrücklich nicht behauptet.**
