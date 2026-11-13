@@ -314,11 +314,11 @@ Zwei GCL-Satellites mit gleichem Titel am 16.12. und 17.12. sind jeweils um 13:1
 
 #### GitHub Actions und Pages-Artefakt
 
-Für den Datenstand `d57405ac93daf54ad4fb7edd3d94b0998c05bcdd` liefen beide Workflows erfolgreich:
-- Datenqualität: [Run 43396767371](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767371), SUCCESS.
-- Pages-Deploy: [Run 43396767374](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767374), SUCCESS.
+Für den Datenstand `3ac55cfc5ae855b0385b20903a7b821dcb742b03` liefen beide Workflows erfolgreich:
+- Datenqualität: [Run 43399143046](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43399143046), SUCCESS.
+- Pages-Deploy: [Run 43399143080](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43399143080), SUCCESS.
 
-Das tatsächliche Artefakt [ID 14022757217](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767374/artifacts/14022757217) wurde heruntergeladen. ZIP-SHA-256: `672ed7d75588e038ce6ebcd3e0503f9a9d51a7615255575c0be2b6cb7564acf9`. Das enthaltene TAR hat 960 Dateien, darunter 925 HTML-Dateien und 11 JSON-Dateien (neun Turnierdateien plus zwei separate Cash-Game-Dateien). Es enthält 852 Turnierdetailseiten, 20 Veranstalterseiten und 921 Sitemap-URLs. Alle neun Turnier-JSON-Dateien stimmen bytegenau über ihre Git-Blob-SHAs mit `main` überein.
+Das tatsächliche Artefakt [ID 14023593376](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43399143080/artifacts/14023593376) wurde heruntergeladen. ZIP-SHA-256: `9b7e5982263543a2fa96bb0d3a4bd55c26ba5f8861d0e058c51804283df166a7`. Das enthaltene TAR hat 960 Dateien, darunter 925 HTML-Dateien und 11 JSON-Dateien (neun Turnierdateien plus zwei separate Cash-Game-Dateien). Es enthält 852 Turnierdetailseiten, 20 Veranstalterseiten und 921 Sitemap-URLs. Alle neun Turnier-JSON-Dateien stimmen bytegenau über ihre Git-Blob-SHAs mit `main` überein.
 
 Alle 852 Turnierdetailseiten sind vorhanden. Die JSON-LD-Daten jeder Detailseite stimmen bei Titel, Datum, Startzeit (inklusive TBA als Datum ohne Uhrzeit) und Buy-in mit den Turnier-JSON-Daten überein; es wurden keine Abweichungen gefunden. Die Zähler aller 20 Veranstalterseiten stimmen mit den zugehörigen Datensätzen überein. 21 Veranstalternamen kommen im Datenbestand vor; Kartenfreunde Wynental hat nur ein kommendes Turnier und erhält gemäss Generatorregel (Veranstalterseiten ab zwei kommenden Turnieren) keine eigene Veranstalterseite. Die einzelne Turnierdetailseite ist vorhanden.
 
