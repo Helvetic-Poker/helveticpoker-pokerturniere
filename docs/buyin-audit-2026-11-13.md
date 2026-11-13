@@ -78,6 +78,9 @@ Quellen:
 
 Es wurden keine Zeiten aus wiederkehrenden Wochenprogrammen übernommen.
 
+### Ergänzte Provenienznotizen
+Für 22 zuvor ohne source_note gespeicherte zukünftige Datensätze wurde die konkrete Quelle nachgetragen: 18 datierte Buy-in.info-Hauptkalender-/Veranstalteransichten und vier datierte offizielle HSOP-Kalendertermine (23., 24., 27. und 28.11.). Die vier HSOP-Einträge sind ausdrücklich als offizielle Veranstalterbelege dokumentiert und werden wegen der nicht erreichbaren Buy-in.info-Folgeseiten nicht zur Buy-in.info-Mindestabdeckung gezählt. Im Prüfzeitraum 13.11.–31.12. verbleiben nun 0 Datensätze ohne source_note.
+
 ## Zusätzliche offizielle Quellen / Anbieter
 
 Ergänzend wurden aktuelle Veranstalterquellen ausserhalb der Buy-in.info-Mindestansichten gegengeprüft:

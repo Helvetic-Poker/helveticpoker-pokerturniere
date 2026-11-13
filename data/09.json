@@ -8906,12 +8906,13 @@
     "buy_in": 0,
     "is_freeroll": true,
     "buy_in_label": "CHF 0 + 20",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://24poker.ch/",
     "chips": null,
     "slug": "24poker-haidy-s-plo-warm-up-2-gtd-2026-11-13",
     "provider_logo": "",
-    "_ord": 334
+    "_ord": 334,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 17:30 with this title and CHF 0+20. The 24Poker organizer overview https://buy-in.info/tournaments/132 confirms the dated event and buy-in. PLO is explicit in the title."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-omaha-freeroll-2026-11-13",
@@ -8931,12 +8932,13 @@
     "buy_in": 0,
     "is_freeroll": true,
     "buy_in_label": "CHF 0 + 25",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.foifdrue.ch/",
     "chips": null,
     "slug": "foif-drue-effretikon-foif-dru-omaha-freeroll-2026-11-13",
     "provider_logo": "",
-    "_ord": 335
+    "_ord": 335,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 18:00 with this title and CHF 0+25. The FOIF organizer overview https://buy-in.info/tournaments/520 confirms the dated event and buy-in. Omaha/PLO and Freeroll are explicit in the title."
   },
   {
     "id": "24poker-24-platinium-godzilla-20-min-blinds-2026-11-13",
@@ -8956,12 +8958,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-26",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://24poker.ch/",
     "chips": null,
     "slug": "24poker-24-platinium-godzilla-20-min-blinds-2026-11-13",
     "provider_logo": "",
-    "_ord": 336
+    "_ord": 336,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 19:00 with this title and CHF 100+30. The 24Poker organizer overview https://buy-in.info/tournaments/132 confirms the dated event and buy-in."
   },
   {
     "id": "capital-poker-club-bern-cpc-freitags-deepstack-30k-max-pot-2026-11-13",
@@ -8981,12 +8984,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-24",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-poker-club-bern-cpc-freitags-deepstack-30k-max-pot-2026-11-13",
     "provider_logo": "",
-    "_ord": 337
+    "_ord": 337,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 19:00 with this title and CHF 100+30. The Capital Poker Club organizer overview https://buy-in.info/tournaments/493 confirms the dated event and buy-in."
   },
   {
     "id": "hsop-zizers-freezeout-turnier-2026-11-13",
@@ -9032,12 +9036,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-friday-night-poker-xxl-2026-11-13",
     "provider_logo": "",
-    "_ord": 339
+    "_ord": 339,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 19:00 with this title and CHF 100+30. The Another Poker Basel organizer overview https://buy-in.info/tournaments/226 confirms the dated event and buy-in."
   },
   {
     "id": "pokerhelden-pokerseries-cup-wilderswil-2026-11-13",
@@ -9162,12 +9167,13 @@
     "buy_in": 75,
     "is_freeroll": false,
     "buy_in_label": "CHF 75 + 25",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.foifdrue.ch/",
     "chips": null,
     "slug": "foif-drue-effretikon-foif-dru-crazy-friday-2026-11-13",
     "provider_logo": "",
-    "_ord": 342
+    "_ord": 342,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 19:30 with this title and CHF 75+25. The FOIF organizer overview https://buy-in.info/tournaments/520 confirms the dated event and buy-in."
   },
   {
     "id": "munot-poker-schaffhausen-new-time-turnier-nlh-plo-2026-11-13",
@@ -9187,12 +9193,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-new-time-turnier-nlh-plo-2026-11-13",
     "provider_logo": "",
-    "_ord": 343
+    "_ord": 343,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 19:30 with this title and CHF 100+30. The Munot organizer overview https://buy-in.info/tournaments/558 confirms the dated event and buy-in; NLH/PLO is explicit in the title."
   },
   {
     "id": "postli-poker-friti-bounty-2026-11-13",
@@ -9265,12 +9272,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 20",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.foifdrue.ch/",
     "chips": null,
     "slug": "foif-drue-effretikon-foif-dru-time-challenge-2026-11-13",
     "provider_logo": "",
-    "_ord": 345
+    "_ord": 345,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-13 at 22:30 with this title and CHF 50+20. The FOIF organizer overview https://buy-in.info/tournaments/520 confirms the dated event and buy-in."
   },
   {
     "id": "prestige-poker-dietlikon-saturday-50er-neu-14-00-2026-11-14",
@@ -9473,12 +9481,13 @@
     "buy_in": 200,
     "is_freeroll": false,
     "buy_in_label": "CHF 200 + 40",
-    "last_checked": "2026-10-24",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.capitalpoker.ch/",
     "chips": null,
     "slug": "capital-poker-club-bern-cpc-big-monsterstack-freezeout-2026-11-14",
     "provider_logo": "",
-    "_ord": 350
+    "_ord": 350,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-14 at 19:00 with this title and CHF 200+40. The Capital organizer overview https://buy-in.info/tournaments/493 confirms the dated event and buy-in; Freezeout is explicit in the title."
   },
   {
     "id": "munot-poker-schaffhausen-new-mega-deep-stack-30k-pot-2026-11-14",
@@ -9498,12 +9507,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-25",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.munotpoker.ch/",
     "chips": null,
     "slug": "munot-poker-schaffhausen-new-mega-deep-stack-30k-pot-2026-11-14",
     "provider_logo": "",
-    "_ord": 351
+    "_ord": 351,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-14 at 19:00 with this title and CHF 100+30. The Munot organizer overview https://buy-in.info/tournaments/558 confirms the dated event and buy-in."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-saturday-night-150k-2026-11-14",
@@ -9680,12 +9690,13 @@
     "buy_in": 150,
     "is_freeroll": false,
     "buy_in_label": "CHF 150 + 35",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-big-sunday-poker-2026-11-15",
     "provider_logo": "",
-    "_ord": 357
+    "_ord": 357,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-15 at 15:00 with this title and CHF 150+35. The Another Poker Basel organizer overview https://buy-in.info/tournaments/226 confirms the dated event and buy-in."
   },
   {
     "id": "capital-poker-club-bern-cpc-the-grand-freezeout-300-2026-11-15",
@@ -9914,12 +9925,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-time-poker-tournament-pl-omaha-4-card-2026-11-15",
     "provider_logo": "",
-    "_ord": 364
+    "_ord": 364,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-15 at 19:00 with this title and CHF 100+30. The Another Poker Basel organizer overview https://buy-in.info/tournaments/226 confirms the dated event and buy-in; PLO/Omaha is explicit in the title."
   },
   {
     "id": "prestige-poker-dietlikon-sunday-50er-19-00-2026-11-15",
@@ -10043,12 +10055,13 @@
     "buy_in": 24,
     "is_freeroll": false,
     "buy_in_label": "CHF 24 + 6",
-    "last_checked": "2026-10-27",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-hyper-turbo-satelitte-1-ticket-garantiert-2026-11-16",
     "provider_logo": "",
-    "_ord": 367
+    "_ord": 367,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-16 at 18:40 with this title and CHF 24+6. The Another Poker Basel organizer overview https://buy-in.info/tournaments/226 confirms the dated event and buy-in."
   },
   {
     "id": "24poker-24-monday-monthly-turbo-omaha-2026-11-16",
@@ -11769,12 +11782,13 @@
     "buy_in": 95,
     "is_freeroll": false,
     "buy_in_label": "CHF 95 + 25",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-zizers-re-entry-turnier-2026-11-23",
     "provider_logo": "",
-    "_ord": 428
+    "_ord": 428,
+    "source_note": "Dated official organizer source: HSOP calendar https://hsop.ch/turnierkalender/ explicitly lists Monday 23.11.2026, Re-Entry Turnier, NLH, CHF 95+25, start 19:00. The Buy-in.info main-calendar pagination beyond 21.11 was not accessible in this run; this record is supported by the dated official HSOP source and is not counted as a confirmed Buy-in.info listing."
   },
   {
     "id": "station-poker-club-league-pro3-team-swiss-biel-bienne-2026-11-23",
@@ -12030,12 +12044,13 @@
     "buy_in": 75,
     "is_freeroll": false,
     "buy_in_label": "CHF 75 + 25",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-zizers-le-petit-re-entry-turnier-2026-11-24",
     "provider_logo": "",
-    "_ord": 436
+    "_ord": 436,
+    "source_note": "Dated official organizer source: HSOP calendar https://hsop.ch/turnierkalender/ explicitly lists Tuesday 24.11.2026, Le Petit Re-Entry Turnier, NLH, CHF 75+25, start 19:00. The Buy-in.info main-calendar pagination beyond 21.11 was not accessible in this run; this record is supported by the dated official HSOP source and is not counted as a confirmed Buy-in.info listing."
   },
   {
     "id": "24poker-haidy-s-plo-warm-up-2-gtd-2026-11-24",
@@ -12657,12 +12672,13 @@
     "buy_in": 200,
     "is_freeroll": false,
     "buy_in_label": "CHF 200 + 40",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-zizers-10-hsop-open-flight-1a-2026-11-27",
     "provider_logo": "",
-    "_ord": 456
+    "_ord": 456,
+    "source_note": "Dated official organizer source: HSOP calendar https://hsop.ch/turnierkalender/ explicitly lists Friday 27.11.2026, 10. HSOP OPEN Flight 1A, NLH Freezeout, CHF 200+40, start 19:00. The Buy-in.info main-calendar pagination beyond 21.11 was not accessible in this run; this record is supported by the dated official HSOP source and is not counted as a confirmed Buy-in.info listing."
   },
   {
     "id": "pokerhelden-bopm-mainevent-flight-1a-wilderswil-2026-11-27",
@@ -13022,12 +13038,13 @@
     "buy_in": 200,
     "is_freeroll": false,
     "buy_in_label": "CHF 200 + 40",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://hsop.ch/",
     "chips": null,
     "slug": "hsop-zizers-10-hsop-open-flight-1b-2026-11-28",
     "provider_logo": "",
-    "_ord": 468
+    "_ord": 468,
+    "source_note": "Dated official organizer source: HSOP calendar https://hsop.ch/turnierkalender/ explicitly lists Saturday 28.11.2026, 10. HSOP OPEN Flight 1B, NLH Freezeout, CHF 200+40, start 15:00. The Buy-in.info main-calendar pagination beyond 21.11 was not accessible in this run; this record is supported by the dated official HSOP source and is not counted as a confirmed Buy-in.info listing."
   },
   {
     "id": "grand-casino-luzern-autumn-special-day-1d-2026-11-28",
@@ -18158,12 +18175,13 @@
     "buy_in": 100,
     "is_freeroll": false,
     "buy_in_label": "CHF 100 + 30",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://kartenfreunde.ch/",
     "chips": null,
     "slug": "kartenfreunde-wynental-mixed-holdem-bomb-pot-bei-levelstart-2026-11-15",
     "provider_logo": "",
-    "_ord": 727
+    "_ord": 727,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-15 at 15:00 with this exact title and CHF 100+30. No separate current organizer overview was accessible. Variant remains TBA; Bomb Pot is explicit in the title."
   },
   {
     "id": "prestige-poker-dietlikon-omaha-hilo-plo8-2026-11-19",
@@ -18183,12 +18201,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 20",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.prestige-poker.ch/",
     "chips": null,
     "slug": "prestige-poker-dietlikon-omaha-hilo-plo8-2026-11-19",
     "provider_logo": "",
-    "_ord": 728
+    "_ord": 728,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-19 at 18:30 with this title and CHF 50+20. The Prestige organizer overview https://buy-in.info/tournaments/189 confirms the dated event and buy-in; PLO8/Omaha is explicit in the title."
   },
   {
     "id": "prestige-poker-dietlikon-mystery-bounty-340-lu-on-top-2026-11-19",
@@ -18208,12 +18227,13 @@
     "buy_in": 70,
     "is_freeroll": false,
     "buy_in_label": "CHF 70 + 30 + 30",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.prestige-poker.ch/",
     "chips": null,
     "slug": "prestige-poker-dietlikon-mystery-bounty-340-lu-on-top-2026-11-19",
     "provider_logo": "",
-    "_ord": 729
+    "_ord": 729,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-19 at 19:00 with this title and CHF 70+30+30. The Prestige organizer overview https://buy-in.info/tournaments/189 confirms the dated event and buy-in; Bounty is explicit in the title."
   },
   {
     "id": "prestige-poker-dietlikon-friday-main-freezeout-2026-11-20",
@@ -18233,12 +18253,13 @@
     "buy_in": 200,
     "is_freeroll": false,
     "buy_in_label": "CHF 200 + 45",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.prestige-poker.ch/",
     "chips": null,
     "slug": "prestige-poker-dietlikon-friday-main-freezeout-2026-11-20",
     "provider_logo": "",
-    "_ord": 730
+    "_ord": 730,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-20 at 19:00 with this title and CHF 200+45. The Prestige organizer overview https://buy-in.info/tournaments/189 confirms the dated event and buy-in; Freezeout is explicit in the title."
   },
   {
     "id": "prestige-poker-dietlikon-friday-50er-21-30-2026-11-20",
@@ -18258,12 +18279,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 20",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.prestige-poker.ch/",
     "chips": null,
     "slug": "prestige-poker-dietlikon-friday-50er-21-30-2026-11-20",
     "provider_logo": "",
-    "_ord": 731
+    "_ord": 731,
+    "source_note": "Buy-in.info current main calendar https://buy-in.info/calendar explicitly lists 2026-11-20 at 21:30 with this title and CHF 50+20. The Prestige organizer overview https://buy-in.info/tournaments/189 confirms the dated event and buy-in."
   },
   {
     "id": "poestli-poker-progressiv-bounty-2026-12-04",
