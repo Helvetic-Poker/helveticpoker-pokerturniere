@@ -3,10 +3,10 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 12.11.2026
+- Datenstand: 13.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
 - 846 eindeutige Turnierdatensätze in 9 Dateien unter `data/*.json`
-- 404 Datensätze vom 12.11.2026 bis 31.12.2026
+- 410 Datensätze vom 12.11.2026 bis 31.12.2026
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
@@ -34,3 +34,16 @@ Der tägliche Quellenabgleich wird fortgeführt. Ein erfolgreicher JSON-/Pages-B
 - 19 zuvor fehlende Dezembertermine wurden in `data/09.json` ergänzt; fehlende Startzeiten bleiben TBA.
 - Der Bestand umfasst nun 846 Datensätze, davon 404 vom 12.11. bis 31.12.2026.
 - Hauptkalender-Pagination und mehrere weitere Veranstalterzeiträume bleiben eingeschränkt; eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird nicht behauptet. Details: [Tagesaudit 12.11.2026](docs/buyin-audit-2026-11-12.md).
+
+
+## Quellenabgleich 13.11.2026 – Prestige-Nachtrag und Hauptkalenderzeiten
+- Die aktuelle Buy-in.info-Hauptkalenderansicht enthält 100 sichtbare Zeilen vom 13.11. bis 21.11.2026 (18:40). Davon sind 97 Turnierlistings, zwei Cash Games und ein als „Dienstag PP geschlossen“ gelisteter Prestige-Schliesstag.
+- Zusätzlich wurden zwölf aktuelle Veranstalterübersichten sowie die STATION-Detailtabelle „Weitere Turniere“ geprüft. Zusammen mit dem Hauptkalender ergeben die erreichbaren Ansichten 441 Zeilen; sieben Cash-Game-/Schliesstag-Zeilen sind keine Turnierlistings. Nach 88 Überschneidungen ergeben sich 346 eindeutige Buy-in.info-Turniere in den erreichbaren Ansichten. Diese Zahl ist keine Vollständigkeitsbehauptung für den gesamten Kalender.
+- In der aktuellen Prestige-Übersicht (https://buy-in.info/tournaments/189) fehlten sechs konkret gelistete Termine am 21.–23.11.2026. Alle sechs wurden in data/09.json ergänzt; vier Zeiten sind explizit im Titel enthalten, zwei nicht veröffentlichte Zeiten bleiben TBA.
+- Vier bestehende Startzeiten vom 20.11.2026 wurden anhand der aktuellen Hauptkalenderzeilen korrigiert: 24Poker 19:00, FOIF Crazy Friday 19:30, Pöstli Progressiv-Bounty 20:00, FOIF Time Challenge 22:30. Der HSOP-Titel wurde auf die aktuelle Schreibweise „FREEZEOUT TURNIER“ korrigiert.
+- Keine Startzeit wurde aus einem Wochenmuster abgeleitet. Variante/Turnierart bleiben TBA, wenn sie nicht ausdrücklich aus dem konkreten Titel oder einer datierten Quelle hervorgehen.
+- Der Bestand umfasst nun 852 Datensätze, davon 397 vom 13.11. bis 31.12.2026 und 410 vom 12.11. bis 31.12.2026.
+- Datenqualität über alle neun Turnierdateien: keine doppelten IDs/Slugs/semantischen Events, keine fehlenden Pflichtfelder, keine ungültigen Datums-/Zeitformate, keine Cash Games in den Turnierdateien.
+- Hauptkalender-Pagination bleibt blockiert: die sichtbare Ansicht endet nach 100 Zeilen; Versuche mit ?page=2, ?offset=100, ?start=100, Datums- und forganizer-Parametern konnten nicht zuverlässig als vollständige Folgeseiten abgerufen werden. Die offenen Veranstalterzeiträume sind im Tagesaudit 13.11.2026 aufgeführt.
+
+Details: [Tagesaudit 13.11.2026](docs/buyin-audit-2026-11-13.md).
