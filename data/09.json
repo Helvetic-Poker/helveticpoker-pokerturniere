@@ -16120,13 +16120,13 @@
     "buy_in": 800,
     "is_freeroll": false,
     "buy_in_label": "CHF 800 + 80",
-    "last_checked": "2026-11-09",
+    "last_checked": "2026-11-13",
     "organizer_url": "https://www.grandcasinoluzern.ch/spielen/poker-circle/poker-circle-swiss-masters",
     "chips": null,
     "slug": "grand-casino-luzern-pcsm-day-1a-2026-12-16",
     "provider_logo": "",
     "_ord": 558,
-    "source_note": "Aktuelle Buy-in.info-Clubübersicht https://buy-in.info/club/458, geprüft 09.11.2026, bestätigt für diesen konkreten Termin Datum, Startzeit, Titel, Variante und Buy-in. Variante gemäß der dortigen Spalte „Variante“ übernommen (Hold'em NL → NLH; Omaha Pot Limit → PLO); keine Übernahme aus einem anderen Termin. Quellenkonflikt: Die aktuelle Clubübersicht listet PCSM Day 1A am 16.12.2026; die ältere „Weitere Turniere“-Tabelle auf https://buy-in.info/tournaments/458 nennt 15.12.2026. Die aktuelle Clubübersicht hat Vorrang; 16.12.2026 bleibt gespeichert."
+    "source_note": "Quellenkonflikt geprüft am 13.11.2026: Die aktuelle Buy-in.info-Clubübersicht https://buy-in.info/club/458 listet PCSM Day 1A am 16.12.2026 um 15:00. Die ältere „Weitere Turniere“-Tabelle auf https://buy-in.info/tournaments/458 zeigt in ihrer fortlaufenden Folge nach den 2026-Terminen einen unqualifizierten Eintrag „Mi 15.12.“; die aktuelle Clubübersicht führt diesen 15.12.-Termin ausdrücklich als 15.12.2027. Der ältere Eintrag gehört somit zum Jahr 2027, nicht 2026. 16.12.2026 bleibt gespeichert; kein zusätzlicher Termin am 15.12.2026 wird angelegt."
   },
   {
     "id": "grand-casino-luzern-sat-for-pcsm-main-event-2026-12-16-1900",
