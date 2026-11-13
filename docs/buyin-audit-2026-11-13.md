@@ -228,8 +228,15 @@ Für HSOP, Airfield/Pokerhelden, DC Poker Club, 72 Offsuite Thun, Kartenfreunde 
 
 ### Datenqualität und Änderungen dieser Nachprüfung
 
-Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze insgesamt, davon 397 vom 13.11. bis 31.12.2026. Es bestehen weiterhin 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate und 0 Cash Games in den Turnierdateien. Im Prüfzeitraum bleiben 148 Startzeiten, 115 Varianten und 62 Turnierarten bewusst TBA; 0 zukünftige Datensätze haben eine leere source_note.
+Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze insgesamt, davon 397 vom 13.11. bis 31.12.2026. Es bestehen weiterhin 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate und 0 Cash Games in den Turnierdateien. Im Prüfzeitraum bleiben 149 Startzeiten, 116 Varianten und 61 Turnierarten bewusst TBA; 0 zukünftige Datensätze haben eine leere source_note.
 
-Änderungsbilanz dieser Nachprüfung: 0 fehlende Turniere ergänzt, 0 fachliche Turnierfelder korrigiert, 10 Provenienznotizen präzisiert, 0 Dubletten bereinigt.
+Änderungsbilanz dieser Nachprüfung: 0 fehlende Turniere ergänzt, 1 bestehender Datensatz fachlich korrigiert (Jahresranking-Final: unbelegte Uhrzeit/Buy-in/Variante auf TBA gesetzt), 10 Provenienznotizen präzisiert, 0 Dubletten bereinigt.
 
 **Eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird weiterhin ausdrücklich nicht behauptet.**
+
+
+### Nachtrag: Pokerhelden-Jahresfinale – Quellenkonflikt 19./26.12.2026
+
+Die offizielle Pokerhelden-Seite im Abschnitt „Jahresranking 2026“ nennt den **26.12.2026** als Finaldatum, gibt aber weder Startzeit noch Buy-in oder Variante an. Die heute abrufbare offizielle Pokerraum-Turnierliste führt daneben **„Jahresranking Final“ am 19.12.2026 um 18:00 mit CHF 100+30**. Die verlinkte Detailseite liefert keine zusätzlichen Turnierdetails, und die beiden offiziellen Quellen klären nicht, ob es zwei verschiedene Finals oder eine Terminänderung desselben Events sind.
+
+Um keine mögliche Dublette anzulegen und keine Zeit-/Buy-in-Angaben von einem anderen Termin zu übernehmen, bleibt der datierte 26.12.-Termin aus der offiziellen Pokerhelden-Jahresranking-Seite im Bestand. Seine Startzeit, sein Buy-in und seine Variante wurden auf TBA gesetzt. Der 19.12.-Eintrag wird als ungeklärter möglicher Doppel-/Alternativtermin dokumentiert und vorerst nicht als zweites Event angelegt. Damit wurde ein bestehender Datensatz fachlich korrigiert; eine vollständige Klärung dieses Quellenkonflikts bleibt offen.
