@@ -5,7 +5,7 @@ Zentraler Kalender der Schweizer Pokerszene.
 ## Aktueller Stand
 - Datenstand: 13.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- 846 eindeutige Turnierdatensätze in 9 Dateien unter `data/*.json`
+- 852 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
 - 410 Datensätze vom 12.11.2026 bis 31.12.2026
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
@@ -32,7 +32,7 @@ Der tägliche Quellenabgleich wird fortgeführt. Ein erfolgreicher JSON-/Pages-B
 ## Quellenabgleich 12.11.2026 – Pöstli-Nachtrag
 - Die aktuelle Buy-in.info-Pöstli-Veranstalterübersicht wurde erneut erfolgreich abgerufen und enthält 36 konkrete Turniertermine vom 12.11. bis 28.12.2026.
 - 19 zuvor fehlende Dezembertermine wurden in `data/09.json` ergänzt; fehlende Startzeiten bleiben TBA.
-- Der Bestand umfasst nun 846 Datensätze, davon 404 vom 12.11. bis 31.12.2026.
+- Der Bestand umfasst nun 852 Datensätze, davon 410 vom 12.11. bis 31.12.2026.
 - Hauptkalender-Pagination und mehrere weitere Veranstalterzeiträume bleiben eingeschränkt; eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird nicht behauptet. Details: [Tagesaudit 12.11.2026](docs/buyin-audit-2026-11-12.md).
 
 
@@ -51,5 +51,10 @@ Details: [Tagesaudit 13.11.2026](docs/buyin-audit-2026-11-13.md).
 
 ### Finale Datenqualitätszahlen nach Filter-/Official-Source-Crosscheck
 - 852 Datensätze insgesamt; 397 vom 13.11. bis 31.12.2026.
-- Im Prüfzeitraum: 148 Startzeiten TBA, 115 Varianten TBA, 62 Turnierarten TBA; alle TBA-Werte sind bewusst nicht mit unbelegten Angaben aufgefüllt.
-- 0 zukünftige Datensätze ohne source_note; 9/9 JSON-Dateien gültig; 0 doppelte IDs, Slugs oder semantische Events.
+- Im Prüfzeitraum: 148 Startzeiten TBA, 129 Varianten TBA, 66 Turnierarten TBA, 2 Buy-in-Angaben TBA; alle TBA-Werte sind bewusst nicht mit unbelegten Angaben aufgefüllt.
+- 0 zukünftige Datensätze ohne source_note; 9/9 Turnier-JSON-Dateien gültig; 0 doppelte IDs, Slugs oder semantische Events.
+
+
+### Artefaktprüfung 13.11.2026
+
+Der Pages-Deploy-Run [43396767374](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767374) war erfolgreich. Das tatsächliche Artefakt (ID 14022757217) enthält 9 Turnier-JSON-Dateien mit 852 Datensätzen, 852 Turnierdetailseiten, 20 Veranstalterseiten und 921 Sitemap-URLs. Alle neun Turnier-JSON-Dateien stimmen bytegenau mit den Git-Blobs auf `main` überein. Der separate Qualitätsworkflow [43396767371](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767371) war ebenfalls erfolgreich. Details und bekannte Kalenderblocker stehen im [Tagesaudit 13.11.2026](docs/buyin-audit-2026-11-13.md).
