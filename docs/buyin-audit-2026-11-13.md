@@ -228,9 +228,9 @@ Für HSOP, Airfield/Pokerhelden, DC Poker Club, 72 Offsuite Thun, Kartenfreunde 
 
 ### Datenqualität und Änderungen dieser Nachprüfung
 
-Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze insgesamt, davon 397 vom 13.11. bis 31.12.2026. Es bestehen weiterhin 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate und 0 Cash Games in den Turnierdateien. Im Prüfzeitraum bleiben 148 Startzeiten, 116 Varianten, 62 Turnierarten und 2 Buy-in-Angaben bewusst TBA; 0 zukünftige Datensätze haben eine leere source_note.
+Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze insgesamt, davon 397 vom 13.11. bis 31.12.2026. Es bestehen weiterhin 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate und 0 Cash Games in den Turnierdateien. Im Prüfzeitraum bleiben 148 Startzeiten, 129 Varianten, 66 Turnierarten und 2 Buy-in-Angaben bewusst TBA; 0 zukünftige Datensätze haben eine leere source_note.
 
-Änderungsbilanz dieser Nachprüfung: 0 fehlende Turniere ergänzt, 1 bestehender Datensatz fachlich korrigiert (Jahresranking Final auf aktuelle offizielle Pokerraum-Übersicht vom 19.12.2026, 18:00, CHF 100+30 ausgerichtet), 10 Provenienznotizen präzisiert, 0 Dubletten bereinigt.
+Änderungsbilanz dieser Nachprüfung: 0 fehlende Turniere ergänzt, 14 bestehende Datensätze fachlich korrigiert (1 Jahresranking-Termin; 13 Airfield-Termine: nicht belegte Varianten auf TBA, Chlouse-Titel/Turnierart an aktuelle Veranstalterquelle angepasst), 23 Provenienznotizen präzisiert, 0 Dubletten bereinigt.
 
 **Eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird weiterhin ausdrücklich nicht behauptet.**
 
@@ -240,3 +240,20 @@ Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze
 Die aktuelle offizielle Pokerraum-Veranstalterübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga listet **„Jahresranking Final“ am 19.12.2026 um 18:00 mit CHF 100+30**. Die ältere statische Pokerhelden-Seite im Abschnitt „Jahresranking 2026“ nennt dagegen **26.12.2026** als Finaldatum, ohne Startzeit oder Buy-in. Die beiden offiziellen Quellen widersprechen sich.
 
 Gewählt wird die aktuellere, konkrete Pokerraum-Veranstalterübersicht mit Eventtitel, Datum, Startzeit und Buy-in. Der Datensatz wurde deshalb auf 19.12.2026, 18:00, CHF 100+30 geändert; die Variante bleibt TBA. Der 26.12.-Text der älteren Pokerhelden-Seite wird als Quellenkonflikt dokumentiert, aber nicht als zweites Event angelegt, um eine mögliche Dublette zu vermeiden. Die dynamische Detailseite des 19.12.-Eintrags liefert keine zusätzliche Variantenangabe.
+
+
+### Airfield/Pokerhelden: direkter Buy-in-Seitenabruf gegen veraltete Suchindex-Snippets
+
+Die Detailseite https://buy-in.info/tournament/112555 wurde heute direkt geöffnet. Sie zeigt als Hauptturnier den Pokerseries Cup vom 16.01.2026; ihre „Weitere Turniere“-Tabelle endet aktuell bei vergangenen Terminen bis 07.11.2026. Die zuvor in Suchindex-Snippets sichtbaren Airfield-Termine vom 13.11. bis 18.12. sind auf dieser direkt geöffneten aktuellen Seite nicht vorhanden und werden daher **nicht** als aktuelle Buy-in.info-Listings gezählt. Der Suchindex-Schnappschuss ist insoweit veraltet.
+
+Die aktuelle offizielle Pokerraum-Veranstalterübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga führt die konkreten Airfield-Termine ab 26.11. bis 19.12. mit Datum, Startzeit und Buy-in. Diese Termine bleiben im Helvetic-Datenbestand als datierte offizielle Veranstaltertermine; die 13 Datensätze vom 26.11. bis 18.12. wurden in ihren Quellenhinweisen auf diese aktuelle offizielle Quelle umgestellt. Da die aktuelle Terminübersicht keine Varianten nennt, wurden diese Varianten auf TBA gesetzt; nicht explizit erkennbare Turnierarten bleiben ebenfalls TBA.
+
+Besonderer Konflikt: Ein älterer Buy-in-Suchindex-Schnappschuss zeigte „Chlouse Trophy“ am 05.12. als Freeroll. Die direkte aktuelle Buy-in-Detailseite enthält diesen zukünftigen Eintrag nicht; die aktuelle offizielle Pokerraum-Liste führt **„Chlouse Trophy / Triplestack Freezout“ am 06.12. um 13:00 mit CHF 50+20**. Gewählt wurde der aktuelle offizielle Veranstaltertermin. Titel und Turnierart wurden entsprechend korrigiert; die Variante bleibt TBA.
+
+Die aktuelle Pokerraum-Liste führt ausserdem „Jahresranking Final“ am 19.12. um 18:00 mit CHF 100+30. Dieser Datensatz wurde bereits oben auf die aktuelle Veranstalterübersicht ausgerichtet; die ältere statische Pokerhelden-Seite mit dem 26.12.-Finaldatum bleibt als Quellenkonflikt dokumentiert.
+
+### Präzisierte Buy-in-Zählung
+
+Die 441 aktuellen Ansichtszeilen (100 Hauptkalender, 331 Zeilen aus zwölf Veranstalterübersichten, 10 Zeilen aus der direkt geöffneten STATION-Detailtabelle) bleiben die zählbare Buy-in-Basis: 434 tatsächliche Turnierlistings nach Ausschluss von vier Cash Games und drei geschlossenen Prestige-Platzhaltern, 88 Überschneidungen und 346 eindeutige Turniere. Die veralteten Airfield-Suchindex-Snippets werden nicht zusätzlich gezählt. Die aktuelle direkte Airfield-Detailseite enthält für den Zeitraum ab 13.11. keine zukünftigen „Weitere Turniere“-Zeilen.
+
+Die Hauptkalender-Pagination nach dem 21.11. bleibt blockiert. Die offiziellen Pokerraum-Termine ab 26.11. sind ergänzende Veranstalterbelege, aber kein Ersatz für eine nicht erreichbare Buy-in.info-Haupt-/Veranstalterübersicht.
