@@ -47,3 +47,9 @@ Der tägliche Quellenabgleich wird fortgeführt. Ein erfolgreicher JSON-/Pages-B
 - Hauptkalender-Pagination bleibt blockiert: die sichtbare Ansicht endet nach 100 Zeilen; Versuche mit ?page=2, ?offset=100, ?start=100, Datums- und forganizer-Parametern konnten nicht zuverlässig als vollständige Folgeseiten abgerufen werden. Die offenen Veranstalterzeiträume sind im Tagesaudit 13.11.2026 aufgeführt.
 
 Details: [Tagesaudit 13.11.2026](docs/buyin-audit-2026-11-13.md).
+
+
+### Finale Datenqualitätszahlen nach Filter-/Official-Source-Crosscheck
+- 852 Datensätze insgesamt; 397 vom 13.11. bis 31.12.2026.
+- Im Prüfzeitraum: 148 Startzeiten TBA, 115 Varianten TBA, 62 Turnierarten TBA; alle TBA-Werte sind bewusst nicht mit unbelegten Angaben aufgefüllt.
+- 0 zukünftige Datensätze ohne source_note; 9/9 JSON-Dateien gültig; 0 doppelte IDs, Slugs oder semantische Events.

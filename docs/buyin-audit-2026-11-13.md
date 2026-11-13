@@ -115,6 +115,8 @@ Diese ergänzenden Termine wurden nicht als Buy-in.info-Organizer-Listings gezä
 - Fehlende Pflichtfelder: 0.
 - Ungültige Datums- oder Zeitformate: 0.
 - Cash Games in den neun Turnierdateien: 0.
+- Im Prüfzeitraum 13.11.–31.12.: 148 Startzeiten TBA, 115 Varianten TBA und 62 Turnierarten TBA; diese Angaben bleiben bewusst unbekannt, wenn die Quelle sie nicht nennt.
+- Zukünftige Datensätze ohne source_note: 0.
 - Dubletten entfernt: 0.
 
 ## Nicht erreichbare Kalenderbereiche / Blocker
