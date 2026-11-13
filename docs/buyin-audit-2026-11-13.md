@@ -228,7 +228,7 @@ Für HSOP, Airfield/Pokerhelden, DC Poker Club, 72 Offsuite Thun, Kartenfreunde 
 
 ### Datenqualität und Änderungen dieser Nachprüfung
 
-Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze insgesamt, davon 397 vom 13.11. bis 31.12.2026. Es bestehen weiterhin 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate und 0 Cash Games in den Turnierdateien. Im Prüfzeitraum bleiben 149 Startzeiten, 116 Varianten und 61 Turnierarten bewusst TBA; 0 zukünftige Datensätze haben eine leere source_note.
+Alle neun data/*.json-Dateien wurden erneut geladen und geparst: 852 Datensätze insgesamt, davon 397 vom 13.11. bis 31.12.2026. Es bestehen weiterhin 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate und 0 Cash Games in den Turnierdateien. Im Prüfzeitraum bleiben 149 Startzeiten, 116 Varianten, 62 Turnierarten und 3 Buy-in-Angaben bewusst TBA; 0 zukünftige Datensätze haben eine leere source_note.
 
 Änderungsbilanz dieser Nachprüfung: 0 fehlende Turniere ergänzt, 1 bestehender Datensatz fachlich korrigiert (Jahresranking-Final: unbelegte Uhrzeit/Buy-in/Variante auf TBA gesetzt), 10 Provenienznotizen präzisiert, 0 Dubletten bereinigt.
 
