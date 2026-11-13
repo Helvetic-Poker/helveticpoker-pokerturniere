@@ -257,3 +257,101 @@ Die aktuelle Pokerraum-Liste führt ausserdem „Jahresranking Final“ am 19.12
 Die 441 aktuellen Ansichtszeilen (100 Hauptkalender, 331 Zeilen aus zwölf Veranstalterübersichten, 10 Zeilen aus der direkt geöffneten STATION-Detailtabelle) bleiben die zählbare Buy-in-Basis: 434 tatsächliche Turnierlistings nach Ausschluss von vier Cash Games und drei geschlossenen Prestige-Platzhaltern, 88 Überschneidungen und 346 eindeutige Turniere. Die veralteten Airfield-Suchindex-Snippets werden nicht zusätzlich gezählt. Die aktuelle direkte Airfield-Detailseite enthält für den Zeitraum ab 13.11. keine zukünftigen „Weitere Turniere“-Zeilen.
 
 Die Hauptkalender-Pagination nach dem 21.11. bleibt blockiert. Die offiziellen Pokerraum-Termine ab 26.11. sind ergänzende Veranstalterbelege, aber kein Ersatz für eine nicht erreichbare Buy-in.info-Haupt-/Veranstalterübersicht.
+
+
+### Erneute Tagesprüfung am 13.11.2026, 10:00 CET
+
+#### Aktuelle Buy-in.info-Ansichten
+
+Die direkt geöffnete Hauptkalenderansicht zeigt weiterhin 100 Zeilen vom 13.11. bis 21.11.2026. Davon sind 97 Turnierlistings, zwei Cash Games und ein geschlossener Prestige-Platzhalter. Die aktuelle Hauptkalenderansicht bleibt die vorrangige Quelle; Suchindex-Snippets mit älteren Crawl-Daten wurden nicht gegen sie aufgewertet.
+
+Die zwölf erreichbaren Veranstalterübersichten enthalten zusammen 331 sichtbare Zeilen:
+
+| Veranstalter | Sichtbare Zeilen |
+|---|---:|
+| FOIF DRÜ EFFRETIKON | 85 |
+| 24Poker | 22 |
+| AZ Poker Club Bern | 20 |
+| Capital Poker Club Bern | 30 |
+| House of Cards Luzern | 14 |
+| Munot Poker Schaffhausen | 10 |
+| Another Poker Basel | 32 |
+| Prestige Poker Dietlikon | 21 (davon 2 geschlossene Platzhalter) |
+| Grand Casino Luzern | 43 (davon 2 Cash Games) |
+| Pöstli Poker | 35 |
+| Sports Zugerland | 12 |
+| RPR/Roger's Pokerroom | 7 |
+| **Summe** | **331** |
+
+Die 331 Veranstalterzeilen enthalten 327 Turnierlistings. Zusätzlich wurde die STATION-Detailtabelle mit 10 Zeilen geprüft. Damit ergeben sich erneut 441 Ansichtszeilen: 100 Hauptkalender, 331 Veranstalterzeilen und 10 STATION-Zeilen. Nach Ausschluss von vier Cash Games und drei geschlossenen Platzhaltern verbleiben 434 Turnierlistings; 88 Wiederholungen zwischen den Ansichten ergeben 346 eindeutige Buy-in.info-Turniere. Alle sichtbaren Turnierlistings sind im Datenbestand enthalten. In dieser Nachprüfung wurden keine neuen fehlenden Buy-in.info-Turniere gefunden.
+
+Aktuelle Filter-/Suchansichten bestätigen unter anderem:
+- Another Poker Basel: `calendar?forganizer=226`, mit datierten Terminen bis 03.12. und expliziten Startzeiten.
+- Capital Poker Club: `calendar?buy-in-promo-id=315&forganizer=493`, mit datierten Terminen und Zeiten bis in den Dezember.
+- Munot Poker: `calendar?forganizer=558`, mit Terminen bis 28.11.
+- Grand Casino Luzern: `calendar?forganizer=458`; die aktuelle Clubübersicht `/club/458` bestätigt zusätzlich die Dezembertermine.
+- House of Cards: Der gefundene Promo-Filter-Snapshot ist drei Wochen alt; die aktuelle Veranstalterübersicht wurde deshalb für Datum/Titel/Buy-in priorisiert. Es wurde kein widersprechender aktueller Termin gefunden.
+
+Die sichtbaren Organizer-Zeilen und die jeweiligen Datensätze stimmen in Anzahl und Inhalt überein. Bei 24Poker, FOIF, AZ, Pöstli, Sports und RPR werden Startzeiten nach dem letzten explizit datierten Kalender-/Filtereintrag weiterhin als TBA geführt, sofern die aktuelle Übersicht keine konkrete Uhrzeit nennt.
+
+#### GCL-PCSM-Datum: Quellenhinweis präzisiert
+
+Der Datensatz `grand-casino-luzern-pcsm-day-1a-2026-12-16` bleibt auf **16.12.2026, 15:00, CHF 800 + 80**. Die aktuelle Buy-in.info-Clubübersicht `https://buy-in.info/club/458` listet diesen Termin ausdrücklich. Der unqualifizierte Eintrag „Mi 15.12.“ in der älteren „Weitere Turniere“-Tabelle `https://buy-in.info/tournaments/458` steht in der Folge der 2027-Termine; die aktuelle Clubübersicht führt den entsprechenden Termin ausdrücklich als **15.12.2027**. Es gibt daher keinen zweiten PCSM-Day-1A-Termin am 15.12.2026. Der Quellenhinweis im Datensatz wurde präzisiert und `last_checked` auf 13.11.2026 gesetzt; Turnierdatum, Startzeit und Buy-in blieben unverändert.
+
+#### JSON- und Dublettenprüfung
+
+Alle neun Turnierdateien wurden erneut geladen und validiert:
+
+- 852 Turnierdatensätze insgesamt; 397 vom 13.11. bis 31.12.2026.
+- 148 Startzeiten TBA, 129 Varianten TBA, 66 Turnierarten TBA und 2 Buy-in-Angaben TBA.
+- 0 doppelte IDs, 0 doppelte Slugs, 0 semantische Dubletten bei identischem Datum/Startzeit/Veranstalter/Titel.
+- 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate, 0 Cash Games in den neun Turnierdateien.
+- 0 zukünftige Datensätze ohne `source_note`.
+
+Zwei GCL-Satellites mit gleichem Titel am 16.12. und 17.12. sind jeweils um 13:15 und 19:00 gelistet; die unterschiedlichen Startzeiten machen sie zu getrennten Turnieren, nicht zu Dubletten.
+
+Änderungsbilanz dieses Re-Checks: 0 fehlende Turniere ergänzt, 0 Turnierfelder fachlich geändert, 0 Dubletten entfernt. Eine Quellenprovenienz wurde präzisiert; README-Zusammenfassungszahlen wurden an den aktuellen Bestand angepasst.
+
+#### GitHub Actions und Pages-Artefakt
+
+Für den Datenstand `d57405ac93daf54ad4fb7edd3d94b0998c05bcdd` liefen beide Workflows erfolgreich:
+- Datenqualität: [Run 43396767371](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767371), SUCCESS.
+- Pages-Deploy: [Run 43396767374](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767374), SUCCESS.
+
+Das tatsächliche Artefakt [ID 14022757217](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767374/artifacts/14022757217) wurde heruntergeladen. ZIP-SHA-256: `672ed7d75588e038ce6ebcd3e0503f9a9d51a7615255575c0be2b6cb7564acf9`. Das enthaltene TAR hat 960 Dateien, darunter 925 HTML-Dateien und 11 JSON-Dateien (neun Turnierdateien plus zwei separate Cash-Game-Dateien). Es enthält 852 Turnierdetailseiten, 20 Veranstalterseiten und 921 Sitemap-URLs. Alle neun Turnier-JSON-Dateien stimmen bytegenau über ihre Git-Blob-SHAs mit `main` überein.
+
+Alle 852 Turnierdetailseiten sind vorhanden. Die JSON-LD-Daten jeder Detailseite stimmen bei Titel, Datum, Startzeit (inklusive TBA als Datum ohne Uhrzeit) und Buy-in mit den Turnier-JSON-Daten überein; es wurden keine Abweichungen gefunden. Die Zähler aller 20 Veranstalterseiten stimmen mit den zugehörigen Datensätzen überein. 21 Veranstalternamen kommen im Datenbestand vor; Kartenfreunde Wynental hat nur ein kommendes Turnier und erhält gemäss Generatorregel (Veranstalterseiten ab zwei kommenden Turnieren) keine eigene Veranstalterseite. Die einzelne Turnierdetailseite ist vorhanden.
+
+Im Vergleich zum vorherigen Bestand mit 846 Datensätzen enthält der aktuelle Bestand sechs zusätzliche Prestige-Termine vom 21.–23.11.2026. Alle sechs Detailseiten sind im Artefakt vorhanden und wurden live geöffnet:
+- 21.11., 14:00 — Saturday 50er - Neu 14:00 — CHF 50 + 20.
+- 21.11., 18:30 — Saturday Main 100er - 18:30 — CHF 100 + 30.
+- 22.11., 15:00 — Sunday Deep - 100K - 15:00 — CHF 100 + 30.
+- 22.11., 19:00 — Sunday 50er - 19:00 — CHF 50 + 20.
+- 23.11., TBA — 125K Extra Monday — CHF 100 + 30.
+- 23.11., TBA — Omaha (PLO) — CHF 50 + 20.
+
+Die aktuelle Prestige-Veranstalterseite zeigt 19 kommende Turniere. Ältere Web-Crawl-Snapshots der Another-Poker- und Grand-Casino-Luzern-Veranstalterseiten zeigen noch vergangene Termine vom 11./12.11. und höhere Zähler; sie sind als Cache-/Crawl-Abweichung zu behandeln. Das heruntergeladene Pages-Artefakt entspricht dem aktuellen Git-Datenbestand und nicht diesen älteren Web-Snapshots.
+
+#### Verbleibende Blocker und offene Monate
+
+Die Hauptkalender-Pagination bleibt nach der 100. sichtbaren Zeile (21.11.2026) nicht zuverlässig abrufbar. Versuche mit `?page=2`, `?offset=100`, `?start=100` sowie Datums-/Organizer-Filtern liefern keine vollständige Folgeseite. Die noch offenen Organizerzeiträume bleiben:
+
+| Veranstalter | Letzter erreichbarer Termin | Noch offen |
+|---|---|---|
+| 24Poker | 06.12. | 07.–31.12. |
+| FOIF DRÜ | 31.12. | kein offener Zeitraum im Prüfbereich |
+| AZ Poker Club | 27.12. | 28.–31.12. |
+| Capital Poker Club | 27.12. | 28.–31.12. |
+| House of Cards | 30.12. | 31.12. |
+| Munot Poker | 28.11. | 29.11.–31.12. |
+| Another Poker | 03.12. | 04.–31.12. |
+| Prestige Poker | 24.11. | 25.11.–31.12. |
+| Grand Casino Luzern | 20.12. | 21.–31.12. |
+| Pöstli Poker | 28.12. | 29.–31.12. |
+| Sports Zugerland | 28.12. | 29.–31.12. |
+| RPR/Roger's Pokerroom | 29.12. | 30.–31.12. |
+| STATION-Detailtabelle | 30.11. | 01.–31.12. |
+
+Für HSOP, Airfield/Pokerhelden, DC Poker Club, 72 Offsuite Thun, Kartenfreunde Wynental, Grand Casino Basel und Open Valais Poker ist keine vollständige aktuelle Buy-in.info-Veranstalterübersicht erreichbar. Einzelne datierte offizielle Veranstalterbelege bleiben ergänzend vorhanden, ersetzen aber keine vollständige Buy-in.info-Mindestabdeckung. Es wurde keine neue eindeutig bestätigte offizielle Absage festgestellt.
+
+**Eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.**
