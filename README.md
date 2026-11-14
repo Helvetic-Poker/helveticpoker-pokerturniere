@@ -75,3 +75,5 @@ Der Pages-Deploy-Run [43399143080](https://github.com/Helvetic-Poker/helveticpok
 - Ein widersprüchlicher Quellenhinweis zum Another-Poker-„Big Fish“ vom 14.11. wurde bereinigt. Hauptkalender und Veranstalterübersicht bestätigen CHF 50+20; die Turnierfelder waren bereits korrekt.
 - Der zusätzliche 26.12.-Eintrag „CPC THE GRAND“ steht nur im sekundären älteren „Weitere Turniere“-Block der Capital-Seite und wurde nicht übernommen. Der GCL-PCSM-Day-1A-Eintrag 15.12. steht ebenfalls nur im sekundären Block; die aktuelle Hauptübersicht bestätigt 16.12.2026.
 - Keine fehlenden Turniere ergänzt, keine Turnierfelder geändert, keine Dubletten entfernt. Details und Blocker: [Nachprüfung im Tagesaudit](docs/buyin-audit-2026-11-14.md).
+
+- Fünf Pöstli-Startzeiten (14., 15., 16., 19. und 20.11.) wurden am 14.11. erneut in der aktuellen Hauptkalender-Suchansicht bestätigt; die bereits vorhandenen Uhrzeiten wurden mit datierten Quellenhinweisen versehen.

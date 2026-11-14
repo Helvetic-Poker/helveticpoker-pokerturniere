@@ -225,7 +225,7 @@ Die direkt geöffnete HTML-Hauptkalenderansicht lieferte weiterhin einen ältere
 
 - Fehlende Buy-in.info-Turniere ergänzt: **0**.
 - Bestehende Turnierfelder korrigiert: **0**.
-- Quellenhinweise korrigiert: **1** (Another Poker Big Fish, 14.11.).
+- Quellenhinweise korrigiert: **6** (Another Poker Big Fish sowie fünf Pöstli-Termine).
 - Dubletten bereinigt: **0**.
 - Bestand: 860 Datensätze; 390 vom 14.11. bis 31.12.2026.
 - Alle neun JSON-Dateien gültig; 0 doppelte IDs/Slugs/semantische Events, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate, 0 Cash Games in den Turnierdateien.
@@ -236,3 +236,18 @@ Die aktuelle Hauptkalender-Pagination hinter dem 21.11. bleibt der zentrale Bloc
 ## 9. Workflow- und Artefaktprüfung
 
 Wird nach dem Commit dieser Nachprüfung ergänzt. Der erfolgreiche Build allein gilt nicht als Beleg der Kalender-Vollständigkeit oder der Live-Auslieferung.
+
+
+### Ergänzende Bestätigung von fünf Pöstli-Startzeiten
+
+Die aktuelle Buy-in.info-Hauptkalender-Suchansicht vom 14.11.2026 führt fünf Pöstli-Termine ausdrücklich mit Uhrzeit. Die bereits gespeicherten Startzeiten wurden erneut bestätigt und die jeweiligen Quellenhinweise sowie last_checked aktualisiert:
+
+| Datum | Turnier | Startzeit |
+|---|---|---:|
+| 14.11.2026 | Saturday Deep Century | 19:30 |
+| 15.11.2026 | Omaha PL | 15:00 |
+| 16.11.2026 | Pokemon | 19:30 |
+| 19.11.2026 | Donschti Gämbler | 20:15 |
+| 20.11.2026 | Progressiv-Bounty | 20:00 |
+
+Die Veranstalterübersicht bestätigt jeweils Datum, Titel und Buy-in; die aktuelle Hauptkalender-Suchansicht bestätigt die konkrete Uhrzeit. Für die übrigen Pöstli-Termine bleibt TBA, da keine aktuelle datierte Hauptkalender- oder offizielle Veranstalterquelle eine Startzeit nennt.
