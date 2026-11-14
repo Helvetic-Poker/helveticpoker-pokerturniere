@@ -9586,13 +9586,13 @@
     "buy_in": 50,
     "is_freeroll": false,
     "buy_in_label": "CHF 50 + 20",
-    "last_checked": "2026-11-11",
+    "last_checked": "2026-11-14",
     "organizer_url": "https://anotherpoker.ch/",
     "chips": null,
     "slug": "another-poker-basel-big-fish-80k-startstack-2026-11-14",
     "provider_logo": "",
     "_ord": 678,
-    "source_note": "Quellenkonflikt 10.11.2026: Buy-in.info-Hauptkalender listet Big Fish am 14.11.2026 um 20:00 für CHF 60+20; die aktuelle Another-Poker-Veranstalterübersicht https://buy-in.info/tournaments/226 zeigt CHF 50+20. Gewählt wird die explizite Hauptkalenderzeile: 20:00, CHF 60+20. Variante und Turnierart bleiben TBA.\nBuy-in.info current main calendar (https://buy-in.info/calendar) and current organizer overview (https://buy-in.info/tournaments/226) list 14.11.2026, 20:00, CHF 50 + 20. Current listing overrides the prior CHF 60 + 20 value."
+    "source_note": "Buy-in.info-Hauptkalender https://buy-in.info/calendar und aktuelle Another-Poker-Veranstalterübersicht https://buy-in.info/tournaments/226 stimmen für 14.11.2026 überein: „Big Fish (80K Startstack)“, 20:00 Uhr, CHF 50 + 20. Ein älterer, inzwischen überholter Quellenvermerk nannte CHF 60 + 20; dieser Wert wird nicht verwendet. Variante und Turnierart sind in den aktuellen Ansichten nicht ausgewiesen und bleiben TBA."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-time-challenge-2026-11-14",

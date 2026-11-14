@@ -68,3 +68,10 @@ Details: [Tagesaudit 13.11.2026](docs/buyin-audit-2026-11-13.md).
 ### Artefaktprüfung 13.11.2026
 
 Der Pages-Deploy-Run [43399143080](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43399143080) war erfolgreich. Das tatsächliche Artefakt (ID 14023593376) enthält 9 Turnier-JSON-Dateien mit 852 Datensätzen, 852 Turnierdetailseiten, 20 Veranstalterseiten und 921 Sitemap-URLs. Alle neun Turnier-JSON-Dateien stimmen bytegenau mit den Git-Blobs auf `main` überein. Der separate Qualitätsworkflow [43396767371](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43396767371) war ebenfalls erfolgreich. Details und bekannte Kalenderblocker stehen im [Tagesaudit 13.11.2026](docs/buyin-audit-2026-11-13.md).
+
+
+### Nachprüfung 14.11.2026, 08:35
+- Die zwölf aktuellen Buy-in.info-Veranstalterübersichten wurden erneut direkt geöffnet: 331 Zeilen insgesamt, davon 318 ab 14.11. bis 31.12.; dazu 10 STATION-Detailzeilen und 85 Zeilen der aktuellen Hauptkalender-Suchansicht im Zeitraum. Nach Ausschluss von zwei Cash Games und drei geschlossenen Prestige-Platzhaltern ergeben sich 408 Listing-Vorkommen, 76 Überschneidungen und 332 eindeutige Turniere; alle 332 sind im Bestand enthalten.
+- Ein widersprüchlicher Quellenhinweis zum Another-Poker-„Big Fish“ vom 14.11. wurde bereinigt. Hauptkalender und Veranstalterübersicht bestätigen CHF 50+20; die Turnierfelder waren bereits korrekt.
+- Der zusätzliche 26.12.-Eintrag „CPC THE GRAND“ steht nur im sekundären älteren „Weitere Turniere“-Block der Capital-Seite und wurde nicht übernommen. Der GCL-PCSM-Day-1A-Eintrag 15.12. steht ebenfalls nur im sekundären Block; die aktuelle Hauptübersicht bestätigt 16.12.2026.
+- Keine fehlenden Turniere ergänzt, keine Turnierfelder geändert, keine Dubletten entfernt. Details und Blocker: [Nachprüfung im Tagesaudit](docs/buyin-audit-2026-11-14.md).

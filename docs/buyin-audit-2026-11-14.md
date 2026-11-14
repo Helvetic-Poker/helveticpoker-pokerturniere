@@ -186,3 +186,53 @@ Weitere konkrete Einschränkungen:
 ## 7. GitHub Actions und Pages-Artefakt
 
 **Wird nach Abschluss des Datencommits, der Workflows und der tatsächlichen Artefaktprüfung ergänzt.** Der Build-Erfolg allein gilt nicht als Nachweis der Buy-in.info-Vollständigkeit oder der Live-Auslieferung.
+
+
+## 8. Erneute Quellenprüfung – 14.11.2026, 08:35 Europe/Zurich
+
+### Aktuelle Veranstalterübersichten erneut direkt geöffnet
+
+Die zwölf Buy-in.info-Veranstalterübersichten sind weiterhin erreichbar. Ihre aktuellen Hauptlisten enthalten zusammen 331 Zeilen; 318 davon liegen im Prüfzeitraum 14.11.–31.12.2026. Zusätzlich enthält die aktuelle STATION-Detailtabelle zehn ausdrücklich datierte Termine bis 30.11.2026. Die aktuelle Suchindexansicht des Hauptkalenders enthält die Termine vom 13.11. bis 21.11.; 85 sichtbare Zeilen liegen ab 14.11. im Prüfzeitraum.
+
+| Quelle | Ansichtszeilen |
+|---|---:|
+| Hauptkalender-Suchansicht ab 14.11. | 85 |
+| Zwölf Veranstalterübersichten ab 14.11. | 318 |
+| STATION-Detailtabelle | 10 |
+| **Gesamt** | **413** |
+| Cash Games ausgeschlossen | 2 |
+| Geschlossene Prestige-Platzhalter ausgeschlossen | 3 |
+| **Turnier-Listing-Vorkommen** | **408** |
+| Wiederholungen zwischen Ansichten | 76 |
+| **Eindeutige Turniere** | **332** |
+
+Alle 332 eindeutigen Turniere sind im Datenbestand enthalten. Die 12 Organizer-Hauptlisten wurden einzeln mit den Datensätzen abgeglichen: 24Poker 20 Zeilen, FOIF DRÜ 82, AZ Poker Club 19, Capital Poker Club 29, House of Cards 14, Munot Poker 9, Another Poker 31, Prestige Poker 19 (davon zwei geschlossene Platzhalter), Grand Casino Luzern 42 (davon zwei Cash Games), Pöstli Poker 34, Sports Zugerland 12 und RPR 7. Die 318 Zeilen ab 14.11. entsprechen den jeweiligen zukünftigen Turnierlistings.
+
+### Zwei sekundäre „Weitere Turniere“-Konflikte nicht übernommen
+
+- **Capital Poker Club Bern:** Die aktuelle primäre Veranstalterliste führt den konkreten 2026-Block bis 27.12. Ein separater sekundärer „Weitere Turniere“-Block enthält zusätzlich „CPC THE GRAND Freezeout 300.-“ am 26.12.2026 und wiederholt andere Termine. Der 26.12.-Eintrag ist nicht in der primären aktuellen Veranstalterliste und wurde nicht als neues Turnier angelegt. Die aktuelle Hauptkalender-/primäre Veranstalteransicht hat Vorrang; der 26.12.-Kandidat bleibt als nicht bestätigter sekundärer Eintrag dokumentiert.
+- **Grand Casino Luzern:** Die aktuelle primäre Veranstalterliste führt PCSM Day 1A am 16.12.2026 um 15:00 mit CHF 800+80. Ein sekundärer „Weitere Turniere“-Block zeigt einen unqualifizierten 15.12.-Eintrag. Dieser gehört zur nachfolgenden 2027-Terminserie (15.12.2027 ist ein Mittwoch); er wird nicht als 2026-Termin interpretiert. Der bestehende Datensatz 16.12.2026 bleibt unverändert.
+
+### Quellenhinweis Another Poker Basel korrigiert
+
+Für „Big Fish (80K Startstack)“ am 14.11.2026 um 20:00 stimmen die aktuelle Buy-in.info-Hauptkalenderansicht und die aktuelle Veranstalterübersicht `/tournaments/226` überein: **CHF 50+20**. Ein alter Quellenvermerk im bestehenden Datensatz behauptete fälschlich, die Hauptkalenderzeile habe CHF 60+20 gezeigt. Das Turnierfeld war bereits CHF 50+20; korrigiert wurden nur source_note und last_checked (14.11.2026). Variante und Turnierart bleiben TBA.
+
+### Pagination und Cache-Status
+
+Die direkt geöffnete HTML-Hauptkalenderansicht lieferte weiterhin einen älteren Ausschnitt vom 01.–09.11.2026. Die aktuelle Suchindexansicht enthält dagegen datierte Listings vom 13.–21.11.2026. Direkte Aufrufe von `?page=2`, `?offset=100`, `?start=100` sowie `?forganizer=`-Kalender-URLs waren über den Webabruf nicht zugänglich. Die direkten Veranstalterübersichten unter `/tournaments/{id}` waren erreichbar. Suchindex-Snapshots ersetzen keine vollständige Kalenderpagination.
+
+### Änderungen und Datenqualität
+
+- Fehlende Buy-in.info-Turniere ergänzt: **0**.
+- Bestehende Turnierfelder korrigiert: **0**.
+- Quellenhinweise korrigiert: **1** (Another Poker Big Fish, 14.11.).
+- Dubletten bereinigt: **0**.
+- Bestand: 860 Datensätze; 390 vom 14.11. bis 31.12.2026.
+- Alle neun JSON-Dateien gültig; 0 doppelte IDs/Slugs/semantische Events, 0 fehlende Pflichtfelder, 0 ungültige Datums-/Zeitformate, 0 Cash Games in den Turnierdateien.
+- Im Prüfzeitraum: 142 Startzeiten TBA, 116 Varianten TBA, 68 Turnierarten TBA, 2 Buy-in-Angaben TBA; 0 zukünftige Datensätze ohne Quellenhinweis.
+
+Die aktuelle Hauptkalender-Pagination hinter dem 21.11. bleibt der zentrale Blocker. Eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
+
+## 9. Workflow- und Artefaktprüfung
+
+Wird nach dem Commit dieser Nachprüfung ergänzt. Der erfolgreiche Build allein gilt nicht als Beleg der Kalender-Vollständigkeit oder der Live-Auslieferung.
