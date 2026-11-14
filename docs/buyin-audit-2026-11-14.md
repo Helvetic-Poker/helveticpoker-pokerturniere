@@ -210,7 +210,7 @@ Alle 332 eindeutigen Turniere sind im Datenbestand enthalten. Die 12 Organizer-H
 
 ### Zwei sekundäre „Weitere Turniere“-Konflikte nicht übernommen
 
-- **Capital Poker Club Bern:** Die aktuelle primäre Veranstalterliste führt den konkreten 2026-Block bis 27.12. Ein separater sekundärer „Weitere Turniere“-Block enthält zusätzlich „CPC THE GRAND Freezeout 300.-“ am 26.12.2026 und wiederholt andere Termine. Der 26.12.-Eintrag ist nicht in der primären aktuellen Veranstalterliste und wurde nicht als neues Turnier angelegt. Die aktuelle Hauptkalender-/primäre Veranstalteransicht hat Vorrang; der 26.12.-Kandidat bleibt als nicht bestätigter sekundärer Eintrag dokumentiert.
+- **Capital Poker Club Bern:** Die aktuelle primäre Veranstalterliste führt den 2026-Block bis 27.12. Ein sekundärer „Weitere Turniere“-Block enthält einen unqualifizierten „So 26.12.“-Eintrag. Die aktuelle Suchansicht des Capital-Kalenders löst diesen Termin als **26.12.2027** auf; er gehört nicht in den 2026-Bestand. Andere im sekundären Block wiederholte Termine werden nicht zusätzlich gezählt.
 - **Grand Casino Luzern:** Die aktuelle primäre Veranstalterliste führt PCSM Day 1A am 16.12.2026 um 15:00 mit CHF 800+80. Ein sekundärer „Weitere Turniere“-Block zeigt einen unqualifizierten 15.12.-Eintrag. Dieser gehört zur nachfolgenden 2027-Terminserie (15.12.2027 ist ein Mittwoch); er wird nicht als 2026-Termin interpretiert. Der bestehende Datensatz 16.12.2026 bleibt unverändert.
 
 ### Quellenhinweis Another Poker Basel korrigiert
@@ -264,3 +264,9 @@ Die aktuelle Buy-in.info-Hauptkalender-Suchansicht vom 14.11.2026 führt fünf P
 | 20.11.2026 | Progressiv-Bounty | 20:00 |
 
 Die Veranstalterübersicht bestätigt jeweils Datum, Titel und Buy-in; die aktuelle Hauptkalender-Suchansicht bestätigt die konkrete Uhrzeit. Für die übrigen Pöstli-Termine bleibt TBA, da keine aktuelle datierte Hauptkalender- oder offizielle Veranstalterquelle eine Startzeit nennt.
+
+
+### Ergänzende offizielle Casinoquellen
+
+- Das offizielle Grand Casino Basel führt das Basler Poker Festival vom 03.–06.12.2026 mit konkreten Terminen am 03.12. um 13:00, 04.12. um 13:00, 05.12. um 12:00 und 06.12. um 14:00. Die offiziellen Festival-/Fivebet-Einträge sind bereits als einzelne Turniere in `data/09.json` enthalten; es wurde kein zusätzlicher, bisher fehlender Termin gefunden.
+- Das offizielle Grand Casino Luzern bestätigt den PCSM-Autumn-Stop vom 26.–29.11.2026 sowie die Championship Week im Dezember. Die datierten Buy-in.info-Kalender-/Clubansichten führen die konkreten PCSM-Termine; sie sind im Bestand enthalten. Der unqualifizierte ältere „Weitere Turniere“-Eintrag 15.12. wird durch die Clubübersicht eindeutig als **15.12.2027** aufgelöst, während PCSM Day 1A 2026 am 16.12.2026 um 15:00 stattfindet.

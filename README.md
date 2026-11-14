@@ -73,7 +73,7 @@ Der Pages-Deploy-Run [43399143080](https://github.com/Helvetic-Poker/helveticpok
 ### Nachprüfung 14.11.2026, 08:35
 - Die zwölf aktuellen Buy-in.info-Veranstalterübersichten wurden erneut direkt geöffnet: 331 Zeilen insgesamt, davon 318 ab 14.11. bis 31.12.; dazu 10 STATION-Detailzeilen und 85 Zeilen der aktuellen Hauptkalender-Suchansicht im Zeitraum. Nach Ausschluss von zwei Cash Games und drei geschlossenen Prestige-Platzhaltern ergeben sich 408 Listing-Vorkommen, 76 Überschneidungen und 332 eindeutige Turniere; alle 332 sind im Bestand enthalten.
 - Ein widersprüchlicher Quellenhinweis zum Another-Poker-„Big Fish“ vom 14.11. wurde bereinigt. Hauptkalender und Veranstalterübersicht bestätigen CHF 50+20; die Turnierfelder waren bereits korrekt.
-- Der zusätzliche 26.12.-Eintrag „CPC THE GRAND“ steht nur im sekundären älteren „Weitere Turniere“-Block der Capital-Seite und wurde nicht übernommen. Der GCL-PCSM-Day-1A-Eintrag 15.12. steht ebenfalls nur im sekundären Block; die aktuelle Hauptübersicht bestätigt 16.12.2026.
+- Der zusätzliche „CPC THE GRAND“-Eintrag im sekundären Capital-Block ist durch die aktuelle Suchansicht als 26.12.2027 bestätigt und wurde nicht in den 2026-Bestand übernommen. Der GCL-PCSM-Day-1A-Eintrag 15.12. steht ebenfalls nur im sekundären Block; die aktuelle Hauptübersicht bestätigt 16.12.2026.
 - Keine fehlenden Turniere ergänzt, keine Turnierfelder geändert, keine Dubletten entfernt. Details und Blocker: [Nachprüfung im Tagesaudit](docs/buyin-audit-2026-11-14.md).
 
 - Fünf Pöstli-Startzeiten (14., 15., 16., 19. und 20.11.) wurden am 14.11. erneut in der aktuellen Hauptkalender-Suchansicht bestätigt; die bereits vorhandenen Uhrzeiten wurden mit datierten Quellenhinweisen versehen.
