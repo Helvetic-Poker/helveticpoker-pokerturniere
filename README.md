@@ -3,13 +3,23 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 13.11.2026
+- Datenstand: 14.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- 852 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
-- 410 Datensätze vom 12.11.2026 bis 31.12.2026
+- 860 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
+- 418 Datensätze vom 12.11.2026 bis 31.12.2026
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
+
+
+## Quellenabgleich 14.11.2026 – Buy-in.info und Veranstalterquellen
+- Die aktuelle Buy-in.info-Hauptkalenderansicht enthält 100 sichtbare Zeilen vom 13.11. bis 21.11.2026. Ab 14.11. sind 85 Zeilen im Prüfzeitraum.
+- Zwölf aktuelle Veranstalterübersichten enthalten zusammen 331 Zeilen; davon liegen 318 ab 14.11. im Prüfzeitraum. Die zusätzliche STATION-Detailtabelle enthält 10 konkret datierte Termine.
+- Zusammen: 413 Ansichtszeilen im Zeitraum ab 14.11.; nach Ausschluss von zwei Cash-Game-Ansichtszeilen und drei geschlossenen Prestige-Platzhaltern bleiben 408 Turnier-Listing-Vorkommen. 76 Wiederholungen zwischen Ansichten ergeben 332 eindeutige Turniere in den heute erreichbaren Ansichten. Alle 332 sind im Datenbestand enthalten; das ist keine Vollständigkeitsbehauptung für den gesamten Kalender.
+- 13 bestehende Datensätze korrigiert: drei AZ-Titel auf die aktuelle Schreibweise „AZ Sunday Freezout 30`000 max pot“, zehn STATION-Varianten auf Hold'em. Bei sechs STATION-Terminen wurden zuvor fehlende Startzeiten anhand der datierten aktuellen Veranstalterseiten ergänzt.
+- Acht zusätzliche, datierte Veranstaltertermine ergänzt (sieben OVP, ein RPR TimePoker). Diese sind ausdrücklich Zusatzquellen und werden nicht als Buy-in.info-Listings gezählt.
+- Der Bestand umfasst nun 860 Turnierdatensätze, davon 390 vom 14.11. bis 31.12.2026. Alle neun Turnier-JSON-Dateien sind gültig; doppelte IDs/Slugs/semantische Events, fehlende Pflichtfelder und ungültige Datums-/Zeitformate: 0.
+- Die Hauptkalender-Pagination bleibt blockiert; die erste Ansicht endet am 21.11.2026. Mehrere Veranstalterseiten enden vor dem 31.12.2026. Eine vollständige Abdeckung bis 31.12. wird ausdrücklich nicht behauptet. Details: [Tagesaudit 14.11.2026](docs/buyin-audit-2026-11-14.md).
 
 ## Datenprinzip
 - Buy-in.info ist die verbindliche Mindestquelle für Schweizer Turnierlistings.
@@ -49,7 +59,7 @@ Der tägliche Quellenabgleich wird fortgeführt. Ein erfolgreicher JSON-/Pages-B
 Details: [Tagesaudit 13.11.2026](docs/buyin-audit-2026-11-13.md).
 
 
-### Finale Datenqualitätszahlen nach Filter-/Official-Source-Crosscheck
+### Datenqualitätszahlen nach Filter-/Official-Source-Crosscheck (Stand 13.11.2026)
 - 852 Datensätze insgesamt; 397 vom 13.11. bis 31.12.2026.
 - Im Prüfzeitraum: 148 Startzeiten TBA, 129 Varianten TBA, 66 Turnierarten TBA, 2 Buy-in-Angaben TBA; alle TBA-Werte sind bewusst nicht mit unbelegten Angaben aufgefüllt.
 - 0 zukünftige Datensätze ohne source_note; 9/9 Turnier-JSON-Dateien gültig; 0 doppelte IDs, Slugs oder semantische Events.

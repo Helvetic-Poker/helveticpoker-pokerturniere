@@ -275,7 +275,7 @@
     "date_end": "2026-11-22",
     "occurrence_date": "2026-11-22",
     "time": "15:00",
-    "title": "AZ Sunday Freezout 30'000 max pot",
+    "title": "AZ Sunday Freezout 30`000 max pot",
     "subtitle": "",
     "city": "Bern",
     "canton": "BE",
@@ -287,12 +287,12 @@
     "buy_in": 300,
     "is_freeroll": false,
     "buy_in_label": "CHF 300 + 40",
-    "last_checked": "2026-11-13",
+    "last_checked": "2026-11-14",
     "organizer_url": "https://azpoker.club/tournament/",
     "chips": null,
     "slug": "az-az-sunday-freezout-30-000-max-pot-2026-11-22",
     "provider_logo": "",
-    "source_note": "Buy-in.info current AZ Poker Club Bern organizer overview https://buy-in.info/tournaments/564 explicitly lists 2026-11-22, “AZ Sunday Freezout 30'000 max pot”, and CHF 300+40, but does not state time or variant. The dated official AZ Poker Club tournament calendar https://azpoker.club/tournament/ explicitly lists this exact date at 15:00 with CHF 300+40. The time is confirmed from a dated official event listing; variant remains TBA because neither current source specifies it. Freezeout is explicit in the title."
+    "source_note": "Buy-in.info current AZ Poker Club Bern organizer overview https://buy-in.info/tournaments/564 explicitly lists 2026-11-22, “AZ Sunday Freezout 30`000 max pot”, and CHF 300+40. The dated official AZ Poker Club calendar https://azpoker.club/tournament/ confirms the same date at 15:00. The title spelling follows both current sources; variant remains TBA because neither source specifies a game variant."
   },
   {
     "id": "house-of-cards-lucky-sunday-2026-11-22",
