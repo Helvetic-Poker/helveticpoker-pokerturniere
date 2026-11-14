@@ -77,3 +77,8 @@ Der Pages-Deploy-Run [43399143080](https://github.com/Helvetic-Poker/helveticpok
 - Keine fehlenden Turniere ergänzt, keine Turnierfelder geändert, keine Dubletten entfernt. Details und Blocker: [Nachprüfung im Tagesaudit](docs/buyin-audit-2026-11-14.md).
 
 - Fünf Pöstli-Startzeiten (14., 15., 16., 19. und 20.11.) wurden am 14.11. erneut in der aktuellen Hauptkalender-Suchansicht bestätigt; die bereits vorhandenen Uhrzeiten wurden mit datierten Quellenhinweisen versehen.
+
+### Deployment- und Live-Prüfung 14.11.2026, 08:43
+- Datenqualitätsworkflow [43572358508](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358508) und Pages-Deployment [43572358527](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358527): beide SUCCESS.
+- Das tatsächlich heruntergeladene Pages-Artefakt [14103944534](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358527/artifacts/14103944534) enthält 860 Turnierseiten, 20 Veranstalterseiten und alle neun Turnier-JSON-Dateien bytegenau wie der Datencommit `ac612a2d47bb7b19693d33201aa7e25ebf3fa8e6`; 860/860 Detailseiten und 20/20 Veranstalterzähler geprüft.
+- Die Live-Veranstalterseiten Pöstli (34 kommende) und Another Poker (31 kommende) sowie die Detailseiten Pöstli Omaha PL und Another Big Fish stimmen mit dem Artefakt überein. Die Live-Homepage-Suchansicht zeigt noch einen älteren Snapshot (13.11. als nächsten Termin; alte Veranstalterzähler) und wird als Cache-Abweichung behandelt.

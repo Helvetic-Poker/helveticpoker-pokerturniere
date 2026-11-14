@@ -233,9 +233,22 @@ Die direkt geöffnete HTML-Hauptkalenderansicht lieferte weiterhin einen ältere
 
 Die aktuelle Hauptkalender-Pagination hinter dem 21.11. bleibt der zentrale Blocker. Eine vollständige Buy-in.info-Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
 
-## 9. Workflow- und Artefaktprüfung
+## 9. Workflow- und Artefaktprüfung – 14.11.2026, 08:43 Europe/Zurich
 
-Wird nach dem Commit dieser Nachprüfung ergänzt. Der erfolgreiche Build allein gilt nicht als Beleg der Kalender-Vollständigkeit oder der Live-Auslieferung.
+- Datenqualitätsworkflow: [Run 43572358508](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358508) – **SUCCESS**.
+- Pages-Deployment: [Run 43572358527](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358527) – **SUCCESS**.
+- Das Pages-Artefakt wurde tatsächlich heruntergeladen: [Artefakt 14103944534](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358527/artifacts/14103944534).
+- ZIP-Grösse: 1'759'055 Bytes; SHA-256: `31dba5681c6ff6848274fb025822e4bc584ae9df1b76456ece3c67eaa0a3f4d7`.
+- Entpackter Inhalt: 969 Dateien, darunter 933 HTML-Dateien, 11 JSON-Dateien (neun Turnierdateien plus zwei Cash-Game-Dateien), 860 Turnierdetailseiten, 20 Veranstalterseiten und 929 Sitemap-URLs.
+- Alle neun Turnier-JSON-Dateien stimmen anhand ihrer Git-Blob-SHAs bytegenau mit dem Datencommit `ac612a2d47bb7b19693d33201aa7e25ebf3fa8e6` überein.
+- Alle 860 Turnierdetailseiten wurden auf Titel, Datum, Startzeit und Buy-in geprüft: **860/860 korrekt**.
+- Die Zähler aller 20 erzeugten Veranstalterseiten stimmen mit dem Datenbestand überein: **20/20 korrekt**. Die 20 sichtbaren Zähler reichen von 2 (72 Offsuite Thun) bis 82 (FOIF DRÜ); Pöstli 34, Another Poker 31, Capital 29 und Grand Casino Luzern 41.
+- Die fünf Pöstli-Detailseiten vom 14., 15., 16., 19. und 20.11. enthalten die am selben Tag in der Buy-in.info-Hauptkalender-Suchansicht bestätigten Startzeiten 19:30, 15:00, 19:30, 20:15 und 20:00.
+- Live-Prüfung: Die Veranstalterseiten [Pöstli Poker](https://pokerturniere.helveticpoker.ch/veranstalter/poestli-poker/) (34 kommende Turniere) und [Another Poker Basel](https://pokerturniere.helveticpoker.ch/veranstalter/another-poker-basel/) (31 kommende Turniere) stimmen mit dem Artefakt überein. Die Detailseiten [Pöstli Omaha PL, 15.11.](https://pokerturniere.helveticpoker.ch/turniere/postli-poker-omaha-pl-2026-11-15/) und [Another Big Fish, 14.11.](https://pokerturniere.helveticpoker.ch/turniere/another-poker-basel-big-fish-80k-startstack-2026-11-14/) stimmen ebenfalls mit Datum, Startzeit und Buy-in überein.
+- Die von der Websuche gelieferte Live-Homepage zeigt noch einen älteren gecachten Snapshot (13.11. als nächsten Termin und alte Veranstalterzähler, u. a. Pöstli 35 statt 34 und Another Poker 32 statt 31). Das ist eine Cache-Abweichung der Homepage-Suchansicht; die heruntergeladenen Artefaktdaten und die direkt geöffneten Veranstalter-/Detailseiten sind aktuell.
+
+Der Artefakt- und Live-Nachweis bezieht sich auf den Datencommit `ac612a2d47bb7b19693d33201aa7e25ebf3fa8e6`. Die nachfolgende Dokumentationsaktualisierung verändert keine Daten- oder Seitengenerierungsdateien.
+
 
 
 ### Ergänzende Bestätigung von fünf Pöstli-Startzeiten
