@@ -27,6 +27,7 @@ Zentraler Kalender der Schweizer Pokerszene.
 Details: [Tagesaudit 15.11.2026](docs/buyin-audit-2026-11-15.md).
 
 - Datencommit: [9534b84](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/9534b84a04d13bb16d9d9df10cb9afcdfe098711). Datenqualität [Run 43689930371](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689930371) und Pages-Deploy [Run 43689930358](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689930358) beide SUCCESS. Das heruntergeladene Pages-Artefakt [ID 14152240679](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689930358/artifacts/14152240679) enthält 9 Turnier-JSON-Dateien, 862 Detailseiten, 20 Veranstalterseiten plus Verzeichnisindex und 931 Sitemap-URLs; alle neun JSON-Blobs stimmen bytegenau mit dem Datencommit überein.
+- Artefakt-ZIP: 1'763'476 Bytes, SHA-256 `64af8d46cfa472ca5f2fb07b2d7f8e0de6a5935f97bea2491346e731933575ca`; alle 9 Daten-JSON-Blobs stimmen bytegenau mit `main` beim Datencommit überein.
 - Live: AZ-Veranstalterseite und beide neuen AZ-Detailseiten sowie BOPM-Detailseiten sind direkt erreichbar und stimmen mit dem Artefakt überein. Homepage und Pokerhelden-Listenansicht zeigen teilweise ältere Crawl-/Cache-Snapshots (14.11. bzw. alter 26.12.-Jahresranking-Termin); die Artefakt- und Detailseitenprüfung ist davon getrennt. [Tagesaudit 15.11.2026](docs/buyin-audit-2026-11-15.md).
 
 ## Quellenabgleich 14.11.2026 – Buy-in.info und Veranstalterquellen
