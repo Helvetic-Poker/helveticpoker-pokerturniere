@@ -10951,7 +10951,7 @@
     "slug": "pokerhelden-pokerseries-cup-wilderswil-2026-11-20",
     "provider_logo": "",
     "_ord": 399,
-    "source_note": "Buy-in.info-Hauptkalender https://buy-in.info/calendar listet Airfield Pokerclub Interlaken am 20.11.2026 um 19:00 mit „Pokerseries Cup Season 2“ und CHF 90+10+30. Die Buy-in-Detailseite https://buy-in.info/tournament/112345 führt den konkreten Termin; https://buy-in.info/tournament/112194 belegt für den gleichnamigen Pokerseries-Cup Hold'em NL. Die Uhrzeit stammt ausschließlich aus der aktuellen Hauptkalenderzeile."
+    "source_note": "Buy-in.info-Hauptkalender https://buy-in.info/calendar listet Airfield Pokerclub Interlaken am 20.11.2026 um 19:00 mit „Pokerseries Cup Season 2“ und CHF 90+10+30. Die aktuelle offizielle Pokerhelden-Turnierübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga bestätigt denselben Termin. Die ältere Buy-in.info-Detailseite https://buy-in.info/tournament/112555 ist ein Termin vom 16.01.2026; ihre „Weitere Turniere“-Tabelle endet am 07.11.2026 und wird nicht als Datumsnachweis verwendet. Hold'em NL stammt aus der Detailbeschreibung des gleichnamigen Pokerseries-Cup-Formats."
   },
   {
     "id": "dc-poker-club-dc-bounty-kop-50k-2026-11-20",
@@ -11265,7 +11265,7 @@
     "slug": "pokerhelden-heads-up-turnier-nur-fur-mitglieder-wilderswil-2026-11-21",
     "provider_logo": "",
     "_ord": 406,
-    "source_note": "Buy-in.info-Hauptkalender https://buy-in.info/calendar listet Airfield Pokerclub Interlaken am 21.11.2026 um 16:00 mit „Heads Up Turnier ( Nur für Mitglieder )“ und CHF 75+25. Die Buy-in-Detailseite https://buy-in.info/tournament/112345 führt den konkreten Termin. Der Titel belegt das Heads-Up-Format; eine Variante wird in den erreichbaren datierten Quellen nicht genannt und bleibt deshalb TBA."
+    "source_note": "Buy-in.info-Hauptkalender https://buy-in.info/calendar listet Airfield Pokerclub Interlaken am 21.11.2026 um 16:00 mit „Heads Up Turnier ( Nur für Mitglieder )“ und CHF 75+25. Die aktuelle offizielle Pokerhelden-Turnierübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga bestätigt denselben Termin. Die ältere Buy-in.info-Detailseite https://buy-in.info/tournament/112555 enthält diesen zukünftigen Termin nicht; sie wird nicht als Datumsnachweis verwendet. Der Titel belegt das Heads-up-Format; eine Variante ist nicht genannt und bleibt TBA."
   },
   {
     "id": "dc-poker-club-dc-the-deep-50k-25-20mn-2026-11-21",
@@ -11311,12 +11311,12 @@
     "buy_in": 80,
     "is_freeroll": false,
     "buy_in_label": "CHF 80 + Mystery 50",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-11-15",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "72-offsuite-thun-bounty-turnier-2026-11-21",
     "provider_logo": "",
-    "source_note": "Die zugängliche datierte Veranstalter-/Pokerhelden-Quelle nennt für diesen Termin keine Variante; deshalb bleibt sie ausdrücklich TBA und wird nicht aus einem Wochenmuster abgeleitet.",
+    "source_note": "Die aktuelle offizielle Pokerhelden-Turnierübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga listet 72 Offsuite Thun am 2026-11-21 um 16:45 mit „Bounty Turnier“ und CHF 80 + Mystery 50. Der konkrete Termin ist offiziell datiert; keine Wochenmuster verwendet. Nicht als Buy-in.info-Hauptkalender-Listing gezählt.",
     "_ord": 407
   },
   {
@@ -12207,7 +12207,7 @@
     "slug": "munot-poker-schaffhausen-new-cool-wednesday-2026-11-25",
     "provider_logo": "",
     "_ord": 438,
-    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-25 um 19:00 Uhr ausdrücklich für „NEW COOL WEDNESDAY“ bei Munot Poker Schaffhausen mit dem im Datensatz geführten Buy-in. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
+    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-25 um 19:00 Uhr ausdrücklich für „NEW COOL WEDNESDAY“ bei Munot Poker Schaffhausen mit CHF 75 + 25. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
   },
   {
     "id": "capital-poker-club-bern-new-mittwoch-deepstack-20min-level-2026-11-25",
@@ -12398,7 +12398,7 @@
     "date_end": "2026-11-26",
     "occurrence_date": "2026-11-26",
     "time": "21:00",
-    "title": "Satelitte BOPM Main Event",
+    "title": "BOPM Satelitte",
     "subtitle": "TBA",
     "city": "Wilderswil",
     "canton": "BE",
@@ -12410,13 +12410,13 @@
     "buy_in": 20,
     "is_freeroll": false,
     "buy_in_label": "CHF 20 + 5",
-    "last_checked": "2026-11-13",
+    "last_checked": "2026-11-15",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "pokerhelden-satelitte-bopm-main-event-wilderswil-2026-11-26",
     "provider_logo": "",
     "_ord": 451,
-    "source_note": "Current official Pokerraum listing confirms 26.11.2026, 21:00, CHF 20+5. Quelle: aktuelle offizielle Pokerraum-Veranstalterübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga. Die direkte aktuelle Buy-in.info-Detailseite https://buy-in.info/tournament/112555 zeigt den Pokerseries-Cup-Termin vom 16.01.2026 und in ihrer „Weitere Turniere“-Tabelle nur vergangene Termine bis 07.11.2026; sie listet diesen zukünftigen Termin derzeit nicht. Frühere Suchindex-Snippets mit Terminen ab 13.11. sind gegenüber der direkt geöffneten aktuellen Seite veraltet und werden nicht als aktueller Buy-in-Nachweis gezählt. Der Termin bleibt als datierter offizieller Veranstaltertermin im Helvetic-Datenbestand; die aktuelle Terminübersicht nennt keine Variante, daher TBA."
+    "source_note": "Die aktuelle offizielle Pokerhelden-Turnierübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga listet am 26.11.2026 um 21:00 „BOPM Satelitte“ mit CHF 20+5. Die ältere Buy-in.info-Detailseite https://buy-in.info/tournament/112555 ist ein Termin vom 16.01.2026; ihre „Weitere Turniere“-Tabelle endet am 07.11.2026 und wird nicht als aktueller Nachweis für diesen zukünftigen Termin verwendet. Dieser Datensatz ist eine datierte offizielle Ergänzung, nicht als bestätigtes Buy-in-Hauptkalender-Listing gezählt."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-freeroll-2026-11-26",
@@ -12494,7 +12494,7 @@
     "slug": "munot-poker-schaffhausen-new-100er-thursday-100k-10k-bonus-2026-11-26",
     "provider_logo": "",
     "_ord": 445,
-    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-26 um 19:00 Uhr ausdrücklich für „NEW 100ER THURSDAY 100K+10K BONUS“ bei Munot Poker Schaffhausen mit dem im Datensatz geführten Buy-in. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
+    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-26 um 19:00 Uhr ausdrücklich für „NEW 100ER THURSDAY 100K+10K BONUS“ bei Munot Poker Schaffhausen mit CHF 100 + 30. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-happy-thursday-neu-mit-add-on-2026-11-26",
@@ -12939,7 +12939,7 @@
     "slug": "munot-poker-schaffhausen-new-time-turnier-nlh-plo-2026-11-27",
     "provider_logo": "",
     "_ord": 463,
-    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-27 um 19:30 Uhr ausdrücklich für „NEW TIME TURNIER NLH/PLO“ bei Munot Poker Schaffhausen mit dem im Datensatz geführten Buy-in. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
+    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-27 um 19:30 Uhr ausdrücklich für „NEW TIME TURNIER NLH/PLO“ bei Munot Poker Schaffhausen mit CHF 100 + 30. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
   },
   {
     "id": "postli-poker-friti-bounty-2026-11-27",
@@ -13227,7 +13227,7 @@
     "slug": "munot-poker-schaffhausen-new-mega-deep-stack-30k-pot-2026-11-28",
     "provider_logo": "",
     "_ord": 475,
-    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-28 um 19:00 Uhr ausdrücklich für „NEW MEGA DEEP STACK 30K POT“ bei Munot Poker Schaffhausen mit dem im Datensatz geführten Buy-in. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
+    "source_note": "Buy-in.info-gefilterte Kalenderansicht https://buy-in.info/calendar?forganizer=558, aktuelle Suchindexansicht geprüft am 15.11.2026, listet 2026-11-28 um 19:00 Uhr ausdrücklich für „NEW MEGA DEEP STACK 30K POT“ bei Munot Poker Schaffhausen mit CHF 100 + 30. Die zuvor dokumentierte fehlende Zeitbestätigung ist damit überholt."
   },
   {
     "id": "foif-drue-effretikon-foif-dru-saturday-night-150k-2026-11-28",
@@ -15600,12 +15600,12 @@
     "buy_in": 200,
     "is_freeroll": false,
     "buy_in_label": "CHF 200",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-11-15",
     "organizer_url": "https://www.pokerhelden.ch/",
     "chips": null,
     "slug": "72-offsuite-thun-turnier-200-2026-12-12",
     "provider_logo": "",
-    "source_note": "Die zugängliche datierte Veranstalter-/Pokerhelden-Quelle nennt für diesen Termin keine Variante; deshalb bleibt sie ausdrücklich TBA und wird nicht aus einem Wochenmuster abgeleitet.",
+    "source_note": "Die aktuelle offizielle Pokerhelden-Turnierübersicht https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga listet 72 Offsuite Thun am 2026-12-12 um 16:45 mit „Turnier 200“ und CHF 200. Der konkrete Termin ist offiziell datiert; keine Wochenmuster verwendet. Nicht als Buy-in.info-Hauptkalender-Listing gezählt.",
     "_ord": 544
   },
   {

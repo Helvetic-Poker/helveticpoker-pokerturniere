@@ -1,15 +1,15 @@
 # Buy-in.info- und Veranstalterabgleich – 15.11.2026
 
-**Prüfstand:** Sonntag, 15.11.2026, 08:06 Europe/Zurich  
+**Prüfstand:** Sonntag, 15.11.2026, Europe/Zurich  
 **Repository:** [Helvetic-Poker/helveticpoker-pokerturniere](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere), Branch `main`  
-**Ausgangs-HEAD:** `a286f4463be58ee4feee5438b4e293da32c7f594`  
-**Ergebnis:** Zwei fehlende AZ-Turniere ergänzt, elf explizite Startzeiten korrigiert und mehrere Quellenangaben bereinigt. Alle 328 eindeutigen Turniere aus den heute erreichbaren Buy-in.info-Ansichten sind nach dem Abgleich im Datenbestand. Eine vollständige Kalenderabdeckung bis 31.12.2026 ist **nicht** bestätigt.
+**Ausgangs-HEAD dieses Korrekturlaufs:** `100625fd5ef6f8e78632207a826524c356480ab6`  
+**Ergebnis:** Zwei fehlende Buy-in.info-Turniere ergänzt, elf Startzeiten korrigiert und mehrere Quellenangaben präzisiert. Drei offizielle Airfield-Termine, die bei einem Abgleich nur von `data/09.json` zunächst wie fehlend wirkten, waren bereits in `data/08.json`; sie wurden nicht doppelt angelegt. Eine vollständige Kalenderabdeckung bis 31.12.2026 ist **nicht** bestätigt.
 
-## 1. Prüfumfang und Zählung
+## 1. Buy-in.info: erreichbare Ansichten und Zählung
 
-Die aktuelle [Buy-in.info-Hauptkalenderansicht](https://buy-in.info/calendar) enthält 100 sichtbare Zeilen vom 15.11. bis 23.11.2026 (L4–L103). Davon sind 97 Turnierlistings, zwei Cash Games und ein Prestige-Platzhalter „Dienstag PP geschlossen“. Cash Games und der geschlossene Platzhalter wurden nicht als Turniere gezählt.
+Die aktuelle [Buy-in.info-Hauptkalenderansicht](https://buy-in.info/calendar) zeigt 100 sichtbare Zeilen vom 15.11. bis 23.11.2026. Davon sind 97 Turnierlistings, zwei Cash Games und ein Prestige-Platzhalter „Dienstag PP geschlossen“. Cash Games und der geschlossene Platzhalter werden nicht als Turniere gezählt.
 
-Zwölf aktuelle Veranstalterübersichten wurden geöffnet und gegen alle neun `data/*.json`-Dateien geprüft:
+Zwölf aktuelle Veranstalterübersichten wurden geprüft:
 
 | Veranstalter | Turnierlistings 15.11.–31.12. | Letzter erreichbarer Termin |
 |---|---:|---|
@@ -27,31 +27,28 @@ Zwölf aktuelle Veranstalterübersichten wurden geöffnet und gegen alle neun `d
 | RPR/Roger's Pokerroom ([Übersicht](https://buy-in.info/tournaments/540)) | 7 | 29.12.2026 |
 | **Zwölf Veranstalterseiten** | **304** | |
 
-Die Prestige-Seite enthält zusätzlich zwei geschlossene Platzhalter; damit umfassen die zwölf Veranstalterseiten 306 sichtbare Zeilen, davon 304 Turnierlistings.
+Die zwölf Veranstalterseiten enthalten zusätzlich zwei geschlossene Prestige-Platzhalter; damit sind es 306 sichtbare Zeilen, davon 304 Turnierlistings.
 
-Zusätzlich wurde die aktuelle [Airfield-/Pokerhelden-Buy-in-Detailseite](https://buy-in.info/tournament/112345) geprüft. Sie listet 15 konkrete Turniertermine vom 15.11. bis 18.12.2026. Die aktuelle Hauptkalenderansicht überschneidet sich mit drei dieser Airfield-Termine.
-
-| Ansicht | Sichtbare Zeilen | Davon Turnierlistings |
+| Ansicht | Sichtbare Zeilen | Turnierlistings |
 |---|---:|---:|
 | Hauptkalender | 100 | 97 |
 | Zwölf Veranstalterseiten | 306 | 304 |
-| Airfield-Detailseite | 15 | 15 |
-| **Gesamt** | **421** | **416** |
+| **Gesamt** | **406** | **401** |
 
-Von den 416 Turnier-Listing-Vorkommen sind 88 Wiederholungen zwischen den Ansichten. Damit ergeben sich **328 eindeutige Turniere** in den heute erreichbaren Ansichten. Alle 328 sind nach dem Abgleich im Datenbestand. Die Zahl beschreibt nur die erreichbaren Ansichten, nicht den vollständigen Schweizer Kalender.
+Von den 401 Turnier-Listing-Vorkommen sind 85 Wiederholungen zwischen den Ansichten. Damit ergeben sich **316 eindeutige Buy-in.info-Turniere** in den heute erreichbaren Ansichten. Alle 316 sind nach dem Abgleich im Datenbestand. Die Zahl beschreibt ausschließlich die erreichbaren Ansichten und nicht den vollständigen Schweizer Kalender.
 
-Die neun zusätzlichen Hauptkalender-Turniere ohne passende der zwölf Veranstalterseiten bzw. Airfield-Detailseite betreffen die dort sichtbaren STATION-, HSOP- und Kartenfreunde-Termine. Sie wurden ebenfalls im Datenbestand abgeglichen.
+Die zwölf zusätzlichen Hauptkalender-Turniere, die in diesen zwölf Veranstalterseiten nicht enthalten sind, verteilen sich auf drei Airfield-, fünf STATION-, drei HSOP- und einen Kartenfreunde-Termin. Auch diese zwölf sind im Datenbestand enthalten.
 
 ## 2. Zwei fehlende AZ-Turniere ergänzt
 
-Die aktuelle Hauptkalenderansicht listet zwei AZ-Turniere, die in der aktuellen AZ-Veranstalterübersicht [https://buy-in.info/tournaments/564](https://buy-in.info/tournaments/564) nicht enthalten sind. Gemäß Quellenpriorität wurde der konkrete Hauptkalendereintrag verwendet; es wurde kein Datum aus einem Wochenmuster abgeleitet.
+Die aktuelle Hauptkalenderansicht listet zwei AZ-Turniere, die in der aktuellen AZ-Veranstalterübersicht [https://buy-in.info/tournaments/564](https://buy-in.info/tournaments/564) fehlen. Gemäß Quellenpriorität wurde der konkrete Hauptkalendereintrag verwendet; es wurde kein Datum aus einem Wochenmuster abgeleitet.
 
-| Datum | Titel | Start | Buy-in | Quelle für Variante/Art |
+| Datum | Titel | Start | Buy-in | Variante/Art |
 |---|---|---:|---:|---|
-| 17.11.2026 | Dienstag Special ReBuy Monster Stack | 19:00 | CHF 50 + 15 | [Buy-in-Detailseite 116042](https://buy-in.info/tournament/116042): Hold'em NL, Rebuy |
-| 19.11.2026 | AZ Win The Button!! Monster Stack | 19:00 | CHF 70 + 20 | [Buy-in-Detailseite 116058](https://buy-in.info/tournament/116058): Hold'em NL |
+| 17.11.2026 | Dienstag Special ReBuy Monster Stack | 19:00 | CHF 50 + 15 | Hold'em NL, Rebuy |
+| 19.11.2026 | AZ Win The Button!! Monster Stack | 19:00 | CHF 70 + 20 | Hold'em NL |
 
-Beide Datums-/Zeit-/Buy-in-Angaben stammen aus den expliziten Zeilen der aktuellen [Hauptkalenderansicht](https://buy-in.info/calendar). Die Detailseiten liefern nur die Turnierstruktur/Variante der gleichnamigen Formate. Beide Datensätze wurden in `data/09.json` angelegt, mit Veranstaltungsort AZ Poker Club Bern, Zentweg 19, 3006 Bern.
+Die Datums-/Zeit-/Buy-in-Angaben stammen aus den expliziten Zeilen der aktuellen [Hauptkalenderansicht](https://buy-in.info/calendar). Die Detailseiten [116042](https://buy-in.info/tournament/116042) und [116058](https://buy-in.info/tournament/116058) belegen die jeweilige Turnierstruktur/Variante.
 
 ## 3. Elf Startzeiten nach Hauptkalender korrigiert
 
@@ -71,16 +68,28 @@ Die folgenden Einträge standen zuvor auf TBA. Die aktuelle Hauptkalenderansicht
 | 23.11. | FOIF DRÜ | Freeroll | 18:00 |
 | 23.11. | Prestige Poker | Omaha (PLO) | 18:30 |
 
-Jede neue Uhrzeit ist direkt aus der datierten Hauptkalenderzeile übernommen. Keine Uhrzeit wurde von einem anderen Termin oder einem generischen Wochenprogramm übertragen.
+Jede neue Uhrzeit wurde direkt aus der datierten Hauptkalenderzeile übernommen. Keine Uhrzeit wurde von einem anderen Termin oder einem generischen Wochenprogramm übertragen.
 
-## 4. Airfield-Veranstaltername und Variantenangabe
+## 4. Airfield: aktuelle Hauptkalender- und offizielle Pokerhelden-Quelle
 
-Die Hauptkalenderansicht bezeichnet Airfield am 20.11. und 21.11. ausdrücklich als „Airfield Pokerclub Interlaken“. Zwei bereits vorhandene Datensätze führten stattdessen „Pokerhelden / Airfield Poker Club“:
+Die Hauptkalenderansicht bezeichnet Airfield am 15., 20. und 21.11. ausdrücklich als „Airfield Pokerclub Interlaken“. Die zwei bestehenden Datensätze vom 20. und 21.11. wurden auf diesen Veranstalternamen normalisiert. Der Heads-up-Titel wurde an die exakte Schreibweise angepasst; da die erreichbare datierte Quelle keine Variante nennt, bleibt `variant=TBA`.
 
 - 20.11.2026, Pokerseries Cup Season 2, 19:00, CHF 90 + 10 + 30
 - 21.11.2026, Heads Up Turnier ( Nur für Mitglieder ), 16:00, CHF 75 + 25
 
-Der Veranstaltername wurde auf die aktuelle Hauptkalenderbezeichnung geändert; der Heads-up-Titel wurde an die exakte aktuelle Schreibweise angepasst. Für das Heads-up-Turnier nennt die erreichbare datierte Quelle keine Variante. `variant` steht deshalb nun auf TBA; `event_type` bleibt „Heads Up“, da dies ausdrücklich im Titel steht. Die Pokerseries-Cup-Variante Hold'em NL ist durch die [Buy-in-Detailseite des gleichnamigen Formats](https://buy-in.info/tournament/112194) belegt.
+Die aktuelle offizielle [Pokerhelden-Turnierübersicht](https://www.pokerraum.ch/turniere/-/Pokerhelden%20Liga) bestätigt beide Termine und listet insgesamt 19 datierte kommende Veranstaltungen bis 19.12.2026. Drei davon (15., 20. und 21.11.) überschneiden sich mit dem Buy-in-Hauptkalender; 16 weitere sind zusätzliche offizielle Veranstaltertermine und werden **nicht** als Buy-in.info-Listings gezählt.
+
+Drei dieser offiziellen Airfield-Termine lagen bereits in `data/08.json` und wurden im Cross-File-Abgleich wiedergefunden; es wurde kein Duplikat erzeugt:
+
+- 26.11.2026, BOPM Opener, 19:00, CHF 60 + 20
+- 28.11.2026, BOPM Main Event Flight 1B, 16:00, CHF 100 + 30
+- 29.11.2026, BOPM Main Event Final, 13:00, Freeroll (0+0)
+
+Der bereits vorhandene 26.11.-Satellite-Datensatz in `data/09.json` wurde auf den offiziellen Titel „BOPM Satelitte“ korrigiert; die offizielle Übersicht bestätigt 21:00 und CHF 20+5. Zwei 72-Offsuite-Thun-Termine (21.11., 16:45, Bounty Turnier, CHF 80 + Mystery 50; 12.12., 16:45, Turnier 200, CHF 200) waren ebenfalls bereits im Datenbestand und wurden anhand derselben offiziellen Übersicht erneut bestätigt.
+
+### Veraltete Buy-in.info-Detailtabellen
+
+Die direkt geöffnete Buy-in.info-Detailseite [112555](https://buy-in.info/tournament/112555) beschreibt einen Pokerseries-Cup-Termin vom 16.01.2026. Ihre alte „Weitere Turniere“-Tabelle endet am 07.11.2026. Sie ist keine aktuelle Airfield-Veranstalterübersicht und wird nicht als Nachweis für spätere Termine verwendet. Die ältere Seite [112345](https://buy-in.info/tournament/112345) beschreibt ebenfalls einen Termin aus 2025. Für den 20./21.11. gilt der aktuelle Buy-in-Hauptkalender; für spätere offizielle Airfield-Termine die aktuelle Pokerhelden-Veranstalterübersicht.
 
 ## 5. Munot-Zeitquellen präzisiert
 
@@ -93,14 +102,7 @@ Vier bestehende Munot-Datensätze vom 25.–28.11.2026 hatten einen Quellenhinwe
 
 Die vier Quellenhinweise und Prüfstände wurden aktualisiert; die gespeicherten Zeiten stimmen mit der aktuellen gefilterten Kalenderansicht überein.
 
-## 6. Weitere Quellen und Konflikte
-
-- Die aktuelle [AZ-Veranstalterübersicht](https://buy-in.info/tournaments/564) enthält die zwei am 17. und 19.11. im Hauptkalender gelisteten AZ-Termine nicht. Gewählt wurde die aktuelle Hauptkalenderansicht; beide Einträge sind dokumentiert.
-- Die aktuellen gefilterten Kalender-Suchansichten für [Another Poker](https://buy-in.info/calendar?forganizer=226), [Capital Poker Club](https://buy-in.info/calendar?forganizer=493), [Munot Poker](https://buy-in.info/calendar?forganizer=558) und [House of Cards](https://buy-in.info/calendar?forganizer=570) bestätigen die in den Daten gespeicherten datierten Startzeiten.
-- Die offizielle [AZ-Poker-Club-Seite](https://azpoker.club/) wurde ergänzend geprüft. Sie bestätigt Standort und wiederkehrende Turnierformate, ersetzt aber keine datierte Buy-in-Kalenderzeile für die beiden neu ergänzten Termine.
-- Es wurde keine neue eindeutig bestätigte Turnierabsage festgestellt. Cash Games und geschlossene Spieltage wurden ausgeschlossen.
-
-## 7. Datenqualität
+## 6. Datenqualität
 
 Nach den Änderungen:
 
@@ -120,11 +122,13 @@ Nach den Änderungen:
 | Cash Games in den Turnierdateien | 0 |
 | Fehlende Quellenhinweise bei zukünftigen Datensätzen | 0 |
 
-Änderungsbilanz: **2 fehlende Turniere ergänzt; 13 bestehende Datensätze mit Feldkorrekturen (11 Startzeiten, zwei Veranstalternamen, ein Titel, eine Variante; einzelne Datensätze enthalten mehrere Feldkorrekturen); 4 weitere Munot-Quellenhinweise aktualisiert; 0 Dubletten entfernt.**
+Änderungsbilanz: **2 Buy-in.info-Turniere ergänzt; 14 bestehende Datensätze mit Feldkorrekturen** (elf Startzeiten, zwei Veranstalternamen, zwei Titel und eine Variante; einzelne Datensätze enthalten mehrere Feldkorrekturen); **23 Quellen-/Prüfhinweise** aktualisiert; **0 Dubletten entfernt**.
 
-## 8. Blocker: nicht vollständig erreichbare Monate und Anbieter
+Der Cross-File-Abgleich über alle neun Dateien verhinderte drei falsche Neuanlagen: BOPM Opener, Flight 1B und Main Event Final lagen bereits in `data/08.json`; die zwei 72-Offsuite-Termine lagen bereits in `data/09.json`.
 
-Die aktuelle Hauptkalenderansicht endet nach 100 Zeilen am 23.11.2026 und zeigt eine „…“-Schaltfläche. Die folgenden Versuche lieferten keine vollständige Folgeseite: `?page=2`, `?offset=100`, `?start=100`. Direkte `?forganizer=`-URLs waren über den Webabruf nicht zuverlässig zu öffnen; für einzelne Filter lieferte der Suchindex jedoch aktuelle Ansichten.
+## 7. Blocker: nicht vollständig erreichbare Monate und Anbieter
+
+Die aktuelle Hauptkalenderansicht endet nach 100 Zeilen am 23.11.2026 und zeigt eine „…“-Schaltfläche. Die folgenden Versuche lieferten keine vollständige Folgeseite: `?page=2`, `?offset=100`, `?start=100`. Direkte `?forganizer=`-URLs waren über den Webabruf nicht zuverlässig zu öffnen; für einzelne Filter lieferte der Suchindex aktuelle Ansichten.
 
 | Anbieter/Ansicht | Letzter erreichbarer Termin | Offener Zeitraum bzw. Einschränkung |
 |---|---|---|
@@ -140,48 +144,11 @@ Die aktuelle Hauptkalenderansicht endet nach 100 Zeilen am 23.11.2026 und zeigt 
 | Pöstli Poker | 28.12. | 29.–31.12. |
 | Sports Zugerland | 28.12. | 29.–31.12. |
 | RPR/Roger's Pokerroom | 29.12. | 30.–31.12. |
-| Airfield-Detailseite | 18.12. | 19.–31.12. |
 | STATION-Detailtabelle | 30.11. | 01.–31.12. |
 | HSOP | keine vollständige aktuelle Buy-in-Veranstalterübersicht | nur einzelne Hauptkalender-/Detaillistings erreichbar |
 | Kartenfreunde Wynental | ein Listing am 15.11. | keine vollständige aktuelle Veranstalterübersicht |
+| Airfield | drei aktuelle Hauptkalenderlistings bis 21.11. | keine vollständige aktuelle Buy-in-Veranstalterübersicht; offizielle Pokerhelden-Termine bis 19.12. sind separat erfasst |
 
-Weitere offizielle Veranstaltertermine im Repository (z. B. DC Poker Club, OVP, 72 Offsuite Thun) sind ergänzende Quellen und werden nicht als Buy-in.info-Listings gezählt, solange kein entsprechender Buy-in-Kalendereintrag erreichbar ist.
+Weitere offizielle Veranstaltertermine (z. B. DC Poker Club, OVP, 72 Offsuite Thun) sind ergänzende Quellen und werden nicht als Buy-in.info-Listings gezählt, solange kein entsprechender Buy-in-Kalendereintrag erreichbar ist.
 
-**Fazit:** Der sichtbare Hauptkalender und die 13 erreichbaren Veranstalter-/Detailansichten wurden abgeglichen. Zwei fehlende AZ-Turniere sind ergänzt, elf belegte Startzeiten korrigiert und alle 328 eindeutigen Turniere aus diesen Ansichten sind im Datenbestand. Die vollständige Abdeckung aller Schweizer Buy-in.info-Turniere bis 31.12.2026 bleibt wegen der nicht erreichbaren Hauptkalender-Pagination und der aufgeführten offenen Anbieterzeiträume ausdrücklich unbestätigt.
-
-## 9. GitHub Actions und tatsächliches Pages-Artefakt
-
-Für den Datencommit `f3b34e8b03c97de9eeff93cefbbf04b98ecd2920` wurden beide Push-Workflows erfolgreich abgeschlossen:
-
-- [Tournament data quality report – Run 43689331692](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331692): **SUCCESS**. Der Schritt `Check tournament data` wurde erfolgreich abgeschlossen.
-- [Generate and deploy tournament pages – Run 43689331711](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331711): **SUCCESS**. Seitengenerierung, Artefakt-Upload und `Deploy to GitHub Pages` wurden erfolgreich abgeschlossen.
-
-Das tatsächliche Artefakt [github-pages, ID 14151542929](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331711/artifacts/14151542929) wurde heruntergeladen, das enthaltene `artifact.tar` entpackt und geprüft.
-
-- ZIP-Grösse: 1'763'337 Bytes
-- ZIP-SHA-256 (entspricht GitHub-Artefakt-Digest): `6146923ee59ec56ac2a2456dc73496030421d18e54762268020af07e1909ed24`
-- entpacktes TAR: 19'712'000 Bytes; SHA-256 `8f0f8ed117c25c3e33cc15387de72060f107b5cb45f4b1bab9a25648038ad896`
-- Dateien insgesamt: 1'910; HTML-Dateien: 935
-- JSON-Dateien: 11 (neun Turnierdateien und zwei separate Cash-Game-Dateien)
-- Turnierdetailseiten: **862**
-- Veranstalterseiten: **20** plus ein Veranstalterverzeichnis-Index
-- Sitemap-URLs: **931**
-
-Alle neun `data/01.json` bis `data/09.json` im Artefakt stimmen über ihre Git-Blob-SHAs bytegenau mit dem Datencommit überein. Alle 20 Veranstalterseiten-Zähler stimmen mit den Daten überein; der separate Verzeichnisindex hat erwartungsgemäss keinen Turnierzähler. Die AZ-Veranstalterseite zeigt im Artefakt **20 kommende Turniere** und enthält beide neuen AZ-Termine.
-
-Die beiden neuen Detailseiten wurden im Artefakt geprüft:
-
-- [Dienstag Special ReBuy Monster Stack, 17.11.2026](https://pokerturniere.helveticpoker.ch/turniere/az-poker-club-bern-dienstag-special-rebuy-monster-stack-2026-11-17/): `startDate=2026-11-17T19:00:00+01:00`, Buy-in CHF 50 + 15.
-- [AZ Win The Button!! Monster Stack, 19.11.2026](https://pokerturniere.helveticpoker.ch/turniere/az-poker-club-bern-az-win-the-button-monster-stack-2026-11-19/): `startDate=2026-11-19T19:00:00+01:00`, Buy-in CHF 70 + 20.
-
-Zusätzlich wurden die elf korrigierten Startzeiten in den Artefakt-JSON-Dateien und den generierten Detailseiten erneut geprüft; alle stimmen mit den aktuellen Buy-in.info-Hauptkalenderzeilen überein.
-
-## 10. Live-Website und Cache-Abweichung
-
-Der verfügbare Webabruf der Live-Website zeigt noch einen älteren Crawl-/Cache-Stand:
-
-- Die [Homepage](https://pokerturniere.helveticpoker.ch/) zeigt noch Termine vom 14.11.2026.
-- Die [AZ-Veranstalterseite](https://pokerturniere.helveticpoker.ch/veranstalter/az-poker-club-bern/) zeigt im Webabruf noch 23 kommende Turniere und einen nächsten Termin am 10.11.; das frisch erzeugte Artefakt zeigt 20 kommende Turniere ab dem 15.11. und enthält die beiden neuen Termine.
-- Die beiden neuen Detailseiten-URLs konnten über den Webabruf nicht direkt geladen werden (Abruf meldet „not accessible“). Ihre Existenz und korrekten Daten sind im tatsächlich heruntergeladenen Pages-Artefakt nachgewiesen.
-
-Damit ist der GitHub-Pages-Workflow erfolgreich, und das generierte Artefakt ist verifiziert. Die zusätzliche Live-Webabrufprüfung ist wegen des erkennbar alten Crawl-/Cache-Stands **nicht vollständig live-bestätigt**. Artefaktstand und Web-Crawl-Abweichung werden getrennt behandelt; aus dem alten Web-Crawl wird nicht auf einen fehlgeschlagenen Deploy geschlossen.
+**Fazit:** Die erreichbare Buy-in-Hauptkalenderansicht und zwölf aktuelle Veranstalterübersichten wurden abgeglichen. 316 eindeutige Buy-in-Turniere aus diesen Ansichten sind im Datenbestand. Die offizielle Pokerhelden-Übersicht wurde ergänzend geprüft; alle 19 dort sichtbaren Termine bis 19.12. sind bereits im Datenbestand. Die vollständige Abdeckung sämtlicher Schweizer Buy-in.info-Turniere bis 31.12.2026 bleibt wegen der nicht erreichbaren Hauptkalender-Pagination und der aufgeführten offenen Anbieterzeiträume ausdrücklich unbestätigt.
