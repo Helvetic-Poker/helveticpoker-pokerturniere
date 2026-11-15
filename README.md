@@ -100,3 +100,18 @@ Der Pages-Deploy-Run [43399143080](https://github.com/Helvetic-Poker/helveticpok
 - Datenqualitätsworkflow [43572358508](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358508) und Pages-Deployment [43572358527](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358527): beide SUCCESS.
 - Das tatsächlich heruntergeladene Pages-Artefakt [14103944534](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43572358527/artifacts/14103944534) enthält 860 Turnierseiten, 20 Veranstalterseiten und alle neun Turnier-JSON-Dateien bytegenau wie der Datencommit `ac612a2d47bb7b19693d33201aa7e25ebf3fa8e6`; 860/860 Detailseiten und 20/20 Veranstalterzähler geprüft.
 - Die Live-Veranstalterseiten Pöstli (34 kommende) und Another Poker (31 kommende) sowie die Detailseiten Pöstli Omaha PL und Another Big Fish stimmen mit dem Artefakt überein. Die Live-Homepage-Suchansicht zeigt noch einen älteren Snapshot (13.11. als nächsten Termin; alte Veranstalterzähler) und wird als Cache-Abweichung behandelt.
+
+
+## Nachprüfung 15.11.2026 – sieben zusätzliche AZ-Listings
+
+- Der erneute Abgleich der aktuellen [AZ-Veranstalterübersicht](https://buy-in.info/tournaments/564) fand sieben konkrete Turniertermine, die im ersten Tagespass noch nicht im Datenbestand waren: 24.11., 26.11., 01.12., 03.12., 08.12., 10.12. und 12.12.2026. Alle sieben wurden mit den ausdrücklich gelisteten Buy-ins ergänzt; nicht veröffentlichte Startzeiten bleiben TBA.
+- Die aktuelle AZ-Übersicht nennt für den 08.12. CHF 50+20; der ältere 03.11.-Detaildatensatz mit CHF 50+15 wurde nicht übertragen.
+- Sechs bestehende „Monster Stack 100K, 20 min Level“-Datensätze wurden nach der gleichnamigen Buy-in.info-Detailbeschreibung von Hold'em NL mit Re-Buy als Turnierart „Rebuy“ korrigiert.
+- Der aktuelle Cross-View-Abgleich umfasst 425 sichtbare Zeilen (Hauptkalender, zwölf Veranstalterübersichten und STATION-Detailtabelle), 419 Turnierlistings im Prüfzeitraum, 93 Überschneidungen und 326 eindeutige Turniere. Alle 326 sind im Datenbestand enthalten.
+- Datenbestand: 869 Datensätze in neun Turnier-JSON-Dateien; 385 Datensätze vom 15.11. bis 31.12.2026. Keine doppelten IDs/Slugs/semantischen Events, keine ungültigen JSON-/Datums-/Zeitfelder, keine Cash Games in den Turnierdateien.
+- [Datencommit](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/813149fc14ee417d0dfecec98a84ef35f19e04d9); [Qualitätsworkflow](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43691206498) und [Pages-Deploy](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43691206506) SUCCESS.
+- Das heruntergeladene [Pages-Artefakt 14152556167](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43691206506/artifacts/14152556167) enthält 869 Turnierdetailseiten, 20 Veranstalterseiten und 938 Sitemap-URLs; alle neun Turnier-JSON-Dateien stimmen bytegenau mit dem Datencommit überein.
+- Der Live-Webabruf zeigt weiterhin den alten Stand (AZ 20 statt 27 kommende Turniere; Homepage mit 14.11. als nächstem Termin). Die sieben neuen Detailseiten sind im Artefakt und in der Sitemap vorhanden, aber im Live-Webabruf nicht abrufbar. Cache-/Live-Abweichung ausdrücklich offen.
+- Hauptkalender-Pagination hinter 23.11. und mehrere Veranstaltermonate bleiben nicht vollständig erreichbar; eine vollständige Abdeckung bis 31.12.2026 wird nicht behauptet.
+
+Details: [Tagesaudit 15.11.2026 – Nachprüfung](docs/buyin-audit-2026-11-15-followup.md).
