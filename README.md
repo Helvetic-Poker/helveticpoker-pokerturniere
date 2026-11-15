@@ -25,6 +25,9 @@ Zentraler Kalender der Schweizer Pokerszene.
 
 Details: [Tagesaudit 15.11.2026](docs/buyin-audit-2026-11-15.md).
 
+- GitHub Actions für den Datencommit `f3b34e8`: Datenqualität [Run 43689331692](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331692) und Pages-Deploy [Run 43689331711](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331711) beide SUCCESS. Das heruntergeladene Pages-Artefakt [ID 14151542929](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331711/artifacts/14151542929) enthält 9 Turnier-JSON-Dateien, 862 Detailseiten, 20 Veranstalterseiten plus Verzeichnisindex und 931 Sitemap-URLs; alle neun JSON-Blobs stimmen bytegenau mit dem Datencommit überein.
+- Die Live-Webansicht zeigt noch einen älteren Crawl-/Cache-Stand (Homepage 14.11.; AZ-Veranstalterseite 23 statt 20 kommende Termine). Die neuen Detailseiten sind im Artefakt vorhanden, konnten aber vom Webabruf nicht direkt geladen werden. Artefakt und Cache-Abweichung sind getrennt dokumentiert; eine vollständige Live-Verifikation wird nicht behauptet. Details: [Tagesaudit 15.11.2026](docs/buyin-audit-2026-11-15.md).
+
 ## Quellenabgleich 14.11.2026 – Buy-in.info und Veranstalterquellen
 - Die aktuelle Buy-in.info-Hauptkalenderansicht enthält 100 sichtbare Zeilen vom 13.11. bis 21.11.2026. Ab 14.11. sind 85 Zeilen im Prüfzeitraum.
 - Zwölf aktuelle Veranstalterübersichten enthalten zusammen 331 Zeilen; davon liegen 318 ab 14.11. im Prüfzeitraum. Die zusätzliche STATION-Detailtabelle enthält 10 konkret datierte Termine.

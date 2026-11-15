@@ -148,3 +148,40 @@ Die aktuelle Hauptkalenderansicht endet nach 100 Zeilen am 23.11.2026 und zeigt 
 Weitere offizielle Veranstaltertermine im Repository (z. B. DC Poker Club, OVP, 72 Offsuite Thun) sind ergänzende Quellen und werden nicht als Buy-in.info-Listings gezählt, solange kein entsprechender Buy-in-Kalendereintrag erreichbar ist.
 
 **Fazit:** Der sichtbare Hauptkalender und die 13 erreichbaren Veranstalter-/Detailansichten wurden abgeglichen. Zwei fehlende AZ-Turniere sind ergänzt, elf belegte Startzeiten korrigiert und alle 328 eindeutigen Turniere aus diesen Ansichten sind im Datenbestand. Die vollständige Abdeckung aller Schweizer Buy-in.info-Turniere bis 31.12.2026 bleibt wegen der nicht erreichbaren Hauptkalender-Pagination und der aufgeführten offenen Anbieterzeiträume ausdrücklich unbestätigt.
+
+## 9. GitHub Actions und tatsächliches Pages-Artefakt
+
+Für den Datencommit `f3b34e8b03c97de9eeff93cefbbf04b98ecd2920` wurden beide Push-Workflows erfolgreich abgeschlossen:
+
+- [Tournament data quality report – Run 43689331692](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331692): **SUCCESS**. Der Schritt `Check tournament data` wurde erfolgreich abgeschlossen.
+- [Generate and deploy tournament pages – Run 43689331711](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331711): **SUCCESS**. Seitengenerierung, Artefakt-Upload und `Deploy to GitHub Pages` wurden erfolgreich abgeschlossen.
+
+Das tatsächliche Artefakt [github-pages, ID 14151542929](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689331711/artifacts/14151542929) wurde heruntergeladen, das enthaltene `artifact.tar` entpackt und geprüft.
+
+- ZIP-Grösse: 1'763'337 Bytes
+- ZIP-SHA-256 (entspricht GitHub-Artefakt-Digest): `6146923ee59ec56ac2a2456dc73496030421d18e54762268020af07e1909ed24`
+- entpacktes TAR: 19'712'000 Bytes; SHA-256 `8f0f8ed117c25c3e33cc15387de72060f107b5cb45f4b1bab9a25648038ad896`
+- Dateien insgesamt: 1'910; HTML-Dateien: 935
+- JSON-Dateien: 11 (neun Turnierdateien und zwei separate Cash-Game-Dateien)
+- Turnierdetailseiten: **862**
+- Veranstalterseiten: **20** plus ein Veranstalterverzeichnis-Index
+- Sitemap-URLs: **931**
+
+Alle neun `data/01.json` bis `data/09.json` im Artefakt stimmen über ihre Git-Blob-SHAs bytegenau mit dem Datencommit überein. Alle 20 Veranstalterseiten-Zähler stimmen mit den Daten überein; der separate Verzeichnisindex hat erwartungsgemäss keinen Turnierzähler. Die AZ-Veranstalterseite zeigt im Artefakt **20 kommende Turniere** und enthält beide neuen AZ-Termine.
+
+Die beiden neuen Detailseiten wurden im Artefakt geprüft:
+
+- [Dienstag Special ReBuy Monster Stack, 17.11.2026](https://pokerturniere.helveticpoker.ch/turniere/az-poker-club-bern-dienstag-special-rebuy-monster-stack-2026-11-17/): `startDate=2026-11-17T19:00:00+01:00`, Buy-in CHF 50 + 15.
+- [AZ Win The Button!! Monster Stack, 19.11.2026](https://pokerturniere.helveticpoker.ch/turniere/az-poker-club-bern-az-win-the-button-monster-stack-2026-11-19/): `startDate=2026-11-19T19:00:00+01:00`, Buy-in CHF 70 + 20.
+
+Zusätzlich wurden die elf korrigierten Startzeiten in den Artefakt-JSON-Dateien und den generierten Detailseiten erneut geprüft; alle stimmen mit den aktuellen Buy-in.info-Hauptkalenderzeilen überein.
+
+## 10. Live-Website und Cache-Abweichung
+
+Der verfügbare Webabruf der Live-Website zeigt noch einen älteren Crawl-/Cache-Stand:
+
+- Die [Homepage](https://pokerturniere.helveticpoker.ch/) zeigt noch Termine vom 14.11.2026.
+- Die [AZ-Veranstalterseite](https://pokerturniere.helveticpoker.ch/veranstalter/az-poker-club-bern/) zeigt im Webabruf noch 23 kommende Turniere und einen nächsten Termin am 10.11.; das frisch erzeugte Artefakt zeigt 20 kommende Turniere ab dem 15.11. und enthält die beiden neuen Termine.
+- Die beiden neuen Detailseiten-URLs konnten über den Webabruf nicht direkt geladen werden (Abruf meldet „not accessible“). Ihre Existenz und korrekten Daten sind im tatsächlich heruntergeladenen Pages-Artefakt nachgewiesen.
+
+Damit ist der GitHub-Pages-Workflow erfolgreich, und das generierte Artefakt ist verifiziert. Die zusätzliche Live-Webabrufprüfung ist wegen des erkennbar alten Crawl-/Cache-Stands **nicht vollständig live-bestätigt**. Artefaktstand und Web-Crawl-Abweichung werden getrennt behandelt; aus dem alten Web-Crawl wird nicht auf einen fehlgeschlagenen Deploy geschlossen.
