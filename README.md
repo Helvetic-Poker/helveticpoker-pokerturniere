@@ -3,14 +3,27 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 14.11.2026
+- Datenstand: 15.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- 860 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
-- 418 Datensätze vom 12.11.2026 bis 31.12.2026
+- 862 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
+- 420 Datensätze vom 12.11.2026 bis 31.12.2026
+- 378 Datensätze vom 15.11.2026 bis 31.12.2026
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
 
+
+## Quellenabgleich 15.11.2026 – Buy-in.info-Hauptkalender und Veranstalteransichten
+- Die aktuelle Hauptkalenderansicht enthält 100 sichtbare Zeilen vom 15.11. bis 23.11.2026: 97 Turnierlistings, zwei Cash Games und einen geschlossenen Prestige-Platzhalter.
+- Zwölf Veranstalterübersichten enthalten 306 Zeilen (304 Turnierlistings und zwei geschlossene Prestige-Platzhalter); die Airfield-Detailseite enthält weitere 15 Turnierlistings. Zusammen sind das 421 Ansichtszeilen. Nach Ausschluss von zwei Cash Games und drei geschlossenen Platzhaltern bleiben 416 Turnier-Listing-Vorkommen. 88 Überschneidungen ergeben 328 eindeutige Turniere in den heute erreichbaren Ansichten. Alle 328 sind nach dem Abgleich im Datenbestand; dies ist keine Vollständigkeitsbehauptung für den gesamten Kalender.
+- Zwei in der aktuellen Hauptkalenderansicht gelistete, aber in der AZ-Veranstalterübersicht fehlende Turniere wurden ergänzt: Dienstag Special ReBuy Monster Stack (17.11., 19:00, CHF 50+15) und AZ Win The Button!! Monster Stack (19.11., 19:00, CHF 70+20). Für beide gilt der konkrete Hauptkalendereintrag als Datums-/Zeit-/Buy-in-Beleg; die passenden Buy-in-Detailseiten belegen die Variante/Turnierart.
+- Elf bestehende Startzeiten vom 21.–23.11. wurden anhand der expliziten Hauptkalenderzeilen von TBA auf die dort gelisteten Uhrzeiten gesetzt. Zwei Airfield-Datensätze wurden beim Veranstalternamen auf „Airfield Pokerclub Interlaken“ normalisiert; der Heads-up-Titel wurde an die aktuelle Schreibweise angepasst und die nicht belegte Variante auf TBA gesetzt.
+- Vier Munot-Quellenhinweise wurden aktualisiert: die aktuelle gefilterte Kalenderansicht bestätigt nun ausdrücklich die Zeiten 25.–28.11.2026 (19:00, 19:00, 19:30, 19:00). Es wurde keine Uhrzeit aus einem Wochenmuster übernommen.
+- Der Datenbestand umfasst 862 Turnierdatensätze, davon 378 vom 15.11. bis 31.12.2026 und 420 vom 12.11. bis 31.12.2026. Alle neun JSON-Dateien sind syntaktisch gültig; doppelte IDs/Slugs/semantische Events, fehlende Pflichtfelder, ungültige Datums-/Zeitformate und Cash Games im Turnierbestand: 0.
+- Fehlende Turniere ergänzt: 2. Bestehende Datensätze korrigiert: 13 (11 Startzeiten, zwei Veranstalternamen, ein Titel und eine Variante; ein Datensatz enthält mehrere Feldkorrekturen). Dubletten entfernt: 0. Quellen-/Prüfhinweise aktualisiert: 17 bestehende Datensätze.
+- Die Hauptkalender-Pagination bleibt blockiert: die sichtbare Ansicht endet nach 100 Zeilen am 23.11.2026 und zeigt eine „…“-Schaltfläche. Versuche mit `?page=2`, `?offset=100` und `?start=100` sowie direkte Organizer-Filter-URLs sind über den Webabruf nicht zuverlässig zugänglich. Die offenen Veranstalterzeiträume und nicht erreichbaren Anbieter sind im Tagesaudit dokumentiert. Eine vollständige Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
+
+Details: [Tagesaudit 15.11.2026](docs/buyin-audit-2026-11-15.md).
 
 ## Quellenabgleich 14.11.2026 – Buy-in.info und Veranstalterquellen
 - Die aktuelle Buy-in.info-Hauptkalenderansicht enthält 100 sichtbare Zeilen vom 13.11. bis 21.11.2026. Ab 14.11. sind 85 Zeilen im Prüfzeitraum.
