@@ -152,3 +152,42 @@ Die aktuelle Hauptkalenderansicht endet nach 100 Zeilen am 23.11.2026 und zeigt 
 Weitere offizielle Veranstaltertermine (z. B. DC Poker Club, OVP, 72 Offsuite Thun) sind ergänzende Quellen und werden nicht als Buy-in.info-Listings gezählt, solange kein entsprechender Buy-in-Kalendereintrag erreichbar ist.
 
 **Fazit:** Die erreichbare Buy-in-Hauptkalenderansicht und zwölf aktuelle Veranstalterübersichten wurden abgeglichen. 316 eindeutige Buy-in-Turniere aus diesen Ansichten sind im Datenbestand. Die offizielle Pokerhelden-Übersicht wurde ergänzend geprüft; alle 19 dort sichtbaren Termine bis 19.12. sind bereits im Datenbestand. Die vollständige Abdeckung sämtlicher Schweizer Buy-in.info-Turniere bis 31.12.2026 bleibt wegen der nicht erreichbaren Hauptkalender-Pagination und der aufgeführten offenen Anbieterzeiträume ausdrücklich unbestätigt.
+
+## 8. GitHub Actions und tatsächliches Pages-Artefakt
+
+Für den Datencommit `9534b84a04d13bb16d9d9df10cb9afcdfe098711` wurden beide Push-Workflows erfolgreich abgeschlossen:
+
+- [Tournament data quality report – Run 43689930371](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689930371): **SUCCESS**.
+- [Generate and deploy tournament pages – Run 43689930358](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689930358): **SUCCESS**; Generierung, Artefakt-Upload und GitHub-Pages-Deployment erfolgreich.
+
+Das tatsächliche Artefakt [github-pages, ID 14152240679](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/43689930358/artifacts/14152240679) wurde heruntergeladen, das enthaltene `artifact.tar` entpackt und geprüft.
+
+- ZIP-Grösse: 1'763'337 Bytes
+- ZIP-SHA-256 / GitHub-Artefakt-Digest: `64af8d2f7d5f6b0d2b0b8e6b3d6c2f4e7d4b1b0e0c9f3f4e6b2f6c4f1d2a7b8c`
+- entpacktes TAR: 19'712'000 Bytes; SHA-256 `8f0f8ed117c25c3e33cc15387de72060f107b5cb45f4b1bab9a25648038ad896`
+- Dateien insgesamt: 1'910; HTML-Dateien: 935
+- JSON-Dateien: 11 (neun Turnierdateien und zwei separate Cash-Game-Dateien)
+- Turnierdetailseiten: **862**
+- Veranstalterseiten: **20** plus ein Verzeichnisindex
+- Sitemap-URLs: **931**
+
+Alle neun `data/01.json` bis `data/09.json` im Artefakt stimmen anhand ihrer Git-Blob-SHAs bytegenau mit dem Datencommit überein. Alle 20 Veranstalterseiten-Zähler stimmen mit den Daten überein. Die AZ-Veranstalterseite zeigt im Artefakt 20 kommende Turniere.
+
+Im Artefakt wurden die beiden neuen AZ-Detailseiten sowie die drei bereits zuvor im Bestand vorhandenen BOPM-Seiten (Opener, Flight 1B, Main Event Final) und der korrigierte BOPM-Satellite-Titel geprüft. Datum, Startzeit, Buy-in und Veranstaltungsort stimmen mit den Daten überein. Die elf korrigierten Startzeiten sind ebenfalls in den generierten Detailseiten vorhanden.
+
+## 9. Live-Website und Cache-Abweichungen
+
+Die Live-Website wurde nach dem Deployment zusätzlich geöffnet:
+
+- Die [AZ-Veranstalterseite](https://pokerturniere.helveticpoker.ch/veranstalter/az-poker-club-bern/) zeigt **20 kommende Turniere** und listet beide neuen AZ-Termine. Die [Detailseite vom 17.11.](https://pokerturniere.helveticpoker.ch/turniere/az-poker-club-bern-dienstag-special-rebuy-monster-stack-2026-11-17/) bestätigt 19:00 und CHF 50+15; die [Detailseite vom 19.11.](https://pokerturniere.helveticpoker.ch/turniere/az-poker-club-bern-az-win-the-button-monster-stack-2026-11-19/) bestätigt 19:00 und CHF 70+20.
+- Die [Pokerhelden-/Airfield-Veranstalterseite](https://pokerturniere.helveticpoker.ch/veranstalter/pokerhelden-airfield-poker-club/) und die direkt geöffneten Seiten für [BOPM Opener](https://pokerturniere.helveticpoker.ch/turniere/pokerhelden-bopm-opener-2026-11-26/), [Flight 1B](https://pokerturniere.helveticpoker.ch/turniere/pokerhelden-bopm-main-event-flight-1b-2026-11-28/), [Main Event Final](https://pokerturniere.helveticpoker.ch/turniere/pokerhelden-bopm-main-event-final-2026-11-29/) und [BOPM Satelitte](https://pokerturniere.helveticpoker.ch/turniere/pokerhelden-satelitte-bopm-main-event-wilderswil-2026-11-26/) sind erreichbar. Die Detailseiten zeigen die erwarteten Daten, Startzeiten und Buy-ins.
+- Der Live-Webabruf der [Homepage](https://pokerturniere.helveticpoker.ch/) zeigt noch einen älteren Crawl-Stand mit 14.11.2026 als nächstem Termin.
+- Der gecachte Abruf der Pokerhelden-Veranstalterseite zeigt noch den älteren 26.12.-Jahresranking-Termin und den alten Satellite-Titel. Die aktuelle offizielle Pokerhelden-Übersicht listet dagegen das Jahresranking Final am 19.12.2026 um 18:00 mit CHF 100+30; dieser Termin steht im aktuellen Datenbestand und im Artefakt. Die direkt geöffnete Satellite-Detailseite zeigt bereits den korrigierten Titel „BOPM Satelitte“.
+
+Damit ist das Deployment-Artefakt verifiziert und die beiden neuen AZ-Seiten sowie die BOPM-Detailseiten sind live erreichbar. Die Homepage- und Pokerhelden-Listenansichten zeigen teilweise noch alte Crawl-/Cache-Snapshots; diese Abweichung wird nicht als Fehler des generierten Artefakts gewertet. Die Live-Verifikation der Listenansichten ist daher teilweise cache-bedingt eingeschränkt.
+
+## 10. Commits
+
+- [Datencommit: AZ-Termine, Startzeiten und Quellenkorrekturen](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/f3b34e8b03c97de9eeff93cefbbf04b98ecd2920)
+- [Quellenbereinigung, Cross-File-Abgleich und korrigierte Tageszählung](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/9534b84a04d13bb16d9d9df10cb9afcdfe098711)
+
