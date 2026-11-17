@@ -284,7 +284,7 @@ def write_page(kind, name, items):
 <span class="next-event-link">Turnierdetails ansehen →</span>
 </a>
 </section>'''
-    rows = ''.join(row(e) for e in upcoming[:60])
+    rows = ''.join(row(e) for e in upcoming)
     if not upcoming and kind == 'stadt':
         rows = ('<li class="empty-state"><strong>Aktuell sind keine kommenden Turniere in ' + esc(name) + ' erfasst.</strong>'
                 '<p>Neue Termine werden laufend ergänzt. Im <a href="/">Schweizer Pokerkalender</a> findest du weitere aktuelle Turniere.</p></li>')
@@ -420,7 +420,7 @@ def write_page(kind, name, items):
                     'name': e.get('title') or 'Pokerturnier',
                     'url': f'{BASE_URL}/turniere/{event_slug(e)}/'
                 }
-                for i, e in enumerate(upcoming[:60])
+                for i, e in enumerate(upcoming)
             ]
         }
     }
@@ -533,7 +533,7 @@ main{padding:22px 12px 40px}.intro{padding:28px 22px 22px}h1{font-size:38px;lett
 <link rel="canonical" href="{esc(url)}">
 <script type="application/ld+json">{json.dumps(breadcrumb_json, ensure_ascii=False)}</script>
 <script type="application/ld+json">{json.dumps(collection_json, ensure_ascii=False)}</script>
-<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"ItemList","name":title,"itemListElement":[{"@type":"ListItem","position":i+1,"name":e.get("title") or "Pokerturnier","url":f"{BASE_URL}/turniere/{event_slug(e)}/"} for i,e in enumerate(upcoming[:60])]}, ensure_ascii=False)}</script>
+<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"ItemList","name":title,"itemListElement":[{"@type":"ListItem","position":i+1,"name":e.get("title") or "Pokerturnier","url":f"{BASE_URL}/turniere/{event_slug(e)}/"} for i,e in enumerate(upcoming)]}, ensure_ascii=False)}</script>
 <style>{style}</style>
 </head>
 <body>

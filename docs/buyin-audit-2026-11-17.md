@@ -71,3 +71,14 @@ Diese letzten sichtbaren Termine belegen nicht, dass danach keine weiteren Turni
 ## Datenprüfung vor Commit
 
 Alle neun `data/*.json`-Dateien wurden geladen und JSON-parsed. IDs und Slugs sind eindeutig; Datum und Zeitformate sind valide. Die zwei neuen Datensätze wurden mit fortlaufenden globalen `_ord`-Werten versehen. Eine vollständige Abdeckung sämtlicher Buy-in.info-Kalenderseiten bis 31.12.2026 wird wegen der genannten Blocker ausdrücklich nicht behauptet.
+
+
+## Nachprüfung des Pages-Artefakts und Generator-Korrektur
+
+Das erste Artefakt für Commit `8494326` enthielt alle neun JSON-Dateien (871 Datensätze), 871 Turnierdetailseiten und 20 Veranstalterseiten. Alle fünf geänderten/neuen Detailseiten waren vorhanden und zeigten Datum, Startzeit und Buy-in korrekt.
+
+Bei der Zähler-/Listenprüfung wurde eine Darstellungsgrenze gefunden: Die FOIF-DRÜ-Veranstalterseite enthielt nur 60 Eventkarten, obwohl 75 kommende FOIF-Datensätze im JSON stehen. `scripts/generate-landing-pages.py` begrenzte die sichtbare Liste und die zugehörigen ItemList-Einträge auf `upcoming[:60]`. Diese Grenze wurde entfernt, damit die Veranstalterseite sämtliche kommenden Einträge zeigt und der sichtbare Umfang zum Zähler passt.
+
+Der Qualitätsworkflow hatte außerdem zwei mögliche Dubletten für die PCSM-Main-Event-Satellites am 16.12. und 17.12. gemeldet. Die Datensätze unterscheiden sich jeweils durch Startzeit und Buy-in (13:15 / CHF 125+25 gegenüber 19:00 / CHF 180+30). Der bisherige Prüfschlüssel ignorierte diese Felder. `scripts/check-event-data.py` vergleicht nun zusätzlich Startzeit und Buy-in-Label; echte identische Veranstaltungen mit leicht abweichenden IDs bleiben erkennbar, die beiden unterschiedlichen Satellites werden nicht mehr fälschlich als Dubletten gemeldet.
+
+Die Korrekturen an Generator und Qualitätsprüfer wurden nach dem Datencommit separat auf `main` committed; das nachfolgende Pages-Artefakt und beide Workflows werden erneut geprüft.

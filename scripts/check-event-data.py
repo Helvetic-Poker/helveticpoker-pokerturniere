@@ -67,8 +67,10 @@ for event in events:
     key = (
         str(event.get("title") or "").strip().casefold(),
         str(event.get("date_start") or "").strip(),
+        str(event.get("time") or "TBA").strip().casefold(),
         str(event.get("city") or "").strip().casefold(),
         str(event.get("organizer") or "").strip().casefold(),
+        re.sub(r"\\s+", " ", str(event.get("buy_in_label") or "").strip().casefold()),
     )
     if all(key):
         if key in seen:
