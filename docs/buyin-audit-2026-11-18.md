@@ -113,3 +113,8 @@ Audit-Zeitpunkt: 18.11.2026.
 
 Datencommit: [4fa1ffe](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/4fa1ffe60d0b59ad41e2222f95ffd2fae291c060). Diese Deployment-Ergänzung ist ein reiner Audit-Dokumentationsnachtrag; die geprüften Daten und das bereits erfolgreiche Deployment bleiben unverändert.
 
+
+
+### Nachprüfung des Live-Cache (18.11.2026, späterer Abruf)
+
+Bei einer erneuten Live-Abfrage lieferte die Startseite den aktuellen Stand 18.11.2026; ihre Top-Veranstalterzähler stimmen mit dem Artefakt überein (u.a. FOIF DRÜ 74, AZ Poker Club 26, DC Poker Club 11, 24Poker 15). Die Veranstalterseite `/veranstalter/` lieferte dagegen in zwei Abrufen widersprüchliche Snapshots: einmal den aktuellen Stand 18.11.2026 mit 20 Karten, danach einen alten Stand 08.11.2026 mit abweichenden Zählern. Das ist eine nachgewiesene Web-/Crawler-Cache-Inkonsistenz; das heruntergeladene Artefakt bleibt der verlässliche Deployment-Nachweis. Die Sports-Zugerland-Detailseite bleibt im Webabruf nicht abrufbar, ist aber im Artefakt mit 26.11.2026, 19:30 Uhr und CHF 60+20 korrekt vorhanden.
