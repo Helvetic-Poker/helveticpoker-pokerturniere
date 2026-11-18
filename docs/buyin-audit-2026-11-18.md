@@ -98,3 +98,18 @@ Nach den Änderungen: JSON-Syntax 9/9 valide; 876 eindeutige IDs; 876 eindeutige
 - Pöstli Poker (heute nicht vollständig abrufbar): https://buy-in.info/tournaments/554
 
 Audit-Zeitpunkt: 18.11.2026.
+
+## GitHub Actions, Pages-Artefakt und Live-Prüfung
+
+- Datenqualitätsworkflow: [Run 44259891744](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44259891744) – SUCCESS. Das Workflow-Log meldet 9 Turnier-JSON-Dateien und 876 Einträge, keine Auffälligkeiten nach den Basisregeln.
+- Pages-Deployment: [Run 44259891800](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44259891800) – SUCCESS. Checkout, Pages-Setup, Seitengenerierung, Artefakt-Upload und Deployment sind jeweils erfolgreich.
+- Tatsächlich heruntergeladenes Artefakt: [github-pages, Artefakt 14406863319](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44259891800/artifacts/14406863319). ZIP-Größe 1.797.009 Byte; SHA-256 `6c560b0154b035df6e12d2e9c4662eaeaab6d00fdb3e12ca0879df9d8481fb42`.
+- Das ZIP enthält `artifact.tar`; nach Entpacken: 9 Turnier-JSON-Dateien mit 876 Datensätzen, 876 Turnierdetailseiten und 949 HTML-Dateien insgesamt. Die zwei separaten Cash-Game-JSON-Dateien enthalten 28 Cash-Game-Datensätze und werden nicht zu Turnieren gezählt.
+- Alle neun Turnier-JSON-Dateien im Artefakt wurden über ihre Git-Blob-SHAs mit dem Commit-Inhalt verglichen und stimmen bytegenau überein.
+- Die Veranstalterübersicht im Artefakt enthält 20 Veranstalterkarten. Die Zähler stimmen mit den generierten Veranstalterlinks überein: 24Poker 15, 72 Offsuite 2, AZ Poker Club 26, Airfield Pokerclub 2, Another Poker 30, Capital Poker Club 26, DC Poker Club 11, FOIF DRÜ 74, Grand Casino Basel 11, Grand Casino Luzern 40, HSOP 6, House of Cards 13, Munot 8, Open Valais 8, Pokerhelden/Airfield 15, Prestige 11, Pöstli 31, RPR 7, STATION 7, Sports Zugerland 11.
+- Die sieben korrigierten Detailseiten sind im Artefakt vorhanden; Datum, Startzeit und Buy-in stimmen. Insbesondere die fünf korrigierten 26.11.-Startzeiten sind im HTML korrekt gerendert.
+- Live-Prüfung: Die öffentliche Veranstalterübersicht https://pokerturniere.helveticpoker.ch/veranstalter/ zeigt den Stand 18.11.2026 und 20 Veranstalterkarten mit den Artefaktzählern. Sechs der sieben korrigierten Detailseiten waren im Webabruf direkt lesbar und stimmen mit dem Artefakt überein. Die Sports-Zugerland-Detailseite lieferte beim Webabruf einen Abruffehler; sie ist im heruntergeladenen Artefakt korrekt vorhanden.
+- Cache-Abweichung: Die Live-Startseite https://pokerturniere.helveticpoker.ch/ zeigt im Webabruf noch einen älteren Snapshot mit 17.11.-Terminen und abweichenden Veranstalterzählern (u.a. FOIF DRÜ 75, AZ 27, DC 12, 24Poker 17). Das ist nicht der aktuelle Deployment-Artefaktstand. Die Veranstalterübersicht und die direkt geöffneten Detailseiten sind aktuell; die Startseite wird als Cache-Abweichung dokumentiert.
+
+Datencommit: [4fa1ffe](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/4fa1ffe60d0b59ad41e2222f95ffd2fae291c060). Diese Deployment-Ergänzung ist ein reiner Audit-Dokumentationsnachtrag; die geprüften Daten und das bereits erfolgreiche Deployment bleiben unverändert.
+
