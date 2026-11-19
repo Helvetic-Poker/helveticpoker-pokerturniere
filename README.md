@@ -25,6 +25,8 @@ Zentraler Kalender der Schweizer Pokerszene.
 
 Details: [Tagesaudit 19.11.2026](docs/buyin-audit-2026-11-19.md).
 
+**Deployment 19.11.2026:** Datencommit [cbe311c](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/cbe311c0dfe3ee058f6195dbf5fbf3af233f638e), Quellenkorrektur [90fe1fa](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/90fe1fab3c0c1188bfd4df9b1d880229f2e21864); Qualitätsworkflow [44484777956](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44484777956) und Pages-Deploy [44484777983](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44484777983) erfolgreich. Das heruntergeladene [Pages-Artefakt 14510326128](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44484777983/artifacts/14510326128) enthält 890 Turnierseiten, 21 Veranstalterseiten und 9 bytegenau mit main übereinstimmende Turnier-JSON-Dateien. Live-Caches sind teilweise älter; Details stehen im Tagesaudit.
+
 ## Quellenabgleich 15.11.2026 – Buy-in.info und offizielle Veranstalterquellen
 - Hauptkalender: 100 sichtbare Zeilen vom 15.11. bis 23.11.2026 (97 Turnierlistings, zwei Cash Games, ein geschlossener Prestige-Platzhalter).
 - Zwölf aktuelle Veranstalterübersichten: 306 Zeilen (304 Turnierlistings plus zwei geschlossene Prestige-Platzhalter). Zusammen mit dem Hauptkalender: **406 Ansichtszeilen**; nach Ausschluss von zwei Cash Games und drei geschlossenen Platzhaltern bleiben **401 Turnier-Listing-Vorkommen**. **85 Überschneidungen** ergeben **316 eindeutige Buy-in.info-Turniere** in den erreichbaren Ansichten. Alle 316 sind im Datenbestand; keine Vollständigkeitsbehauptung.
