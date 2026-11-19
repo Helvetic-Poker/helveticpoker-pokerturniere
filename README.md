@@ -3,15 +3,27 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 15.11.2026
+- Datenstand: 19.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- 862 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
-- 420 Datensätze vom 12.11.2026 bis 31.12.2026
-- 378 Datensätze vom 15.11.2026 bis 31.12.2026
+- 890 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
+- 448 Datensätze vom 12.11.2026 bis 31.12.2026
+- 406 Datensätze vom 15.11.2026 bis 31.12.2026
+- 357 Datensätze vom 19.11.2026 bis 31.12.2026
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
+## Quellenabgleich 19.11.2026 – Buy-in.info und offizielle Veranstalterquellen
+- Die aktuelle Buy-in.info-Hauptkalenderansicht enthält 100 Zeilen; ab 19.11. bis zum ersten Eintrag am 27.11. sind 92 Ansichtszeilen sichtbar. Davon sind 89 Turnierlistings, zwei Cash Games und ein geschlossener Prestige-Platzhalter.
+- Zusätzlich wurden zwölf direkte Veranstalterübersichten sowie die STATION-Detailtabelle geprüft. Zusammen ergeben diese 296 Ansichtszeilen (12 Cash Games und ein geschlossener Prestige-Platzhalter ausgeschlossen). Zusammen mit dem Hauptkalender: **388 Ansichtszeilen**; nach Ausschluss von 14 Cash-Game-Zeilen und zwei geschlossenen Platzhaltern bleiben **372 Turnier-Listing-Vorkommen**. **83 Überschneidungen** ergeben **289 eindeutige Buy-in.info-Turniere** in den heute erreichbaren Ansichten. Alle 289 sind im Datenbestand; keine Vollständigkeitsbehauptung.
+- Die Pöstli-Übersicht ist heute wieder direkt erreichbar und listet 31 konkrete Termine bis 28.12.2026. Auch RPR und STATION sind mit aktuellen datierten Übersichten erreichbar.
+- Keine fehlenden Buy-in.info-Turniere in den erreichbaren Ansichten ergänzt. **14 zusätzliche datierte Veranstaltertermine** wurden ergänzend aufgenommen: zehn OVP-Turniere (01.–26.12.) aus der offiziellen OVP-Seite und deren Check-Raise-Registrierungen sowie vier RDC-Poker-Club-Turniere (21.11.–02.12.) aus datierten Veranstalterregistrierungen. Diese 14 Zusatztermine werden ausdrücklich nicht als Buy-in.info-Listings gezählt.
+- Sechs bestehende Eventdatensätze wurden in Feldern korrigiert: drei OVP-Main-Event-Titel auf die aktuellen Registrierungsbezeichnungen, der AZ-Titel am 06.12. auf die aktuelle Buy-in.info-Organizerbezeichnung sowie zwei AZ-Championship-Startzeiten am 28.11. und 05.12. auf die datierte Check-Raise-Zeit 19:00. Die Buy-in-Konflikte bei AZ wurden zugunsten der aktuellen Buy-in.info-Angaben dokumentiert.
+- Fünf frühere AZ-„Top Structure“-Termine (27.11., 04.12., 11.12., 18.12., 25.12.) und das Another-Poker-Satellite vom 23.11. fehlen in den aktuellen Buy-in.info-Haupt-/Organizeransichten. Sie wurden nicht blind gelöscht: frühere explizite Buy-in-Listungen bleiben mit Konflikthinweis erhalten, bis eine datierte Absage oder Bestätigung vorliegt. Sie werden nicht als aktuell sichtbare Listings gezählt.
+- Konflikte: Check-Raise listet am 20.11. bei AZ „Amazing Friday Structure“ (CHF 200+30), während Buy-in.info im Hauptkalender „Top Structure 2026“ (CHF 300+40) führt; gewählt wird Buy-in.info. Für AZ Championship Serie 4 zeigt Check-Raise CHF 100+40, Buy-in.info aktuell CHF 120+20; Buy-in.info bleibt für den Buy-in maßgeblich. Am 06.12. nennt Buy-in.info „AZ 3nd ANNIVERSARY JUBILE, Hold'em“, die offizielle AZ-Seite „AZ Sunday Freezout“; der Buy-in-Titel folgt Buy-in.info, Zeit/Freezeout der datierten offiziellen AZ-Seite.
+- Datenbestand nach Ergänzungen: 890 Datensätze, davon 357 vom 19.11. bis 31.12.2026. Alle neun JSON-Dateien werden nach dem Commit erneut auf Syntax, IDs, Slugs, semantische Dubletten, Pflichtfelder, Datum/Zeit und Cash Games geprüft.
+- Die Hauptkalender-Pagination bleibt blockiert: die sichtbare Ansicht endet nach 100 Zeilen mit dem ersten Eintrag am 27.11.2026. Versuche mit `?page=2`, `?offset=100`, `?start=100`, Datumsparametern und direkten Organizerfiltern lieferten keine vollständige Folgeseite. Offene spätere Veranstalterzeiträume sind im Tagesaudit dokumentiert; vollständige Abdeckung bis 31.12.2026 wird nicht behauptet.
 
+Details: [Tagesaudit 19.11.2026](docs/buyin-audit-2026-11-19.md).
 
 ## Quellenabgleich 15.11.2026 – Buy-in.info und offizielle Veranstalterquellen
 - Hauptkalender: 100 sichtbare Zeilen vom 15.11. bis 23.11.2026 (97 Turnierlistings, zwei Cash Games, ein geschlossener Prestige-Platzhalter).
