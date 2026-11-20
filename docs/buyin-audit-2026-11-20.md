@@ -175,12 +175,13 @@ Die Veranstalterzähler für Another Poker (28) und AZ Poker Club (24) liegen ü
 
 ## 9. Live-Website und Cache-Abweichung
 
-Der Live-Webabruf zeigt weiterhin einen älteren Snapshot:
-- Another-Poker-Veranstalterseite: 27 statt 28 Datensätze im aktuellen Artefakt; die drei neuen Dezemberseiten fehlen im abgerufenen Snapshot.
-- Homepage: weiterhin ein älterer Stand mit 19.11.-Terminen.
-- Die drei neuen Detailseiten konnten im Live-Webabruf nicht zuverlässig geöffnet werden.
+Die Live-Prüfung zeigt eine gemischte Cache-/Auslieferungslage:
+- Die Another-Poker-Veranstalterseite liefert 28 kommende Einträge, also denselben Zähler wie das Artefakt. Sie enthält aber in den Listenzeilen noch alte Inhalte: die Titel vom 23.11., 25.11. und 05.12. sind dort nicht auf den aktuellen Stand gebracht; die Startzeiten für 04., 05., 06., 11., 18. und 25.12. werden in der Veranstalterliste als TBA dargestellt.
+- Die drei neuen Detailseiten sind über die Links der Live-Veranstalterseite erreichbar. Jede zeigt korrekt Datum, 19:00 Uhr und CHF 100+30. Auch die Detailseiten vom 04., 05. und 06.12. zeigen die bestätigten Zeiten; die Detailseiten vom 23.11. und 25.11. zeigen die korrigierten Titel.
+- Die Veranstalterliste enthält weiterhin die drei ungeklärten älteren Another-Listungen (23.11. Satellite, 25.11. Satellite 350, 28.11. Master Freezeout), die in der aktuellen Buy-in.info-Veranstalterübersicht nicht mehr erscheinen. Der Zähler 28 ist daher um diese drei dokumentierten Konfliktfälle höher als die aktuelle Buy-in.info-Übersicht mit 25 Turnierlistings.
+- Die Homepage liefert weiterhin einen älteren Snapshot mit Terminen vom 19.11.2026.
 
-Die Artefaktprüfung ist erfolgreich; die öffentliche Live-Auslieferung der drei neuen Detailseiten ist nicht bestätigt. Cache-/Crawler-Abweichung und Artefaktstand werden getrennt behandelt.
+Die Detailseiten und das heruntergeladene Artefakt sind aktuell und korrekt. Die Veranstalterlisten- und Homepage-Abrufe sind teilweise älter; diese Cache-/Crawler-Abweichung wird vom Artefaktstand getrennt behandelt.
 
 ## 10. Nicht vollständig erreichbare Kalenderzeiträume
 
