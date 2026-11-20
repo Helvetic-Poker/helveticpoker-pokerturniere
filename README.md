@@ -3,12 +3,14 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 19.11.2026
+- Datenstand: 20.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- 890 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
-- 448 Datensätze vom 12.11.2026 bis 31.12.2026
-- 406 Datensätze vom 15.11.2026 bis 31.12.2026
-- 357 Datensätze vom 19.11.2026 bis 31.12.2026
+- 893 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
+- 451 Datensätze vom 12.11.2026 bis 31.12.2026
+- 409 Datensätze vom 15.11.2026 bis 31.12.2026
+- 360 Datensätze vom 19.11.2026 bis 31.12.2026
+- 347 Datensätze vom 20.11.2026 bis 31.12.2026
+- Letzter Buy-in.info-Abgleich: 20.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-20.md); 282 eindeutige aktuelle Turniere in den erreichbaren Ansichten, keine Vollständigkeitsbehauptung
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
@@ -129,3 +131,14 @@ Der Pages-Deploy-Run [43399143080](https://github.com/Helvetic-Poker/helveticpok
 - Hauptkalender-Pagination hinter 23.11. und mehrere Veranstaltermonate bleiben nicht vollständig erreichbar; eine vollständige Abdeckung bis 31.12.2026 wird nicht behauptet.
 
 Details: [Tagesaudit 15.11.2026 – Nachprüfung](docs/buyin-audit-2026-11-15-followup.md).
+
+
+## Tagesabgleich 20.11.2026 – Buy-in.info
+- 385 Ansichtszeilen geprüft (14 Cash Games und zwei geschlossene Platzhalter ausgeschlossen), 369 Listing-Vorkommen, 87 Überschneidungen und 282 eindeutige aktuelle Turniere.
+- Drei fehlende Another-Poker-Basel-Termine (11.12., 18.12., 25.12.) ergänzt; zwölf bestehende Datensätze korrigiert (neun Startzeiten, drei Titel). Keine Dubletten bereinigt.
+- Neun ältere, in aktuellen Haupt-/Veranstalteransichten nicht mehr gelistete Events bleiben mit dokumentiertem Quellenkonflikt erhalten und werden nicht als aktuelle Listings gezählt.
+- 893 Datensätze in neun JSON-Dateien; JSON, IDs, Slugs und semantische Dubletten über alle Dateien geprüft.
+- [Qualitätsworkflow](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44694292980) und [Pages-Deploy](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44694293006) SUCCESS. Das heruntergeladene [Pages-Artefakt 14609901853](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44694293006/artifacts/14609901853) enthält 893 Detailseiten, 21 Veranstalterseiten und 965 Sitemap-URLs.
+- Die Hauptkalender-Paginierung und mehrere Veranstaltermonate bleiben offen; eine vollständige Abdeckung bis 31.12.2026 wird nicht behauptet.
+
+Details: [Tagesaudit 20.11.2026](docs/buyin-audit-2026-11-20.md).
