@@ -3,14 +3,15 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 20.11.2026
+- Datenstand: 21.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- 893 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
-- 451 Datensätze vom 12.11.2026 bis 31.12.2026
-- 409 Datensätze vom 15.11.2026 bis 31.12.2026
-- 360 Datensätze vom 19.11.2026 bis 31.12.2026
-- 347 Datensätze vom 20.11.2026 bis 31.12.2026
-- Letzter Buy-in.info-Abgleich: 20.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-20.md); 282 eindeutige aktuelle Turniere in den erreichbaren Ansichten, keine Vollständigkeitsbehauptung
+- 921 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
+- 479 Datensätze vom 12.11.2026 bis 31.12.2026
+- 437 Datensätze vom 15.11.2026 bis 31.12.2026
+- 388 Datensätze vom 19.11.2026 bis 31.12.2026
+- 375 Datensätze vom 20.11.2026 bis 31.12.2026
+- 359 Datensätze vom 21.11.2026 bis 31.12.2026
+- Letzter Buy-in.info-Abgleich: 21.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-21.md); 294 eindeutige aktuelle Turniere in den erreichbaren Ansichten, keine Vollständigkeitsbehauptung
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
