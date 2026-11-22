@@ -173,3 +173,48 @@ Letzte direkt sichtbare zukünftige Listung je Veranstalterübersicht:
 - HSOP und Airfield: aktuelle datierte Hauptkalenderlistings bis 29.11.; keine vollständige aktuelle Veranstalter-Monatsübersicht.
 
 Diese letzten sichtbaren Termine sind keine Garantie, dass danach keine weiteren Turniere veröffentlicht werden. Eine vollständige Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
+
+
+## GitHub Actions und Pages-Artefakt
+
+Der finale Datencommit ist `3f67d6fc2a89599a4f65b93dd81868c21f9e7d11`.
+
+- Tournament Data Quality Report: [Run 44997701064](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44997701064) – SUCCESS.
+- Generate and deploy tournament pages: [Run 44997701103](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44997701103) – SUCCESS.
+- Der zwischenzeitliche Deploy für den vorherigen Datencommit `45be9dd` wurde durch den unmittelbar folgenden Push abgebrochen; der finale Deploy für `3f67d6f` lief vollständig erfolgreich.
+- Qualitätsjob-Log: `9 Turnier-JSON-Dateien, 921 Einträge geprüft`.
+
+Das Pages-Artefakt wurde tatsächlich heruntergeladen und entpackt:
+
+- [Artefakt 14743994061](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/44997701103/artifacts/14743994061)
+- ZIP-SHA-256: `3b4572133a18b072e431f2c4d6597deb117ff72346cbed39b7a65aff4b844ac6` – stimmt mit dem GitHub-Artefakt-Digest überein.
+- Turnier-JSON-Dateien: 9; zusätzlich 2 Cash-Game-JSON-Dateien.
+- Turnierdatensätze: 921.
+- Turnierdetailseiten: 921.
+- Veranstalterseiten: 20.
+- HTML-Dateien: 996.
+- Sitemap-URLs: 992.
+
+Alle neun Turnier-JSON-Dateien im Artefakt stimmen anhand ihrer Git-Blob-SHAs bytegenau mit den Dateien des Datencommits überein. Alle 20 korrigierten Detailseiten sind vorhanden; Datum, Titel, Veranstalter, Startzeit und Buy-in stimmen in 20/20 Fällen mit den JSON-Datensätzen überein.
+
+Alle 20 erzeugten Veranstalterseiten wurden auf ihre eindeutigen Turnierlinks geprüft; die Zähler stimmen mit den jeweiligen Datenbeständen überein. Für 72 Offsuite Thun existiert aktuell nur ein kommendes Turnier. Die Generatorregel erzeugt Veranstalterseiten erst ab zwei kommenden Turnieren; die einzelne Turnierdetailseite bleibt vorhanden.
+
+## Live-Verifikation und Cache-Unterschiede
+
+Direkt erreichbar und mit dem Artefakt übereinstimmend:
+- Airfield Pokerclub Interlaken: 7 kommende Turniere.
+- Die Detailseiten für 24Poker Kingpin Freezeout (28.11., 16:00, CHF 300+40), FOIF Saturday Night (28.11., 19:30, CHF 75+25), Pöstli Omaha Time (29.11., 15:00, CHF 50+10), FOIF Freeroll (29.11., 14:30) und AZ Championship Serie 4 (28.11., 19:00, CHF 100+20+20).
+- BOPM Closer (29.11., 15:00, CHF 60+20) zeigt die korrigierte Veranstalterbezeichnung Airfield Pokerclub Interlaken.
+
+Mehrere serverseitig gerenderte Veranstalterseiten liefern im Webabruf noch ältere Snapshots:
+- 24Poker: 37 statt 13 kommende Einträge; der Webabruf ist drei Wochen alt.
+- FOIF DRÜ: 74 statt 67; Snapshot zwei Tage alt.
+- Pöstli Poker: 31 statt 28; Snapshot zwei Tage alt.
+- AZ Poker Club: 26 statt 22; Snapshot zwei Tage alt.
+- Another Poker: 28 statt 24; Snapshot zwei Tage alt.
+- Munot und Prestige enthalten in den aktuellen Live-Snapshots noch bereits vergangene Novembertermine.
+- Zwei Airfield-Detailseiten (Flight 1B und Main Event Final) zeigen noch ältere Titel-/Veranstalter-Snapshots. Das Artefakt enthält die korrigierten Werte.
+
+Die Homepage-Webansicht zeigt im statischen Crawl zunächst 0 Turniere für „Heute“. Das ist kein belastbarer Cache-Nachweis: Die Startseite lädt die neun JSON-Dateien clientseitig per JavaScript nach; der statische Artefakt-HTML enthält bereits zwölf SEO-Karten für den 22.11.2026. Der Web-Crawler führt dieses JavaScript nicht aus. Die Live-Webabruf-Verifikation ist deshalb bei der Homepage und den genannten Veranstalter-/Detailseiten teilweise eingeschränkt; die Artefaktprüfung bleibt davon getrennt und vollständig erfolgreich.
+
+Der letzte Dokumentationscommit ändert keine Turnierdaten und benötigt keinen neuen Datenbuild. Aktueller `main`-HEAD nach Audit-Dokumentation: `a64207085ef4f8cae211411e65fa138a1732c74d`.
