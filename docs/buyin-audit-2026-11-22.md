@@ -217,4 +217,4 @@ Mehrere serverseitig gerenderte Veranstalterseiten liefern im Webabruf noch ält
 
 Die Homepage-Webansicht zeigt im statischen Crawl zunächst 0 Turniere für „Heute“. Das ist kein belastbarer Cache-Nachweis: Die Startseite lädt die neun JSON-Dateien clientseitig per JavaScript nach; der statische Artefakt-HTML enthält bereits zwölf SEO-Karten für den 22.11.2026. Der Web-Crawler führt dieses JavaScript nicht aus. Die Live-Webabruf-Verifikation ist deshalb bei der Homepage und den genannten Veranstalter-/Detailseiten teilweise eingeschränkt; die Artefaktprüfung bleibt davon getrennt und vollständig erfolgreich.
 
-Der letzte Dokumentationscommit ändert keine Turnierdaten und benötigt keinen neuen Datenbuild. Aktueller `main`-HEAD nach Audit-Dokumentation: `a64207085ef4f8cae211411e65fa138a1732c74d`.
+Der letzte Datencommit ist `3f67d6fc2a89599a4f65b93dd81868c21f9e7d11`; die nachfolgenden Commits betreffen ausschließlich die Audit-Dokumentation und ändern keine Turnierdaten.
