@@ -247,4 +247,3 @@ Die Artefaktprüfung ist damit vollständig erfolgreich. Die Live-Auslieferung �
 
 - Datencommit: `6fd84f7bf347e5e55a468c9ff1583dd285fed249`
 - Audit-Dokumentation und README wurden nach erfolgreichem Datenbuild separat committed.
-- Der aktuelle `main`-HEAD nach Dokumentation: `d90c14f435898dadaa3b99f7279beca638895aa9`.
