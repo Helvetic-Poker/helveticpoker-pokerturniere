@@ -56,7 +56,7 @@ Damit ergeben sich **280 eindeutige aktuelle Turniere** aus den heute erreichbar
 | Sports Zugerland | 10 | 10 |
 | **Gesamt** | **276** | **266** |
 
-Die zehn ausgeschlossenen Zeilen der Veranstalterübersichten bestehen aus fünf Cash Games des Grand Casino Luzern, drei geschlossenen Munot-Platzhaltern und zwei geschlossenen Prestige-Platzhaltern. Die sechs Ausschlüsse aus der Hauptkalenderansicht sind ein Cash Game und ein geschlossener Prestige-Platzhalter; die übrigen vier Cash-/Platzhalter-Ausschlüsse verteilen sich auf die Veranstalterseiten wie oben ausgewiesen. Cash Games und geschlossene Platzhalter sind keine Turniere und werden nicht in die eindeutige Turnierzahl eingerechnet.
+Aus der Hauptkalenderansicht wurden zwei Zeilen ausgeschlossen (ein Cash Game und ein geschlossener Prestige-Platzhalter). Aus den Veranstalterübersichten wurden zehn Zeilen ausgeschlossen: fünf Cash Games des Grand Casino Luzern, drei geschlossene Munot-Platzhalter und zwei geschlossene Prestige-Platzhalter. Cash Games und geschlossene Platzhalter sind keine Turniere und werden nicht in die eindeutige Turnierzahl eingerechnet.
 
 Direkt geprüfte Übersichten:
 
@@ -193,3 +193,58 @@ Letzter sichtbarer zukünftiger Termin der heute geöffneten direkten Veranstalt
 Die sichtbaren Enddaten sind keine Garantie, dass danach keine weiteren Turniere veröffentlicht werden. Für STATION, HSOP und Airfield fehlt weiterhin eine vollständige aktuelle Buy-in.info-Veranstalterübersicht; hier wurden nur die konkret datierten Hauptkalender-/Suchindex-Einträge gezählt. Auch weitere Anbieter wie RDC, DC Poker Club, OVP und 72 Offsuite haben keine vollständige aktuelle Buy-in.info-Monatsübersicht in diesem Abgleich geliefert.
 
 **Fazit:** 280 eindeutige aktuelle Turniere aus den erreichbaren Buy-in.info-Ansichten sind im Helvetic-Datenbestand enthalten. Drei fehlende Turniere ergänzt, ein bestehender Another-Poker-Datensatz korrigiert, ein weiterer Quellenkonflikt ausdrücklich dokumentiert, keine Dubletten bereinigt. Alle neun JSON-Dateien sind valide. Die Hauptkalender-Paginierung und mehrere Veranstalter-Monatsbereiche bleiben offen; vollständige Abdeckung bis 31.12.2026 wird nicht behauptet.
+
+
+## 8. GitHub Actions und Pages-Deployment
+
+**Tournament data quality report:** [Run 45130275570](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/45130275570) – **SUCCESS**. Der Job `quality-report` und alle Schritte einschließlich „Check tournament data“ wurden erfolgreich abgeschlossen.
+
+**Generate and deploy tournament pages:** [Run 45130275494](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/45130275494) – **SUCCESS**. Der Job `deploy` und alle Schritte einschließlich Seitengenerierung, Artefakt-Upload und GitHub-Pages-Deployment wurden erfolgreich abgeschlossen.
+
+Beide Workflows liefen auf dem Datencommit `6fd84f7bf347e5e55a468c9ff1583dd285fed249`. Die nachfolgenden Commits aktualisieren nur Audit-Dokumentation und README.
+
+## 9. Tatsächliches Pages-Artefakt heruntergeladen und geprüft
+
+[GitHub-Pages-Artefakt 14797925871](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/45130275494/artifacts/14797925871)
+
+- ZIP-Größe: 1'840'495 Bytes
+- SHA-256: `8f815cf1820dd395f37f6596add84f8eb7776e7f2d830fa4e75f957baf9be99e`
+- Enthält `artifact.tar`; das TAR wurde extrahiert und geprüft.
+- Turnier-JSON-Dateien: 9
+- Separate Cash-Game-JSON-Dateien: 2
+- Turnierdatensätze in den neun Dateien: 924
+- Turnierdetailseiten: 924
+- Individuelle Veranstalterseiten: 20 (zuzüglich Veranstalter-Indexseite)
+- HTML-Dateien insgesamt: 999
+- Sitemap-URLs: 995
+
+Alle neun Turnier-JSON-Dateien stimmen bytegenau anhand ihrer Git-Blob-SHAs mit dem Datencommit `6fd84f7` überein. Insbesondere hat `data/09.json` im Artefakt den Git-Blob-SHA `6a409a1269ed981360969aad0f1ba19b8cd66f67`, identisch mit dem Stand des Datencommits. Alle 924 Slugs besitzen eine erzeugte Detailseite; fehlende Eventseiten: 0.
+
+Die Zähler aller 20 individuellen Veranstalterseiten stimmen mit den tatsächlich verlinkten Turnierdetailseiten überein (20/20). Beispiele: Another Poker Basel 25, FOIF DRÜ 64, Pöstli Poker 27, Grand Casino Luzern 40, Airfield Pokerclub Interlaken 7, HSOP 5 und STATION 4.
+
+Die vier geänderten bzw. neu hinzugefügten Another-Poker-Seiten wurden im Artefakt einzeln geprüft:
+
+| Datum | Turnier | Startzeit im Artefakt | Buy-in |
+|---|---|---:|---:|
+| 25.11.2026 | Hyper Turbo Satelitte - 1 Ticket garantiert | 18:40 | CHF 24 + 6 |
+| 26.11.2026 | Big Thursday Poker | TBA | CHF 150 + 100 + 45 |
+| 28.11.2026 | Hyper Turbo Satellite King of Freezeout | 18:40 | CHF 24 + 6 |
+| 28.11.2026 | King of Freezeout - 100K & 20 Min | 19:00 | CHF 200 + 45 |
+
+Datum, Startzeit und Buy-in stimmen auf allen vier erzeugten HTML-Detailseiten mit den JSON-Datensätzen überein. Die alte 28.11.-Seite „Master Freezeout“ bleibt zusätzlich vorhanden, weil der ungeklärte Quellenkonflikt nicht durch blindes Löschen aufgelöst wurde.
+
+## 10. Live-Website-Verifikation und Cache-Abweichung
+
+Der öffentliche Webabruf liefert noch einen älteren Stand:
+
+- Die Homepage zeigt weiterhin den 22.11.2026 als jüngste Termine und im dynamischen „Heute“-Block 0 Turniere. Der statische Web-Crawler führt das clientseitige Nachladen der JSON-Dateien nicht aus; der Homepage-Block ist deshalb kein verlässlicher Nachweis für den tatsächlichen Client-Kalender.
+- Die Live-Veranstalterseite [Another Poker Basel](https://pokerturniere.helveticpoker.ch/veranstalter/another-poker-basel/) zeigt 24 kommende Turniere statt der 25 im aktuellen Artefakt. Sie führt am 25.11. weiterhin das alte „Satellite 350 Master Freezeout“ CHF 30+10 und am 28.11. das alte „Master Freezeout“ CHF 300+50; die drei neuen Listings fehlen dort noch.
+- Die vier neuen bzw. korrigierten Detail-URLs waren beim direkten Webabruf nicht erreichbar (Internal Error), auch mit Cache-Buster-Query. Sie sind jedoch im heruntergeladenen Pages-Artefakt vorhanden und korrekt gerendert.
+
+Die Artefaktprüfung ist damit vollständig erfolgreich. Die Live-Auslieferung über den Webabruf ist für die geänderte Veranstalterseite und die neuen Detailseiten noch nicht bestätigt; die sichtbare Abweichung ist als möglicher CDN-/Crawler-Cache-Stand dokumentiert und wird nicht mit dem aktuellen Artefakt verwechselt.
+
+## 11. Aktueller Repository-Stand
+
+- Datencommit: `6fd84f7bf347e5e55a468c9ff1583dd285fed249`
+- Audit-Dokumentation und README wurden nach erfolgreichem Datenbuild separat committed.
+- Der aktuelle `main`-HEAD nach Dokumentation: `b9c1f8eaa9e8dd1d166db75bc128cc4652d37713`.
