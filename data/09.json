@@ -20754,7 +20754,7 @@
     "chips": null,
     "slug": "another-poker-basel-big-thursday-poker-2026-11-26",
     "provider_logo": "",
-    "source_note": "Die aktuelle direkte Buy-in.info-Veranstalterübersicht https://buy-in.info/tournaments/226, geprüft am 23.11.2026, listet ausdrücklich am 26.11.2026 „Big Thursday Poker“ mit CHF 150+100+45. Die Übersicht nennt keine Startzeit, Variante oder Turnierart; diese Felder bleiben TBA. Keine Uhrzeit aus dem parallel gelisteten Small Fish oder einem Wochenmuster übernommen.\nPrevious direct organizer overview observation (23.11.2026): https://buy-in.info/tournaments/226 listed CHF 150+100+45 without a time. Current reconciliation (24.11.2026): the current main calendar https://buy-in.info/calendar explicitly lists 2026-11-26 Big Thursday Poker at 19:00 with CHF 150+35. Following the user's source precedence, the current main-calendar values are used; the discrepancy is documented.",
+    "source_note": "Current Buy-in.info main calendar https://buy-in.info/calendar and current organizer overview https://buy-in.info/tournaments/226 both list 2026-11-26 “Big Thursday Poker” with CHF 150+35. The previous stored value CHF 150+100+45 was outdated and has been corrected. The current main calendar explicitly lists 19:00. No weekly-pattern time was extrapolated.",
     "_ord": 826
   },
   {
@@ -21568,7 +21568,7 @@
     "date_start": "2026-12-02",
     "date_end": "2026-12-02",
     "occurrence_date": "2026-12-02",
-    "time": "TBA",
+    "time": "19:00",
     "title": "75er- Turnier",
     "subtitle": "",
     "city": "Dietlikon",
@@ -21587,6 +21587,6 @@
     "slug": "prestige-poker-dietlikon-75er-turnier-2026-12-02",
     "provider_logo": "",
     "_ord": 858,
-    "source_note": "Buy-in.info current Prestige Poker organizer overview https://buy-in.info/tournaments/189, checked 2026-11-24, explicitly lists 2026-12-02 “75er- Turnier” with CHF 75 + 25. No start time, variant or tournament type is published for this specific listing; these fields remain TBA. Location from the same overview: Industriestrasse 28, 8305 Dietlikon (ZH)."
+    "source_note": "Buy-in.info current organizer overview https://buy-in.info/tournaments/189 lists 2026-12-02 “75er- Turnier” with CHF 75+25. The current date-filtered calendar view https://www.buy-in.info/calendar?forganizer=189 explicitly lists this specific date at 19:00, so 19:00 is used. Variant and tournament type are not published and remain TBA. Location: Industriestrasse 28, 8305 Dietlikon (ZH)."
   }
 ]
