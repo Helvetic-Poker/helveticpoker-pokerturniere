@@ -5,7 +5,7 @@
 - Datenänderung auf \`main\`: [Commit 8d1b0d8](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/8d1b0d8ff70155c40009956c4a8c4bf7fa2107f8)
 - Nachkorrektur auf \`main\`: [Commit 56d6c4b](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/56d6c4b2c7702a472699abae461770ca9833674c)
 - **30 neue Turnierdatensätze**: 29 aus der aktuellen 24Poker-Veranstalterübersicht und 1 aus der aktuellen Prestige-Übersicht.
-- **10 bestehende Datensätze korrigiert** (11 fachliche Feldwerte: 10 Startzeiten und 1 Buy-in-Label).
+- **11 bestehende Datensätze korrigiert** (12 fachliche Feldwerte: 10 Startzeiten, 1 Buy-in-Label und 1 Titel).
 - Zusätzlich wurde die Startzeit des neu ergänzten Prestige-Termins am 02.12. aus der aktuellen Datumsfilteransicht von TBA auf 19:00 präzisiert.
 - Dubletten bereinigt: 0. Keine Veranstaltung wurde allein wegen fehlender Angaben gelöscht.
 - Datenbestand: **954 Turnierdatensätze** in neun Dateien; **349** liegen zwischen 24.11. und 31.12.2026.
@@ -113,6 +113,7 @@ Die 14:30-Uhrzeit am 28.11. stammt aus der aktuellen [Hauptkalenderansicht](http
 | 01.12. | 24Poker | Haidy's PLO Warm Up - 2 Gtd !! | Startzeit TBA → 17:30 |
 | 01.12. | FOIF DRÜ | 300er Freezeout | Startzeit TBA → 18:30 |
 | 01.12. | RPR | Dienstagturnier mit Halbjahrespot SHOT-CLOCK | Startzeit TBA → 18:30 |
+| 24.11. | HSOP | Le Petit Re-Entry Turnier | Titel gemäß aktuellem Buy-in.info-Hauptkalender auf HSOP GRAUBÜNDEN korrigiert |
 
 Die Startzeiten stammen aus konkreten datierten Hauptkalenderzeilen. Beim Big Thursday stimmen die aktuelle Hauptkalenderansicht und die aktuelle Another-Veranstalterübersicht inzwischen beide mit CHF 150+35 überein; der zuvor gespeicherte Wert CHF 150+100+45 war veraltet.
 
@@ -122,6 +123,7 @@ Die Startzeiten stammen aus konkreten datierten Hauptkalenderzeilen. Beim Big Th
 - **AZ Top Structure:** Die fünf früher gespeicherten Termine 27.11., 04.12., 11.12., 18.12. und 25.12. fehlen in der aktuellen direkten AZ-Übersicht. Ohne datierte Absage wurden sie nicht gelöscht; sie werden nicht als aktuelle Listings gezählt.
 - **Grand Casino Luzern:** Die ältere „Weitere Turniere“-Tabelle enthält Autumn Special Day 1A am 25.11. mit CHF 350+50 und PCSM Day 1A am 15.12. mit CHF 800+80. Die aktuelle Veranstalterübersicht/Hauptkalenderansicht führt Autumn Special Day 1A am 26.11. mit CHF 300+40 und PCSM Day 1A am 16.12. mit CHF 800+80. Die aktuellen Kalenderzeilen haben Vorrang; die alten Tabellenzeilen wurden nicht als zusätzliche Turniere übernommen.
 - **Big Thursday Poker:** Der frühere gespeicherte Buy-in CHF 150+100+45 wurde durch den heutigen aktuellen Hauptkalender- und Veranstalterübersichtswert CHF 150+35 ersetzt.
+- **HSOP, 24.11.:** Der aktuelle Buy-in.info-Hauptkalender listet den Titel „HSOP GRAUBÜNDEN“; die datierte offizielle HSOP-Seite nennt für denselben Termin „Le Petit Re-Entry Turnier“. Wegen des Vorrangs des aktuellen Buy-in.info-Hauptkalenders wurde der Datensatz-Titel auf „HSOP GRAUBÜNDEN“ korrigiert. Die offizielle HSOP-Seite bestätigt weiterhin NLH, Re-Entry (3 Re-Entries), 19:00 Uhr und CHF 75+25.
 - Heute wurde keine neue offiziell bestätigte Absage festgestellt.
 
 ## Datenqualität über alle neun Turnierdateien

@@ -8,14 +8,14 @@ Zentraler Kalender der Schweizer Pokerszene.
 - **954 Turnierdatensätze** in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
 - **349 Datensätze** vom 24.11.2026 bis 31.12.2026
 - Letzter Buy-in.info-Abgleich: 24.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-24.md); 299 eindeutige aktuelle Turniere aus den erreichbaren Ansichten, keine Vollständigkeitsbehauptung
-- 30 fehlende Turniere ergänzt, 10 bestehende Datensätze korrigiert; zusätzlich eine Startzeit eines neu ergänzten Turniers anhand des aktuellen Filters präzisiert
+- 30 fehlende Turniere ergänzt, 11 bestehende Datensätze korrigiert (12 Feldwerte); zusätzlich eine Startzeit eines neu ergänzten Turniers anhand des aktuellen Filters präzisiert
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
 
 ## Quellenabgleich 24.11.2026 – Buy-in.info
 - Hauptkalender: 100 sichtbare Zeilen, davon 89 ab 24.11. bis zum ersten Eintrag am 01.12.2026. Zwölf aktuelle Veranstalterübersichten: 298 Ansichtszeilen. Insgesamt 387 Ansichtszeilen; nach Ausschluss von 10 Cash-Game-Zeilen und 5 geschlossenen Platzhaltern bleiben 372 Turnier-Listing-Vorkommen. 73 Überschneidungen ergeben **299 eindeutige aktuelle Buy-in.info-Turniere** in den erreichbaren Ansichten; alle 299 sind im Datenbestand.
-- 30 fehlende Termine ergänzt (29 24Poker, 1 Prestige); 10 bestehende Datensätze quellenbasiert korrigiert. Keine Dubletten entfernt.
+- 30 fehlende Termine ergänzt (29 24Poker, 1 Prestige); 11 bestehende Datensätze quellenbasiert korrigiert (10 Startzeiten, 1 Buy-in-Label, 1 Titel). Der HSOP-Titel vom 24.11. folgt der aktuellen Buy-in.info-Hauptkalenderansicht; die abweichende offizielle HSOP-Bezeichnung ist im Audit dokumentiert. Keine Dubletten entfernt.
 - Die Hauptkalender-Paginierung nach der ersten 100-Zeilen-Ansicht und mehrere Veranstalterfilter bleiben blockiert oder liefern alte Snapshots. Eine vollständige Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
 - Datenqualität, GitHub Actions, Pages-Artefakt und Live-Cache-Abweichungen: [Tagesaudit 24.11.2026](docs/buyin-audit-2026-11-24.md).
 
