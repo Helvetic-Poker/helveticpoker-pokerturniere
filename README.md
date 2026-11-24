@@ -1,20 +1,20 @@
-# Pokerturniere Schweiz – Helvetic Poker
-
-Zentraler Kalender der Schweizer Pokerszene.
-
 ## Aktueller Stand
-- Datenstand: 23.11.2026
+- Datenstand: 24.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- 924 eindeutige Turnierdatensätze in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
-- 479 Datensätze vom 12.11.2026 bis 31.12.2026
-- 437 Datensätze vom 15.11.2026 bis 31.12.2026
-- 388 Datensätze vom 19.11.2026 bis 31.12.2026
-- 375 Datensätze vom 20.11.2026 bis 31.12.2026
-- 331 Datensätze vom 23.11.2026 bis 31.12.2026
-- Letzter Buy-in.info-Abgleich: 23.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-23.md); 280 eindeutige aktuelle Turniere in den erreichbaren Ansichten, keine Vollständigkeitsbehauptung
+- **954 Turnierdatensätze** in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
+- **349 Datensätze** vom 24.11.2026 bis 31.12.2026
+- Letzter Buy-in.info-Abgleich: 24.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-24.md); 299 eindeutige aktuelle Turniere aus den erreichbaren Ansichten, keine Vollständigkeitsbehauptung
+- 30 fehlende Turniere ergänzt, 10 bestehende Datensätze korrigiert; zusätzlich eine Startzeit eines neu ergänzten Turniers anhand des aktuellen Filters präzisiert
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
+
+## Quellenabgleich 24.11.2026 – Buy-in.info
+- Hauptkalender: 100 sichtbare Zeilen, davon 89 ab 24.11. bis zum ersten Eintrag am 01.12.2026. Zwölf aktuelle Veranstalterübersichten: 298 Ansichtszeilen. Insgesamt 387 Ansichtszeilen; nach Ausschluss von 10 Cash-Game-Zeilen und 5 geschlossenen Platzhaltern bleiben 372 Turnier-Listing-Vorkommen. 73 Überschneidungen ergeben **299 eindeutige aktuelle Buy-in.info-Turniere** in den erreichbaren Ansichten; alle 299 sind im Datenbestand.
+- 30 fehlende Termine ergänzt (29 24Poker, 1 Prestige); 10 bestehende Datensätze quellenbasiert korrigiert. Keine Dubletten entfernt.
+- Die Hauptkalender-Paginierung nach der ersten 100-Zeilen-Ansicht und mehrere Veranstalterfilter bleiben blockiert oder liefern alte Snapshots. Eine vollständige Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
+- Datenqualität, GitHub Actions, Pages-Artefakt und Live-Cache-Abweichungen: [Tagesaudit 24.11.2026](docs/buyin-audit-2026-11-24.md).
+
 ## Quellenabgleich 19.11.2026 – Buy-in.info und offizielle Veranstalterquellen
 - Die aktuelle Buy-in.info-Hauptkalenderansicht enthält 100 Zeilen; ab 19.11. bis zum ersten Eintrag am 27.11. sind 92 Ansichtszeilen sichtbar. Davon sind 89 Turnierlistings, zwei Cash Games und ein geschlossener Prestige-Platzhalter.
 - Zusätzlich wurden zwölf direkte Veranstalterübersichten sowie die STATION-Detailtabelle geprüft. Zusammen ergeben diese 296 Ansichtszeilen (12 Cash Games und ein geschlossener Prestige-Platzhalter ausgeschlossen). Zusammen mit dem Hauptkalender: **388 Ansichtszeilen**; nach Ausschluss von 14 Cash-Game-Zeilen und zwei geschlossenen Platzhaltern bleiben **372 Turnier-Listing-Vorkommen**. **83 Überschneidungen** ergeben **289 eindeutige Buy-in.info-Turniere** in den heute erreichbaren Ansichten. Alle 289 sind im Datenbestand; keine Vollständigkeitsbehauptung.
