@@ -1,3 +1,7 @@
+# Pokerturniere Schweiz – Helvetic Poker
+
+Zentraler Kalender der Schweizer Pokerszene.
+
 ## Aktueller Stand
 - Datenstand: 24.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
