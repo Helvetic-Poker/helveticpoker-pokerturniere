@@ -121,3 +121,39 @@ Prüfergebnisse:
 ## Fazit
 
 Die sichtbare Hauptkalenderansicht enthält 91 gültige Turnierlistings ab 25.11.; alle sind vorhanden. Aus zwölf zusätzlich geöffneten Veranstalterübersichten wurden vier weitere, zuvor fehlende Dezembertermine entdeckt und ergänzt. Insgesamt enthält der Datenbestand jetzt 958 Turniere, davon 347 im Zeitraum 25.11.–31.12.2026. Alle neun JSON-Dateien sind syntaktisch gültig und frei von ID-, Slug- und semantischen Dubletten. Die Hauptkalender-Paginierung und mehrere vollständige Anbieter-/Monatsansichten bleiben offen. Eine vollständige Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
+
+## Commits, Workflows und Pages-Artefakt
+
+- Datencommit: [79e777c – Add four newly listed Buy-in.info December tournaments](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/79e777cbec9efbc65a0a1c1088a0fb230d74a253).
+- Aktualisierung dieses Audits: [65de0ae](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/65de0ae26744f55d85e7d83170ad7b7baf6d97ea).
+- README-Aktualisierung: [e009096](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/commit/e0090961247bf4c70c7a934c18ff3f853cfe2b04).
+- Aktueller main-HEAD nach Dokumentationsänderungen: e0090961247bf4c70c7a934c18ff3f853cfe2b04.
+
+GitHub Actions:
+- Qualitätsworkflow [45567905904](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/45567905904): **SUCCESS**.
+- Pages-Workflow [45567905987](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/45567905987): **SUCCESS**; Seitengenerierung, Artefakt-Upload und Pages-Deploy erfolgreich.
+- Ein früherer Deployversuch des vorherigen Datenstands war zunächst fehlgeschlagen. Der fehlgeschlagene Deployjob wurde erneut ausgeführt und endete ebenfalls erfolgreich: [Run 45404823078, Versuch 2](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/45404823078).
+
+Tatsächliches Pages-Artefakt:
+- [Artefakt 14999659722](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/45567905987/artifacts/14999659722)
+- ZIP-Grösse: 1'890'252 Bytes.
+- SHA-256: `a58df53dd6e64daa0493b581e718317563e3a6cb339fa17d907c930314faf636`.
+- Enthaltene Turnier-JSON-Dateien: **9**.
+- Turnierdatensätze: **958**.
+- Turnierdetailseiten: **958/958**.
+- Veranstalterseiten: **20** plus Veranstalterverzeichnis.
+- HTML-Dateien insgesamt: **1'033**.
+- Sitemap-Einträge: **1'029**.
+- Die neun JSON-Dateien stimmen anhand ihrer Git-Blob-SHAs bytegenau mit dem Datencommit überein. data/09.json enthält 844 Datensätze; die übrigen acht Dateien enthalten zusammen 114.
+
+Alle vier neu ergänzten Detailseiten wurden im Artefakt einzeln geöffnet und geprüft. Datum, Titel, Startzeit TBA und Buy-in stimmen jeweils mit dem JSON-Datensatz überein. Alle vier Seiten sind vorhanden.
+
+Veranstalterseiten-Zähler im Artefakt wurden anhand der verlinkten Turnierdetailseiten kontrolliert. Beispiele: 24Poker 39, FOIF DRÜ 61, Grand Casino Luzern 40, Pöstli Poker 26, Another Poker Basel 23, Capital Poker Club Bern 24, Munot Poker 21, Prestige Poker 12. Das Veranstalterverzeichnis ist zusätzlich vorhanden. Für 72 Offsuite Thun wird keine eigene Veranstalterseite erzeugt, weil nur ein kommendes Turnier vorhanden ist; die Turnierdetailseite bleibt im Artefakt.
+
+## Live-Verifikation nach Deploy
+
+Die vier neuen Detailseiten konnten beim direkten öffentlichen Webabruf nicht geladen werden (Internal Error). Die aktuellen Veranstalterseiten-Abfragen zeigen ältere Snapshots:
+- Another Poker Basel: Live-Crawler 22 kommende Turniere, aktuelles Artefakt 23.
+- Capital Poker Club Bern: Live-Crawler 39 kommende Turniere, aktuelles Artefakt 24.
+
+Die neue Detailseiten- und Veranstalterseiten-Generierung ist im heruntergeladenen Artefakt korrekt. Die öffentliche Webabruf-/Cache-Verifikation ist für die vier neuen Seiten noch offen und wird ausdrücklich von der erfolgreichen Artefaktprüfung getrennt. Die Homepage lädt Kalenderdaten clientseitig; ein statischer Webcrawler zeigt dort teilweise einen älteren oder leeren Heute-Block.
