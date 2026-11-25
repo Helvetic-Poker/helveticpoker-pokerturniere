@@ -3,15 +3,22 @@
 Zentraler Kalender der Schweizer Pokerszene.
 
 ## Aktueller Stand
-- Datenstand: 24.11.2026
+- Datenstand: 25.11.2026
 - Zeitraum im Datenbestand: Oktober 2026 bis mindestens Dezember 2026
-- **954 Turnierdatensätze** in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
-- **349 Datensätze** vom 24.11.2026 bis 31.12.2026
-- Letzter Buy-in.info-Abgleich: 24.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-24.md); 299 eindeutige aktuelle Turniere aus den erreichbaren Ansichten, keine Vollständigkeitsbehauptung
-- 30 fehlende Turniere ergänzt, 11 bestehende Datensätze korrigiert (12 Feldwerte); zusätzlich eine Startzeit eines neu ergänzten Turniers anhand des aktuellen Filters präzisiert
+- **958 Turnierdatensätze** in 9 Turnierdateien unter `data/` (zusätzlich 2 separate Cash-Game-Dateien)
+- **347 Datensätze** vom 25.11.2026 bis 31.12.2026
+- Letzter Buy-in.info-Abgleich: 25.11.2026 – [Tagesaudit](docs/buyin-audit-2026-11-25.md); 91 eindeutige Turnierzeilen in der sichtbaren Hauptkalenderansicht plus vier zusätzliche, zuvor fehlende Veranstalterlistings; keine Vollständigkeitsbehauptung
+- 4 fehlende Turniere aus Another Poker und Capital Poker Club ergänzt; keine bestehenden Felder korrigiert und keine Dubletten entfernt
 - Direktlinks zu den jeweiligen Veranstaltern
 - Filter: Heute, Morgen, Wochenende, Monat, Region, Buy-in, Variante, Turnierart, Veranstalter und Suche
 - Mobile-first Darstellung
+
+## Quellenabgleich 25.11.2026 – Buy-in.info
+- Hauptkalender: 100 sichtbare Zeilen; sieben vom 24.11. sind vergangen. Vom 25.11. bis zum letzten sichtbaren Eintrag am 01.12. sind 93 Zeilen sichtbar; zwei Cash Games ausgeschlossen ergeben 91 gültige Turnierlistings. Alle 91 sind im Datenbestand vorhanden.
+- Zwölf aktuelle Veranstalter-/Clubübersichten wurden zusätzlich geöffnet. Dabei wurden vier zuvor fehlende Termine entdeckt und ergänzt: Another Poker Time Poker Tournament PL Omaha 4 Card am 06.12.; Capital Poker Club X-MAS Special am 23.12.; Capital Special ULTIMATE BIG Mystery Bounty am 26.12.; Capital CPC THE GRAND Freezeout am 26.12. Fehlende Startzeiten bleiben TBA.
+- Datenbestand: 958 Turnierdatensätze; 347 liegen vom 25.11. bis 31.12.2026. Alle neun JSON-Dateien sind valide; doppelte IDs, Slugs und semantische Events: 0.
+- Die Hauptkalender-Paginierung nach den ersten 100 Zeilen und mehrere spätere Anbieter-/Monatsansichten bleiben unvollständig. Eine vollständige Abdeckung bis 31.12.2026 wird ausdrücklich nicht behauptet.
+- Details: [Tagesaudit 25.11.2026](docs/buyin-audit-2026-11-25.md).
 
 ## Quellenabgleich 24.11.2026 – Buy-in.info
 - Hauptkalender: 100 sichtbare Zeilen, davon 89 ab 24.11. bis zum ersten Eintrag am 01.12.2026. Zwölf aktuelle Veranstalterübersichten: 298 Ansichtszeilen. Insgesamt 387 Ansichtszeilen; nach Ausschluss von 10 Cash-Game-Zeilen und 5 geschlossenen Platzhaltern bleiben 372 Turnier-Listing-Vorkommen. 73 Überschneidungen ergeben **299 eindeutige aktuelle Buy-in.info-Turniere** in den erreichbaren Ansichten; alle 299 sind im Datenbestand.
