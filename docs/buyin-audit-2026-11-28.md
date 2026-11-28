@@ -98,3 +98,19 @@ Pages-Workflow für `6a2ff33`: erster Deploy-Job fehlgeschlagen, obwohl die Seit
 - Für die nicht vollständig sichtbaren Monate/Anbieter vom 2026-12-11 bis 2026-12-31 kann deshalb keine Vollständigkeit behauptet werden.
 
 **Keine vollständige Abdeckung aller Schweizer Buy-in.info-Turniere bis 2026-12-31 bestätigt.**
+
+
+## Nachtrag: Artefakt- und Deployprüfung (08:17 CET)
+
+Das Pages-Artefakt aus Run 46120769898, Attempt 3, wurde tatsächlich heruntergeladen und geprüft: [Artifact 15253557726](https://github.com/Helvetic-Poker/helveticpoker-pokerturniere/actions/runs/46120769898/artifacts/15253557726). ZIP-SHA-256: `a3319572bd4eae04d7bda2aa5bda972b64fe2f140516013c5132fb2610af4a93`.
+
+- 11 JSON-Dateien im Artefakt: neun Turnierdateien plus `cashgames.json` und `cashgames-sources.json`.
+- Turnier-JSON: 982 Einträge; alle neun JSON-Dateien stimmen bytegenau per Git-Blob-SHA mit `main` auf dem Datencommit `6a2ff33` überein.
+- 982/982 Turnierdetailseiten vorhanden.
+- 20/20 Veranstalterseiten vorhanden; alle 20 Zähler stimmen mit den kommenden Datensätzen aus den JSON-Dateien überein.
+- 1'057 HTML-Dateien insgesamt.
+- 22/22 neu hinzugefügte Detailseiten geprüft: Datum, Zeit bzw. TBA und Buy-in stimmen mit den jeweiligen JSON-Datensätzen überein.
+
+Der Pages-Deploy blieb trotz drei Versuchen fehlgeschlagen. Die Seitengenerierung und der Artefakt-Upload waren erfolgreich; `actions/deploy-pages@v4` brach ab, weil nach den Wiederholungen zwei Artefakte namens `github-pages` in demselben Workflow-Run vorhanden waren: “Multiple artifacts named \"github-pages\" were unexpectedly found ... Artifact count is 2.” Ein neues Deploy wurde daher nicht bestätigt.
+
+Die Live-Veranstalterseite Prestige Poker Dietlikon liefert noch einen älteren Stand mit 12 kommenden Turnieren und listet die neu hinzugefügten Dezembertermine noch nicht. Die drei direkt getesteten neuen Detailseiten waren beim Webabruf nicht erreichbar. Das Artefakt ist korrekt; die öffentliche Live-Auslieferung ist noch nicht aktualisiert/verifiziert.
