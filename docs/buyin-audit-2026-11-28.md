@@ -13,10 +13,10 @@ Neun direkt erreichbare aktuelle Veranstalterübersichten wurden ausgewertet: 24
 - Davon geschlossene Platzhalter: 6
 - Gültige Turnierlistings aus diesen Veranstalteransichten: 201
 - Zusätzliche aktuelle Hauptkalenderzeilen für 2026-11-28: 19, davon 1 Cash Game und 18 Turniere
-- Überschneidungen dieser 18 Hauptkalender-Turniere mit den Veranstalteransichten: 18
-- Vereinigungsmenge dieser konkret gezählten Ansichten: 201 eindeutige Turniere
+- Überschneidungen dieser 18 Hauptkalender-Turniere mit den Veranstalteransichten: 13
+- Vereinigungsmenge dieser konkret gezählten Ansichten: 206 eindeutige Turniere
 
-Diese Zählung bezieht sich ausschliesslich auf die genannten neun Veranstalterübersichten und den konkret sichtbaren Hauptkalender-Tagesabschnitt 28.11. Sie ist **keine** Gesamtzahl aller Schweizer Buy-in.info-Turniere. Weitere Kalender-/Suchindex-Ausschnitte für 29.11.–10.12. wurden für die Feldprüfung verwendet, aber wegen fragmentarischer Such-Snippets nicht in die Zeilensumme aufgenommen.
+Diese Zählung bezieht sich ausschliesslich auf die genannten neun Veranstalterübersichten und den konkret sichtbaren Hauptkalender-Tagesabschnitt 28.11. Die fünf zusätzlichen eindeutigen Tageslistings betreffen HSOP (1), Airfield (2) und FOIF DRÜ (2), für die in diesem Teilumfang keine direkte Veranstalterseite enthalten ist. Sie ist **keine** Gesamtzahl aller Schweizer Buy-in.info-Turniere. Weitere Kalender-/Suchindex-Ausschnitte für 29.11.–10.12. wurden für die Feldprüfung verwendet, aber wegen fragmentarischer Such-Snippets nicht in die Zeilensumme aufgenommen.
 
 ### Ergänzte Turniere
 
